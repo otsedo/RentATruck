@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Busquedas\" />
-    <Folder Include="Clases\" />
     <Folder Include="Consultas\" />
     <Folder Include="Formularios\" />
     <Folder Include="Mantenimientos\" />
