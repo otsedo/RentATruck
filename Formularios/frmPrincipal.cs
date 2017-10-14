@@ -34,6 +34,7 @@ namespace RentATruck.Formularios
             {
                 this.Show();
                 UsuarioLogueado = true;
+                lblEstado.Text = "Usuario: " + login.resultado.Substring(20);
 
                              
             }

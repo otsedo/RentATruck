@@ -14,6 +14,7 @@ namespace RentATruck.Formularios
     public partial class frmLogin : Form
     {
         public Boolean logueado = false;
+        public string resultado;
         public frmLogin()
         {
             InitializeComponent();
@@ -24,10 +25,9 @@ namespace RentATruck.Formularios
 
         }
 
-        
-        private void cmdAceptar_Click(object sender, EventArgs e)
+        public void IniciarSesion()
         {
-            string resultado = Utilitarios.IniciarSesion(this.txtUsuario.Text,this.txtPassword.Text);
+            resultado = Utilitarios.IniciarSesion(this.txtUsuario.Text, this.txtPassword.Text);
             if (resultado != "")
             {
                 MessageBox.Show(resultado, "Mensaje", MessageBoxButtons.OK);
@@ -43,9 +43,30 @@ namespace RentATruck.Formularios
             }
         }
 
+        
+        private void cmdAceptar_Click(object sender, EventArgs e)
+        {
+            IniciarSesion();
+        }
+
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) {
+                this.txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                IniciarSesion();
+            }
         }
     }
 }

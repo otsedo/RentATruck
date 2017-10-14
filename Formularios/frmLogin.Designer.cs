@@ -72,9 +72,11 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(124, 51);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(217, 20);
             this.txtPassword.TabIndex = 10;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsuario
             // 
@@ -82,6 +84,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(217, 20);
             this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // cmdCancelar
             // 
@@ -112,8 +115,10 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.cmdAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(345, 141);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cmdCancelar);
