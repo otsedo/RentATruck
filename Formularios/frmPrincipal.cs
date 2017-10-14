@@ -14,6 +14,7 @@ namespace RentATruck.Formularios
     public partial class frmPrincipal : Form
     {
         public Boolean UsuarioLogueado = false;
+        frmAbout frmAbout = null;
         
 
         public frmPrincipal()
@@ -54,6 +55,16 @@ namespace RentATruck.Formularios
                 {
                     e.Cancel = true;
                 }                
+            }
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frmAbout == null)
+            {
+                frmAbout = new frmAbout();
+                frmAbout.MdiParent = this;
+                frmAbout.Show();
             }
         }
     }
