@@ -7,15 +7,12 @@ using RentATruck.Clases;
 using System.Data.SqlClient;
 
 
+
 namespace RentATruck.Clases
 {
+
     class Utilitarios
     {
-        
-                
-        
-
-
         public static string IniciarSesion(string usuario, string password)
         {
             int logueado = 0;
@@ -55,13 +52,6 @@ namespace RentATruck.Clases
             else
                 return mensaje;           
         }
-
-
-
-
-
-
-
-
+        
     }
 }

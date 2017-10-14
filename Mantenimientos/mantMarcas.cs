@@ -1,0 +1,240 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace RentATruck.Mantenimientos
+{
+    public partial class mantMarcas : Form
+    {
+        datos objDatos = new datos();
+        DataView miFiltro;
+        public static int codigo_marca;
+        public static string marcaEncontrada;
+
+        public mantMarcas()
+        {
+            InitializeComponent();
+        }
+
+        private static mantMarcas marcaInstancia = null;
+
+        private void mantMarcas_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = this.cmdGuardar;
+            this.CancelButton = cmdCancelar;
+
+            try
+            {
+                cargarMarcas();
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+           
+        }
+
+        public void cargarMarcas()
+        {
+            this.txtID.Text = "Nuevo";
+            this.txtMarca.Text = "";
+            this.txtMarca.Focus();
+            this.txtID.Enabled = false;
+            objDatos.Conectar();
+
+            string sring = ("exec obtenerMarcas");
+            objDatos.Consulta_llenar_datos(sring);
+
+            this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
+            this.dataGridView1.DataSource = miFiltro;
+            this.dataGridView1.Columns[0].Width = 80;
+            this.dataGridView1.Columns[1].Width = 400;
+
+            objDatos.Desconectar();
+        }
+
+        private bool validadCampo()
+        {
+            return (txtMarca.Text.Length > 2);
+        }
+
+
+
+        public static mantMarcas Instancia()
+        {
+            if ((marcaInstancia == null) || (marcaInstancia.IsDisposed == true))
+                {
+                marcaInstancia = new mantMarcas();                
+            }
+            marcaInstancia.BringToFront();
+            return marcaInstancia;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validando que no pueda ingresar espacios, numeros y simbolos
+            if(Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Al hacer click que llene los textbox
+           if(dataGridView1.DataSource == null)
+            {
+                return;
+            }
+           else
+            {
+                txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                return;
+            }
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (validadCampo() == false)
+            {
+                MessageBox.Show("La Marca debe ser mayor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                //Verificar si ya la marca insertada estaba insertada
+                marcaEncontrada = "";
+                if (txtID.Text == "Nuevo")
+                {
+                    codigo_marca = 0;
+                }
+                else
+                {
+                    codigo_marca = int.Parse(this.txtID.Text);
+                }
+
+                //Busco en el gridview
+                foreach (DataGridViewRow Row in dataGridView1.Rows)
+                {
+                    int fila = Row.Index;
+                    String valor = Row.Cells[1].Value.ToString();
+
+                    //compara lo que se escribe con lo que esta en el grid
+                    if (this.txtMarca.Text == valor)
+                    {
+                        marcaEncontrada = valor;
+                        dataGridView1.Rows[fila].Selected = true;
+                    }
+                }
+                //validamos la variable valor
+                if (marcaEncontrada != "")
+                {
+                    DialogResult respuesta;
+                    respuesta = MessageBox.Show("La marca encontrada, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (respuesta == DialogResult.OK)
+                    {
+                        MessageBox.Show("Procedemos a guardar");
+                        cargarMarcas();
+                    }
+                    else
+                    {
+                        cargarMarcas();
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        objDatos.Conectar();
+                        string sql = "exec inserta_actualiza_marcas " + codigo_marca + ",'" + this.txtMarca.Text + "'";
+                        if (objDatos.Insertar(sql))
+                        {
+                            MessageBox.Show("Registro Insertado");
+                            cargarMarcas();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registro no pudo ser insertado");
+                        }
+                        objDatos.Cn.Close();
+                        cargarMarcas();
+                    }
+                    catch (System.Data.SqlClient.SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+            }
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if(this.txtID.Text == "" || this.txtID.Text == "Nuevo")
+            {
+                MessageBox.Show("Favor de seleccionar un elemento para borrar");
+            }
+            else
+            {
+                try
+                {
+                    objDatos.Conectar();
+                    string sql = "exec elimina_marcas " + this.txtID.Text;
+                    if (objDatos.Insertar(sql))
+                    {
+                        MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cargarMarcas();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro no pudo eliminar el registro");
+                    }
+                    objDatos.Cn.Close();
+                    cargarMarcas();
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridView1.DataSource == null)
+            {
+                return;
+            }
+            else
+            {
+                txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            }
+        }
+    }
+}
+

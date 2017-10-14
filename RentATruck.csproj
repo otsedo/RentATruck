@@ -72,6 +72,12 @@
     <Compile Include="Formularios\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantMarcas.Designer.cs">
+      <DependentUpon>mantMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmLogin.resx">
@@ -79,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantMarcas.resx">
+      <DependentUpon>mantMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,7 +115,6 @@
   <ItemGroup>
     <Folder Include="Busquedas\" />
     <Folder Include="Consultas\" />
-    <Folder Include="Mantenimientos\" />
     <Folder Include="PopUps\" />
     <Folder Include="Procesos\" />
     <Folder Include="Recibos\" />

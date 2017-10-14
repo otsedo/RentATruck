@@ -1,27 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
-using System.Data;
 
     class datos
     {
         private string Cadena = @"Data Source=LENOVO-PC\SQLEXPRESS;Initial Catalog=RentATruck;Integrated Security=True";
         public SqlConnection Cn;
         private SqlCommandBuilder cmb;
-
-        private void Conectar()
-        {
-            Cn = new SqlConnection(Cadena);
-            Cn.Open();
-        }
-
-        public datos()
-        {
-            Conectar();
-        }
-
         public DataSet ds = new DataSet();
         public SqlDataAdapter da;
 
@@ -53,7 +41,19 @@ using System.Data;
             }
         }
 
-        public DataTable ConsultaTabla(string tabla, string orderBy)
+        public void Conectar()
+    {
+        Cn = new SqlConnection(Cadena);
+        Cn.Open();
+    }
+
+    public void Desconectar()
+    {
+        Cn.Close();
+    }
+
+
+    public DataTable ConsultaTabla(string tabla, string orderBy)
         {
             string sql = "select * from " + tabla + orderBy;
             da = new SqlDataAdapter(sql, Cn);
@@ -125,5 +125,5 @@ using System.Data;
             da = new SqlDataAdapter(cadena, Cn);
             cmb = new SqlCommandBuilder(da);
             da.Fill(ds);
-        }
-    }
+        } 
+}

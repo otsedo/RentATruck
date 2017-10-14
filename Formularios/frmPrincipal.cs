@@ -15,7 +15,8 @@ namespace RentATruck.Formularios
     {
         public Boolean UsuarioLogueado = false;
         frmAbout frmAbout = null;
-        
+        //Mantenimientos.mantMarcas mantMarcas = null;
+
 
         public frmPrincipal()
         {
@@ -66,6 +67,15 @@ namespace RentATruck.Formularios
                 frmAbout.MdiParent = this;
                 frmAbout.Show();
             }
+        }
+
+        private void marcasDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantMarcas F_mantMarcas = new Mantenimientos.mantMarcas();
+            F_mantMarcas = Mantenimientos.mantMarcas.Instancia();
+            F_mantMarcas.MdiParent = this;
+            F_mantMarcas.Show();
+
         }
     }
 }
