@@ -73,6 +73,66 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_cancel_black_18dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_cancel_black_18dp_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_delete_black_24dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_delete_black_24dp_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_save_black_18dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_save_black_18dp_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_document_sans_cancel_103500 {
+            get {
+                object obj = ResourceManager.GetObject("if_document_sans_cancel_103500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_floppy_disk_save_103863 {
+            get {
+                object obj = ResourceManager.GetObject("if_floppy_disk_save_103863", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_floppy_disk_save_103863__1_ {
+            get {
+                object obj = ResourceManager.GetObject("if_floppy_disk_save_103863 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap yes {
             get {
                 object obj = ResourceManager.GetObject("yes", resourceCulture);

@@ -126,6 +126,24 @@
   <ItemGroup>
     <None Include="Resources\yes.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_delete_black_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_cancel_black_18dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_save_black_18dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_floppy_disk_save_103863.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_floppy_disk_save_103863 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_document_sans_cancel_103500.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

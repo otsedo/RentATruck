@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentATruck.Mantenimientos
@@ -16,16 +11,16 @@ namespace RentATruck.Mantenimientos
         DataView miFiltro;
         public static int codigo_marca;
         public static string marcaEncontrada;
+        private static mantMarcas marcaInstancia = null;
 
         public mantMarcas()
         {
             InitializeComponent();
         }
 
-        private static mantMarcas marcaInstancia = null;
-
         private void mantMarcas_Load(object sender, EventArgs e)
         {
+            this.cmdEliminar.Enabled = false;
             this.AcceptButton = this.cmdGuardar;
             this.CancelButton = cmdCancelar;
 
@@ -37,7 +32,6 @@ namespace RentATruck.Mantenimientos
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-           
         }
 
         public void cargarMarcas()
@@ -53,8 +47,27 @@ namespace RentATruck.Mantenimientos
 
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
-            this.dataGridView1.Columns[0].Width = 80;
-            this.dataGridView1.Columns[1].Width = 400;
+
+            this.dataGridView1.Columns[0].Width = 120;
+            this.dataGridView1.Columns[0].HeaderText = "ID";
+            this.dataGridView1.Columns[1].Width = 421;
+            this.dataGridView1.Columns[1].HeaderText = "Marca";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            this.cmdEliminar.Enabled = false;
+            this.dataGridView1.ClearSelection();
 
             objDatos.Desconectar();
         }
@@ -64,13 +77,11 @@ namespace RentATruck.Mantenimientos
             return (txtMarca.Text.Length > 2);
         }
 
-
-
         public static mantMarcas Instancia()
         {
             if ((marcaInstancia == null) || (marcaInstancia.IsDisposed == true))
-                {
-                marcaInstancia = new mantMarcas();                
+            {
+                marcaInstancia = new mantMarcas();
             }
             marcaInstancia.BringToFront();
             return marcaInstancia;
@@ -79,7 +90,7 @@ namespace RentATruck.Mantenimientos
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Validando que no pueda ingresar espacios, numeros y simbolos
-            if(Char.IsLetter(e.KeyChar))
+            if (Char.IsLetter(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -102,11 +113,11 @@ namespace RentATruck.Mantenimientos
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Al hacer click que llene los textbox
-           if(dataGridView1.DataSource == null)
+            if (dataGridView1.DataSource == null)
             {
                 return;
             }
-           else
+            else
             {
                 txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -194,38 +205,49 @@ namespace RentATruck.Mantenimientos
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            if(this.txtID.Text == "" || this.txtID.Text == "Nuevo")
+            DialogResult respuesta;
+            respuesta = MessageBox.Show("Desea elmininar el registro " + this.txtMarca.Text + "?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.OK)
             {
-                MessageBox.Show("Favor de seleccionar un elemento para borrar");
+
+                if (this.txtID.Text == "" || this.txtID.Text == "Nuevo")
+                {
+                    MessageBox.Show("Favor de seleccionar un elemento para borrar");
+                }
+                else
+                {
+                    try
+                    {
+                        objDatos.Conectar();
+                        string sql = "exec elimina_marcas " + this.txtID.Text;
+                        if (objDatos.Insertar(sql))
+                        {
+                            MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cargarMarcas();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registro no pudo eliminar el registro");
+                        }
+                        objDatos.Cn.Close();
+                        cargarMarcas();
+                    }
+                    catch (System.Data.SqlClient.SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                    cargarMarcas();
+                }
             }
             else
             {
-                try
-                {
-                    objDatos.Conectar();
-                    string sql = "exec elimina_marcas " + this.txtID.Text;
-                    if (objDatos.Insertar(sql))
-                    {
-                        MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarMarcas();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro no pudo eliminar el registro");
-                    }
-                    objDatos.Cn.Close();
-                    cargarMarcas();
-                }
-                catch (System.Data.SqlClient.SqlException ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                cargarMarcas();
             }
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.DataSource == null)
+            if (dataGridView1.DataSource == null)
             {
                 return;
             }
@@ -233,8 +255,29 @@ namespace RentATruck.Mantenimientos
             {
                 txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                this.cmdEliminar.Enabled = true;
             }
+        }
+
+        private void dataGridView1_CellClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            //Al hacer click que llene los textbox
+            if (dataGridView1.DataSource == null)
+            {
+                return;
+            }
+            else
+            {
+                txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                this.cmdEliminar.Enabled = true;
+                return;
+            }
+        }
+
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+            cargarMarcas();
         }
     }
 }
-
