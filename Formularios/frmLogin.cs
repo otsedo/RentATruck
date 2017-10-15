@@ -27,7 +27,9 @@ namespace RentATruck.Formularios
 
         public void IniciarSesion()
         {
+            
             resultado = Utilitarios.IniciarSesion(this.txtUsuario.Text, this.txtPassword.Text);
+            
             if (resultado != "")
             {
                 MessageBox.Show(resultado, "Mensaje", MessageBoxButtons.OK);

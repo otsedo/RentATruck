@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentATruck.Clases;
 
 
 namespace RentATruck.Formularios
@@ -31,12 +32,17 @@ namespace RentATruck.Formularios
             this.Hide();
             frmLogin login = new frmLogin();
             login.ShowDialog();
-
+            int codigo_perfil = Utilitarios.codigo_perfil;
             if (login.logueado == true)
             {
                 this.Show();
                 UsuarioLogueado = true;
                 lblEstado.Text = "Usuario: " + login.resultado.Substring(20);
+
+                if(codigo_perfil == 1)
+                {
+                    mnuMantenimientos.Enabled = false;
+                }
 
                              
             }
