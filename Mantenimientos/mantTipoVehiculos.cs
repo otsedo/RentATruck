@@ -12,6 +12,7 @@ namespace RentATruck.Mantenimientos
     {
         datos objDatos = new datos();
         DataView miFiltro;
+        private static mantTipoVehiculos tipoVehiculosInstancia = null;
 
         public mantTipoVehiculos()
         {
@@ -21,6 +22,16 @@ namespace RentATruck.Mantenimientos
         private void mantTipoVehiculos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static mantTipoVehiculos InstanciaTipoVehiculos()
+        {
+            if ((tipoVehiculosInstancia == null) || (tipoVehiculosInstancia.IsDisposed == true))
+            {
+                tipoVehiculosInstancia = new mantTipoVehiculos();
+            }
+            tipoVehiculosInstancia.BringToFront();
+            return tipoVehiculosInstancia;
         }
 
         override public void cargarMarcas()

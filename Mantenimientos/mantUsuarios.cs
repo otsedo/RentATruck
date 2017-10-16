@@ -3,56 +3,84 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentATruck.Mantenimientos
 {
-    public partial class mantModelosVehiculos : RentATruck.Mantenimientos.mantMarcas
+    public partial class mantUsuarios : Form
     {
         datos objDatos = new datos();
         DataView miFiltro;
-        public static new int codigo_marca;
-        public static new string marcaEncontrada;
-        private static mantModelosVehiculos modeloInstancia = null;
-        public mantModelosVehiculos()
+        public static int codigo_marca;
+        public static string marcaEncontrada;
+        private static mantUsuarios usuariosInstancia = null;
+
+        public mantUsuarios()
         {
             InitializeComponent();
         }
 
-        private void mantModelosVehiculos_Load(object sender, EventArgs e)
+        private void mantusuarios_Load(object sender, EventArgs e)
         {
-
+            cargarMarcas();
         }
 
-        public static mantModelosVehiculos InstanciaModelos()
+        public static mantUsuarios InstanciaUsuarios()
         {
-            if ((modeloInstancia == null) || (modeloInstancia.IsDisposed == true))
+            if ((usuariosInstancia == null) || (usuariosInstancia.IsDisposed == true))
             {
-                modeloInstancia = new mantModelosVehiculos();
+                usuariosInstancia = new mantUsuarios();
             }
-            modeloInstancia.BringToFront();
-            return modeloInstancia;
+            usuariosInstancia.BringToFront();
+            return usuariosInstancia;
         }
 
-        override public void cargarMarcas()
+
+
+        public bool validadCampo()
+        {
+            return (txtMarca.Text.Length > 2);
+        }
+
+        public void cargarMarcas()
         {
             this.txtID.Text = "Nuevo";
             this.txtMarca.Text = "";
+            this.txtUsuario.Text = "";
+            this.txtContrasena1.Text = "";
+            this.txtContrasena2.Text = "";
+            this.txtFecha.Text = System.DateTime.Now.Date.ToShortDateString();
+            this.txtHora.Text = DateTime.Now.ToString("h:mm:ss tt");
             this.txtMarca.Focus();
             this.txtID.Enabled = false;
             objDatos.Conectar();
 
-            string sring = ("exec obtenerModelos");
+            string sring = ("exec obtenerUsuarios");
             objDatos.Consulta_llenar_datos(sring);
 
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
 
-            this.dataGridView1.Columns[0].Width = 120;
+            this.dataGridView1.Columns[0].Width = 30;
             this.dataGridView1.Columns[0].HeaderText = "ID";
-            this.dataGridView1.Columns[1].Width = 421;
-            this.dataGridView1.Columns[1].HeaderText = "Marca";
+            this.dataGridView1.Columns[1].Width = 100;
+            this.dataGridView1.Columns[1].HeaderText = "Nombre Usuario";
+            this.dataGridView1.Columns[2].Width = 80;
+            this.dataGridView1.Columns[2].HeaderText = "Usuario";
+            this.dataGridView1.Columns[3].Width = 100;
+            this.dataGridView1.Columns[3].HeaderText = "Contraseña";
+            this.dataGridView1.Columns[4].Width = 60;
+            this.dataGridView1.Columns[4].HeaderText = "Fecha Creacion";
+            this.dataGridView1.Columns[5].Width = 60;
+            this.dataGridView1.Columns[5].HeaderText = "Hora Creacion";
+            this.dataGridView1.Columns[6].Width = 60;
+            this.dataGridView1.Columns[6].HeaderText = "Codigo Perfil";
+            this.dataGridView1.Columns[7].Width = 83;
+            this.dataGridView1.Columns[7].HeaderText = "Perfil Asignado";
+
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
 
@@ -70,16 +98,20 @@ namespace RentATruck.Mantenimientos
             this.cmdEliminar.Enabled = false;
             this.dataGridView1.ClearSelection();
 
+            this.cmbPerfiles.DataSource = objDatos.ConsultaTabla("perfiles_usuarios", " descripcion");
+            this.cmbPerfiles.DisplayMember = "descripcion";
+            this.cmbPerfiles.ValueMember = "nivel";
+
             objDatos.Desconectar();
         }
 
-        public override void guardarRegistros()
+        public void guardarRegistros()
         {
             if (this.txtMarca.Text != "")
             {
                 if (validadCampo() == false)
                 {
-                    MessageBox.Show("La Marca debe ser mayor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El nombre del usuario debe ser mayor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -111,7 +143,7 @@ namespace RentATruck.Mantenimientos
                     if (marcaEncontrada != "")
                     {
                         DialogResult respuesta;
-                        respuesta = MessageBox.Show("La marca encontrada, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        respuesta = MessageBox.Show("El usuario encontrado, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (respuesta == DialogResult.OK)
                         {
                             MessageBox.Show("Procedemos a guardar");
@@ -124,32 +156,39 @@ namespace RentATruck.Mantenimientos
                     }
                     else
                     {
-                        try
+                        if (this.txtContrasena1.Text == this.txtContrasena2.Text)
                         {
-                            objDatos.Conectar();
-                            string sql = "exec inserta_actualiza_modelos " + codigo_marca + ",'" + this.txtMarca.Text + "'";
-                            if (objDatos.Insertar(sql))
+                            try
                             {
-                                MessageBox.Show("Registro Insertado");
-                                //cargarMarcas();
+                                objDatos.Conectar();
+                                string sql = "exec inserta_actualiza_usuarios " + codigo_marca + ",'" + this.txtMarca.Text + "','" + this.txtUsuario.Text + "','" + this.txtContrasena1.Text + "','" + this.txtFecha.Text + "','" + this.txtHora.Text + "'," + this.cmbPerfiles.SelectedValue;
+                                if (objDatos.Insertar(sql))
+                                {
+                                    MessageBox.Show("Registro Insertado");
+                                    //cargarMarcas();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Registro no pudo ser insertado");
+                                }
+                                objDatos.Cn.Close();
+                                cargarMarcas();
                             }
-                            else
+                            catch (System.Data.SqlClient.SqlException ex)
                             {
-                                MessageBox.Show("Registro no pudo ser insertado");
+                                MessageBox.Show(ex.Message.ToString());
                             }
-                            objDatos.Cn.Close();
-                            cargarMarcas();
                         }
-                        catch (System.Data.SqlClient.SqlException ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message.ToString());
+                            MessageBox.Show("Las contraseñas no coinciden");
                         }
                     }
                 }
             }
         }
 
-        public override void eliminarRegistro()
+        public void eliminarRegistro()
         {
             DialogResult respuesta;
             respuesta = MessageBox.Show("Desea elmininar el registro " + this.txtMarca.Text + "?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -165,7 +204,7 @@ namespace RentATruck.Mantenimientos
                     try
                     {
                         objDatos.Conectar();
-                        string sql = "exec elimina_modelos " + this.txtID.Text;
+                        string sql = "exec elimina_usuarios " + this.txtID.Text;
                         if (objDatos.Insertar(sql))
                         {
                             MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -191,6 +230,34 @@ namespace RentATruck.Mantenimientos
             }
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Al hacer click que llene los textbox
+            if (dataGridView1.DataSource == null)
+            {
+                return;
+            }
+            else
+            {
+                txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                this.txtUsuario.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                this.txtFecha.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                this.txtHora.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                this.txtContrasena1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                this.txtContrasena2.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                this.cmbPerfiles.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                this.cmdEliminar.Enabled = true;
+                this.cmdEliminar.Enabled = true;
+                return;
+            }
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
             eliminarRegistro();
@@ -201,6 +268,9 @@ namespace RentATruck.Mantenimientos
             guardarRegistros();
         }
 
-
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+            cargarMarcas();
+        }
     }
 }

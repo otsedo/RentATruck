@@ -12,6 +12,7 @@ namespace RentATruck.Mantenimientos
     {
         datos objDatos = new datos();
         DataView miFiltro;
+        private static mantColores coloresInstancia = null;
 
         public mantColores()
         {
@@ -21,6 +22,16 @@ namespace RentATruck.Mantenimientos
         private void mantColores_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static mantColores InstanciaColores()
+        {
+            if ((coloresInstancia == null) || (coloresInstancia.IsDisposed == true))
+            {
+                coloresInstancia = new mantColores();
+            }
+            coloresInstancia.BringToFront();
+            return coloresInstancia;
         }
 
         override public void cargarMarcas()
@@ -177,6 +188,11 @@ namespace RentATruck.Mantenimientos
             {
                 cargarMarcas();
             }
+        }
+
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,7 +77,7 @@ namespace RentATruck.Mantenimientos
             return (txtMarca.Text.Length > 2);
         }
 
-        public static mantMarcas Instancia()
+        public static mantMarcas InstanciaMarcas()
         {
             if ((marcaInstancia == null) || (marcaInstancia.IsDisposed == true))
             {
