@@ -103,6 +103,16 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_1_04_511562 {
+            get {
+                object obj = ResourceManager.GetObject("if_1-04_511562", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_document_sans_cancel_103500 {
             get {
                 object obj = ResourceManager.GetObject("if_document_sans_cancel_103500", resourceCulture);

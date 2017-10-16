@@ -8,5 +8,5 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmLogin.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmPrincipal.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantMarcas.resources
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csproj.CoreCompileInputs.cache
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantModelosVehiculos.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantColores.resources

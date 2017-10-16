@@ -72,11 +72,23 @@
     <Compile Include="Formularios\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantColores.Designer.cs">
+      <DependentUpon>mantColores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimientos\mantMarcas.Designer.cs">
       <DependentUpon>mantMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mantModelosVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantModelosVehiculos.Designer.cs">
+      <DependentUpon>mantModelosVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,8 +98,14 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantColores.resx">
+      <DependentUpon>mantColores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantMarcas.resx">
       <DependentUpon>mantMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantModelosVehiculos.resx">
+      <DependentUpon>mantModelosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_document_sans_cancel_103500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_1-04_511562.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

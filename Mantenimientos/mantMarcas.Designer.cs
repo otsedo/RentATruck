@@ -119,8 +119,8 @@
             this.cmdEliminar.Enabled = false;
             this.cmdEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdEliminar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmdEliminar.Image = global::RentATruck.Properties.Resources.ic_delete_black_24dp_2x;
+            this.cmdEliminar.ForeColor = System.Drawing.Color.Red;
+            this.cmdEliminar.Image = global::RentATruck.Properties.Resources.if_1_04_511562;
             this.cmdEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.cmdEliminar.Location = new System.Drawing.Point(491, 152);
             this.cmdEliminar.Name = "cmdEliminar";
@@ -207,16 +207,15 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.Button cmdGuardar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button cmdCancelar;
-        private System.Windows.Forms.Button cmdEliminar;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Button cmdNuevo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtMarca;
+        public System.Windows.Forms.Button cmdGuardar;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button cmdCancelar;
+        public System.Windows.Forms.Button cmdEliminar;
+        public System.Windows.Forms.TextBox txtID;
+        public System.Windows.Forms.Button cmdNuevo;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

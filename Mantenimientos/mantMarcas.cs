@@ -34,7 +34,7 @@ namespace RentATruck.Mantenimientos
             }
         }
 
-        public void cargarMarcas()
+        public virtual void cargarMarcas()
         {
             this.txtID.Text = "Nuevo";
             this.txtMarca.Text = "";
@@ -72,7 +72,7 @@ namespace RentATruck.Mantenimientos
             objDatos.Desconectar();
         }
 
-        private bool validadCampo()
+        public bool validadCampo()
         {
             return (txtMarca.Text.Length > 2);
         }
@@ -131,6 +131,16 @@ namespace RentATruck.Mantenimientos
         }
 
         private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            guardarRegistros();
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarRegistro();
+        }
+
+        public virtual void guardarRegistros()
         {
             if (validadCampo() == false)
             {
@@ -203,7 +213,7 @@ namespace RentATruck.Mantenimientos
             }
         }
 
-        private void cmdEliminar_Click(object sender, EventArgs e)
+        public virtual void eliminarRegistro()
         {
             DialogResult respuesta;
             respuesta = MessageBox.Show("Desea elmininar el registro " + this.txtMarca.Text + "?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
