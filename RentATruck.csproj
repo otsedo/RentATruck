@@ -90,6 +90,12 @@
     <Compile Include="Mantenimientos\mantModelosVehiculos.Designer.cs">
       <DependentUpon>mantModelosVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantNCF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantNCF.Designer.cs">
+      <DependentUpon>mantNCF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantTipoVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantModelosVehiculos.resx">
       <DependentUpon>mantModelosVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantNCF.resx">
+      <DependentUpon>mantNCF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantTipoVehiculos.resx">
       <DependentUpon>mantTipoVehiculos.cs</DependentUpon>
