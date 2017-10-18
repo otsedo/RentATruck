@@ -63,6 +63,16 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car_placeholder {
+            get {
+                object obj = ResourceManager.GetObject("car-placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dialog_cancel {
             get {
                 object obj = ResourceManager.GetObject("dialog_cancel", resourceCulture);
@@ -136,6 +146,26 @@ namespace RentATruck.Properties {
         internal static System.Drawing.Bitmap if_floppy_disk_save_103863__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_floppy_disk_save_103863 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap place_holder {
+            get {
+                object obj = ResourceManager.GetObject("place_holder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap place_holder1 {
+            get {
+                object obj = ResourceManager.GetObject("place_holder1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

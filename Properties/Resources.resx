@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="place_holder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\place_holder.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_document_sans_cancel_103500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_document_sans_cancel_103500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_floppy_disk_save_103863" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_floppy_disk_save_103863.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_floppy_disk_save_103863 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_floppy_disk_save_103863 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_1-04_511562" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_1-04_511562.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dialog_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dialog_cancel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,16 +139,19 @@
   <data name="ic_cancel_black_18dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_cancel_black_18dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_save_black_18dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ic_save_black_18dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_floppy_disk_save_103863" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_floppy_disk_save_103863.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_delete_black_24dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_delete_black_24dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_floppy_disk_save_103863 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_floppy_disk_save_103863 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_save_black_18dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ic_save_black_18dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_1-04_511562" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_1-04_511562.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="place_holder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\place_holder1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

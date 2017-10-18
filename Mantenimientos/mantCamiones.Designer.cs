@@ -33,31 +33,31 @@
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.cbmMarca = new System.Windows.Forms.ComboBox();
+            this.cbmTipo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbmColor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtKm = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtChasis = new System.Windows.Forms.TextBox();
+            this.estado = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.cmbPerfiles = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -99,6 +99,7 @@
             this.cmdNuevo.TabIndex = 94;
             this.cmdNuevo.Text = "Nuevo";
             this.cmdNuevo.UseVisualStyleBackColor = false;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
             // txtID
             // 
@@ -120,64 +121,14 @@
             this.label1.TabIndex = 90;
             this.label1.Text = "Marca:";
             // 
-            // txtMarca
+            // txtDescripcion
             // 
-            this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(137, 224);
-            this.txtMarca.MaxLength = 40;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(479, 26);
-            this.txtMarca.TabIndex = 88;
-            // 
-            // cmdEliminar
-            // 
-            this.cmdEliminar.BackColor = System.Drawing.Color.White;
-            this.cmdEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cmdEliminar.Enabled = false;
-            this.cmdEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdEliminar.ForeColor = System.Drawing.Color.Red;
-            this.cmdEliminar.Image = global::RentATruck.Properties.Resources.if_1_04_511562;
-            this.cmdEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdEliminar.Location = new System.Drawing.Point(532, 256);
-            this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.Size = new System.Drawing.Size(84, 78);
-            this.cmdEliminar.TabIndex = 92;
-            this.cmdEliminar.Text = "Eliminar";
-            this.cmdEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdEliminar.UseVisualStyleBackColor = false;
-            // 
-            // cmdCancelar
-            // 
-            this.cmdCancelar.BackColor = System.Drawing.Color.White;
-            this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCancelar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmdCancelar.Image = global::RentATruck.Properties.Resources.if_document_sans_cancel_103500;
-            this.cmdCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdCancelar.Location = new System.Drawing.Point(320, 256);
-            this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(97, 78);
-            this.cmdCancelar.TabIndex = 91;
-            this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdCancelar.UseVisualStyleBackColor = false;
-            // 
-            // cmdGuardar
-            // 
-            this.cmdGuardar.BackColor = System.Drawing.Color.White;
-            this.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGuardar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.cmdGuardar.Image = global::RentATruck.Properties.Resources.if_floppy_disk_save_103863__1_;
-            this.cmdGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(137, 256);
-            this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(84, 78);
-            this.cmdGuardar.TabIndex = 89;
-            this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmdGuardar.UseVisualStyleBackColor = false;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(137, 224);
+            this.txtDescripcion.MaxLength = 40;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(479, 26);
+            this.txtDescripcion.TabIndex = 88;
             // 
             // label3
             // 
@@ -190,14 +141,14 @@
             this.label3.TabIndex = 97;
             this.label3.Text = "Placa:";
             // 
-            // textBox2
+            // txtPlaca
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(423, 158);
-            this.textBox2.MaxLength = 40;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 26);
-            this.textBox2.TabIndex = 96;
+            this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlaca.Location = new System.Drawing.Point(423, 158);
+            this.txtPlaca.MaxLength = 40;
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(193, 26);
+            this.txtPlaca.TabIndex = 96;
             // 
             // label5
             // 
@@ -210,38 +161,38 @@
             this.label5.TabIndex = 101;
             this.label5.Text = "Tipo:";
             // 
-            // textBox4
+            // txtModelo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(137, 127);
-            this.textBox4.MaxLength = 40;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 26);
-            this.textBox4.TabIndex = 100;
+            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(137, 127);
+            this.txtModelo.MaxLength = 40;
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(197, 26);
+            this.txtModelo.TabIndex = 100;
             // 
-            // cmbPerfiles
+            // cbmMarca
             // 
-            this.cmbPerfiles.BackColor = System.Drawing.Color.SteelBlue;
-            this.cmbPerfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPerfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPerfiles.ForeColor = System.Drawing.Color.White;
-            this.cmbPerfiles.FormattingEnabled = true;
-            this.cmbPerfiles.Location = new System.Drawing.Point(137, 92);
-            this.cmbPerfiles.Name = "cmbPerfiles";
-            this.cmbPerfiles.Size = new System.Drawing.Size(197, 28);
-            this.cmbPerfiles.TabIndex = 102;
+            this.cbmMarca.BackColor = System.Drawing.Color.SteelBlue;
+            this.cbmMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmMarca.ForeColor = System.Drawing.Color.White;
+            this.cbmMarca.FormattingEnabled = true;
+            this.cbmMarca.Location = new System.Drawing.Point(137, 92);
+            this.cbmMarca.Name = "cbmMarca";
+            this.cbmMarca.Size = new System.Drawing.Size(197, 28);
+            this.cbmMarca.TabIndex = 102;
             // 
-            // comboBox1
+            // cbmTipo
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(423, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 28);
-            this.comboBox1.TabIndex = 103;
+            this.cbmTipo.BackColor = System.Drawing.Color.SteelBlue;
+            this.cbmTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmTipo.ForeColor = System.Drawing.Color.White;
+            this.cbmTipo.FormattingEnabled = true;
+            this.cbmTipo.Location = new System.Drawing.Point(423, 88);
+            this.cbmTipo.Name = "cbmTipo";
+            this.cbmTipo.Size = new System.Drawing.Size(193, 28);
+            this.cbmTipo.TabIndex = 103;
             // 
             // label6
             // 
@@ -254,17 +205,17 @@
             this.label6.TabIndex = 104;
             this.label6.Text = "Modelo:";
             // 
-            // comboBox2
+            // cbmColor
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.SteelBlue;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(423, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(193, 28);
-            this.comboBox2.TabIndex = 105;
+            this.cbmColor.BackColor = System.Drawing.Color.SteelBlue;
+            this.cbmColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmColor.ForeColor = System.Drawing.Color.White;
+            this.cbmColor.FormattingEnabled = true;
+            this.cbmColor.Location = new System.Drawing.Point(423, 123);
+            this.cbmColor.Name = "cbmColor";
+            this.cbmColor.Size = new System.Drawing.Size(193, 28);
+            this.cbmColor.TabIndex = 105;
             // 
             // label4
             // 
@@ -288,14 +239,14 @@
             this.label7.TabIndex = 108;
             this.label7.Text = "Año:";
             // 
-            // textBox3
+            // txtAño
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(137, 160);
-            this.textBox3.MaxLength = 40;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 26);
-            this.textBox3.TabIndex = 107;
+            this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAño.Location = new System.Drawing.Point(137, 160);
+            this.txtAño.MaxLength = 40;
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(197, 26);
+            this.txtAño.TabIndex = 107;
             // 
             // label8
             // 
@@ -319,14 +270,14 @@
             this.label9.TabIndex = 111;
             this.label9.Text = "Kilometraje:";
             // 
-            // textBox5
+            // txtKm
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(137, 193);
-            this.textBox5.MaxLength = 40;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(197, 26);
-            this.textBox5.TabIndex = 110;
+            this.txtKm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKm.Location = new System.Drawing.Point(137, 193);
+            this.txtKm.MaxLength = 40;
+            this.txtKm.Name = "txtKm";
+            this.txtKm.Size = new System.Drawing.Size(197, 26);
+            this.txtKm.TabIndex = 110;
             // 
             // label10
             // 
@@ -339,43 +290,102 @@
             this.label10.TabIndex = 113;
             this.label10.Text = "Chasis";
             // 
-            // textBox6
+            // txtChasis
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(423, 191);
-            this.textBox6.MaxLength = 40;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(193, 26);
-            this.textBox6.TabIndex = 112;
+            this.txtChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChasis.Location = new System.Drawing.Point(423, 191);
+            this.txtChasis.MaxLength = 40;
+            this.txtChasis.Name = "txtChasis";
+            this.txtChasis.Size = new System.Drawing.Size(193, 26);
+            this.txtChasis.TabIndex = 112;
             // 
-            // checkBox1
+            // estado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.checkBox1.Location = new System.Drawing.Point(423, 58);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 24);
-            this.checkBox1.TabIndex = 114;
-            this.checkBox1.Text = "Estado";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(651, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 279);
-            this.pictureBox1.TabIndex = 115;
-            this.pictureBox1.TabStop = false;
+            this.estado.AutoSize = true;
+            this.estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estado.ForeColor = System.Drawing.Color.SteelBlue;
+            this.estado.Location = new System.Drawing.Point(423, 58);
+            this.estado.Name = "estado";
+            this.estado.Size = new System.Drawing.Size(85, 24);
+            this.estado.TabIndex = 114;
+            this.estado.Text = "Estado";
+            this.estado.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(137, 350);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 350);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(806, 341);
+            this.dataGridView1.Size = new System.Drawing.Size(916, 341);
             this.dataGridView1.TabIndex = 116;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::RentATruck.Properties.Resources.place_holder1;
+            this.pictureBox1.Location = new System.Drawing.Point(651, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(292, 279);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 115;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.BackColor = System.Drawing.Color.White;
+            this.cmdEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cmdEliminar.Enabled = false;
+            this.cmdEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdEliminar.ForeColor = System.Drawing.Color.Red;
+            this.cmdEliminar.Image = global::RentATruck.Properties.Resources.if_1_04_511562;
+            this.cmdEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdEliminar.Location = new System.Drawing.Point(532, 256);
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Size = new System.Drawing.Size(84, 78);
+            this.cmdEliminar.TabIndex = 92;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdEliminar.UseVisualStyleBackColor = false;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
+            // 
+            // cmdCancelar
+            // 
+            this.cmdCancelar.BackColor = System.Drawing.Color.White;
+            this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCancelar.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cmdCancelar.Image = global::RentATruck.Properties.Resources.if_document_sans_cancel_103500;
+            this.cmdCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdCancelar.Location = new System.Drawing.Point(320, 256);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(97, 78);
+            this.cmdCancelar.TabIndex = 91;
+            this.cmdCancelar.Text = "Cancelar";
+            this.cmdCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdCancelar.UseVisualStyleBackColor = false;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
+            // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.BackColor = System.Drawing.Color.White;
+            this.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdGuardar.ForeColor = System.Drawing.Color.SteelBlue;
+            this.cmdGuardar.Image = global::RentATruck.Properties.Resources.if_floppy_disk_save_103863__1_;
+            this.cmdGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cmdGuardar.Location = new System.Drawing.Point(137, 256);
+            this.cmdGuardar.Name = "cmdGuardar";
+            this.cmdGuardar.Size = new System.Drawing.Size(84, 78);
+            this.cmdGuardar.TabIndex = 89;
+            this.cmdGuardar.Text = "Guardar";
+            this.cmdGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmdGuardar.UseVisualStyleBackColor = false;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // mantCamiones
             // 
@@ -384,23 +394,23 @@
             this.ClientSize = new System.Drawing.Size(972, 725);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.estado);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtChasis);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtKm);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAño);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbmColor);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.cmbPerfiles);
+            this.Controls.Add(this.cbmTipo);
+            this.Controls.Add(this.cbmMarca);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.txtID);
@@ -408,14 +418,14 @@
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdGuardar);
-            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.Name = "mantCamiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.mantCamiones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,24 +441,24 @@
         public System.Windows.Forms.Button cmdCancelar;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button cmdGuardar;
-        public System.Windows.Forms.TextBox txtMarca;
+        public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtPlaca;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox cmbPerfiles;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.ComboBox cbmMarca;
+        private System.Windows.Forms.ComboBox cbmTipo;
         public System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbmColor;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox txtAño;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtKm;
         public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.TextBox txtChasis;
+        private System.Windows.Forms.CheckBox estado;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.DataGridView dataGridView1;
     }
