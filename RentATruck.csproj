@@ -72,6 +72,12 @@
     <Compile Include="Formularios\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantCamiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantCamiones.Designer.cs">
+      <DependentUpon>mantCamiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantColores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantCamiones.resx">
+      <DependentUpon>mantCamiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantColores.resx">
       <DependentUpon>mantColores.cs</DependentUpon>
