@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtModelo = new System.Windows.Forms.TextBox();
             this.cbmMarca = new System.Windows.Forms.ComboBox();
             this.cbmTipo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,6 +55,8 @@
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdGuardar = new System.Windows.Forms.Button();
+            this.txtRutaImagen = new System.Windows.Forms.TextBox();
+            this.cbmModelo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -125,10 +126,10 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(137, 224);
-            this.txtDescripcion.MaxLength = 40;
+            this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(479, 26);
-            this.txtDescripcion.TabIndex = 88;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // label3
             // 
@@ -145,10 +146,10 @@
             // 
             this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlaca.Location = new System.Drawing.Point(423, 158);
-            this.txtPlaca.MaxLength = 40;
+            this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(193, 26);
-            this.txtPlaca.TabIndex = 96;
+            this.txtPlaca.TabIndex = 1;
             // 
             // label5
             // 
@@ -160,15 +161,6 @@
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 101;
             this.label5.Text = "Tipo:";
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(137, 127);
-            this.txtModelo.MaxLength = 40;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(197, 26);
-            this.txtModelo.TabIndex = 100;
             // 
             // cbmMarca
             // 
@@ -243,10 +235,10 @@
             // 
             this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAño.Location = new System.Drawing.Point(137, 160);
-            this.txtAño.MaxLength = 40;
+            this.txtAño.MaxLength = 4;
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(197, 26);
-            this.txtAño.TabIndex = 107;
+            this.txtAño.TabIndex = 0;
             // 
             // label8
             // 
@@ -274,10 +266,10 @@
             // 
             this.txtKm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKm.Location = new System.Drawing.Point(137, 193);
-            this.txtKm.MaxLength = 40;
+            this.txtKm.MaxLength = 6;
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(197, 26);
-            this.txtKm.TabIndex = 110;
+            this.txtKm.TabIndex = 2;
             // 
             // label10
             // 
@@ -294,14 +286,16 @@
             // 
             this.txtChasis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChasis.Location = new System.Drawing.Point(423, 191);
-            this.txtChasis.MaxLength = 40;
+            this.txtChasis.MaxLength = 17;
             this.txtChasis.Name = "txtChasis";
             this.txtChasis.Size = new System.Drawing.Size(193, 26);
-            this.txtChasis.TabIndex = 112;
+            this.txtChasis.TabIndex = 3;
             // 
             // estado
             // 
             this.estado.AutoSize = true;
+            this.estado.Checked = true;
+            this.estado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estado.ForeColor = System.Drawing.Color.SteelBlue;
             this.estado.Location = new System.Drawing.Point(423, 58);
@@ -387,11 +381,34 @@
             this.cmdGuardar.UseVisualStyleBackColor = false;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
+            // txtRutaImagen
+            // 
+            this.txtRutaImagen.Location = new System.Drawing.Point(651, 313);
+            this.txtRutaImagen.Name = "txtRutaImagen";
+            this.txtRutaImagen.Size = new System.Drawing.Size(292, 20);
+            this.txtRutaImagen.TabIndex = 119;
+            this.txtRutaImagen.Text = "C:\\RentATruck\\place_holder1.jpg";
+            this.txtRutaImagen.Visible = false;
+            // 
+            // cbmModelo
+            // 
+            this.cbmModelo.BackColor = System.Drawing.Color.SteelBlue;
+            this.cbmModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmModelo.ForeColor = System.Drawing.Color.White;
+            this.cbmModelo.FormattingEnabled = true;
+            this.cbmModelo.Location = new System.Drawing.Point(137, 123);
+            this.cbmModelo.Name = "cbmModelo";
+            this.cbmModelo.Size = new System.Drawing.Size(197, 28);
+            this.cbmModelo.TabIndex = 120;
+            // 
             // mantCamiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 725);
+            this.Controls.Add(this.cbmModelo);
+            this.Controls.Add(this.txtRutaImagen);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.estado);
@@ -408,7 +425,6 @@
             this.Controls.Add(this.cbmTipo);
             this.Controls.Add(this.cbmMarca);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.label2);
@@ -445,7 +461,6 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtPlaca;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.ComboBox cbmMarca;
         private System.Windows.Forms.ComboBox cbmTipo;
         public System.Windows.Forms.Label label6;
@@ -461,5 +476,7 @@
         private System.Windows.Forms.CheckBox estado;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtRutaImagen;
+        private System.Windows.Forms.ComboBox cbmModelo;
     }
 }

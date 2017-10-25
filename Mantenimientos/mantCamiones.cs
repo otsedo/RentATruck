@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ namespace RentATruck.Mantenimientos
     public partial class mantCamiones : Form
     {
         datos objDatos = new datos();
+        string activo = "";
         DataView miFiltro;
         public static int codigo_marca;
         public static string marcaEncontrada;
@@ -29,6 +32,15 @@ namespace RentATruck.Mantenimientos
             this.AcceptButton = this.cmdGuardar;
             this.CancelButton = cmdCancelar;
 
+            if (estado.Checked == true)
+            {
+                activo = "True";
+            }
+            else
+            {
+                activo = "False";
+            }
+
             try
             {
                 cargarMarcas();
@@ -41,8 +53,8 @@ namespace RentATruck.Mantenimientos
 
         public virtual void cargarMarcas()
         {
+            estado.Checked = true;
             this.txtID.Text = "Nuevo";
-            this.txtModelo.Text = "";
             this.txtAño.Text = "";
             this.txtKm.Text = "";
             this.txtDescripcion.Text = "";
@@ -50,6 +62,7 @@ namespace RentATruck.Mantenimientos
             this.txtChasis.Text = "";
             this.txtDescripcion.Focus();
             this.txtID.Enabled = false;
+            this.pictureBox1.Image = RentATruck.Properties.Resources.place_holder1;
             objDatos.Conectar();
 
             string sring = ("exec obtenerVehiculos");
@@ -101,18 +114,23 @@ namespace RentATruck.Mantenimientos
 
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            this.cbmMarca.DataSource = objDatos.ConsultaTabla("marca_articulos", " descripcion");
+            this.cbmMarca.DataSource = objDatos.ConsultaTabla("marca_articulos", " order by descripcion asc");
             this.cbmMarca.DisplayMember = "descripcion";
             this.cbmMarca.ValueMember = "codigo_marca";
 
-            this.cbmTipo.DataSource = objDatos.ConsultaTabla("tipo_vehiculos", " descripcion");
+            this.cbmTipo.DataSource = objDatos.ConsultaTabla("tipo_vehiculos", " order by descripcion asc");
             this.cbmTipo.DisplayMember = "descripcion";
             this.cbmTipo.ValueMember = "codigo_tipo_vehiculo";
 
-            this.cbmColor.DataSource = objDatos.ConsultaTabla("colores", " descripcion");
+            this.cbmColor.DataSource = objDatos.ConsultaTabla("colores", " order by descripcion asc");
             this.cbmColor.DisplayMember = "descripcion";
             this.cbmColor.ValueMember = "codigo_color";
 
+            this.cbmModelo.DataSource = objDatos.ConsultaTabla("modelos_vehiculos", " order by descripcion asc");
+            this.cbmModelo.DisplayMember = "descripcion";
+            this.cbmModelo.ValueMember = "codigo_modelos";
+
+            buscarImagen();
             objDatos.Desconectar();
         }
 
@@ -142,7 +160,7 @@ namespace RentATruck.Mantenimientos
             {
                 txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 cbmMarca.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txtModelo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                cbmModelo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtAño.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 txtDescripcion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 txtPlaca.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
@@ -150,17 +168,21 @@ namespace RentATruck.Mantenimientos
                 cbmColor.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 txtDescripcion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 this.txtKm.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                this.cbmTipo.Text = dataGridView1.CurrentRow.Cells[12].Value.ToString();
 
 
                 if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][7]) == true)
                 {
                     this.estado.Checked = true;
+                    activo = "True";
                 }
                 if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][7]) == false)
                 {
                     this.estado.Checked = false;
+                    activo = "True";
                 }
-
+                buscarImagen();
+                this.cmdEliminar.Enabled = true;
                 return;
             }
         }
@@ -182,81 +204,111 @@ namespace RentATruck.Mantenimientos
 
         public virtual void guardarRegistros()
         {
+            if (String.IsNullOrEmpty(this.txtAño.Text) || (String.IsNullOrEmpty(this.txtPlaca.Text) || (String.IsNullOrEmpty(this.txtKm.Text)) || (String.IsNullOrEmpty(this.txtChasis.Text))))
+            {
+                MessageBox.Show("No puede haber campos en blanco", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtAño.Focus();
+            }
+
             if (validadCampo() == false)
             {
-                MessageBox.Show("La Marca debe ser mayor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("La descripcion no puede ser menor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                //Verificar si ya la marca insertada estaba insertada
-                marcaEncontrada = "";
-                if (txtID.Text == "Nuevo")
-                {
-                    codigo_marca = 0;
-                }
-                else
-                {
-                    codigo_marca = int.Parse(this.txtID.Text);
-                }
+                objDatos.Conectar();
 
-                //Busco en el gridview
-                foreach (DataGridViewRow Row in dataGridView1.Rows)
+                if (this.txtID.Text == "Nuevo")
                 {
-                    int fila = Row.Index;
-                    String valor = Row.Cells[1].Value.ToString();
+                    byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
+                    string qry = "insert into vehiculo (codigo_marca, codigo_tipo_vehiculo,codigo_modelos, codigo_color, anoveh_veh, descri_veh, numpla_veh, kilome_veh, numcha_veh, estado, fotove_veh) values (@codigo_marca, @codigo_tipo_vehiculo,@codigo_modelos, @codigo_color, @anoveh_veh, @descri_veh, @numpla_veh, @kilome_veh, @numcha_veh, @estado, @fotove_veh)";
 
-                    //compara lo que se escribe con lo que esta en el grid
-                    if (this.txtDescripcion.Text == valor)
-                    {
-                        marcaEncontrada = valor;
-                        dataGridView1.Rows[fila].Selected = true;
-                    }
-                }
-                //validamos la variable valor
-                if (marcaEncontrada != "")
-                {
-                    DialogResult respuesta;
-                    respuesta = MessageBox.Show("La marca encontrada, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (respuesta == DialogResult.OK)
-                    {
-                        MessageBox.Show("Procedemos a guardar");
-                        cargarMarcas();
-                    }
-                    else
-                    {
-                        cargarMarcas();
-                    }
-                }
-                else
-                {
                     try
                     {
+                        // Inicializa el objeto SqlCommand
+                        SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
+
+                        // Se agrega la información como parámetros
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_marca", this.cbmMarca.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_tipo_vehiculo", this.cbmTipo.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_modelos", this.cbmModelo.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_color", this.cbmColor.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@anoveh_veh", this.txtAño.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@descri_veh", this.txtDescripcion.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@numpla_veh", this.txtPlaca.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@kilome_veh", this.txtKm.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@numcha_veh", txtChasis.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
+                        SqlCom.Parameters.Add(new SqlParameter("@fotove_veh", data));
+
+                        // Abrir la conexión y ejecutar el query
                         objDatos.Conectar();
-                        string sql = "exec inserta_actualiza_marcas " + codigo_marca + ",'" + this.txtDescripcion.Text + "'";
-                        if (objDatos.Insertar(sql))
-                        {
-                            MessageBox.Show("Registro Insertado");
-                            cargarMarcas();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Registro no pudo ser insertado");
-                        }
-                        objDatos.Cn.Close();
+                        SqlCom.ExecuteNonQuery();
+
+                        // Mostrar un mensaje de confirmación
+                        MessageBox.Show("Registro guardado correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarMarcas();
                     }
-                    catch (System.Data.SqlClient.SqlException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message.ToString());
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        // Cerrar la conexión si esta se encuentra abierta
+                        if (objDatos.Cn.State == ConnectionState.Open)
+                            objDatos.Desconectar();
+                    }
+                }
+                else
+                {
+                    byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
+                    string qry = "update vehiculo set codigo_marca = @codigo_marca, codigo_tipo_vehiculo = @codigo_tipo_vehiculo,codigo_modelos = @codigo_modelos, codigo_color=@codigo_color, anoveh_veh=@anoveh_veh, descri_veh = @descri_veh, numpla_veh=@numpla_veh, kilome_veh = @kilome_veh, numcha_veh = @numcha_veh, estado = @estado, fotove_veh  = @fotove_veh where codveh_veh = " + this.txtID.Text;
+
+                    try
+                    {
+                        // Inicializa el objeto SqlCommand
+                        SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
+
+                        // Se agrega la información como parámetros
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_marca", this.cbmMarca.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_tipo_vehiculo", this.cbmTipo.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_modelos", this.cbmModelo.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@codigo_color", this.cbmColor.SelectedValue));
+                        SqlCom.Parameters.Add(new SqlParameter("@anoveh_veh", this.txtAño.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@descri_veh", this.txtDescripcion.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@numpla_veh", this.txtPlaca.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@kilome_veh", this.txtKm.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@numcha_veh", txtChasis.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
+                        SqlCom.Parameters.Add(new SqlParameter("@fotove_veh", data));
+
+                        // Abrir la conexión y ejecutar el query
+                        objDatos.Conectar();
+                        SqlCom.ExecuteNonQuery();
+
+                        // Mostrar un mensaje de confirmación
+                        MessageBox.Show("Nota Actualizada correctamente", "Guardar Nota", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        // Cerrar la conexión si esta se encuentra abierta
+                        if (objDatos.Cn.State == ConnectionState.Open)
+                            objDatos.Desconectar();
                     }
                 }
             }
         }
 
+
         public virtual void eliminarRegistro()
         {
             DialogResult respuesta;
-            respuesta = MessageBox.Show("Desea elmininar el registro " + this.txtDescripcion.Text + "?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            respuesta = MessageBox.Show("Desea elmininar el registro seleccionado?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (respuesta == DialogResult.OK)
             {
 
@@ -269,10 +321,10 @@ namespace RentATruck.Mantenimientos
                     try
                     {
                         objDatos.Conectar();
-                        string sql = "exec elimina_marcas " + this.txtID.Text;
+                        string sql = "exec elimina_vehiculos " + this.txtID.Text;
                         if (objDatos.Insertar(sql))
                         {
-                            MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Registro Eliminado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.None);
                             cargarMarcas();
                         }
                         else
@@ -306,14 +358,73 @@ namespace RentATruck.Mantenimientos
             BuscarImagen.Filter = "Archivos de Imagenes (*.jpg)|*.jpg|(*.png)|*.png|All files (*.*)|*.*";
             BuscarImagen.FileName = "";
             BuscarImagen.Title = "Buscar Imagen del articulo";
-            DialogResult result = BuscarImagen.ShowDialog();
+            BuscarImagen.FileName = this.txtRutaImagen.Text;
+            //DialogResult result = BuscarImagen.ShowDialog();
 
             // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
             // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
+            if (BuscarImagen.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(BuscarImagen.FileName);
+                this.txtRutaImagen.Text = BuscarImagen.FileName;
+                String Direccion = BuscarImagen.FileName;
+                this.pictureBox1.ImageLocation = Direccion;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        void buscarImagen()
+        {
+            string ID = "";
+            if (this.txtID.Text != "Nuevo") { ID = this.txtID.Text; } else { ID = "0"; };
+            string qry = "select fotove_veh from vehiculo where codveh_veh = " + ID;
+            try
+            {
+                objDatos.Conectar();
+                // Inicializa el objeto SqlCommand
+                SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
+
+                // Se agrega la información de búsqueda con parámetros
+                SqlCom.Parameters.Add(new SqlParameter("@codveh_veh", this.txtID.Text));
+
+                // Abre la conexión y ejecutar el query
+                objDatos.Conectar();
+                SqlDataReader rdr = SqlCom.ExecuteReader();
+
+                Image newImage = null;
+
+                if (rdr.Read())
+                {
+                    // Obtiene los resultados de la búsqueda
+                    //txtDescripcion.Text = rdr.GetString(0);
+                    byte[] imgData = (byte[])rdr.GetValue(0);
+
+                    // Trata la información de la imagen para poder trasladarla al picturebox
+                    using (MemoryStream ms = new MemoryStream(imgData, 0, imgData.Length))
+                    {
+                        ms.Write(imgData, 0, imgData.Length);
+                        newImage = Image.FromStream(ms, true);
+                    }
+
+                    pictureBox1.Image = newImage;
+                    newImage = null;
+                }
+                else
+                {
+                    //MessageBox.Show("No existe registro con ese Id", "Búsqueda Nota", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Cierra la conexión si esta se encuentra abierta
+                if (objDatos.Cn.State == ConnectionState.Open)
+                    objDatos.Cn.Close();
             }
         }
     }
 }
+
+
