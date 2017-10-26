@@ -32,14 +32,7 @@ namespace RentATruck.Mantenimientos
             this.AcceptButton = this.cmdGuardar;
             this.CancelButton = cmdCancelar;
 
-            if (estado.Checked == true)
-            {
-                activo = "True";
-            }
-            else
-            {
-                activo = "False";
-            }
+
 
             try
             {
@@ -179,7 +172,7 @@ namespace RentATruck.Mantenimientos
                 if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][7]) == false)
                 {
                     this.estado.Checked = false;
-                    activo = "True";
+                    activo = "False";
                 }
                 buscarImagen();
                 this.cmdEliminar.Enabled = true;
@@ -422,6 +415,18 @@ namespace RentATruck.Mantenimientos
                 // Cierra la conexión si esta se encuentra abierta
                 if (objDatos.Cn.State == ConnectionState.Open)
                     objDatos.Cn.Close();
+            }
+        }
+
+        private void estado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.estado.Checked == true)
+            {
+                activo = "True";
+            }
+            if (this.estado.Checked == false)
+            {
+                activo = "False";
             }
         }
     }

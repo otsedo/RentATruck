@@ -48,12 +48,6 @@
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Utilitarios.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +96,12 @@
     <Compile Include="Mantenimientos\mantNCF.Designer.cs">
       <DependentUpon>mantNCF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantServicios.Designer.cs">
+      <DependentUpon>mantServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantTipoVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantNCF.resx">
       <DependentUpon>mantNCF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantServicios.resx">
+      <DependentUpon>mantServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantTipoVehiculos.resx">
       <DependentUpon>mantTipoVehiculos.cs</DependentUpon>

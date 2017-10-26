@@ -304,6 +304,7 @@
             this.estado.TabIndex = 114;
             this.estado.Text = "Estado";
             this.estado.UseVisualStyleBackColor = true;
+            this.estado.CheckedChanged += new System.EventHandler(this.estado_CheckedChanged);
             // 
             // dataGridView1
             // 
