@@ -17,11 +17,21 @@ namespace RentATruck.Mantenimientos
         public static int codigo_marca;
         public static string marcaEncontrada;
         string activo = "";
-        private static mantMarcas marcaInstancia = null;
+        private static mantServicios serviciosInstancia = null;
 
         public mantServicios()
         {
             InitializeComponent();
+        }
+
+        public static mantServicios InstanciaServicios()
+        {
+            if ((serviciosInstancia == null) || (serviciosInstancia.IsDisposed == true))
+            {
+                serviciosInstancia = new mantServicios();
+            }
+            serviciosInstancia.BringToFront();
+            return serviciosInstancia;
         }
 
         private void mantServicios_Load(object sender, EventArgs e)

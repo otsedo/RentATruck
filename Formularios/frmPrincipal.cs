@@ -18,7 +18,6 @@ namespace RentATruck.Formularios
         frmAbout frmAbout = null;
         //Mantenimientos.mantMarcas mantMarcas = null;
 
-
         public frmPrincipal()
         {
             InitializeComponent();
@@ -26,9 +25,6 @@ namespace RentATruck.Formularios
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
-
-
             this.Hide();
             frmLogin login = new frmLogin();
             login.ShowDialog();
@@ -43,8 +39,6 @@ namespace RentATruck.Formularios
                 {
                     mnuMantenimientos.Enabled = false;
                 }
-
-
             }
             else
             {
@@ -114,6 +108,27 @@ namespace RentATruck.Formularios
             F_mantUsuarios = Mantenimientos.mantUsuarios.InstanciaUsuarios();
             F_mantUsuarios.MdiParent = this;
             F_mantUsuarios.Show();
+        }
+
+        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantCamiones F_mantCamiones = new Mantenimientos.mantCamiones();
+            F_mantCamiones = Mantenimientos.mantCamiones.InstanciaCamiones();
+            F_mantCamiones.MdiParent = this;
+            F_mantCamiones.Show();
+        }
+
+        private void unidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantServicios F_mantServicios = new Mantenimientos.mantServicios();
+            F_mantServicios = Mantenimientos.mantServicios.InstanciaServicios();
+            F_mantServicios.MdiParent = this;
+            F_mantServicios.Show();
+        }
+
+        private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

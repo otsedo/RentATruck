@@ -26,14 +26,21 @@ namespace RentATruck.Mantenimientos
             InitializeComponent();
         }
 
+        public static mantCamiones InstanciaMarcas()
+        {
+            if ((camionesInstancia == null) || (camionesInstancia.IsDisposed == true))
+            {
+                camionesInstancia = new mantCamiones();
+            }
+            camionesInstancia.BringToFront();
+            return camionesInstancia;
+        }
+
         private void mantCamiones_Load(object sender, EventArgs e)
         {
             this.cmdEliminar.Enabled = false;
             this.AcceptButton = this.cmdGuardar;
             this.CancelButton = cmdCancelar;
-
-
-
             try
             {
                 cargarMarcas();

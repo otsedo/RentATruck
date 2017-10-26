@@ -40,16 +40,6 @@
             this.gruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paisesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.provinciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.municipiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sectoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.callesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.direccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subSectoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nCFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,28 +119,19 @@
             this.salirDelSistemaToolStripMenuItem.Name = "salirDelSistemaToolStripMenuItem";
             this.salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.salirDelSistemaToolStripMenuItem.Text = "Salir del Sistema";
+            this.salirDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem_Click);
             // 
             // mnuMantenimientos
             // 
             this.mnuMantenimientos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gruposToolStripMenuItem,
+            this.clientesToolStripMenuItem,
             this.articulosToolStripMenuItem,
             this.marcasDeArticulosToolStripMenuItem,
             this.medidasToolStripMenuItem,
-            this.tipoProductosToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.gruposToolStripMenuItem,
             this.unidadesToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.suplidoresToolStripMenuItem,
-            this.paisesToolStripMenuItem,
-            this.regionesToolStripMenuItem,
-            this.provinciasToolStripMenuItem,
-            this.municipiosToolStripMenuItem,
-            this.sectoresToolStripMenuItem,
-            this.seccionesToolStripMenuItem,
-            this.callesToolStripMenuItem,
-            this.direccionesToolStripMenuItem,
-            this.subSectoresToolStripMenuItem});
+            this.tipoProductosToolStripMenuItem,
+            this.toolStripSeparator1});
             this.mnuMantenimientos.Name = "mnuMantenimientos";
             this.mnuMantenimientos.Size = new System.Drawing.Size(106, 20);
             this.mnuMantenimientos.Text = "&Mantenimientos";
@@ -190,94 +171,23 @@
             // 
             // gruposToolStripMenuItem
             // 
-            this.gruposToolStripMenuItem.Enabled = false;
             this.gruposToolStripMenuItem.Name = "gruposToolStripMenuItem";
             this.gruposToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.gruposToolStripMenuItem.Text = "Grupos";
+            this.gruposToolStripMenuItem.Text = "Camiones";
+            this.gruposToolStripMenuItem.Click += new System.EventHandler(this.gruposToolStripMenuItem_Click);
             // 
             // unidadesToolStripMenuItem
             // 
-            this.unidadesToolStripMenuItem.Enabled = false;
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
             this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.unidadesToolStripMenuItem.Text = "Unidades";
+            this.unidadesToolStripMenuItem.Text = "Servicios";
+            this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem.Enabled = false;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.clientesToolStripMenuItem.Text = "C&lientes";
-            // 
-            // suplidoresToolStripMenuItem
-            // 
-            this.suplidoresToolStripMenuItem.Enabled = false;
-            this.suplidoresToolStripMenuItem.Name = "suplidoresToolStripMenuItem";
-            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.suplidoresToolStripMenuItem.Text = "&Suplidores";
-            // 
-            // paisesToolStripMenuItem
-            // 
-            this.paisesToolStripMenuItem.Enabled = false;
-            this.paisesToolStripMenuItem.Name = "paisesToolStripMenuItem";
-            this.paisesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.paisesToolStripMenuItem.Text = "Paises";
-            // 
-            // regionesToolStripMenuItem
-            // 
-            this.regionesToolStripMenuItem.Enabled = false;
-            this.regionesToolStripMenuItem.Name = "regionesToolStripMenuItem";
-            this.regionesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.regionesToolStripMenuItem.Text = "Regiones";
-            // 
-            // provinciasToolStripMenuItem
-            // 
-            this.provinciasToolStripMenuItem.Enabled = false;
-            this.provinciasToolStripMenuItem.Name = "provinciasToolStripMenuItem";
-            this.provinciasToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.provinciasToolStripMenuItem.Text = "Provincias";
-            // 
-            // municipiosToolStripMenuItem
-            // 
-            this.municipiosToolStripMenuItem.Enabled = false;
-            this.municipiosToolStripMenuItem.Name = "municipiosToolStripMenuItem";
-            this.municipiosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.municipiosToolStripMenuItem.Text = "Municipios";
-            // 
-            // sectoresToolStripMenuItem
-            // 
-            this.sectoresToolStripMenuItem.Enabled = false;
-            this.sectoresToolStripMenuItem.Name = "sectoresToolStripMenuItem";
-            this.sectoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.sectoresToolStripMenuItem.Text = "Sectores";
-            // 
-            // seccionesToolStripMenuItem
-            // 
-            this.seccionesToolStripMenuItem.Enabled = false;
-            this.seccionesToolStripMenuItem.Name = "seccionesToolStripMenuItem";
-            this.seccionesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.seccionesToolStripMenuItem.Text = "Secciones";
-            // 
-            // callesToolStripMenuItem
-            // 
-            this.callesToolStripMenuItem.Enabled = false;
-            this.callesToolStripMenuItem.Name = "callesToolStripMenuItem";
-            this.callesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.callesToolStripMenuItem.Text = "Calles";
-            // 
-            // direccionesToolStripMenuItem
-            // 
-            this.direccionesToolStripMenuItem.Enabled = false;
-            this.direccionesToolStripMenuItem.Name = "direccionesToolStripMenuItem";
-            this.direccionesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.direccionesToolStripMenuItem.Text = "Direcciones";
-            // 
-            // subSectoresToolStripMenuItem
-            // 
-            this.subSectoresToolStripMenuItem.Enabled = false;
-            this.subSectoresToolStripMenuItem.Name = "subSectoresToolStripMenuItem";
-            this.subSectoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.subSectoresToolStripMenuItem.Text = "Sub Sectores";
             // 
             // procesosToolStripMenuItem
             // 
@@ -388,19 +298,19 @@
             // artiulosToolStripMenuItem
             // 
             this.artiulosToolStripMenuItem.Name = "artiulosToolStripMenuItem";
-            this.artiulosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.artiulosToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.artiulosToolStripMenuItem.Text = "Articulos";
             // 
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // suplidoresToolStripMenuItem1
             // 
             this.suplidoresToolStripMenuItem1.Name = "suplidoresToolStripMenuItem1";
-            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.suplidoresToolStripMenuItem1.Text = "Suplidores";
             // 
             // reportesToolStripMenuItem
@@ -622,16 +532,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipoProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem paisesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem regionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem provinciasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem municipiosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sectoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem seccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem callesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem direccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subSectoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nCFToolStripMenuItem;
