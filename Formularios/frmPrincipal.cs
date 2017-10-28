@@ -15,6 +15,7 @@ namespace RentATruck.Formularios
     public partial class frmPrincipal : Form
     {
         public Boolean UsuarioLogueado = false;
+        public string varf2_codigo;
         frmAbout frmAbout = null;
         //Mantenimientos.mantMarcas mantMarcas = null;
 
@@ -129,6 +130,14 @@ namespace RentATruck.Formularios
         private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantClientes F_mantClientes = new Mantenimientos.mantClientes();
+            F_mantClientes = Mantenimientos.mantClientes.InstanciaClientes();
+            F_mantClientes.MdiParent = this;
+            F_mantClientes.Show();
         }
     }
 }

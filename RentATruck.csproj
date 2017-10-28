@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas\busquedaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\busquedaClientes.Designer.cs">
+      <DependentUpon>busquedaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Utilitarios.cs" />
     <Compile Include="Formularios\frmAbout.cs">
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="Mantenimientos\mantCamiones.Designer.cs">
       <DependentUpon>mantCamiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mantClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantClientes.Designer.cs">
+      <DependentUpon>mantClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mantColores.cs">
       <SubType>Form</SubType>
@@ -116,6 +128,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
+      <DependentUpon>busquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantCamiones.resx">
       <DependentUpon>mantCamiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantClientes.resx">
+      <DependentUpon>mantClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantColores.resx">
       <DependentUpon>mantColores.cs</DependentUpon>
@@ -170,7 +188,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Busquedas\" />
     <Folder Include="Consultas\" />
     <Folder Include="PopUps\" />
     <Folder Include="Procesos\" />
@@ -212,6 +229,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\place_holder1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_xmag_8826.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_xmag_8826 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

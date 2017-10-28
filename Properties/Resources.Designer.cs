@@ -153,6 +153,26 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_xmag_8826 {
+            get {
+                object obj = ResourceManager.GetObject("if_xmag_8826", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_xmag_8826__1_ {
+            get {
+                object obj = ResourceManager.GetObject("if_xmag_8826 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap place_holder {
             get {
                 object obj = ResourceManager.GetObject("place_holder", resourceCulture);
@@ -166,6 +186,16 @@ namespace RentATruck.Properties {
         internal static System.Drawing.Bitmap place_holder1 {
             get {
                 object obj = ResourceManager.GetObject("place_holder1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

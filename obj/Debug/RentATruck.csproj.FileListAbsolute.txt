@@ -15,3 +15,5 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantNCF.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantCamiones.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantServicios.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantClientes.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaClientes.resources
