@@ -55,6 +55,12 @@
     <Compile Include="Busquedas\busquedaClientes.Designer.cs">
       <DependentUpon>busquedaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\busquedaServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\busquedaServicios.Designer.cs">
+      <DependentUpon>busquedaServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\busquedaVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
       <DependentUpon>busquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\busquedaServicios.resx">
+      <DependentUpon>busquedaServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\busquedaVendedores.resx">
       <DependentUpon>busquedaVendedores.cs</DependentUpon>

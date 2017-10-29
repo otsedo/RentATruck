@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace RentATruck.Busquedas
 {
-    public partial class busquedaClientes : Form
+    public partial class busquedaServicios : Form
     {
         datos objDatos = new datos();
         DataSet Resultados = new DataSet();
@@ -19,29 +19,26 @@ namespace RentATruck.Busquedas
         public string ReturnValue1 { get; set; }
         public string ReturnValue2 { get; set; }
 
-        public busquedaClientes()
+        public busquedaServicios()
         {
             InitializeComponent();
         }
 
-        private void busquedaClientes_Load(object sender, EventArgs e)
+        private void busquedaServicios_Load(object sender, EventArgs e)
         {
-
             objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select c.codigo_cliente, c.nombre, c.direccion,c.telefono1, c.telefono2 from clientes c, tipo_cliente tc where c.codtip_tip = tc.codtip_tip");
+            objDatos.Consulta_llenar_datos("select * from servicios");
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
 
-            this.dataGridView1.Columns[0].Width = 48;
+            this.dataGridView1.Columns[0].Width = 80;
             this.dataGridView1.Columns[0].HeaderText = "ID";
-            this.dataGridView1.Columns[1].Width = 200;
-            this.dataGridView1.Columns[1].HeaderText = "Nombre del cliente";
-            this.dataGridView1.Columns[2].Width = 300;
-            this.dataGridView1.Columns[2].HeaderText = "Direccion del cliente";
+            this.dataGridView1.Columns[1].Width = 418;
+            this.dataGridView1.Columns[1].HeaderText = "Nombre del servicio";
+            this.dataGridView1.Columns[2].Width = 150;
+            this.dataGridView1.Columns[2].HeaderText = "Precio";
             this.dataGridView1.Columns[3].Width = 100;
-            this.dataGridView1.Columns[3].HeaderText = "Telefono 1";
-            this.dataGridView1.Columns[4].Width = 100;
-            this.dataGridView1.Columns[4].HeaderText = "Telefono 2";
+            this.dataGridView1.Columns[3].HeaderText = "Estado";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
@@ -57,7 +54,7 @@ namespace RentATruck.Busquedas
             this.dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.ClearSelection();
             objDatos.Desconectar();
-            textBox1.Focus(); ;
+            textBox1.Focus();
         }
 
         private void cmdSeleccionar_Click(object sender, EventArgs e)
@@ -81,26 +78,26 @@ namespace RentATruck.Busquedas
             {
                 if (salida_datos.Length == 0)
                 {
-                    salida_datos = "(Nombre del cliente LIKE '%" + palabra + "%')";
+                    salida_datos = "(ID LIKE '%" + palabra + "%')";
                 }
                 else
                 {
-                    salida_datos += "AND (Nombre del cliente LIKE '%" + palabra + "'%)";
+                    salida_datos += "AND (Nombre del servicio LIKE '%" + palabra + "'%)";
                 }
             }
         }
 
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                this.ReturnValue1 = row.Cells["codigo_cliente"].Value.ToString();
-                this.ReturnValue2 = row.Cells["nombre"].Value.ToString();
+                this.ReturnValue1 = row.Cells["codigo_servicio"].Value.ToString();
+                this.ReturnValue2 = row.Cells["descripcion"].Value.ToString();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cmdCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
@@ -109,24 +106,6 @@ namespace RentATruck.Busquedas
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             this.cmdSeleccionar.PerformClick();
-        }
-
-        private void textBox1_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            string salida_datos = "";
-            string[] palabras_busqueda = this.textBox1.Text.Split(' ');
-            foreach (string palabra in palabras_busqueda)
-            {
-                if (salida_datos.Length == 0)
-                {
-                    salida_datos = "(nombre LIKE '%" + palabra + "%')";
-                }
-                else
-                {
-                    salida_datos += "AND (nombre LIKE '%" + palabra + "'%)";
-                }
-            }
-            this.miFiltro.RowFilter = salida_datos;
         }
     }
 }

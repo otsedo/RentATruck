@@ -40,14 +40,14 @@ namespace RentATruck.Procesos
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
         {
-            //Consultas.busquedaClientes f2 = new Consultas.busquedaClientes();
-            //DialogResult res = f2.ShowDialog();
+            Busquedas.busquedaClientes f3 = new Busquedas.busquedaClientes();
+            DialogResult res = f3.ShowDialog();
 
-            //if (res == DialogResult.OK)
-            //{
-            //    txtCodigoCliente.Text = f2.varf2_codigo;
-            //    lblNombreCliente.Text = f2.varf2_nombre;
-            //}
+            if (res == DialogResult.OK)
+            {
+                txtCodigoCliente.Text = f3.ReturnValue1;
+                lblNombreCliente.Text = f3.ReturnValue2;
+            }
         }
 
         private void txtCodigoArticulo_KeyPress(object sender, KeyPressEventArgs e)
