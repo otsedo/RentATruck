@@ -211,6 +211,7 @@
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.facturacionToolStripMenuItem.Text = "&Facturacion";
+            this.facturacionToolStripMenuItem.Click += new System.EventHandler(this.facturacionToolStripMenuItem_Click);
             // 
             // nCFToolStripMenuItem
             // 
@@ -223,8 +224,9 @@
             // generarNCFToolStripMenuItem
             // 
             this.generarNCFToolStripMenuItem.Name = "generarNCFToolStripMenuItem";
-            this.generarNCFToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.generarNCFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.generarNCFToolStripMenuItem.Text = "Generar NCF";
+            this.generarNCFToolStripMenuItem.Click += new System.EventHandler(this.generarNCFToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 

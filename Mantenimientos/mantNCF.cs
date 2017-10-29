@@ -14,6 +14,7 @@ namespace RentATruck.Mantenimientos
     {
         datos obDatos = new datos();
         string total = "";
+        private static mantNCF ncfInstancia = null;
 
         public mantNCF()
         {
@@ -27,6 +28,16 @@ namespace RentATruck.Mantenimientos
             this.cmbTCF.DisplayMember = "descri_tncf";
             this.cmbTCF.ValueMember = "codigo_tncf";
             obDatos.Desconectar();
+        }
+
+        public static mantNCF InstanciaNCF()
+        {
+            if ((ncfInstancia == null) || (ncfInstancia.IsDisposed == true))
+            {
+                ncfInstancia = new mantNCF();
+            }
+            ncfInstancia.BringToFront();
+            return ncfInstancia;
         }
 
         private void cmdGenerar_Click(object sender, EventArgs e)

@@ -25,25 +25,42 @@ namespace RentATruck.Formularios
         private void frmDevuelta_Load(object sender, EventArgs e)
         {
             this.txtCantidadPagar.Text = pagar_monto;
-            this.txtFT.Focus();
+            txtFT.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            long efectivo;
-            efectivo = Convert.ToInt64(this.txtFT.Text);
-
-
-            if (efectivo < total)
+            if (this.txtCambio.Text != "")
             {
-                MessageBox.Show("Fondos Insuficientes", "Error");
+                this.Close();
             }
             else
             {
-                double devuelta = efectivo - total;
-                this.txtCambio.Text = devuelta.ToString("C");
+                long efectivo;
+                efectivo = Convert.ToInt64(this.txtFT.Text);
+
+
+                if (efectivo < total)
+                {
+                    MessageBox.Show("Fondos Insuficientes", "Error");
+                }
+                else
+                {
+                    double devuelta = efectivo - total;
+                    this.txtCambio.Text = devuelta.ToString("C");
+                }
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtFT_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

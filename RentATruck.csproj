@@ -160,6 +160,12 @@
     <Compile Include="Mantenimientos\mantVendedores.Designer.cs">
       <DependentUpon>mantVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUps\popEditarArticulos1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUps\popEditarArticulos1.Designer.cs">
+      <DependentUpon>popEditarArticulos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\imprimirFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     <EmbeddedResource Include="Mantenimientos\mantVendedores.resx">
       <DependentUpon>mantVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUps\popEditarArticulos1.resx">
+      <DependentUpon>popEditarArticulos1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\imprimirFactura.resx">
       <DependentUpon>imprimirFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,7 +265,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Consultas\" />
-    <Folder Include="PopUps\" />
     <Folder Include="Recibos\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
@@ -304,6 +312,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_xmag_8826 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_InterfaceExpendet-13_592605 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_1-04_5115621.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_edit_173002.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

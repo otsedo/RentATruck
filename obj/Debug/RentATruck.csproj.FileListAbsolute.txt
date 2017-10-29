@@ -26,3 +26,4 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.imprim
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaServicios.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.PopUps.popEditarArticulos1.resources

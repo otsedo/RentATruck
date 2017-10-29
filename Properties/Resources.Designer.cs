@@ -123,9 +123,29 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_1_04_5115621 {
+            get {
+                object obj = ResourceManager.GetObject("if_1-04_5115621", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_document_sans_cancel_103500 {
             get {
                 object obj = ResourceManager.GetObject("if_document_sans_cancel_103500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_edit_173002 {
+            get {
+                object obj = ResourceManager.GetObject("if_edit_173002", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,16 @@ namespace RentATruck.Properties {
         internal static System.Drawing.Bitmap if_floppy_disk_save_103863__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_floppy_disk_save_103863 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_InterfaceExpendet_13_592605__3_ {
+            get {
+                object obj = ResourceManager.GetObject("if_InterfaceExpendet-13_592605 (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

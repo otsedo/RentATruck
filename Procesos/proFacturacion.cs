@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentATruck.Procesos;
 
 namespace RentATruck.Procesos
 {
@@ -16,9 +17,31 @@ namespace RentATruck.Procesos
         DataView miFiltro;
         int linea = 1;
         string descripcion, unidad, codigobarra, codigoArticulo, subTotal2, subTotal3, cantidadUpdated;
+        int numeroFactura, cantidad, codigoDetalleFactura;
+        double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS, descuento;
+        private static proFacturacion facturacionInstancia = null;
+        public double total;
+        //CrystalReport1 objRpt;
+
+        //Funcion para asignar teclas de funciones
+        private void KeyEvent(object sender, KeyEventArgs e) //Keyup Event 
+        {
+            if (e.KeyCode == Keys.F4)
+            {
+                //this.cmdBuscarArticulo.PerformClick();
+                MessageBox.Show("F4");
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                //this.cmdBuscarCodCli.PerformClick();
+                MessageBox.Show("F5");
+            }
+        }
 
         private void proFacturacion_Load(object sender, EventArgs e)
         {
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(KeyEvent);
+
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
             txtHora.Text = DateTime.Now.ToShortTimeString().ToString();
 
@@ -37,6 +60,18 @@ namespace RentATruck.Procesos
             this.cmbTipoNCF.ValueMember = "codigo_tncf";
             this.cmbTipoNCF.SelectedIndex = 6;
             obDatos.Desconectar();
+            //Corre la funcion para asignar teclas de funciones
+
+        }
+
+        public static proFacturacion InstanciaFacturacion()
+        {
+            if ((facturacionInstancia == null) || (facturacionInstancia.IsDisposed == true))
+            {
+                facturacionInstancia = new proFacturacion();
+            }
+            facturacionInstancia.BringToFront();
+            return facturacionInstancia;
         }
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
@@ -72,6 +107,12 @@ namespace RentATruck.Procesos
                         //unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
                         precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][2].ToString());
                     }
+                    else
+                    {
+                        MessageBox.Show("Articulo no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.txtCodigoArticulo.Focus();
+                        this.txtCodigoArticulo.Clear();
+                    }
                     obDatos.Desconectar();
                 }
                 else
@@ -85,15 +126,6 @@ namespace RentATruck.Procesos
 
         private void cmdBuscarArticulo_Click(object sender, EventArgs e)
         {
-            //Consultas.busquedaArticulos Ba = new Consultas.busquedaArticulos();
-            //DialogResult res = Ba.ShowDialog();
-
-            //if (res == DialogResult.OK)
-            //{
-            //    this.txtCodigoArticulo.Text = Ba.var_codigo_de_articulo;
-            //    this.txtCantidad.Focus();
-            //}
-
             Busquedas.busquedaServicios f2 = new Busquedas.busquedaServicios();
             DialogResult res = f2.ShowDialog();
 
@@ -102,7 +134,6 @@ namespace RentATruck.Procesos
                 this.txtCodigoArticulo.Text = f2.ReturnValue1;
                 this.txtNombreArticulo.Text = f2.ReturnValue2;
                 this.txtCantidad.Focus();
-
             }
         }
 
@@ -128,9 +159,9 @@ namespace RentATruck.Procesos
                         cantidad = 0;
                     }
 
-                    cantidad = Convert.ToInt32(cantidad) + Convert.ToInt32(this.txtCantidad.Value);
+                    cantidad = Convert.ToInt32(cantidad) + Convert.ToInt32(this.txtCantidad.Text);
 
-                    string sql = "exec inserta_actualiza_detalle_factura_temporal " + this.codigoArticulo.ToString() + "," + linea + ",'" + descripcion + "'," + cantidad + "," + this.porcientoDescuento.Value + "," + importe + "," + precioUnidad.ToString() + "";
+                    string sql = "exec inserta_actualiza_detalle_factura_temporal " + this.codigoArticulo.ToString() + "," + linea + ",'" + descripcion + "'," + cantidad + ",0" + "," + importe + "," + precioUnidad.ToString() + "";
                     if (obDatos.Insertar(sql))
                     {
                         cantidad = 0;
@@ -144,7 +175,6 @@ namespace RentATruck.Procesos
                 else
                 {
                     MessageBox.Show("Debe especificar el codigo de barra del articulo");
-                    this.txtCodigoArticulo.Focus();
                 }
             }
             catch (System.Exception ex)
@@ -168,24 +198,7 @@ namespace RentATruck.Procesos
 
         private void txtCantidad_Enter(object sender, EventArgs e)
         {
-            this.txtCantidad.Select(0, this.txtCantidad.ToString().Length);
-            if (this.txtCodigoArticulo.Text != "")
-            {
-                string sql = ("select * from servicios s where s.estado_art = 'True' and s.codigo_servicio = '" + this.txtCodigoArticulo.Text.ToString() + "'");
-                obDatos.Conectar();
-                obDatos.Consulta_llenar_datos(sql);
-                this.txtCantidad.Focus();
 
-                if (obDatos.ds.Tables[0].Rows.Count > 0)
-                {
-                    codigoArticulo = obDatos.ds.Tables[0].Rows[0][0].ToString();
-                    //codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
-                    descripcion = obDatos.ds.Tables[0].Rows[0][1].ToString();
-                    //unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
-                    precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][2].ToString());
-                }
-                obDatos.Desconectar();
-            }
         }
 
         private void txtCantidad_ValueChanged(object sender, EventArgs e)
@@ -197,7 +210,7 @@ namespace RentATruck.Procesos
 
         private void chkDescuento_CheckedChanged(object sender, EventArgs e)
         {
-            this.porcientoDescuento.Enabled = true;
+            //this.porcientoDescuento.Enabled = true;
         }
 
         private void proFacturacion_FormClosed(object sender, FormClosedEventArgs e)
@@ -208,14 +221,6 @@ namespace RentATruck.Procesos
 
         private void cmdAgregarNCF_Click(object sender, EventArgs e)
         {
-            //PopUps.popSeleccionarNCF f2 = new PopUps.popSeleccionarNCF();
-            //DialogResult NCF = f2.ShowDialog();
-
-            //if (NCF == DialogResult.OK)
-            //{
-            //    txtNCF.Text = f2.numero_comprobante_fiscal;
-            //}
-
             datos objDato = new datos();
             objDato.Conectar();
             string sql = "";
@@ -231,7 +236,7 @@ namespace RentATruck.Procesos
             }
             else
             {
-                MessageBox.Show("No hay NCF disponibles");
+                MessageBox.Show("No hay NCF disponibles de este tipo");
             }
             objDato.Desconectar();
         }
@@ -252,32 +257,52 @@ namespace RentATruck.Procesos
 
         private void cmdEditarArticulo_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
+                PopUps.popEditarArticulos1 Art = new PopUps.popEditarArticulos1();
+                DialogResult res = Art.ShowDialog();
 
-            //    PopUps.popEditarArticulo Art = new PopUps.popEditarArticulo();
-            //    DialogResult res = Art.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    cantidadUpdated = Art.var_cantidadUpdated;
+                }
+                int fila = this.dataGridView1.CurrentRow.Index;
+                string sql = ("update facturatemporal set cantidad = " + Art.var_cantidadUpdated + " where codigo_art = " + this.dataGridView1.Rows[fila].Cells["Cod. Art."].Value + "");
+                obDatos.Conectar();
+                obDatos.Consulta_llenar_datos(sql);
+                obDatos.Desconectar(); ;
+                actualizarDatosFactura();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            //    if (res == DialogResult.OK)
-            //    {
-            //        cantidadUpdated = Art.var_cantidadUpdated;
-            //    }
-            //    int fila = this.dataGridView1.CurrentRow.Index;
-            //    string sql = ("update facturatemporal set cantidad = " + Art.var_cantidadUpdated + " where codigo_art = " + this.dataGridView1.Rows[fila].Cells["Cod. Art."].Value + "");
-            //    obDatos.Consulta_llenar_datos(sql);
-            //    actualizarDatosFactura();
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+        private void txtCodigoArticulo_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void cmdFacturar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(this.txtNCF.Text) || (String.IsNullOrEmpty(this.txtCodigoCliente.Text)))
+            if (txtNCF.Text == "")
             {
-                MessageBox.Show("Codigo de cliente o NCF no pueden estar en blanco", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult respuestaNCF;
+                respuestaNCF = MessageBox.Show("Desea la factura sin comprobante fiscal?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (respuestaNCF == DialogResult.Yes)
+                {
+                    this.txtNCF.Text = "N/A";
+                }
+                else
+                {
+                    MessageBox.Show("Debe asignar un NCF", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            if (String.IsNullOrEmpty(this.txtCodigoCliente.Text))
+            {
+                MessageBox.Show("Codigo de cliente no puede estar en blanco", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -285,7 +310,7 @@ namespace RentATruck.Procesos
 
                 if (tipoPago == 1)
                 {
-                    descontarInventario();
+                    //descontarInventario();
                     guardarFactura();
                     guardarDetalleFactura();
 
@@ -296,7 +321,7 @@ namespace RentATruck.Procesos
                 }
                 if (tipoPago == 2)
                 {
-                    descontarInventario();
+                    //descontarInventario();
                     guardarFactura();
                     guardarDetalleFactura();
 
@@ -306,7 +331,7 @@ namespace RentATruck.Procesos
                 }
                 if (tipoPago == 3)
                 {
-                    descontarInventario();
+                    //descontarInventario();
                     guardarFactura();
                     guardarDetalleFactura();
 
@@ -315,7 +340,6 @@ namespace RentATruck.Procesos
                     tc.ShowDialog();
                     MessageBox.Show("Proceso concluido");
                 }
-
             }
         }
 
@@ -332,23 +356,85 @@ namespace RentATruck.Procesos
             //}
         }
 
-        int numeroFactura, cantidad, codigoDetalleFactura;
-        double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS, descuento;
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                //this.txtCantidad.Select(0, this.txtCantidad.ToString().Length);
+                if (this.txtCodigoArticulo.Text != "")
+                {
+                    string sql = ("select * from servicios s where s.estado_art = 'True' and s.codigo_servicio = '" + this.txtCodigoArticulo.Text.ToString() + "'");
+                    obDatos.Conectar();
+                    obDatos.Consulta_llenar_datos(sql);
+                    this.txtCantidad.Focus();
+
+                    if (obDatos.ds.Tables[0].Rows.Count > 0)
+                    {
+                        codigoArticulo = obDatos.ds.Tables[0].Rows[0][0].ToString();
+                        //codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                        descripcion = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                        //unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
+                        precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][2].ToString());
+                    }
+                    obDatos.Desconectar();
+                    this.cmdAgregarArticuloaFactura.PerformClick();
+                    this.txtCantidad.Text = "";
+                    this.txtNombreArticulo.Text = "";
+                    this.txtCodigoArticulo.Text = "";
+                    this.txtCodigoArticulo.Focus();
+                }
+            }
+        }
+
+        private void txtCantidad_Enter_1(object sender, EventArgs e)
+        {
+
+        }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form facturacion = new Procesos.proFacturacion();
-            facturacion.Show();
+            DialogResult respuestaLimpiar;
+            respuestaLimpiar = MessageBox.Show("Desea limpiar todos los datos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuestaLimpiar == DialogResult.Yes)
+            {
+                txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+                txtHora.Text = DateTime.Now.ToShortTimeString().ToString();
+
+                obDatos.Conectar();
+                obDatos.consultar("SELECT COUNT(numfac_fac) from ", "facturas");
+                numeroFactura = Convert.ToInt32(obDatos.ds.Tables["facturas"].Rows[0][0].ToString()) + 1;
+                this.txtNumeroFactura.Text = (Convert.ToString(numeroFactura));
+                actualizarDatosFactura();
+
+                this.cmbTipoPago.DataSource = obDatos.ConsultaTabla("tipo_factura", " descri_fac");
+                this.cmbTipoPago.DisplayMember = "descri_fac";
+                this.cmbTipoPago.ValueMember = "codtip_fac";
+
+                this.cmbTipoNCF.DataSource = obDatos.ConsultaTabla("tipo_NCF", " descri_tncf");
+                this.cmbTipoNCF.DisplayMember = "descri_tncf";
+                this.cmbTipoNCF.ValueMember = "codigo_tncf";
+                this.cmbTipoNCF.SelectedIndex = 6;
+
+                string truncarTablaTemporal = ("truncate table facturatemporal");
+                obDatos.Consulta_llenar_datos(truncarTablaTemporal);
+                actualizarDatosFactura();
+                this.txtCodigoArticulo.Focus();
+                this.txtCodigoCliente.Text = "";
+                this.lblNombreCliente.Text = "";
+                this.txtNCF.Text = "";
+
+
+                obDatos.Desconectar();
+            }
         }
 
-        public double total;
-        //CrystalReport1 objRpt;
+
 
         public proFacturacion()
         {
@@ -362,9 +448,11 @@ namespace RentATruck.Procesos
             this.miFiltro = (obDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
             this.dataGridView1.Columns[0].Width = 80;
-            this.dataGridView1.Columns[1].Width = 400;
-            this.dataGridView1.Columns[2].Width = 60;
-            this.dataGridView1.Columns[3].Width = 55;
+            this.dataGridView1.Columns[1].Width = 385;
+            this.dataGridView1.Columns[2].Width = 100;
+            this.dataGridView1.Columns[3].Width = 100;
+            this.dataGridView1.Columns[4].Width = 118;
+            this.dataGridView1.Columns[5].Width = 110;
 
 
             for (int a = 0; a < this.dataGridView1.Rows.Count; a++)
@@ -416,18 +504,19 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
-            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + "," + this.porcientoDescuento.Value.ToString() + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + "");
+            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + "");
         }
 
         private void desabilitarNCF()
         {
-            obDatos.Consulta_llenar_datos("update NCF set estado = 0 where ncf_ncf =  '" + this.txtNCF.Text + "'");
+            obDatos.Consulta_llenar_datos("update NCF set estado = 'False' where ncf_ncf =  '" + this.txtNCF.Text + "'");
         }
 
         private void guardarDetalleFactura()
         {
             datos objDatos = new datos();
-            string sql = "select precio,cantidad,codigo_art,descuento,cantidad*precio as 'importe',codigo_uni from facturatemporal,tipo_unidad where descri_uni = unidad";
+            objDatos.Conectar();
+            string sql = "select precio,cantidad,codigo_art,descuento,cantidad*precio as 'importe' from facturatemporal";
             objDatos.Consulta_llenar_datos(sql);
 
             //Buscar cantidad de articulos
@@ -441,11 +530,11 @@ namespace RentATruck.Procesos
                 int codArticulo = Convert.ToInt32(objDatos.ds.Tables[0].Rows[n][2].ToString());
                 int descuento = Convert.ToInt32(objDatos.ds.Tables[0].Rows[n][3].ToString());
                 double importe = Convert.ToDouble(objDatos.ds.Tables[0].Rows[n][4].ToString());
-                int codigoUnidad = Convert.ToInt32(objDatos.ds.Tables[0].Rows[n][5].ToString());
                 obDatos.consultar("SELECT COUNT(id_detall) from ", "detalle_facturas");
                 int idDetall = Convert.ToInt32(obDatos.ds.Tables["detalle_facturas"].Rows[0][0].ToString()) + 1;
 
-                obDatos.Consulta_llenar_datos("exec inserta_detalles_facturas " + idDetall + "," + this.txtNumeroFactura.Text + "," + precio + "," + cantidad + "," + codArticulo + "," + descuento + "," + importe + "," + codigoUnidad + "");
+                obDatos.Consulta_llenar_datos("exec inserta_detalles_facturas " + idDetall + "," + this.txtNumeroFactura.Text + "," + precio + "," + cantidad + "," + codArticulo + "," + descuento + "," + importe + "");
+                objDatos.Desconectar();
             }
 
         }
@@ -454,5 +543,7 @@ namespace RentATruck.Procesos
         {
 
         }
+
+
     }
 }

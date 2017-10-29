@@ -139,5 +139,21 @@ namespace RentATruck.Formularios
             F_mantClientes.MdiParent = this;
             F_mantClientes.Show();
         }
+
+        private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.proFacturacion proFacturacion = new Procesos.proFacturacion();
+            proFacturacion = Procesos.proFacturacion.InstanciaFacturacion();
+            proFacturacion.MdiParent = this;
+            proFacturacion.Show();
+        }
+
+        private void generarNCFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantNCF F_mantClientes = new Mantenimientos.mantNCF();
+            F_mantClientes = Mantenimientos.mantNCF.InstanciaNCF();
+            F_mantClientes.MdiParent = this;
+            F_mantClientes.Show();
+        }
     }
 }

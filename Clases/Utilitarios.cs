@@ -31,7 +31,7 @@ namespace RentATruck.Clases
             cmd.Parameters.Add(new SqlParameter("@usuario", usuario));
             cmd.Parameters.Add(new SqlParameter("@password", password));
 
-            SqlParameter pLogueado = new SqlParameter("@logueado",0);
+            SqlParameter pLogueado = new SqlParameter("@logueado", 0);
             pLogueado.Direction = System.Data.ParameterDirection.Output;
             cmd.Parameters.Add(pLogueado);
 
@@ -50,7 +50,11 @@ namespace RentATruck.Clases
             conexion.Close();
 
             logueado = Int32.Parse(cmd.Parameters["@logueado"].Value.ToString());
-            codigo_perfil = Int32.Parse(cmd.Parameters["@codigo_perfil"].Value.ToString());
+            if (logueado == 1)
+            {
+                codigo_perfil = Int32.Parse(cmd.Parameters["@codigo_perfil"].Value.ToString());
+            }
+
 
             if (logueado > 0)
             {
@@ -58,8 +62,8 @@ namespace RentATruck.Clases
                 return mensaje;
             }
             else
-                return mensaje;           
+                return mensaje;
         }
-        
+
     }
 }
