@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,12 +62,19 @@
       <DependentUpon>busquedaVendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Utilitarios.cs" />
     <Compile Include="Formularios\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmDevuelta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDevuelta.Designer.cs">
+      <DependentUpon>frmDevuelta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
@@ -77,6 +87,12 @@
     </Compile>
     <Compile Include="Formularios\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTarjetaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTarjetaCredito.Designer.cs">
+      <DependentUpon>frmTarjetaCredito.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mantCamiones.cs">
       <SubType>Form</SubType>
@@ -138,6 +154,18 @@
     <Compile Include="Mantenimientos\mantVendedores.Designer.cs">
       <DependentUpon>mantVendedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\imprimirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\imprimirFactura.Designer.cs">
+      <DependentUpon>imprimirFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\proFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proFacturacion.Designer.cs">
+      <DependentUpon>proFacturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
@@ -146,11 +174,17 @@
     <EmbeddedResource Include="Busquedas\busquedaVendedores.resx">
       <DependentUpon>busquedaVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDevuelta.resx">
+      <DependentUpon>frmDevuelta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTarjetaCredito.resx">
+      <DependentUpon>frmTarjetaCredito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantCamiones.resx">
       <DependentUpon>mantCamiones.cs</DependentUpon>
@@ -182,6 +216,12 @@
     <EmbeddedResource Include="Mantenimientos\mantVendedores.resx">
       <DependentUpon>mantVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\imprimirFactura.resx">
+      <DependentUpon>imprimirFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proFacturacion.resx">
+      <DependentUpon>proFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -208,7 +248,6 @@
   <ItemGroup>
     <Folder Include="Consultas\" />
     <Folder Include="PopUps\" />
-    <Folder Include="Procesos\" />
     <Folder Include="Recibos\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
