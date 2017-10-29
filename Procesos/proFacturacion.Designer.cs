@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proFacturacion));
             this.cmdPrueba = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtCodigoEmpleado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbTipoNCF = new System.Windows.Forms.ComboBox();
@@ -73,7 +72,7 @@
             this.Button5 = new System.Windows.Forms.Button();
             this.Button6 = new System.Windows.Forms.Button();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
-            this.Label6 = new System.Windows.Forms.Label();
+            this.nombreArticulo = new System.Windows.Forms.Label();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
             this.cmdImprimirFactura = new System.Windows.Forms.Button();
             this.Label4 = new System.Windows.Forms.Label();
@@ -84,6 +83,7 @@
             this.Label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.txtNombreArticulo = new System.Windows.Forms.TextBox();
             this.cmdPrueba.SuspendLayout();
             this.GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,7 +95,7 @@
             // cmdPrueba
             // 
             this.cmdPrueba.BackColor = System.Drawing.Color.LightGray;
-            this.cmdPrueba.Controls.Add(this.button1);
+            this.cmdPrueba.Controls.Add(this.txtNombreArticulo);
             this.cmdPrueba.Controls.Add(this.txtCodigoEmpleado);
             this.cmdPrueba.Controls.Add(this.label5);
             this.cmdPrueba.Controls.Add(this.cmbTipoNCF);
@@ -126,7 +126,7 @@
             this.cmdPrueba.Controls.Add(this.Button5);
             this.cmdPrueba.Controls.Add(this.Button6);
             this.cmdPrueba.Controls.Add(this.txtCodigoCliente);
-            this.cmdPrueba.Controls.Add(this.Label6);
+            this.cmdPrueba.Controls.Add(this.nombreArticulo);
             this.cmdPrueba.Controls.Add(this.txtNumeroFactura);
             this.cmdPrueba.Controls.Add(this.cmdImprimirFactura);
             this.cmdPrueba.Controls.Add(this.Label4);
@@ -143,15 +143,6 @@
             this.cmdPrueba.TabIndex = 3;
             this.cmdPrueba.TabStop = false;
             this.cmdPrueba.Enter += new System.EventHandler(this.cmdPrueba_Enter);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(512, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 92;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtCodigoEmpleado
             // 
@@ -181,7 +172,7 @@
             this.cmbTipoNCF.FormattingEnabled = true;
             this.cmbTipoNCF.Location = new System.Drawing.Point(667, 85);
             this.cmbTipoNCF.Name = "cmbTipoNCF";
-            this.cmbTipoNCF.Size = new System.Drawing.Size(142, 21);
+            this.cmbTipoNCF.Size = new System.Drawing.Size(246, 21);
             this.cmbTipoNCF.TabIndex = 89;
             // 
             // cmbTipoPago
@@ -302,26 +293,26 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(0, 163);
             this.dataGridView1.MultiSelect = false;
@@ -370,15 +361,15 @@
             this.Label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label17.Location = new System.Drawing.Point(-4, 124);
             this.Label17.Name = "Label17";
-            this.Label17.Size = new System.Drawing.Size(192, 20);
+            this.Label17.Size = new System.Drawing.Size(63, 20);
             this.Label17.TabIndex = 40;
-            this.Label17.Text = "Codigo de barra o Articulo";
+            this.Label17.Text = "Codigo:";
             // 
             // txtCodigoArticulo
             // 
-            this.txtCodigoArticulo.Location = new System.Drawing.Point(199, 126);
+            this.txtCodigoArticulo.Location = new System.Drawing.Point(65, 126);
             this.txtCodigoArticulo.Name = "txtCodigoArticulo";
-            this.txtCodigoArticulo.Size = new System.Drawing.Size(202, 20);
+            this.txtCodigoArticulo.Size = new System.Drawing.Size(35, 20);
             this.txtCodigoArticulo.TabIndex = 0;
             this.txtCodigoArticulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoArticulo_KeyPress);
             // 
@@ -557,7 +548,7 @@
             // txtNCF
             // 
             this.txtNCF.Enabled = false;
-            this.txtNCF.Location = new System.Drawing.Point(843, 85);
+            this.txtNCF.Location = new System.Drawing.Point(937, 83);
             this.txtNCF.Name = "txtNCF";
             this.txtNCF.Size = new System.Drawing.Size(194, 20);
             this.txtNCF.TabIndex = 14;
@@ -603,15 +594,15 @@
             this.txtCodigoCliente.Size = new System.Drawing.Size(143, 20);
             this.txtCodigoCliente.TabIndex = 12;
             // 
-            // Label6
+            // nombreArticulo
             // 
-            this.Label6.AutoSize = true;
-            this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label6.Location = new System.Drawing.Point(620, 18);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(112, 20);
-            this.Label6.TabIndex = 11;
-            this.Label6.Text = "Código Cliente";
+            this.nombreArticulo.AutoSize = true;
+            this.nombreArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreArticulo.Location = new System.Drawing.Point(620, 18);
+            this.nombreArticulo.Name = "nombreArticulo";
+            this.nombreArticulo.Size = new System.Drawing.Size(112, 20);
+            this.nombreArticulo.TabIndex = 11;
+            this.nombreArticulo.Text = "Código Cliente";
             // 
             // txtNumeroFactura
             // 
@@ -719,13 +710,23 @@
             this.Label1.TabIndex = 0;
             this.Label1.Text = "Vendedor";
             // 
+            // txtNombreArticulo
+            // 
+            this.txtNombreArticulo.Enabled = false;
+            this.txtNombreArticulo.Location = new System.Drawing.Point(129, 127);
+            this.txtNombreArticulo.Name = "txtNombreArticulo";
+            this.txtNombreArticulo.Size = new System.Drawing.Size(272, 20);
+            this.txtNombreArticulo.TabIndex = 93;
+            // 
             // proFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 675);
             this.Controls.Add(this.cmdPrueba);
+            this.MaximizeBox = false;
             this.Name = "proFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "proFacturacion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.proFacturacion_FormClosed);
             this.Load += new System.EventHandler(this.proFacturacion_Load);
@@ -745,7 +746,6 @@
         #endregion
 
         internal System.Windows.Forms.GroupBox cmdPrueba;
-        private System.Windows.Forms.Button button1;
         internal System.Windows.Forms.TextBox txtCodigoEmpleado;
         internal System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbTipoNCF;
@@ -785,7 +785,7 @@
         internal System.Windows.Forms.Button Button5;
         internal System.Windows.Forms.Button Button6;
         internal System.Windows.Forms.TextBox txtCodigoCliente;
-        internal System.Windows.Forms.Label Label6;
+        internal System.Windows.Forms.Label nombreArticulo;
         internal System.Windows.Forms.TextBox txtNumeroFactura;
         internal System.Windows.Forms.Button cmdImprimirFactura;
         internal System.Windows.Forms.Label Label4;
@@ -796,5 +796,6 @@
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
+        internal System.Windows.Forms.TextBox txtNombreArticulo;
     }
 }

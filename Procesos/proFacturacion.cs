@@ -35,6 +35,7 @@ namespace RentATruck.Procesos
             this.cmbTipoNCF.DataSource = obDatos.ConsultaTabla("tipo_NCF", " descri_tncf");
             this.cmbTipoNCF.DisplayMember = "descri_tncf";
             this.cmbTipoNCF.ValueMember = "codigo_tncf";
+            this.cmbTipoNCF.SelectedIndex = 6;
             obDatos.Desconectar();
         }
 
@@ -56,7 +57,8 @@ namespace RentATruck.Procesos
             {
                 if (this.txtCodigoArticulo.Text != "")
                 {
-                    string sql = ("select a.codigo_art,a.codbrr_art as 'Codigo Barra', a.descriart_art as 'Descripcion',tu.descri_uni as 'Unidad',a.precio_art as 'Precio' from articulos a,tipo_unidad tu where a.codigo_uni = tu.codigo_uni and a.codigo_art = '" + this.txtCodigoArticulo.Text.ToString() + "'");
+                    string sql = ("select * from servicios s where s.estado_art = 'True' and s.codigo_servicio = '" + this.txtCodigoArticulo.Text.ToString() + "'");
+                    obDatos.Conectar();
                     obDatos.Consulta_llenar_datos(sql);
                     this.txtCantidad.Focus();
 
@@ -64,11 +66,13 @@ namespace RentATruck.Procesos
                     if (obDatos.ds.Tables[0].Rows.Count > 0)
                     {
                         codigoArticulo = obDatos.ds.Tables[0].Rows[0][0].ToString();
-                        codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
-                        descripcion = obDatos.ds.Tables[0].Rows[0][2].ToString();
-                        unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
-                        precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][4].ToString());
+                        //codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                        descripcion = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                        this.txtNombreArticulo.Text = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                        //unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
+                        precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][2].ToString());
                     }
+                    obDatos.Desconectar();
                 }
                 else
                 {
@@ -76,6 +80,7 @@ namespace RentATruck.Procesos
                     this.txtCodigoArticulo.Focus();
                 }
             }
+
         }
 
         private void cmdBuscarArticulo_Click(object sender, EventArgs e)
@@ -88,6 +93,17 @@ namespace RentATruck.Procesos
             //    this.txtCodigoArticulo.Text = Ba.var_codigo_de_articulo;
             //    this.txtCantidad.Focus();
             //}
+
+            Busquedas.busquedaServicios f2 = new Busquedas.busquedaServicios();
+            DialogResult res = f2.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                this.txtCodigoArticulo.Text = f2.ReturnValue1;
+                this.txtNombreArticulo.Text = f2.ReturnValue2;
+                this.txtCantidad.Focus();
+
+            }
         }
 
         private void cmdAgregarArticuloaFactura_Click(object sender, EventArgs e)
@@ -114,7 +130,7 @@ namespace RentATruck.Procesos
 
                     cantidad = Convert.ToInt32(cantidad) + Convert.ToInt32(this.txtCantidad.Value);
 
-                    string sql = "exec inserta_actualiza_detalle_factura_temporal " + this.codigoArticulo.ToString() + "," + linea + ",'" + descripcion + "'," + cantidad + ",'" + unidad + "'," + this.porcientoDescuento.Value + "," + importe + "," + precioUnidad.ToString() + "";
+                    string sql = "exec inserta_actualiza_detalle_factura_temporal " + this.codigoArticulo.ToString() + "," + linea + ",'" + descripcion + "'," + cantidad + "," + this.porcientoDescuento.Value + "," + importe + "," + precioUnidad.ToString() + "";
                     if (obDatos.Insertar(sql))
                     {
                         cantidad = 0;
@@ -155,18 +171,20 @@ namespace RentATruck.Procesos
             this.txtCantidad.Select(0, this.txtCantidad.ToString().Length);
             if (this.txtCodigoArticulo.Text != "")
             {
-                string sql = ("select a.codigo_art,a.codbrr_art as 'Codigo Barra', a.descriart_art as 'Descripcion',tu.descri_uni as 'Unidad',a.precio_art as 'Precio' from articulos a,tipo_unidad tu where a.codigo_uni = tu.codigo_uni and a.codigo_art = '" + this.txtCodigoArticulo.Text.ToString() + "'");
+                string sql = ("select * from servicios s where s.estado_art = 'True' and s.codigo_servicio = '" + this.txtCodigoArticulo.Text.ToString() + "'");
+                obDatos.Conectar();
                 obDatos.Consulta_llenar_datos(sql);
                 this.txtCantidad.Focus();
 
                 if (obDatos.ds.Tables[0].Rows.Count > 0)
                 {
                     codigoArticulo = obDatos.ds.Tables[0].Rows[0][0].ToString();
-                    codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
-                    descripcion = obDatos.ds.Tables[0].Rows[0][2].ToString();
-                    unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
-                    precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][4].ToString());
+                    //codigobarra = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                    descripcion = obDatos.ds.Tables[0].Rows[0][1].ToString();
+                    //unidad = obDatos.ds.Tables[0].Rows[0][3].ToString();
+                    precioUnidad = Convert.ToDouble(obDatos.ds.Tables[0].Rows[0][2].ToString());
                 }
+                obDatos.Desconectar();
             }
         }
 
@@ -340,7 +358,7 @@ namespace RentATruck.Procesos
         private void actualizarDatosFactura()
         {
             obDatos.Conectar();
-            obDatos.Consulta_llenar_datos("select f.codigo_art as 'Cod. Art.',f.descripcion as 'Descripcion',f.cantidad as 'Cantidad',f.unidad as 'Unidad',f.descuento as 'Descuento',f.precio as 'Precio',f.cantidad*f.precio as 'Importe' from  facturatemporal f");
+            obDatos.Consulta_llenar_datos("select f.codigo_art as 'Cod. Art.',f.descripcion as 'Descripcion',f.cantidad as 'Cantidad',f.descuento as 'Descuento',f.precio as 'Precio',f.cantidad*f.precio as 'Importe' from  facturatemporal f");
             this.miFiltro = (obDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
             this.dataGridView1.Columns[0].Width = 80;
