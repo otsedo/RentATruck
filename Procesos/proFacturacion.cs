@@ -340,20 +340,21 @@ namespace RentATruck.Procesos
                     tc.ShowDialog();
                     MessageBox.Show("Proceso concluido");
                 }
+                this.cmdImprimirFactura.PerformClick();
             }
         }
 
         private void cmdImprimirFactura_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Form frmImprimir = new Procesos.imprimirFactura(this.numeroFactura);
-            //    frmImprimir.Show();
-            //}
-            //catch (SystemException ex)
-            //{
-            //    MessageBox.Show("No se encuentra la factura actual");
-            //}
+            try
+            {
+                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
+                frmImprimir.Show();
+            }
+            catch (SystemException ex)
+            {
+                MessageBox.Show("No se encuentra la factura actual");
+            }
         }
 
 
@@ -453,6 +454,8 @@ namespace RentATruck.Procesos
             this.dataGridView1.Columns[3].Width = 100;
             this.dataGridView1.Columns[4].Width = 118;
             this.dataGridView1.Columns[5].Width = 110;
+            dataGridView1.Columns[4].DefaultCellStyle.Format = "c";
+            dataGridView1.Columns[5].DefaultCellStyle.Format = "c";
 
 
             for (int a = 0; a < this.dataGridView1.Rows.Count; a++)
