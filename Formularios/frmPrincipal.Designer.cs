@@ -84,6 +84,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +131,7 @@
             this.marcasDeArticulosToolStripMenuItem,
             this.medidasToolStripMenuItem,
             this.unidadesToolStripMenuItem,
+            this.suplidoresToolStripMenuItem,
             this.tipoProductosToolStripMenuItem,
             this.toolStripSeparator1});
             this.mnuMantenimientos.Name = "mnuMantenimientos";
@@ -224,7 +226,7 @@
             // generarNCFToolStripMenuItem
             // 
             this.generarNCFToolStripMenuItem.Name = "generarNCFToolStripMenuItem";
-            this.generarNCFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.generarNCFToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.generarNCFToolStripMenuItem.Text = "Generar NCF";
             this.generarNCFToolStripMenuItem.Click += new System.EventHandler(this.generarNCFToolStripMenuItem_Click);
             // 
@@ -499,6 +501,13 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
+            // suplidoresToolStripMenuItem
+            // 
+            this.suplidoresToolStripMenuItem.Name = "suplidoresToolStripMenuItem";
+            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.suplidoresToolStripMenuItem.Text = "Suplidores";
+            this.suplidoresToolStripMenuItem.Click += new System.EventHandler(this.suplidoresToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,5 +589,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblEstado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
     }
 }

@@ -155,5 +155,13 @@ namespace RentATruck.Formularios
             F_mantClientes.MdiParent = this;
             F_mantClientes.Show();
         }
+
+        private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantSuplidores F_mantSuplidores = new Mantenimientos.mantSuplidores();
+            F_mantSuplidores = Mantenimientos.mantSuplidores.InstanciaSuplidores();
+            F_mantSuplidores.MdiParent = this;
+            F_mantSuplidores.Show();
+        }
     }
 }

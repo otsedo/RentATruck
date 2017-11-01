@@ -394,21 +394,14 @@
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.RichTextBox txtDireccion;
         public System.Windows.Forms.Button cmdNuevo;
-        private System.Windows.Forms.MaskedTextBox txtTelefono2;
-        private System.Windows.Forms.MaskedTextBox txtTelefono1;
         public System.Windows.Forms.Button cmdBuscar;
         public System.Windows.Forms.Button cmdEliminar;
         public System.Windows.Forms.Button cmdCancelar;
         public System.Windows.Forms.Button cmdGuardar;
-        private System.Windows.Forms.TextBox txtRutaImagen;
-        private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox estado;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtIDentificacion;
@@ -417,5 +410,12 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtID;
+        public System.Windows.Forms.RichTextBox txtDireccion;
+        public System.Windows.Forms.MaskedTextBox txtTelefono2;
+        public System.Windows.Forms.MaskedTextBox txtTelefono1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.CheckBox estado;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.TextBox txtRutaImagen;
     }
 }

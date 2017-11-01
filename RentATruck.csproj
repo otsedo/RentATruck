@@ -67,6 +67,12 @@
     <Compile Include="Busquedas\busquedaServicios.Designer.cs">
       <DependentUpon>busquedaServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\busquedaSuplidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\busquedaSuplidores.Designer.cs">
+      <DependentUpon>busquedaSuplidores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\busquedaVendedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,12 @@
     <Compile Include="Mantenimientos\mantServicios.Designer.cs">
       <DependentUpon>mantServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantSuplidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantSuplidores.Designer.cs">
+      <DependentUpon>mantSuplidores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantTipoVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     <Compile Include="Procesos\imprimirFacturas.Designer.cs">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\proCuentasXPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proCuentasXPagar.Designer.cs">
+      <DependentUpon>proCuentasXPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\proFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\busquedaServicios.resx">
       <DependentUpon>busquedaServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\busquedaSuplidores.resx">
+      <DependentUpon>busquedaSuplidores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\busquedaVendedores.resx">
       <DependentUpon>busquedaVendedores.cs</DependentUpon>
@@ -234,6 +255,9 @@
     <EmbeddedResource Include="Mantenimientos\mantServicios.resx">
       <DependentUpon>mantServicios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantSuplidores.resx">
+      <DependentUpon>mantSuplidores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantTipoVehiculos.resx">
       <DependentUpon>mantTipoVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\imprimirFacturas.resx">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proCuentasXPagar.resx">
+      <DependentUpon>proCuentasXPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proFacturacion.resx">
       <DependentUpon>proFacturacion.cs</DependentUpon>
