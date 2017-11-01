@@ -20,21 +20,21 @@ namespace RentATruck.Procesos
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
         {
-            //Consultas.busquedaSuplidores f2 = new Consultas.busquedaSuplidores();
-            //DialogResult res = f2.ShowDialog();
+            Busquedas.busquedaSuplidores f2 = new Busquedas.busquedaSuplidores();
+            DialogResult res = f2.ShowDialog();
 
-            //if (res == DialogResult.OK)
-            //{
-            //    CodigoCliente = Convert.ToInt16(f2.varf2_codigo);
-            //    this.txtNombreCliente.Text = f2.varf2_nombre;
-            //    this.txtCodigoCliente.Text = CodigoCliente.ToString();
-            //}
+            if (res == DialogResult.OK)
+            {
+                CodigoCliente = Convert.ToInt16(f2.ReturnValue1);
+                this.txtNombreCliente.Text = f2.ReturnValue2;
+                this.txtCodigoCliente.Text = CodigoCliente.ToString();
+            }
         }
 
         private void actualizarDatosFactura()
         {
-
-            objDatos.Consulta_llenar_datos("select cpp.numfac_fac as 'No. Fac.',cpp.fecha as 'Fecha Factura',cpp.monto as 'Monto',u.nombre as 'Usuario',cpp.ncf_ncf as 'NCF',tf.descri_fac as 'Tipo Factura',cpp.saldo_final as 'Balance',cpp.codsup_sup as 'Codigo Suplidor' from tipo_factura tf,usuario u,cuentas_por_pagar cpp where cpp.codtip_fac = tf.codtip_fac and cpp.codusuario = u.codigo_usu and cpp.saldo_final > 0 and cpp.codsup_sup = " + CodigoCliente.ToString() + "");
+            objDatos.Conectar();
+            objDatos.Consulta_llenar_datos("select cpp.numfac_fac as 'No. Fac.',cpp.fecha as 'Fecha Factura',cpp.monto as 'Monto',u.nombre as 'Usuario',cpp.ncf_ncf as 'NCF',tf.descri_fac as 'Tipo Factura',cpp.saldo_final as 'Balance',cpp.codigo_suplidor as 'Codigo Suplidor' from tipo_factura tf,usuarios u,cuentas_por_pagar cpp where cpp.codtip_fac = tf.codtip_fac and cpp.codigo_usuario = u.codigo_usuario and cpp.saldo_final > 0 and cpp.codigo_suplidor = " + CodigoCliente.ToString() + "");
             if (objDatos.ds.Tables[0].Rows.Count > 0)
             {
                 this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
@@ -55,7 +55,7 @@ namespace RentATruck.Procesos
                 chk.Name = "chk";
                 dataGridView1.Rows[0].Cells[8].Value = false;
                 this.dataGridView1.Columns[8].Width = 50;
-
+                objDatos.Desconectar();
 
                 for (int a = 0; a < this.dataGridView1.Rows.Count; a++)
                 {
@@ -71,17 +71,19 @@ namespace RentATruck.Procesos
 
         private void cmdConsultarCuentas_Click(object sender, EventArgs e)
         {
-            this.objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codsup_sup = " + CodigoCliente.ToString());
+            objDatos.Conectar();
+            this.objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codigo_suplidor = " + CodigoCliente.ToString());
             saldo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
             this.txtSaldo.Text = saldo.ToString("C");
             actualizarDatosFactura();
+            objDatos.Desconectar();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns[8].Index)
             {
-                dataGridView1.EndEdit();  //Stop editing of cell.                             
+                dataGridView1.EndEdit();
             }
         }
 
@@ -101,77 +103,86 @@ namespace RentATruck.Procesos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //int rows = dataGridView1.RowCount;
-            //for (int i = 0; i < rows; i++)
-            //{
-            //    string sql = "select cpp.codigo_cpp from cuentas_por_pagar cpp where cpp.numfac_fac = '" + dataGridView1.Rows[i].Cells[0].Value + "'";
-            //    string referecnia = "select referecnia from cuentas_por_pagar cpp where cpp.numfac_fac = '" + dataGridView1.Rows[i].Cells[0].Value + "'";
-            //    Int32 codigoCpC = 0; objDatos.Consulta_llenar_datos(sql); objDatos3.Consulta_llenar_datos(referecnia); codigoCpC = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][0].ToString());
+            int rows = dataGridView1.RowCount;
+            for (int i = 0; i < rows; i++)
+            {
+                objDatos.Conectar();
+                objDatos3.Conectar();
+                string sql = "select cpp.codigo_cpp from cuentas_por_pagar cpp where cpp.numfac_fac = '" + dataGridView1.Rows[i].Cells[0].Value + "'";
+                string referecnia = "select referecnia from cuentas_por_pagar cpp where cpp.numfac_fac = '" + dataGridView1.Rows[i].Cells[0].Value + "'";
+                Int32 codigoCpC = 0; objDatos.Consulta_llenar_datos(sql); objDatos3.Consulta_llenar_datos(referecnia); codigoCpC = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][0].ToString());
 
-            //    objDatos.Consulta_llenar_datos("insert into cuenta_por_pagar_temporal values ('" + dataGridView1.Rows[i].Cells[0].Value + "','" + dataGridView1.Rows[i].Cells[1].Value + "'," + dataGridView1.Rows[i].Cells[2].Value + ",'" + dataGridView1.Rows[i].Cells[3].Value + "','" + dataGridView1.Rows[i].Cells[4].Value + "','" + dataGridView1.Rows[i].Cells[5].Value + "'," + dataGridView1.Rows[i].Cells[6].Value + "," + dataGridView1.Rows[i].Cells[7].Value + ",'" + dataGridView1.Rows[i].Cells[8].Value + "'," + codigoCpC.ToString() + ",'" + objDatos3.ds.Tables[0].Rows[0][0].ToString() + "')");
-            //}
+                objDatos.Consulta_llenar_datos("insert into cuenta_por_pagar_temporal values ('" + dataGridView1.Rows[i].Cells[0].Value + "','" + dataGridView1.Rows[i].Cells[1].Value + "'," + dataGridView1.Rows[i].Cells[2].Value + ",'" + dataGridView1.Rows[i].Cells[3].Value + "','" + dataGridView1.Rows[i].Cells[4].Value + "','" + dataGridView1.Rows[i].Cells[5].Value + "'," + dataGridView1.Rows[i].Cells[6].Value + "," + dataGridView1.Rows[i].Cells[7].Value + ",'" + dataGridView1.Rows[i].Cells[8].Value + "'," + codigoCpC.ToString() + ",'" + objDatos3.ds.Tables[0].Rows[0][0].ToString() + "')");
+                objDatos.Desconectar();
+                objDatos3.Desconectar();
+            }
 
-            ////Buscar cantidad de facturas marcadas
-            //objDatos.Consulta_llenar_datos("select count(numfac_fac) from cuenta_por_pagar_temporal where saldar = 1");
-            //int cantFacturas = 0;
-            //cantFacturas = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][0].ToString());
+            //Buscar cantidad de facturas marcadas
+            objDatos.Consulta_llenar_datos("select count(numfac_fac) from cuenta_por_pagar_temporal where saldar = 1");
+            int cantFacturas = 0;
+            cantFacturas = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][0].ToString());
 
-            //objDatos.Consulta_llenar_datos("insert into registro_abonos_cpp values (" + this.txtCodigoCxC.Text + "," + this.txtCodigoCliente.Text + "," + this.txtFecha.Text + ")");
-            //datos objDatos2 = new datos();
-
-
+            objDatos.Consulta_llenar_datos("insert into registro_abonos_cpp values (" + this.txtCodigoCxC.Text + "," + this.txtCodigoCliente.Text + "," + this.txtFecha.Text + ")");
+            datos objDatos2 = new datos();
 
 
-            //for (int n = 0; n < cantFacturas; n++)
-            //{
-            //    objDatos2.Consulta_llenar_datos("select * from cuenta_por_pagar_temporal where saldar = 1");
-            //    Int32 codigoCXC = Convert.ToInt32(objDatos2.ds.Tables[0].Rows[n][9].ToString());
-            //    DateTime fecha = Convert.ToDateTime(objDatos2.ds.Tables[0].Rows[n][1].ToString());
-            //    string numfac_fac = objDatos2.ds.Tables[0].Rows[n][0].ToString();
-            //    double credito = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
-            //    double monto = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
-            //    double debito = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
-            //    double saldo_final = 0.0;
-            //    int codigocliente = Convert.ToInt16(objDatos2.ds.Tables[0].Rows[n][7].ToString());
-            //    string ncf = objDatos2.ds.Tables[0].Rows[n][4].ToString();
-            //    string referencia = objDatos2.ds.Tables[0].Rows[n][10].ToString();
 
-            //    string sql = "actualiza_cuentas_por_pagar " + codigoCXC.ToString() + ",'" + fecha.ToShortDateString() + "','" + numfac_fac.ToString() + "'," + credito.ToString() + "," + monto.ToString() + "," + debito.ToString() + "," + saldo_final.ToString() + "," + this.cmbTipoPago.SelectedValue.ToString() + "," + this.txtCodigoCliente.Text + "," + codigocliente.ToString() + ",'" + ncf.ToString() + "','" + referencia.ToString() + "'";
-            //    objDatos2.Consulta_llenar_datos(sql);
 
-            //    string sql2 = "insert into registro_detalles_abonos_cpp values (" + this.txtCodigoCxC.Text + ",'" + numfac_fac.ToString() + "'," + monto.ToString() + ")";
-            //    objDatos2.Consulta_llenar_datos(sql2);
-            //}
+            for (int n = 0; n < cantFacturas; n++)
+            {
+                objDatos2.Conectar();
+                objDatos2.Consulta_llenar_datos("select * from cuenta_por_pagar_temporal where saldar = 1");
+                Int32 codigoCXC = Convert.ToInt32(objDatos2.ds.Tables[0].Rows[n][9].ToString());
+                DateTime fecha = Convert.ToDateTime(objDatos2.ds.Tables[0].Rows[n][1].ToString());
+                string numfac_fac = objDatos2.ds.Tables[0].Rows[n][0].ToString();
+                double credito = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
+                double monto = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
+                double debito = Convert.ToDouble(objDatos2.ds.Tables[0].Rows[n][2].ToString());
+                double saldo_final = 0.0;
+                int codigocliente = Convert.ToInt16(objDatos2.ds.Tables[0].Rows[n][7].ToString());
+                string ncf = objDatos2.ds.Tables[0].Rows[n][4].ToString();
+                string referencia = objDatos2.ds.Tables[0].Rows[n][10].ToString();
 
-            //MessageBox.Show("Proceso concluido");
-            //DialogResult dialogResult = MessageBox.Show("Desea Imprimir el recibo?", "", MessageBoxButtons.YesNo);
-            //if (dialogResult == DialogResult.Yes)
-            //{
-            //    try
-            //    {
-            //        Form frmImprimirRecibo = new Recibos.ReciboCpP(CodigoCxP);
-            //        frmImprimirRecibo.Show();
-            //    }
-            //    catch (SystemException ex)
-            //    {
-            //        MessageBox.Show("No se encuentra la factura actual");
-            //    }
-            //}
-            //else if (dialogResult == DialogResult.No)
-            //{
-            //    this.Close();
-            //}
-            //objDatos.Consulta_llenar_datos("truncate table cuenta_por_pagar_temporal");
+                string sql = "actualiza_cuentas_por_pagar " + codigoCXC.ToString() + ",'" + fecha.ToShortDateString() + "','" + numfac_fac.ToString() + "'," + credito.ToString() + "," + monto.ToString() + "," + debito.ToString() + "," + saldo_final.ToString() + "," + this.cmbTipoPago.SelectedValue.ToString() + "," + this.txtCodigoCliente.Text + "," + codigocliente.ToString() + ",'" + ncf.ToString() + "','" + referencia.ToString() + "'";
+                objDatos2.Consulta_llenar_datos(sql);
+
+                string sql2 = "insert into registro_detalles_abonos_cpp values (" + this.txtCodigoCxC.Text + ",'" + numfac_fac.ToString() + "'," + monto.ToString() + ")";
+                objDatos2.Consulta_llenar_datos(sql2);
+                objDatos2.Desconectar();
+            }
+
+            MessageBox.Show("Proceso concluido");
+            DialogResult dialogResult = MessageBox.Show("Desea Imprimir el recibo?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    //Form frmImprimirRecibo = new Recibos.ReciboCpP(CodigoCxP);
+                    //frmImprimirRecibo.Show();
+                }
+                catch (SystemException ex)
+                {
+                    MessageBox.Show("No se encuentra la factura actual");
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                this.Close();
+            }
+            objDatos.Consulta_llenar_datos("truncate table cuenta_por_pagar_temporal");
         }
 
         private void proCuentasXPagar_FormClosing(object sender, FormClosingEventArgs e)
         {
+            objDatos.Conectar();
             objDatos.Consulta_llenar_datos("truncate table cuenta_por_pagar_temporal");
+            objDatos.Desconectar();
         }
 
         private void proCuentasXPagar_Load(object sender, EventArgs e)
         {
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+            objDatos.Conectar();
             objDatos.consultar("SELECT codigo_cpp from ", "cuentas_por_pagar");
             if (objDatos.ds.Tables[0].Rows.Count > 0)
             {
@@ -183,6 +194,7 @@ namespace RentATruck.Procesos
             this.cmbTipoPago.DataSource = objDatos.ConsultaTabla("tipo_pagos", " descri_tpa");
             this.cmbTipoPago.DisplayMember = "descri_tpa";
             this.cmbTipoPago.ValueMember = "codigo_tpa";
+            objDatos.Desconectar();
         }
 
         public proCuentasXPagar()
