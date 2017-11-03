@@ -51,14 +51,23 @@ namespace RentATruck.Procesos
         {
             if (txtCodigoSuplidor.Text != "")
             {
-                objDatos.Conectar();
-                objDatos.Consulta_llenar_datos("insert into cuentas_por_pagar values ('" + txtFecha.Text + "','" + txtNumeroFactura.Text + "'," + txtMontoFactura.Text + "," + txtMontoFactura.Text + ",0," + this.txtMontoFactura.Text + "," + cmbTipoPago.SelectedValue.ToString() + "," + txtUsuario.Text + "," + txtCodigoSuplidor.Text + ",'" + txtNCF.Text + "','" + txtConceptp.Text + "')");
-                MessageBox.Show("Cuenta por Pagar Generada");
-                objDatos.Desconectar();
+                if (this.txtMontoFactura.Text != "" && txtNumeroFactura.Text != "" && this.txtNCF.Text != "")
+                {
+                    objDatos.Conectar();
+                    objDatos.Consulta_llenar_datos("insert into cuentas_por_pagar values ('" + txtFecha.Text + "','" + txtNumeroFactura.Text + "'," + txtMontoFactura.Text + "," + txtMontoFactura.Text + ",0," + this.txtMontoFactura.Text + "," + cmbTipoPago.SelectedValue.ToString() + "," + txtUsuario.Text + "," + txtCodigoSuplidor.Text + ",'" + txtNCF.Text + "','" + txtConceptp.Text + "','False')");
+                    MessageBox.Show("Cuenta por Pagar Generada");
+                    objDatos.Desconectar();
+                }
+                else
+                {
+                    MessageBox.Show("Existen campos obligatorios necesarios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+
             }
             else
             {
-                MessageBox.Show("Seleccione un suplidor");
+                MessageBox.Show("Seleccione un suplidor", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

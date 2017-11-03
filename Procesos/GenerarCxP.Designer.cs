@@ -28,25 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
-            this.cmdProcesar = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCodigoSuplidor = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMontoFactura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombreSuplidor = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
-            this.cmdBuscarCodCli = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,6 +54,9 @@
             this.txtConceptp = new System.Windows.Forms.TextBox();
             this.txtCodigoCxP = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmdProcesar = new System.Windows.Forms.Button();
+            this.cmdBuscarCodCli = new System.Windows.Forms.Button();
+            this.txtMontoFactura = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,18 +81,6 @@
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(144, 21);
             this.cmbTipoPago.TabIndex = 88;
-            // 
-            // cmdProcesar
-            // 
-            this.cmdProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmdProcesar.Location = new System.Drawing.Point(290, 67);
-            this.cmdProcesar.Name = "cmdProcesar";
-            this.cmdProcesar.Size = new System.Drawing.Size(112, 30);
-            this.cmdProcesar.TabIndex = 29;
-            this.cmdProcesar.Text = "Procesar";
-            this.cmdProcesar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdProcesar.UseVisualStyleBackColor = true;
-            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 
             // txtUsuario
             // 
@@ -144,15 +132,6 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha:";
-            // 
-            // txtMontoFactura
-            // 
-            this.txtMontoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoFactura.Location = new System.Drawing.Point(70, 72);
-            this.txtMontoFactura.Name = "txtMontoFactura";
-            this.txtMontoFactura.Size = new System.Drawing.Size(100, 23);
-            this.txtMontoFactura.TabIndex = 29;
-            this.txtMontoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -212,44 +191,32 @@
             this.txtNumeroFactura.TabIndex = 27;
             this.txtNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // cmdBuscarCodCli
-            // 
-            this.cmdBuscarCodCli.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmdBuscarCodCli.Location = new System.Drawing.Point(176, 67);
-            this.cmdBuscarCodCli.Name = "cmdBuscarCodCli";
-            this.cmdBuscarCodCli.Size = new System.Drawing.Size(112, 30);
-            this.cmdBuscarCodCli.TabIndex = 24;
-            this.cmdBuscarCodCli.Text = "Buscar Suplidor";
-            this.cmdBuscarCodCli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
-            this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.Location = new System.Drawing.Point(12, 244);
             this.dataGridView1.MultiSelect = false;
@@ -368,6 +335,41 @@
             this.panel1.Size = new System.Drawing.Size(408, 110);
             this.panel1.TabIndex = 87;
             // 
+            // cmdProcesar
+            // 
+            this.cmdProcesar.Image = global::RentATruck.Properties.Resources.exec;
+            this.cmdProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmdProcesar.Location = new System.Drawing.Point(290, 67);
+            this.cmdProcesar.Name = "cmdProcesar";
+            this.cmdProcesar.Size = new System.Drawing.Size(112, 30);
+            this.cmdProcesar.TabIndex = 29;
+            this.cmdProcesar.Text = "Procesar";
+            this.cmdProcesar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdProcesar.UseVisualStyleBackColor = true;
+            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
+            // 
+            // cmdBuscarCodCli
+            // 
+            this.cmdBuscarCodCli.Image = global::RentATruck.Properties.Resources.system_search;
+            this.cmdBuscarCodCli.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmdBuscarCodCli.Location = new System.Drawing.Point(176, 67);
+            this.cmdBuscarCodCli.Name = "cmdBuscarCodCli";
+            this.cmdBuscarCodCli.Size = new System.Drawing.Size(112, 30);
+            this.cmdBuscarCodCli.TabIndex = 24;
+            this.cmdBuscarCodCli.Text = "Buscar Suplidor";
+            this.cmdBuscarCodCli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
+            this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
+            // 
+            // txtMontoFactura
+            // 
+            this.txtMontoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoFactura.Location = new System.Drawing.Point(70, 72);
+            this.txtMontoFactura.Name = "txtMontoFactura";
+            this.txtMontoFactura.Size = new System.Drawing.Size(100, 23);
+            this.txtMontoFactura.TabIndex = 29;
+            this.txtMontoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // GenerarCxP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +380,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "GenerarCxP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GenerarCxP";
@@ -403,7 +406,6 @@
         private System.Windows.Forms.TextBox txtCodigoSuplidor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMontoFactura;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombreSuplidor;
         private System.Windows.Forms.TextBox txtFecha;
@@ -421,5 +423,6 @@
         private System.Windows.Forms.TextBox txtConceptp;
         private System.Windows.Forms.TextBox txtCodigoCxP;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtMontoFactura;
     }
 }
