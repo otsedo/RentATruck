@@ -44,7 +44,7 @@ class datos
     public void Conectar()
     {
         Cn = new SqlConnection(Cadena);
-        //Cn.Open();
+        Cn.Open();
     }
 
     public void Desconectar()

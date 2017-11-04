@@ -14,9 +14,11 @@ namespace RentATruck.Procesos
     {
         int CodigoCxP, CodigoSuplidor;
         datos objDatos = new datos();
+        private static GenerarCxP cxpInstancia = null;
 
         private void GenerarCxP_Load(object sender, EventArgs e)
         {
+            proximoCodigoCxP();
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
             objDatos.Conectar();
             this.cmbTipoPago.DataSource = objDatos.ConsultaTabla("tipo_pagos", " descri_tpa");
@@ -24,14 +26,18 @@ namespace RentATruck.Procesos
             this.cmbTipoPago.ValueMember = "codigo_tpa";
 
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
-            objDatos.consultar("SELECT codigo_cpp from ", "numero_cpp");
-            if (objDatos.ds.Tables[0].Rows.Count > 0)
-            {
-                CodigoCxP = Convert.ToInt32(objDatos.ds.Tables["numero_cpp"].Rows[0][0].ToString()) + 1;
-                this.txtCodigoCxP.Text = CodigoCxP.ToString();
-            }
-            else { CodigoCxP = 1; this.txtCodigoCxP.Text = CodigoCxP.ToString(); }
+
             objDatos.Desconectar();
+        }
+
+        public static GenerarCxP InstanciaCxP()
+        {
+            if ((cxpInstancia == null) || (cxpInstancia.IsDisposed == true))
+            {
+                cxpInstancia = new GenerarCxP();
+            }
+            cxpInstancia.BringToFront();
+            return cxpInstancia;
         }
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
@@ -57,6 +63,14 @@ namespace RentATruck.Procesos
                     objDatos.Consulta_llenar_datos("insert into cuentas_por_pagar values ('" + txtFecha.Text + "','" + txtNumeroFactura.Text + "'," + txtMontoFactura.Text + "," + txtMontoFactura.Text + ",0," + this.txtMontoFactura.Text + "," + cmbTipoPago.SelectedValue.ToString() + "," + txtUsuario.Text + "," + txtCodigoSuplidor.Text + ",'" + txtNCF.Text + "','" + txtConceptp.Text + "','False')");
                     MessageBox.Show("Cuenta por Pagar Generada");
                     objDatos.Desconectar();
+                    proximoCodigoCxP();
+                    this.txtCodigoSuplidor.Text = "";
+                    this.txtNombreSuplidor.Text = "";
+                    this.txtConceptp.Text = "";
+                    this.txtNCF.Text = "";
+                    this.txtMontoFactura.Text = "";
+                    this.txtNumeroFactura.Text = "";
+                    this.txtUsuario.Text = "";
                 }
                 else
                 {
@@ -69,6 +83,19 @@ namespace RentATruck.Procesos
             {
                 MessageBox.Show("Seleccione un suplidor", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void proximoCodigoCxP()
+        {
+            objDatos.Conectar();
+            objDatos.consultar("SELECT codigo_cpp from ", "numero_cpp");
+            if (objDatos.ds.Tables[0].Rows.Count > 0)
+            {
+                CodigoCxP = Convert.ToInt32(objDatos.ds.Tables["numero_cpp"].Rows[0][0].ToString()) + 1;
+                this.txtCodigoCxP.Text = CodigoCxP.ToString();
+            }
+            else { CodigoCxP = 1; this.txtCodigoCxP.Text = CodigoCxP.ToString(); }
+            objDatos.Desconectar();
         }
 
         public GenerarCxP()

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -48,15 +48,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtNCF = new System.Windows.Forms.TextBox();
+            this.txtMontoFactura = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtConceptp = new System.Windows.Forms.TextBox();
-            this.txtCodigoCxP = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.cmdBuscarCodCli = new System.Windows.Forms.Button();
-            this.txtMontoFactura = new System.Windows.Forms.TextBox();
+            this.txtCodigoCxP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             this.cmbTipoPago.Location = new System.Drawing.Point(228, 28);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(144, 21);
-            this.cmbTipoPago.TabIndex = 88;
+            this.cmbTipoPago.TabIndex = 3;
             // 
             // txtUsuario
             // 
@@ -188,7 +188,7 @@
             this.txtNumeroFactura.Location = new System.Drawing.Point(70, 26);
             this.txtNumeroFactura.Name = "txtNumeroFactura";
             this.txtNumeroFactura.Size = new System.Drawing.Size(100, 23);
-            this.txtNumeroFactura.TabIndex = 27;
+            this.txtNumeroFactura.TabIndex = 0;
             this.txtNumeroFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataGridView1
@@ -197,26 +197,26 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView1.Location = new System.Drawing.Point(12, 244);
             this.dataGridView1.MultiSelect = false;
@@ -264,8 +264,17 @@
             this.txtNCF.MaxLength = 19;
             this.txtNCF.Name = "txtNCF";
             this.txtNCF.Size = new System.Drawing.Size(144, 23);
-            this.txtNCF.TabIndex = 91;
+            this.txtNCF.TabIndex = 2;
             this.txtNCF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMontoFactura
+            // 
+            this.txtMontoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoFactura.Location = new System.Drawing.Point(70, 72);
+            this.txtMontoFactura.Name = "txtMontoFactura";
+            this.txtMontoFactura.Size = new System.Drawing.Size(100, 23);
+            this.txtMontoFactura.TabIndex = 1;
+            this.txtMontoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -304,16 +313,6 @@
             this.txtConceptp.Name = "txtConceptp";
             this.txtConceptp.Size = new System.Drawing.Size(402, 182);
             this.txtConceptp.TabIndex = 0;
-            // 
-            // txtCodigoCxP
-            // 
-            this.txtCodigoCxP.Enabled = false;
-            this.txtCodigoCxP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoCxP.Location = new System.Drawing.Point(272, 6);
-            this.txtCodigoCxP.Name = "txtCodigoCxP";
-            this.txtCodigoCxP.Size = new System.Drawing.Size(100, 23);
-            this.txtCodigoCxP.TabIndex = 3;
-            this.txtCodigoCxP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -361,14 +360,15 @@
             this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
             this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
             // 
-            // txtMontoFactura
+            // txtCodigoCxP
             // 
-            this.txtMontoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoFactura.Location = new System.Drawing.Point(70, 72);
-            this.txtMontoFactura.Name = "txtMontoFactura";
-            this.txtMontoFactura.Size = new System.Drawing.Size(100, 23);
-            this.txtMontoFactura.TabIndex = 29;
-            this.txtMontoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodigoCxP.Enabled = false;
+            this.txtCodigoCxP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCxP.Location = new System.Drawing.Point(272, 6);
+            this.txtCodigoCxP.Name = "txtCodigoCxP";
+            this.txtCodigoCxP.Size = new System.Drawing.Size(100, 23);
+            this.txtCodigoCxP.TabIndex = 3;
+            this.txtCodigoCxP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GenerarCxP
             // 
@@ -421,8 +421,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtConceptp;
-        private System.Windows.Forms.TextBox txtCodigoCxP;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtMontoFactura;
+        private System.Windows.Forms.TextBox txtCodigoCxP;
     }
 }

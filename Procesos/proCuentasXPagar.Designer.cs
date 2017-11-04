@@ -63,7 +63,7 @@
             // 
             this.button1.Image = global::RentATruck.Properties.Resources.currency_dollar_red1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(667, 496);
+            this.button1.Location = new System.Drawing.Point(687, 436);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 33);
             this.button1.TabIndex = 91;
@@ -280,7 +280,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(790, 329);
+            this.dataGridView1.Size = new System.Drawing.Size(809, 269);
             this.dataGridView1.TabIndex = 90;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -297,7 +297,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(424, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(376, 110);
+            this.panel2.Size = new System.Drawing.Size(395, 110);
             this.panel2.TabIndex = 89;
             // 
             // button2
@@ -339,17 +339,17 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(811, 38);
+            this.textBox1.Size = new System.Drawing.Size(831, 38);
             this.textBox1.TabIndex = 92;
             this.textBox1.TabStop = false;
-            this.textBox1.Text = "Cuentas por Pagar";
+            this.textBox1.Text = "Abonos a Cuentas por Pagar";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // proCuentasXPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 534);
+            this.ClientSize = new System.Drawing.Size(831, 486);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

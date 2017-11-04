@@ -163,5 +163,22 @@ namespace RentATruck.Formularios
             F_mantSuplidores.MdiParent = this;
             F_mantSuplidores.Show();
         }
+
+        private void crearCuentasPorPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.GenerarCxP F_CxP = new Procesos.GenerarCxP();
+            F_CxP = Procesos.GenerarCxP.InstanciaCxP();
+            F_CxP.MdiParent = this;
+            F_CxP.Show();
+        }
+
+        private void cuentasPorPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.proCuentasXPagar F_AbonoCxP = new Procesos.proCuentasXPagar();
+            F_AbonoCxP = Procesos.proCuentasXPagar.InstanciaAbonarCxP();
+            F_AbonoCxP.MdiParent = this;
+            F_AbonoCxP.Show();
+
+        }
     }
 }

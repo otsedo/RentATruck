@@ -327,7 +327,7 @@ namespace RentATruck.Procesos
 
                     desabilitarNCF();
                     obDatos.Conectar();
-                    obDatos.Consulta_llenar_datos("insert into cuentas_por_cobrar values ('" + txtFecha.Text + "'," + numeroFactura.ToString() + "," + total.ToString() + "," + total.ToString() + ",0," + total.ToString() + ")");
+                    obDatos.Consulta_llenar_datos("insert into cuentas_por_cobrar values ('" + txtFecha.Text + "'," + numeroFactura.ToString() + "," + total.ToString() + "," + total.ToString() + ",0," + total.ToString() + ",'False')");
                     MessageBox.Show("Cuenta por cobrar generada");
                     obDatos.Desconectar();
                 }

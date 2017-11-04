@@ -15,6 +15,7 @@ namespace RentATruck.Mantenimientos
     public partial class mantCamiones : Form
     {
         datos objDatos = new datos();
+        datos objDatosImg = new datos();
         string activo = "";
         DataView miFiltro;
         public static int codigo_marca;
@@ -41,14 +42,14 @@ namespace RentATruck.Mantenimientos
             this.cmdEliminar.Enabled = false;
             this.AcceptButton = this.cmdGuardar;
             this.CancelButton = cmdCancelar;
-            try
-            {
-                cargarMarcas();
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            //try
+            //{
+            cargarMarcas();
+            //}
+            //catch (System.Data.SqlClient.SqlException ex)
+            //{
+            //    MessageBox.Show(ex.Message.ToString());
+            //}
         }
 
         public virtual void cargarMarcas()
@@ -70,6 +71,7 @@ namespace RentATruck.Mantenimientos
 
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
+            objDatos.Desconectar();
 
             this.dataGridView1.Columns[0].Width = 50;
             this.dataGridView1.Columns[0].HeaderText = "ID";
@@ -113,7 +115,7 @@ namespace RentATruck.Mantenimientos
             }
 
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            objDatos.Conectar();
             this.cbmMarca.DataSource = objDatos.ConsultaTabla("marca_articulos", " order by descripcion asc");
             this.cbmMarca.DisplayMember = "descripcion";
             this.cbmMarca.ValueMember = "codigo_marca";
@@ -424,6 +426,9 @@ namespace RentATruck.Mantenimientos
                     objDatos.Cn.Close();
             }
         }
+
+
+
 
         private void estado_CheckedChanged(object sender, EventArgs e)
         {

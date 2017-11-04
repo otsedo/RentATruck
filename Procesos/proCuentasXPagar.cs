@@ -16,6 +16,7 @@ namespace RentATruck.Procesos
         private datos objDatos3 = new datos();
         private datos objDatos = new datos();
         private datos objDatos2 = new datos();
+        private static proCuentasXPagar abonocxpInstancia = null;
         DataView miFiltro;
         double apagar, saldo;
 
@@ -32,6 +33,16 @@ namespace RentATruck.Procesos
             }
         }
 
+        public static proCuentasXPagar InstanciaAbonarCxP()
+        {
+            if ((abonocxpInstancia == null) || (abonocxpInstancia.IsDisposed == true))
+            {
+                abonocxpInstancia = new proCuentasXPagar();
+            }
+            abonocxpInstancia.BringToFront();
+            return abonocxpInstancia;
+        }
+
         private void actualizarDatosFactura()
         {
             objDatos.Conectar();
@@ -41,9 +52,9 @@ namespace RentATruck.Procesos
                 int nSaldar = ((int)objDatos.ds.Tables[0].Rows.Count) - 1;
                 this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
                 this.dataGridView1.DataSource = miFiltro;
-                this.dataGridView1.Columns[0].Width = 40;
-                this.dataGridView1.Columns[1].Width = 40;
-                this.dataGridView1.Columns[2].Width = 101;
+                this.dataGridView1.Columns[0].Width = 60;
+                this.dataGridView1.Columns[1].Width = 60;
+                this.dataGridView1.Columns[2].Width = 80;
                 this.dataGridView1.Columns[3].Width = 70;
                 this.dataGridView1.Columns[4].Width = 95;
                 this.dataGridView1.Columns[5].Width = 139;
@@ -150,26 +161,8 @@ namespace RentATruck.Procesos
                 }
 
                 MessageBox.Show("Proceso concluido");
-                DialogResult dialogResult = MessageBox.Show("Desea Imprimir el recibo?", "", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    try
-                    {
-                        //Form frmImprimirRecibo = new Recibos.ReciboCpP(CodigoCxP);
-                        //frmImprimirRecibo.Show();
-                        MessageBox.Show("imprimir");
-                        limpiarPantall();
-                    }
-                    catch (SystemException ex)
-                    {
-                        MessageBox.Show("No se encuentra la factura actual");
-                    }
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    limpiarPantall();
-                }
                 objDatos.Consulta_llenar_datos("truncate table cuenta_por_pagar_temporal");
+                limpiarPantall();
             }
             else
             {
