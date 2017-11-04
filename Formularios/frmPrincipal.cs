@@ -188,5 +188,13 @@ namespace RentATruck.Formularios
             F_cuadre.MdiParent = this;
             F_cuadre.Show();
         }
+
+        private void clientesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Reportes.Clientes.Form1 F_reporteClientes = new Reportes.Clientes.Form1();
+            F_reporteClientes = Reportes.Clientes.Form1.InstanciaReporteClientes();
+            F_reporteClientes.MdiParent = this;
+            F_reporteClientes.Show();
+        }
     }
 }
