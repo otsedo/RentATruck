@@ -162,6 +162,7 @@
             this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Codigo CxC";
+            this.label2.Visible = false;
             // 
             // txtAPagar
             // 
@@ -219,7 +220,9 @@
             this.txtCodigoCxC.Name = "txtCodigoCxC";
             this.txtCodigoCxC.Size = new System.Drawing.Size(100, 23);
             this.txtCodigoCxC.TabIndex = 3;
+            this.txtCodigoCxC.Text = "0";
             this.txtCodigoCxC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodigoCxC.Visible = false;
             // 
             // label8
             // 
@@ -354,7 +357,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "proCuentasXPagar";
-            this.Text = "proCuentasXPagar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.proCuentasXPagar_FormClosing);
             this.Load += new System.EventHandler(this.proCuentasXPagar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
