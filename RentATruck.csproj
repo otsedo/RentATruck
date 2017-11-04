@@ -196,6 +196,12 @@
     <Compile Include="Procesos\imprimirFacturas.Designer.cs">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\proCuadreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proCuadreCaja.Designer.cs">
+      <DependentUpon>proCuadreCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\proCuentasxCobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\imprimirFacturas.resx">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proCuadreCaja.resx">
+      <DependentUpon>proCuadreCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proCuentasxCobrar.resx">
       <DependentUpon>proCuentasxCobrar.cs</DependentUpon>

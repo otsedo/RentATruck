@@ -180,5 +180,13 @@ namespace RentATruck.Formularios
             F_AbonoCxP.Show();
 
         }
+
+        private void cuadreDeCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.proCuadreCaja F_cuadre = new Procesos.proCuadreCaja();
+            F_cuadre = Procesos.proCuadreCaja.InstanciaCuadre();
+            F_cuadre.MdiParent = this;
+            F_cuadre.Show();
+        }
     }
 }

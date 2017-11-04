@@ -51,3 +51,4 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaSuplidores.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proCuentasXCobrar.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.GenerarCxP.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proCuadreCaja.resources
