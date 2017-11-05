@@ -339,6 +339,7 @@
             this.nCFDisponiblesToolStripMenuItem.Name = "nCFDisponiblesToolStripMenuItem";
             this.nCFDisponiblesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.nCFDisponiblesToolStripMenuItem.Text = "NCF Disponibles";
+            this.nCFDisponiblesToolStripMenuItem.Click += new System.EventHandler(this.nCFDisponiblesToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 

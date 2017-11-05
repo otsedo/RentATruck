@@ -204,5 +204,13 @@ namespace RentATruck.Formularios
             F_ReimpresionFacturas.MdiParent = this;
             F_ReimpresionFacturas.Show();
         }
+
+        private void nCFDisponiblesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.NCF.Form1 F_NCFActivos = new Reportes.NCF.Form1();
+            F_NCFActivos = Reportes.NCF.Form1.InstanciaReporteNCFActivos();
+            F_NCFActivos.MdiParent = this;
+            F_NCFActivos.Show();
+        }
     }
 }

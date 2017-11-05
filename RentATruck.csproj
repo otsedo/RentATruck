@@ -240,6 +240,18 @@
       <DependentUpon>Facturas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\NCF\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\NCF\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\NCF\NCFActivos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NCFActivos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\ReimpresionFacturas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,6 +359,13 @@
     <EmbeddedResource Include="Reportes\Facturas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facturas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\NCF\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\NCF\NCFActivos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NCFActivos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReimpresionFacturas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

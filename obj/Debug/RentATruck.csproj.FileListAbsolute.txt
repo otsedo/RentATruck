@@ -54,3 +54,5 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\stdole.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReimpresionFacturas.Form1.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.NCF.Form1.resources
