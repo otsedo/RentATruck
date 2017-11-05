@@ -75,6 +75,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -391,7 +392,8 @@
             // administrarToolStripMenuItem
             // 
             this.administrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.backupDelSistemaToolStripMenuItem});
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.administrarToolStripMenuItem.Text = "Administrar";
@@ -399,7 +401,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -433,6 +435,13 @@
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
+            // 
+            // backupDelSistemaToolStripMenuItem
+            // 
+            this.backupDelSistemaToolStripMenuItem.Name = "backupDelSistemaToolStripMenuItem";
+            this.backupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.backupDelSistemaToolStripMenuItem.Text = "Backup del Sistema";
+            this.backupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.backupDelSistemaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -506,5 +515,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblEstado;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupDelSistemaToolStripMenuItem;
     }
 }

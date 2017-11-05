@@ -220,5 +220,13 @@ namespace RentATruck.Formularios
             F_RptSuplidores.MdiParent = this;
             F_RptSuplidores.Show();
         }
+
+        private void backupDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.proBackup F_backup = new Procesos.proBackup();
+            F_backup = Procesos.proBackup.InstanciaBackup();
+            F_backup.MdiParent = this;
+            F_backup.Show();
+        }
     }
 }

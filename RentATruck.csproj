@@ -196,6 +196,12 @@
     <Compile Include="Procesos\imprimirFacturas.Designer.cs">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\proBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proBackup.Designer.cs">
+      <DependentUpon>proBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\proCuadreCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     <EmbeddedResource Include="Procesos\imprimirFacturas.resx">
       <DependentUpon>imprimirFacturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proBackup.resx">
+      <DependentUpon>proBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proCuadreCaja.resx">
       <DependentUpon>proCuadreCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,6 +480,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\system_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_to_nas.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
