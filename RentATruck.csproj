@@ -258,6 +258,18 @@
     <Compile Include="Reportes\ReimpresionFacturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Suplodore\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Suplodore\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Suplodore\Suplidores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Suplidores.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
       <DependentUpon>busquedaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +381,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReimpresionFacturas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Suplodore\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Suplodore\Suplidores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Suplidores.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

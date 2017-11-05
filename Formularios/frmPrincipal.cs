@@ -212,5 +212,13 @@ namespace RentATruck.Formularios
             F_NCFActivos.MdiParent = this;
             F_NCFActivos.Show();
         }
+
+        private void suplidoresToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Reportes.Suplodore.Form1 F_RptSuplidores = new Reportes.Suplodore.Form1();
+            F_RptSuplidores = Reportes.Suplodore.Form1.InstanciaSuplidores();
+            F_RptSuplidores.MdiParent = this;
+            F_RptSuplidores.Show();
+        }
     }
 }

@@ -333,6 +333,7 @@
             this.suplidoresToolStripMenuItem2.Name = "suplidoresToolStripMenuItem2";
             this.suplidoresToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
             this.suplidoresToolStripMenuItem2.Text = "Suplidores";
+            this.suplidoresToolStripMenuItem2.Click += new System.EventHandler(this.suplidoresToolStripMenuItem2_Click);
             // 
             // nCFDisponiblesToolStripMenuItem
             // 
