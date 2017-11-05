@@ -16,8 +16,7 @@ namespace RentATruck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Reportes.Facturas.Form1());
-            //Application.Run(new Formularios.frmPrincipal());
+            Application.Run(new Reportes.ReimpresionFacturas.Form1());
         }
     }
 }

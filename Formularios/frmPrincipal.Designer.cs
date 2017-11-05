@@ -318,71 +318,72 @@
             // clientesToolStripMenuItem2
             // 
             this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
-            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // suplidoresToolStripMenuItem2
             // 
             this.suplidoresToolStripMenuItem2.Name = "suplidoresToolStripMenuItem2";
-            this.suplidoresToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.suplidoresToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
             this.suplidoresToolStripMenuItem2.Text = "Suplidores";
             // 
             // nCFDisponiblesToolStripMenuItem
             // 
             this.nCFDisponiblesToolStripMenuItem.Name = "nCFDisponiblesToolStripMenuItem";
-            this.nCFDisponiblesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.nCFDisponiblesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.nCFDisponiblesToolStripMenuItem.Text = "NCF Disponibles";
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(182, 6);
             // 
             // imprimirFacturasToolStripMenuItem
             // 
             this.imprimirFacturasToolStripMenuItem.Name = "imprimirFacturasToolStripMenuItem";
-            this.imprimirFacturasToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.imprimirFacturasToolStripMenuItem.Text = "Imprimir Facturas";
+            this.imprimirFacturasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.imprimirFacturasToolStripMenuItem.Text = "Re-Imprimir Facturas";
+            this.imprimirFacturasToolStripMenuItem.Click += new System.EventHandler(this.imprimirFacturasToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(182, 6);
             // 
             // cuentasPorCobrarToolStripMenuItem
             // 
             this.cuentasPorCobrarToolStripMenuItem.Name = "cuentasPorCobrarToolStripMenuItem";
-            this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cuentasPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar";
             // 
             // cuentasPorPagarToolStripMenuItem1
             // 
             this.cuentasPorPagarToolStripMenuItem1.Name = "cuentasPorPagarToolStripMenuItem1";
-            this.cuentasPorPagarToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.cuentasPorPagarToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.cuentasPorPagarToolStripMenuItem1.Text = "Cuentas por Pagar";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(174, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(182, 6);
             // 
             // recibosCxCToolStripMenuItem
             // 
             this.recibosCxCToolStripMenuItem.Name = "recibosCxCToolStripMenuItem";
-            this.recibosCxCToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.recibosCxCToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.recibosCxCToolStripMenuItem.Text = "Recibos CxC";
             // 
             // recibosCxPToolStripMenuItem
             // 
             this.recibosCxPToolStripMenuItem.Name = "recibosCxPToolStripMenuItem";
-            this.recibosCxPToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.recibosCxPToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.recibosCxPToolStripMenuItem.Text = "Recibos CxP";
             // 
             // administrarToolStripMenuItem

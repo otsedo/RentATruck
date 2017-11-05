@@ -240,10 +240,10 @@
       <DependentUpon>Facturas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Facturas\Form1.cs">
+    <Compile Include="Reportes\ReimpresionFacturas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Facturas\Form1.Designer.cs">
+    <Compile Include="Reportes\ReimpresionFacturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
@@ -348,7 +348,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Facturas.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Facturas\Form1.resx">
+    <EmbeddedResource Include="Reportes\ReimpresionFacturas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

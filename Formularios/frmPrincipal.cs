@@ -196,5 +196,13 @@ namespace RentATruck.Formularios
             F_reporteClientes.MdiParent = this;
             F_reporteClientes.Show();
         }
+
+        private void imprimirFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReimpresionFacturas.Form1 F_ReimpresionFacturas = new Reportes.ReimpresionFacturas.Form1();
+            F_ReimpresionFacturas = Reportes.ReimpresionFacturas.Form1.InstanciaReimpresionFActuras();
+            F_ReimpresionFacturas.MdiParent = this;
+            F_ReimpresionFacturas.Show();
+        }
     }
 }
