@@ -372,6 +372,7 @@
             this.cuentasPorPagarToolStripMenuItem1.Name = "cuentasPorPagarToolStripMenuItem1";
             this.cuentasPorPagarToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.cuentasPorPagarToolStripMenuItem1.Text = "Cuentas por Pagar";
+            this.cuentasPorPagarToolStripMenuItem1.Click += new System.EventHandler(this.cuentasPorPagarToolStripMenuItem1_Click);
             // 
             // toolStripSeparator9
             // 

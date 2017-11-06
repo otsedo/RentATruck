@@ -21,6 +21,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportApp
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\stdole.dll
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaClientes.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaServicios.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaSuplidores.resources
@@ -58,4 +59,4 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Suplod
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csproj.GenerateResource.Cache
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.CxP.Form1.resources
