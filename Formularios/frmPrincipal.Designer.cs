@@ -71,11 +71,11 @@
             this.recibosCxPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -365,6 +365,7 @@
             this.cuentasPorCobrarToolStripMenuItem.Name = "cuentasPorCobrarToolStripMenuItem";
             this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cuentasPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar";
+            this.cuentasPorCobrarToolStripMenuItem.Click += new System.EventHandler(this.cuentasPorCobrarToolStripMenuItem_Click);
             // 
             // cuentasPorPagarToolStripMenuItem1
             // 
@@ -405,6 +406,13 @@
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
+            // backupDelSistemaToolStripMenuItem
+            // 
+            this.backupDelSistemaToolStripMenuItem.Name = "backupDelSistemaToolStripMenuItem";
+            this.backupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.backupDelSistemaToolStripMenuItem.Text = "Backup del Sistema";
+            this.backupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.backupDelSistemaToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -435,13 +443,6 @@
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
-            // 
-            // backupDelSistemaToolStripMenuItem
-            // 
-            this.backupDelSistemaToolStripMenuItem.Name = "backupDelSistemaToolStripMenuItem";
-            this.backupDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.backupDelSistemaToolStripMenuItem.Text = "Backup del Sistema";
-            this.backupDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.backupDelSistemaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

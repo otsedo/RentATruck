@@ -228,5 +228,13 @@ namespace RentATruck.Formularios
             F_backup.MdiParent = this;
             F_backup.Show();
         }
+
+        private void cuentasPorCobrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.CxC.Form1 F_RCxC = new Reportes.CxC.Form1();
+            F_RCxC = Reportes.CxC.Form1.InstanciaReporteCxCs();
+            F_RCxC.MdiParent = this;
+            F_RCxC.Show();
+        }
     }
 }

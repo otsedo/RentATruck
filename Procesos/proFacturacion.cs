@@ -38,6 +38,38 @@ namespace RentATruck.Procesos
             }
         }
 
+        private void limpiarDatos()
+        {
+            txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+            txtHora.Text = DateTime.Now.ToShortTimeString().ToString();
+
+            obDatos.Conectar();
+            obDatos.consultar("SELECT COUNT(numfac_fac) from ", "facturas");
+            numeroFactura = Convert.ToInt32(obDatos.ds.Tables["facturas"].Rows[0][0].ToString()) + 1;
+            this.txtNumeroFactura.Text = (Convert.ToString(numeroFactura));
+            actualizarDatosFactura();
+
+            this.cmbTipoPago.DataSource = obDatos.ConsultaTabla("tipo_factura", " descri_fac");
+            this.cmbTipoPago.DisplayMember = "descri_fac";
+            this.cmbTipoPago.ValueMember = "codtip_fac";
+
+            this.cmbTipoNCF.DataSource = obDatos.ConsultaTabla("tipo_NCF", " descri_tncf");
+            this.cmbTipoNCF.DisplayMember = "descri_tncf";
+            this.cmbTipoNCF.ValueMember = "codigo_tncf";
+            this.cmbTipoNCF.SelectedIndex = 6;
+
+            string truncarTablaTemporal = ("truncate table facturatemporal");
+            obDatos.Consulta_llenar_datos(truncarTablaTemporal);
+            actualizarDatosFactura();
+            this.txtCodigoArticulo.Focus();
+            this.txtCodigoCliente.Text = "";
+            this.lblNombreCliente.Text = "";
+            this.txtNCF.Text = "";
+
+
+            obDatos.Desconectar();
+        }
+
         private void proFacturacion_Load(object sender, EventArgs e)
         {
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(KeyEvent);
@@ -318,6 +350,7 @@ namespace RentATruck.Procesos
                     Formularios.frmDevuelta fr = new Formularios.frmDevuelta(lblTotal.Text, total);
                     fr.Show();
                     MessageBox.Show("Proceso concluido");
+
                 }
                 if (tipoPago == 2)
                 {
@@ -329,6 +362,7 @@ namespace RentATruck.Procesos
                     obDatos.Conectar();
                     obDatos.Consulta_llenar_datos("insert into cuentas_por_cobrar values ('" + txtFecha.Text + "'," + numeroFactura.ToString() + "," + total.ToString() + "," + total.ToString() + ",0," + total.ToString() + ",'False')");
                     MessageBox.Show("Cuenta por cobrar generada");
+
                     obDatos.Desconectar();
                 }
                 if (tipoPago == 3)
@@ -341,8 +375,10 @@ namespace RentATruck.Procesos
                     Formularios.frmTarjetaCredito tc = new Formularios.frmTarjetaCredito(total, this.numeroFactura.ToString());
                     tc.ShowDialog();
                     MessageBox.Show("Proceso concluido");
+
                 }
                 this.cmdImprimirFactura.PerformClick();
+                limpiarDatos();
             }
         }
 
@@ -406,34 +442,7 @@ namespace RentATruck.Procesos
             respuestaLimpiar = MessageBox.Show("Desea limpiar todos los datos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuestaLimpiar == DialogResult.Yes)
             {
-                txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
-                txtHora.Text = DateTime.Now.ToShortTimeString().ToString();
-
-                obDatos.Conectar();
-                obDatos.consultar("SELECT COUNT(numfac_fac) from ", "facturas");
-                numeroFactura = Convert.ToInt32(obDatos.ds.Tables["facturas"].Rows[0][0].ToString()) + 1;
-                this.txtNumeroFactura.Text = (Convert.ToString(numeroFactura));
-                actualizarDatosFactura();
-
-                this.cmbTipoPago.DataSource = obDatos.ConsultaTabla("tipo_factura", " descri_fac");
-                this.cmbTipoPago.DisplayMember = "descri_fac";
-                this.cmbTipoPago.ValueMember = "codtip_fac";
-
-                this.cmbTipoNCF.DataSource = obDatos.ConsultaTabla("tipo_NCF", " descri_tncf");
-                this.cmbTipoNCF.DisplayMember = "descri_tncf";
-                this.cmbTipoNCF.ValueMember = "codigo_tncf";
-                this.cmbTipoNCF.SelectedIndex = 6;
-
-                string truncarTablaTemporal = ("truncate table facturatemporal");
-                obDatos.Consulta_llenar_datos(truncarTablaTemporal);
-                actualizarDatosFactura();
-                this.txtCodigoArticulo.Focus();
-                this.txtCodigoCliente.Text = "";
-                this.lblNombreCliente.Text = "";
-                this.txtNCF.Text = "";
-
-
-                obDatos.Desconectar();
+                limpiarDatos();
             }
         }
 
