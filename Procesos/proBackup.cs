@@ -43,7 +43,6 @@ namespace RentATruck.Procesos
             {
                 timer1.Stop();
 
-
                 string info = @"C:\RentATruck\backup.bat";
                 Process test = new Process();
                 test.StartInfo.FileName = info;
@@ -71,7 +70,8 @@ namespace RentATruck.Procesos
                 }
                 else
                 {
-                    MessageBox.Show("Backup Listo");
+                    MessageBox.Show("Backup Listo, se procedera a copiar los archivos");
+                    copiar();
                     //MessageBox.Show(result);
                 }
                 progressBar1.Value = 0;
@@ -79,6 +79,42 @@ namespace RentATruck.Procesos
                 timer1.Stop();
             }
         }
+
+        public void copiar()
+        {
+            progressBar1.Increment(1);
+            label1.Text = "Copiando Archivos de Backup  " + progressBar1.Value.ToString() + "%";
+            if (progressBar1.Value == progressBar1.Maximum)
+            {
+                timer1.Stop();
+                string Copiar = @"C:\RentATruck\Copiar.bat";
+                Process test2 = new Process();
+                test2.StartInfo.FileName = Copiar;
+                test2.StartInfo.UseShellExecute = false;
+                test2.StartInfo.RedirectStandardOutput = true;
+                test2.StartInfo.RedirectStandardError = true;
+                test2.Start();
+
+
+                string result = test2.StandardOutput.ReadToEnd();
+                string error = test2.StandardError.ReadToEnd();
+
+                test2.WaitForExit();
+                if (error != "")
+                {
+                    MessageBox.Show(error);
+                }
+                else
+                {
+                    MessageBox.Show("Proceso terminado");
+                    //MessageBox.Show(result);
+                }
+                progressBar1.Value = 0;
+                label1.Text = "";
+                timer1.Stop();
+            }
+        }
+
 
 
 
@@ -90,10 +126,6 @@ namespace RentATruck.Procesos
         private void button1_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-
-
-
-
         }
 
         private void proBackup_Load(object sender, EventArgs e)
@@ -104,6 +136,18 @@ namespace RentATruck.Procesos
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Abre folder en el explorer
+            Process.Start(@"C:\AnthonysRentATruckBackup");
+            // Abre folder en el explorer
+            //Process.Start("explorer.exe", @"C:\AnthonysRentATruckBackup");
+            //// lanza un error
+            //Process.Start(@"c:\");
+            //// opens explorer, showing some other folder)
+            //Process.Start("explorer.exe", @"c:\");
         }
     }
 }

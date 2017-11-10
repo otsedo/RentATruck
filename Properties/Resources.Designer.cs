@@ -203,6 +203,16 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_folder_118926 {
+            get {
+                object obj = ResourceManager.GetObject("if_folder_118926", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_InterfaceExpendet_13_592605__3_ {
             get {
                 object obj = ResourceManager.GetObject("if_InterfaceExpendet-13_592605 (3)", resourceCulture);
