@@ -48,7 +48,7 @@
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 268);
+            this.dataGridView1.Location = new System.Drawing.Point(44, 265);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(544, 241);
             this.dataGridView1.TabIndex = 97;
@@ -65,7 +65,7 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(616, 38);
+            this.textBox1.Size = new System.Drawing.Size(609, 38);
             this.textBox1.TabIndex = 96;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Mantenimiento de Servicios";
@@ -76,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(33, 60);
+            this.label2.Location = new System.Drawing.Point(46, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 20);
             this.label2.TabIndex = 95;
@@ -85,10 +85,10 @@
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(72, 96);
+            this.txtMarca.Location = new System.Drawing.Point(85, 93);
             this.txtMarca.MaxLength = 40;
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(479, 26);
+            this.txtMarca.Size = new System.Drawing.Size(503, 26);
             this.txtMarca.TabIndex = 88;
             this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
             // 
@@ -100,7 +100,7 @@
             this.cmdGuardar.ForeColor = System.Drawing.Color.SteelBlue;
             this.cmdGuardar.Image = global::RentATruck.Properties.Resources.if_floppy_disk_save_103863__1_;
             this.cmdGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdGuardar.Location = new System.Drawing.Point(31, 184);
+            this.cmdGuardar.Location = new System.Drawing.Point(44, 181);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(84, 78);
             this.cmdGuardar.TabIndex = 89;
@@ -114,11 +114,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(3, 96);
+            this.label1.Location = new System.Drawing.Point(2, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 90;
-            this.label1.Text = "Marca:";
+            this.label1.Text = "Servicio:";
             // 
             // cmdCancelar
             // 
@@ -128,7 +128,7 @@
             this.cmdCancelar.ForeColor = System.Drawing.Color.SteelBlue;
             this.cmdCancelar.Image = global::RentATruck.Properties.Resources.if_document_sans_cancel_103500;
             this.cmdCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdCancelar.Location = new System.Drawing.Point(252, 184);
+            this.cmdCancelar.Location = new System.Drawing.Point(265, 181);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(97, 78);
             this.cmdCancelar.TabIndex = 91;
@@ -147,7 +147,7 @@
             this.cmdEliminar.ForeColor = System.Drawing.Color.Red;
             this.cmdEliminar.Image = global::RentATruck.Properties.Resources.if_1_04_511562;
             this.cmdEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmdEliminar.Location = new System.Drawing.Point(491, 184);
+            this.cmdEliminar.Location = new System.Drawing.Point(504, 181);
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Size = new System.Drawing.Size(84, 78);
             this.cmdEliminar.TabIndex = 92;
@@ -159,7 +159,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(72, 57);
+            this.txtID.Location = new System.Drawing.Point(85, 54);
             this.txtID.MaxLength = 40;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(193, 26);
@@ -170,7 +170,7 @@
             this.cmdNuevo.BackColor = System.Drawing.Color.SteelBlue;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdNuevo.ForeColor = System.Drawing.Color.White;
-            this.cmdNuevo.Location = new System.Drawing.Point(271, 53);
+            this.cmdNuevo.Location = new System.Drawing.Point(284, 50);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(95, 35);
             this.cmdNuevo.TabIndex = 94;
@@ -185,7 +185,7 @@
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEstado.ForeColor = System.Drawing.Color.SteelBlue;
-            this.chkEstado.Location = new System.Drawing.Point(178, 130);
+            this.chkEstado.Location = new System.Drawing.Point(191, 127);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(77, 24);
             this.chkEstado.TabIndex = 100;
@@ -198,7 +198,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(2, 130);
+            this.label3.Location = new System.Drawing.Point(15, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 99;
@@ -207,7 +207,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(72, 127);
+            this.txtPrecio.Location = new System.Drawing.Point(85, 124);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 26);
             this.txtPrecio.TabIndex = 98;
@@ -217,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(616, 520);
+            this.ClientSize = new System.Drawing.Size(609, 520);
             this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPrecio);
