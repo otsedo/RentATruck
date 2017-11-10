@@ -16,8 +16,7 @@ namespace RentATruck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Reportes.CxP.Form1());
-            Application.Run(new Procesos.proCuadreCaja());
+            Application.Run(new Procesos.GenerarCxP());
         }
     }
 }

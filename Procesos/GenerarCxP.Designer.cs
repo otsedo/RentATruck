@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerarCxP));
             this.label10 = new System.Windows.Forms.Label();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -57,6 +58,7 @@
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.cmdBuscarCodCli = new System.Windows.Forms.Button();
             this.txtCodigoCxP = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -218,7 +220,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 244);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 281);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -252,7 +254,7 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtNumeroFactura);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(12, 128);
+            this.panel3.Location = new System.Drawing.Point(12, 165);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(408, 110);
             this.panel3.TabIndex = 89;
@@ -301,7 +303,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtConceptp);
-            this.panel2.Location = new System.Drawing.Point(426, 12);
+            this.panel2.Location = new System.Drawing.Point(426, 49);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(408, 226);
             this.panel2.TabIndex = 88;
@@ -329,7 +331,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtCodigoCxP);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 49);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(408, 110);
             this.panel1.TabIndex = 87;
@@ -370,20 +372,38 @@
             this.txtCodigoCxP.TabIndex = 3;
             this.txtCodigoCxP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.HideSelection = false;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(847, 38);
+            this.textBox1.TabIndex = 91;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Generar CxP";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // GenerarCxP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 448);
+            this.ClientSize = new System.Drawing.Size(847, 487);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GenerarCxP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GenerarCxP";
             this.Load += new System.EventHandler(this.GenerarCxP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -393,6 +413,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -424,5 +445,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtMontoFactura;
         private System.Windows.Forms.TextBox txtCodigoCxP;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

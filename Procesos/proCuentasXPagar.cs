@@ -78,6 +78,22 @@ namespace RentATruck.Procesos
             {
                 saldo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
             }
+            objDatos.Desconectar();
+
+
+            string sring = ("exec consultarCxP = " + CodigoCliente.ToString());
+            objDatos.Consulta_llenar_datos(sring);
+
+            this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
+            this.dataGridView1.DataSource = miFiltro;
+            objDatos.Desconectar();
+
+            this.dataGridView1.Columns[0].Width = 50;
+            this.dataGridView1.Columns[1].Width = 125;
+            this.dataGridView1.Columns[2].Width = 125;
+            this.dataGridView1.Columns[3].Width = 80;
+            this.dataGridView1.Columns[4].Width = 170;
+
 
             this.txtSaldo.Text = saldo.ToString("C");
             actualizarDatosFactura();

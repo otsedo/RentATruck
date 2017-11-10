@@ -15,6 +15,7 @@ namespace RentATruck.Procesos
         int CodigoCxP, CodigoSuplidor;
         datos objDatos = new datos();
         private static GenerarCxP cxpInstancia = null;
+        DataView miFiltro;
 
         private void GenerarCxP_Load(object sender, EventArgs e)
         {
@@ -24,10 +25,27 @@ namespace RentATruck.Procesos
             this.cmbTipoPago.DataSource = objDatos.ConsultaTabla("tipo_pagos", " descri_tpa");
             this.cmbTipoPago.DisplayMember = "descri_tpa";
             this.cmbTipoPago.ValueMember = "codigo_tpa";
-
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
-
             objDatos.Desconectar();
+        }
+
+        void actualizarGrid()
+        {
+            string sring = ("exec consultarCxP " + CodigoSuplidor.ToString());
+            objDatos.Consulta_llenar_datos(sring);
+
+            this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
+            this.dataGridView1.DataSource = miFiltro;
+            objDatos.Desconectar();
+
+            this.dataGridView1.Columns[0].Width = 50;
+            this.dataGridView1.Columns[1].Width = 250;
+            this.dataGridView1.Columns[2].Width = 100;
+            this.dataGridView1.Columns[3].Width = 80;
+            this.dataGridView1.Columns[4].Width = 80;
+            this.dataGridView1.Columns[5].Width = 256;
+            dataGridView1.Columns[4].DefaultCellStyle.Format = "c";
+            dataGridView1.Columns[2].DefaultCellStyle.Format = "dd-MM-yyyy";
         }
 
         public static GenerarCxP InstanciaCxP()
@@ -51,6 +69,8 @@ namespace RentATruck.Procesos
                 this.txtNombreSuplidor.Text = f2.ReturnValue2;
                 this.txtCodigoSuplidor.Text = CodigoSuplidor.ToString();
             }
+
+            actualizarGrid();
         }
 
         private void cmdProcesar_Click(object sender, EventArgs e)
@@ -76,8 +96,6 @@ namespace RentATruck.Procesos
                 {
                     MessageBox.Show("Existen campos obligatorios necesarios", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-
             }
             else
             {
