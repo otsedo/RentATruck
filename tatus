@@ -1,0 +1,282 @@
+[33mcommit 751390c436095c2458478cac6f24dd5f4518d2fa[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 6081c52 92ec273
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Nov 8 01:26:35 2017 -0400
+
+    Con errores
+
+[33mcommit 6081c52f4b2edb9f94dfec9dfe89e7e6a78a33fc[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Nov 8 01:23:55 2017 -0400
+
+    Con errores
+
+[33mcommit 6445f6a11b15c02c09f37e9dac05553fcf77343d[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Nov 8 00:55:05 2017 -0400
+
+    Modifiaciones
+
+[33mcommit 92ec2732fcce5df230b43de3fc6bd00604a5f077[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Nov 8 00:11:18 2017 -0400
+
+    borrar
+
+[33mcommit eb5bf16d4e432a6bfe1e4bd029e019164779c13f[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Nov 8 00:09:37 2017 -0400
+
+    borrar
+
+[33mcommit ad5ec58b844d9f90a4cd1ed4a96dc8e148d9fb28[m[33m ([m[1;32mPrueba[m[33m)[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Nov 7 23:42:18 2017 -0400
+
+    Na
+
+[33mcommit fe272c85cd4026cb24efe796daa11ddb6c8ca265[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Nov 7 23:36:54 2017 -0400
+
+    Algunos cambios
+
+[33mcommit 7adec8ab7c9d618ffa3b8458b51d4a8825abbe1b[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Nov 7 23:03:13 2017 -0400
+
+    Varios Bugs corregidos
+
+[33mcommit 7f2435b829aa0cc21233a42e194b352137101978[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Mon Nov 6 21:48:57 2017 -0400
+
+    Corregir algunos bugs
+
+[33mcommit da95ae1d1d0471e50129e6979edaf19c0c34e2af[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Nov 5 21:39:11 2017 -0500
+
+    Reporte CxP
+
+[33mcommit 84d7c2293c7e35b7609c6b56ced7cfb5cf7b88b0[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Nov 5 20:40:34 2017 -0500
+
+    Se corrigio limpiar la pantalla al facturar
+
+[33mcommit a8e187004a7f260d307028ac5278da84853bdeea[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Nov 5 20:32:54 2017 -0500
+
+    Reporte CxC listo
+
+[33mcommit 675c276391546b89ac2023b4824e39fbbfd7f49b[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 23:08:38 2017 -0400
+
+    Backup de BDD Listo
+
+[33mcommit 98e08e60fbaa32f3e46c0d19ae5eb662b78910df[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 22:07:34 2017 -0400
+
+    Reporte de Suplidores listo
+
+[33mcommit 80796eb7c7ccf7a737d01d77ebb426d61ca13099[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 21:25:28 2017 -0400
+
+    Reporte de NCF listo
+
+[33mcommit 7673e2468fa56c15530f2f31229afb56852cbec4[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 20:47:33 2017 -0400
+
+    Reimpresion de Facturas lista
+
+[33mcommit 7589ca0568d0f100f0d72105dd136fb6e959e25f[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 18:02:13 2017 -0400
+
+    Reporte de clientes terminado
+
+[33mcommit 0342e271bd7b34446f49191f4475393f467084c7[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 16:08:36 2017 -0400
+
+    Cuadre de caja listo
+
+[33mcommit 75ca58a32907dda9cdf535e8681ad762786268f0[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Nov 4 15:20:52 2017 -0400
+
+    CxC y CxP Listas
+
+[33mcommit c810647bbf6b7209f41953e6403675f07237ee2b[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Fri Nov 3 23:53:07 2017 -0400
+
+    proCuentasXPagar completado
+
+[33mcommit 87350168dd966fd431ea76fade76c9d3ccf5c814[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Thu Nov 2 23:29:17 2017 -0400
+
+    Correccion a CPP, 90%
+
+[33mcommit 25ae485418e8398203ed3e1204b28428a9acb1dc[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 31 23:13:09 2017 -0400
+
+    Se comenzo CxC y CxP
+
+[33mcommit eba433174582c64abde83608f7d549b7be898f79[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 31 20:45:49 2017 -0400
+
+    Se agrego el mantenimiento a Suplidores
+
+[33mcommit 1324274e261f9aee871ff239f0b3a1e737eff7ab[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 29 23:01:29 2017 -0400
+
+    Se agrego el reporte de Facturas
+
+[33mcommit 1c88cff9ae7d86efad41fa4308194246643892f7[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 29 15:13:28 2017 -0400
+
+    Proceso Facturacion casi terminado 100%
+
+[33mcommit 7cb2772d7a79b9e1351a0c5fc5af747ce5e8feaf[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 28 23:53:00 2017 -0400
+
+    Se avanzó en el proceso de Facturacion
+
+[33mcommit eac204270601d512672c18f3681f766b0b3f171f[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 28 23:24:00 2017 -0400
+
+    Se agrego busqueda de servicios
+
+[33mcommit b3e9e7654549f0c25de95f32ae9fb38f85dcdb02[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 28 23:09:08 2017 -0400
+
+    Se comenzo a trabajar con el proceso de Facturacion
+
+[33mcommit 9b5a78824a58d73379cc322e1aded80470979430[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 28 22:20:08 2017 -0400
+
+    Mantenimiento de vendedores listo
+
+[33mcommit 23b7ab127439aa1b4c086aee58df2404b74c91e1[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 28 00:22:43 2017 -0400
+
+    Mantenimiento de Clientes listo
+
+[33mcommit 4f813368916046a00a1b5d24045145e7a9bc274c[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Oct 25 23:16:12 2017 -0400
+
+    Se actualizo el menu del formulario principal para agregar los demas mantenimientos
+
+[33mcommit 0f6bce1c75cf5e7bf6fb102c03829611dad111da[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Oct 25 23:03:16 2017 -0400
+
+    mantenimiento de servicios terminado
+
+[33mcommit 7efcebb101514b9de496d0a793f4388754d1e1ac[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 24 22:37:23 2017 -0400
+
+    Mantenimiento de camiones listo
+
+[33mcommit 815f101d1e68211d3ff12a6a4a7805ed3f3f3726[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 17 23:05:01 2017 -0400
+
+    Mantenimiento de Camiones 50%
+
+[33mcommit 5aea3edc20e05208e4500166cfb7416db6065cc3[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 17 21:19:06 2017 -0400
+
+    Se diseño la pantalla del mantenimiento de Camiones
+
+[33mcommit e9159a03df7ba03e4a119a16f5d0101dcf1bf137[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Tue Oct 17 19:42:47 2017 -0400
+
+    Se agrego mantenimiento de NCF
+
+[33mcommit 03a7ceb66ba68cc0f2072c5122b725b42a78d8d0[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 15 23:34:29 2017 -0400
+
+    Se agrego el mantenimiento de usuarios
+
+[33mcommit 6009251001ff18561fdba8786fd4071f15f4c437[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 15 21:14:50 2017 -0400
+
+    Se agrego Mantenimiento tipo de Vehiculos
+
+[33mcommit 9f6ab06f004d333810eac2009b1a0bec8136d824[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 15 20:47:52 2017 -0400
+
+    Se agregaron Mantenimientos de modelos y colores
+
+[33mcommit d8b2f06d5a590c4416b13c5b55f1adbd71370533[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sun Oct 15 18:53:16 2017 -0400
+
+    Se agregó el menu segun el perfil que tenga el usuario en la base de datos
+
+[33mcommit e4452ca02d05bcc70706dff122145a1634106e69[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 14 23:42:40 2017 -0400
+
+    Mantenimiento de Marcas completamente terminado
+
+[33mcommit 446b3f2f19027807185c7a7c1df15fdd658b66a6[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Sat Oct 14 01:55:56 2017 -0400
+
+    Se agrego la funcionalidad al mantenimiento de Marcas
+
+[33mcommit 6ddd4f8825028351918bd69a7a6ef8dc373a3483[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Fri Oct 13 22:04:53 2017 -0400
+
+    Se agrego el formulario vacio de About
+
+[33mcommit 20403f3a1c13eebc66ab3a9a80068cecbaea7b5c[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Fri Oct 13 21:59:53 2017 -0400
+
+    Se agrego la barra de estado con el nombre del usuario logueado.
+
+[33mcommit be63be60075ec8364808677218b491940abff498[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Thu Oct 5 00:24:33 2017 -0400
+
+    Se termino el Login y se creo la clase Utilitarios
+
+[33mcommit 4cd60f38e6f52f23758b2c53598dbb6b3c47189c[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Oct 4 21:46:55 2017 -0400
+
+    Se agrego la clase conexion
+
+[33mcommit 767798046e3cc16543389d7e2874500e6b70340f[m
+Author: Odesto Polanco <opr.2311@gmail.com>
+Date:   Wed Oct 4 21:38:31 2017 -0400
+
+    Inicio del proyecto en blanco
