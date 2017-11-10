@@ -13,12 +13,20 @@ namespace RentATruck.Procesos
     public partial class proCuadreCaja : Form
     {
         int peso, cinco, diez, veinte, veintey5, cincuenta, cien, doscientos, quinientos, mil, dosmil, total;
+        double vendidoEfectivo, vendidoCredito, totalCajero, diferencia;
         private static proCuadreCaja cuadreInstancia = null;
 
         private void txtQuinientos_TextChanged(object sender, EventArgs e)
         {
-            quinientos = Convert.ToInt32(this.txtQuinientos.Text) * 500;
-            this.txtTotal500.Text = quinientos.ToString("C");
+            try
+            {
+                quinientos = Convert.ToInt32(this.txtQuinientos.Text) * 500;
+                this.txtTotal500.Text = quinientos.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         public static proCuadreCaja InstanciaCuadre()
@@ -33,19 +41,33 @@ namespace RentATruck.Procesos
 
         private void txtMil_TextChanged(object sender, EventArgs e)
         {
-            mil = Convert.ToInt32(this.txtMil.Text) * 1000;
-            this.txtTotal1000.Text = mil.ToString("C");
+            try
+            {
+                mil = Convert.ToInt32(this.txtMil.Text) * 1000;
+                this.txtTotal1000.Text = mil.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtDosMil_TextChanged(object sender, EventArgs e)
         {
-            dosmil = Convert.ToInt32(this.txtDosMil.Text) * 2000;
-            this.txtTotal2000.Text = dosmil.ToString("C");
+            try
+            {
+                dosmil = Convert.ToInt32(this.txtDosMil.Text) * 2000;
+                this.txtTotal2000.Text = dosmil.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void cmdCalcular_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -69,53 +91,108 @@ namespace RentATruck.Procesos
 
         private void txtDoscientos_TextChanged(object sender, EventArgs e)
         {
-            doscientos = Convert.ToInt32(this.txtDoscientos.Text) * 200;
-            this.txtTotal200.Text = doscientos.ToString("C");
+            try
+            {
+                doscientos = Convert.ToInt32(this.txtDoscientos.Text) * 200;
+                this.txtTotal200.Text = doscientos.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtCien_TextChanged(object sender, EventArgs e)
         {
-            cien = Convert.ToInt32(this.txtCien.Text) * 100;
-            this.txtTotalCien.Text = cien.ToString("C");
+            try
+            {
+                cien = Convert.ToInt32(this.txtCien.Text) * 100;
+                this.txtTotalCien.Text = cien.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtCincuenta_TextChanged(object sender, EventArgs e)
         {
-            cincuenta = Convert.ToInt32(this.txtCincuenta.Text) * 50;
-            this.txtTotalCiencuenta.Text = cincuenta.ToString("C");
+            try
+            {
+                cincuenta = Convert.ToInt32(this.txtCincuenta.Text) * 50;
+                this.txtTotalCiencuenta.Text = cincuenta.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtVeinticinco_TextChanged(object sender, EventArgs e)
         {
-            veintey5 = Convert.ToInt32(this.txtVeinte.Text) * 25;
-            this.txtTotalVeinteyCinco.Text = veintey5.ToString("C");
+            try
+            {
+                veintey5 = Convert.ToInt32(this.txtVeinte.Text) * 25;
+                this.txtTotalVeinteyCinco.Text = veintey5.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtVeinte_TextChanged(object sender, EventArgs e)
         {
-            veinte = Convert.ToInt32(this.txtVeinte.Text) * 20;
-            this.txtTotalVeinte.Text = veinte.ToString("C");
+            try
+            {
+                veinte = Convert.ToInt32(this.txtVeinte.Text) * 20;
+                this.txtTotalVeinte.Text = veinte.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtDiez_TextChanged(object sender, EventArgs e)
         {
-            diez = Convert.ToInt32(this.txtDiez.Text) * 10;
-            this.txtTotalDiez.Text = diez.ToString("C");
+            try
+            {
+                diez = Convert.ToInt32(this.txtDiez.Text) * 10;
+                this.txtTotalDiez.Text = diez.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtCinco_TextChanged(object sender, EventArgs e)
         {
-            cinco = Convert.ToInt32(this.txtCinco.Text) * 5;
-            this.txtTotalCinco.Text = cinco.ToString("C");
+            try
+            {
+                cinco = Convert.ToInt32(this.txtCinco.Text) * 5;
+                this.txtTotalCinco.Text = cinco.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
         private void txtPeso_TextChanged(object sender, EventArgs e)
         {
-            peso = Convert.ToInt32(this.txtPeso.Text) * 1;
-            this.txtTotalPeso.Text = peso.ToString("C");
+            try
+            {
+                peso = Convert.ToInt32(this.txtPeso.Text) * 1;
+                this.txtTotalPeso.Text = peso.ToString("C");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Este valor no debe estar en blanco. Puede ser 0");
+            }
         }
 
-        double vendidoEfectivo, vendidoCredito, vendidotarjeta, totalCajero, diferencia;
         public proCuadreCaja()
         {
             InitializeComponent();
@@ -123,47 +200,54 @@ namespace RentATruck.Procesos
 
         private void proCuadreCaja_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            datos objDatos = new datos();
-            string fecha = DateTime.Now.Date.Date.ToString("yyyy-MM-dd");
-            objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.fecfac_fac = " + "'" + fecha.ToString() + "'");
-            vendidoEfectivo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
-            this.txtTotalEfectivoSistema.Text = vendidoEfectivo.ToString("C");
-            objDatos.Desconectar();
-
-            objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.codtip_fac = 2 and f.fecfac_fac = " + "'" + fecha.ToString() + "'");
-            if (objDatos.ds.Tables[0].Rows.Count < 1)
+            try
             {
-                this.txtVentasEfectivo.Text = "$0.00";
+                datos objDatos = new datos();
+                string fecha = DateTime.Now.Date.Date.ToString("yyyy-MM-dd");
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.fecfac_fac = " + "'" + fecha.ToString() + "' and f.codtip_fac = 1");
+                if (Convert.ToString(objDatos.ds.Tables[0].Rows[0][0].ToString()) == "")
+                {
+                    this.txtTotalEfectivoSistema.Text = "$0.00";
+                }
+                else
+                {
+                    vendidoEfectivo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                    this.txtTotalEfectivoSistema.Text = vendidoEfectivo.ToString("C");
+                }
+                objDatos.Desconectar();
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.codtip_fac = 2 and f.fecfac_fac = " + "'" + fecha.ToString() + "'");
+                if (Convert.ToString(objDatos.ds.Tables[0].Rows[0][0].ToString()) == "")
+                {
+                    this.txtVentasEfectivo.Text = "$0.00";
+                }
+                else
+                {
+                    {
+                        vendidoCredito = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                        this.txtVentasEfectivo.Text = vendidoCredito.ToString("C");
+                    }
+
+                }
+                //-------------------VENTAS EN TARJETA DE CREDITO---------------------
+                //    objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.codtip_fac = 3 and f.fecfac_fac = " + "'" + fecha.ToString() + "'");
+                //    if (objDatos.ds.Tables[0].Rows.Count < 1)
+                //    {
+                //        this.txtTotalVentasTarjeta.Text = "$0.00";
+                //    }
+                //    else
+                //    {
+                //        vendidotarjeta = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                //        this.txtTotalVentasTarjeta.Text = vendidotarjeta.ToString("C");
+                //    }
+
             }
-            else
+            catch (System.Exception ex)
             {
-                vendidoCredito = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
-                this.txtVentasEfectivo.Text = vendidoCredito.ToString("C");
+                MessageBox.Show("No se encontraron facturas el dia de hoy");
             }
-
-            //-------------------VENTAS EN TARJETA DE CREDITO---------------------
-            //    objDatos.Consulta_llenar_datos("select SUM(f.monfac_fac)as 'monto' from facturas f where f.codtip_fac = 3 and f.fecfac_fac = " + "'" + fecha.ToString() + "'");
-            //    if (objDatos.ds.Tables[0].Rows.Count < 1)
-            //    {
-            //        this.txtTotalVentasTarjeta.Text = "$0.00";
-            //    }
-            //    else
-            //    {
-            //        vendidotarjeta = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
-            //        this.txtTotalVentasTarjeta.Text = vendidotarjeta.ToString("C");
-            //    }
-
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    MessageBox.Show("No se encontraron facturas el dia de hoy");
-            //}
-
-            this.lblSistema.Text = (vendidoCredito + vendidotarjeta + vendidoEfectivo).ToString("C");
+            this.lblSistema.Text = (vendidoCredito + vendidoEfectivo).ToString("C");
             this.lblSistema2.Text = (vendidoEfectivo).ToString("C");
         }
     }
