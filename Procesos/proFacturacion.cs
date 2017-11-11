@@ -96,6 +96,11 @@ namespace RentATruck.Procesos
             obDatos.Consulta_llenar_datos("select nombre from usuarios where codigo_usuario = " + codigoEmpleado);
             this.txtVendedor.Text = obDatos.ds.Tables[0].Rows[0][0].ToString();
             obDatos.Desconectar();
+            this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
+
+            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString("dd-MM-yyyy"));
+            DateTime expiryDate = startDate.AddDays(30);
+            this.fechaVencimiento.Text = expiryDate.ToString("dd-MM-yyyy");
 
         }
 
@@ -285,7 +290,8 @@ namespace RentATruck.Procesos
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("No se ha seleccionado nada a eliminar");
             }
         }
 
@@ -309,7 +315,8 @@ namespace RentATruck.Procesos
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("No se ha seleccionado nada a editar");
             }
         }
 
@@ -518,7 +525,7 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
-            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + "");
+            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "'");
         }
 
         private void desabilitarNCF()

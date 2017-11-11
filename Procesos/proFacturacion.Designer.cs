@@ -75,6 +75,8 @@
             this.cmdFacturar = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtVendedor = new System.Windows.Forms.TextBox();
+            this.fechaVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
             this.GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -247,9 +249,8 @@
             this.txtCodigoEmpleado.ForeColor = System.Drawing.Color.Green;
             this.txtCodigoEmpleado.Location = new System.Drawing.Point(181, 39);
             this.txtCodigoEmpleado.Name = "txtCodigoEmpleado";
-            this.txtCodigoEmpleado.Size = new System.Drawing.Size(78, 20);
+            this.txtCodigoEmpleado.Size = new System.Drawing.Size(94, 20);
             this.txtCodigoEmpleado.TabIndex = 91;
-            this.txtCodigoEmpleado.Text = "1";
             this.txtCodigoEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbTipoNCF
@@ -316,7 +317,7 @@
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblSubTotal.Location = new System.Drawing.Point(135, 63);
+            this.lblSubTotal.Location = new System.Drawing.Point(127, 63);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(58, 25);
             this.lblSubTotal.TabIndex = 8;
@@ -326,7 +327,7 @@
             // 
             this.lblItbis.AutoSize = true;
             this.lblItbis.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItbis.Location = new System.Drawing.Point(135, 105);
+            this.lblItbis.Location = new System.Drawing.Point(127, 88);
             this.lblItbis.Name = "lblItbis";
             this.lblItbis.Size = new System.Drawing.Size(58, 25);
             this.lblItbis.TabIndex = 5;
@@ -336,7 +337,7 @@
             // 
             this.Label13.AutoSize = true;
             this.Label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label13.Location = new System.Drawing.Point(49, 105);
+            this.Label13.Location = new System.Drawing.Point(46, 88);
             this.Label13.Name = "Label13";
             this.Label13.Size = new System.Drawing.Size(75, 25);
             this.Label13.TabIndex = 4;
@@ -347,7 +348,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Navy;
-            this.lblTotal.Location = new System.Drawing.Point(135, 136);
+            this.lblTotal.Location = new System.Drawing.Point(127, 113);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(58, 25);
             this.lblTotal.TabIndex = 1;
@@ -358,7 +359,7 @@
             this.Label9.AutoSize = true;
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label9.ForeColor = System.Drawing.Color.Navy;
-            this.Label9.Location = new System.Drawing.Point(49, 136);
+            this.Label9.Location = new System.Drawing.Point(52, 113);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(72, 25);
             this.Label9.TabIndex = 0;
@@ -561,7 +562,7 @@
             this.txtHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHora.Location = new System.Drawing.Point(180, 91);
             this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(79, 20);
+            this.txtHora.Size = new System.Drawing.Size(95, 20);
             this.txtHora.TabIndex = 5;
             this.txtHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -583,7 +584,7 @@
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Location = new System.Drawing.Point(180, 65);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(79, 20);
+            this.txtFecha.Size = new System.Drawing.Size(95, 20);
             this.txtFecha.TabIndex = 4;
             this.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -598,11 +599,36 @@
             this.txtVendedor.TabIndex = 3;
             this.txtVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // fechaVencimiento
+            // 
+            this.fechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.fechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fechaVencimiento.Location = new System.Drawing.Point(489, 94);
+            this.fechaVencimiento.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.fechaVencimiento.Name = "fechaVencimiento";
+            this.fechaVencimiento.Size = new System.Drawing.Size(182, 26);
+            this.fechaVencimiento.TabIndex = 107;
+            this.fechaVencimiento.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label16.Location = new System.Drawing.Point(315, 99);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(168, 20);
+            this.label16.TabIndex = 108;
+            this.label16.Text = "Fecha Vencimiento:";
+            // 
             // proFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 559);
+            this.Controls.Add(this.fechaVencimiento);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.cmdAgregarNCF);
             this.Controls.Add(this.cmdEditarArticulo);
             this.Controls.Add(this.Button5);
@@ -697,5 +723,7 @@
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker fechaVencimiento;
+        public System.Windows.Forms.Label label16;
     }
 }

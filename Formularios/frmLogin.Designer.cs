@@ -76,6 +76,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(217, 20);
             this.txtPassword.TabIndex = 10;
+            this.txtPassword.Text = "123";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
@@ -85,6 +86,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(217, 20);
             this.txtUsuario.TabIndex = 9;
+            this.txtUsuario.Text = "odesto";
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // cmdCancelar
