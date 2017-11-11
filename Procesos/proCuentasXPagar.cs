@@ -18,7 +18,7 @@ namespace RentATruck.Procesos
         private datos objDatos2 = new datos();
         private static proCuentasXPagar abonocxpInstancia = null;
         DataView miFiltro;
-        double apagar, saldo;
+        double apagar, saldo, deuda;
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace RentATruck.Procesos
         private void actualizarDatosFactura()
         {
             objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select cpp.numfac_fac as 'No. Fac.',cpp.codigo_cpp as 'CxP',cpp.fecha as 'Fecha Factura',cpp.monto as 'Monto',u.nombre as 'Usuario',cpp.ncf_ncf as 'NCF',tf.descri_fac as 'Tipo Factura',cpp.saldo_final as 'Balance',cpp.codigo_suplidor as 'Codigo Suplidor', cpp.Saldar as 'Saldar' from tipo_factura tf,usuarios u,cuentas_por_pagar cpp where cpp.codtip_fac = tf.codtip_fac and cpp.codigo_usuario = u.codigo_usuario and cpp.saldo_final > 0 and cpp.codigo_suplidor = " + CodigoCliente.ToString() + "");
+            objDatos.Consulta_llenar_datos("select cpp.numfac_fac as 'No. Fac.',cpp.codigo_cpp as 'CxP',cpp.fecha as 'Fecha Factura',cpp.monto as 'Monto',u.nombre_usuario as 'Usuario',cpp.ncf_ncf as 'NCF',tf.descri_fac as 'Tipo Factura',cpp.saldo_final as 'Balance',cpp.codigo_suplidor as 'Codigo Suplidor', cpp.Saldar as 'Saldar' from tipo_factura tf,usuarios u,cuentas_por_pagar cpp where cpp.codtip_fac = tf.codtip_fac and cpp.codigo_usuario = u.codigo_usuario and cpp.saldo_final > 0 and cpp.codigo_suplidor = " + CodigoCliente.ToString() + "");
             if (objDatos.ds.Tables[0].Rows.Count > 0)
             {
                 int nSaldar = ((int)objDatos.ds.Tables[0].Rows.Count) - 1;
@@ -71,34 +71,44 @@ namespace RentATruck.Procesos
 
         private void cmdConsultarCuentas_Click(object sender, EventArgs e)
         {
-            objDatos.Conectar();
-            this.objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codigo_suplidor = " + CodigoCliente.ToString());
-
-            if (objDatos.ds.Tables[0].Rows[0][0].ToString() != "")
+            if (this.txtCodigoCliente.Text != "")
             {
-                saldo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                objDatos.Conectar();
+                this.objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codigo_suplidor = " + CodigoCliente.ToString());
+
+                deuda = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                if (objDatos.ds.Tables[0].Rows[0][0].ToString() != "0.00")
+                {
+                    saldo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                }
+                objDatos.Desconectar();
+                this.txtSaldo.Text = saldo.ToString("C");
+
+                if (deuda > 0)
+                {
+                    string sring = ("exec consultarCxP " + CodigoCliente.ToString());
+                    objDatos.Consulta_llenar_datos(sring);
+
+                    this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
+                    this.dataGridView1.DataSource = miFiltro;
+                    objDatos.Desconectar();
+
+                    this.dataGridView1.Columns[0].Width = 50;
+                    this.dataGridView1.Columns[1].Width = 125;
+                    this.dataGridView1.Columns[2].Width = 125;
+                    this.dataGridView1.Columns[3].Width = 80;
+                    this.dataGridView1.Columns[4].Width = 170;
+
+                    actualizarDatosFactura();
+                    objDatos.Desconectar();
+                }
+                else
+                {
+                    MessageBox.Show("El suplidor seleccionado no tiene Cuentas por Pagar", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
-            objDatos.Desconectar();
-
-
-            string sring = ("exec consultarCxP = " + CodigoCliente.ToString());
-            objDatos.Consulta_llenar_datos(sring);
-
-            this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
-            this.dataGridView1.DataSource = miFiltro;
-            objDatos.Desconectar();
-
-            this.dataGridView1.Columns[0].Width = 50;
-            this.dataGridView1.Columns[1].Width = 125;
-            this.dataGridView1.Columns[2].Width = 125;
-            this.dataGridView1.Columns[3].Width = 80;
-            this.dataGridView1.Columns[4].Width = 170;
-
-
-            this.txtSaldo.Text = saldo.ToString("C");
-            actualizarDatosFactura();
-            objDatos.Desconectar();
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -184,7 +194,6 @@ namespace RentATruck.Procesos
             {
                 MessageBox.Show("Expecifique el monto que desea abonar a la CxP");
             }
-
         }
 
         private void limpiarPantall()

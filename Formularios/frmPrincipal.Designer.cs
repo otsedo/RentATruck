@@ -238,6 +238,7 @@
             this.cuentasPorCobrarToolStripMenuItem1.Name = "cuentasPorCobrarToolStripMenuItem1";
             this.cuentasPorCobrarToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
             this.cuentasPorCobrarToolStripMenuItem1.Text = "Cuentas por Cobrar";
+            this.cuentasPorCobrarToolStripMenuItem1.Click += new System.EventHandler(this.cuentasPorCobrarToolStripMenuItem1_Click);
             // 
             // crearCuentasPorPagarToolStripMenuItem
             // 

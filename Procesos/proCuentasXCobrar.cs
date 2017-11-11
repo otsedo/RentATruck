@@ -18,6 +18,17 @@ namespace RentATruck.Procesos
         datos objDatos2 = new datos();
         DataView miFiltro;
         double acobrar, saldo;
+        private static proCuentasxCobrar cxcInstancia = null;
+
+        public static proCuentasxCobrar InstanciaCxc()
+        {
+            if ((cxcInstancia == null) || (cxcInstancia.IsDisposed == true))
+            {
+                cxcInstancia = new proCuentasxCobrar();
+            }
+            cxcInstancia.BringToFront();
+            return cxcInstancia;
+        }
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
         {

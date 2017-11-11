@@ -242,12 +242,20 @@ namespace RentATruck.Formularios
             F_RCxC.Show();
         }
 
-        private void cuentasPorPagarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void cuentasPorCobrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Reportes.CxP.Form1 F_RCxC = new Reportes.CxP.Form1();
-            F_RCxC = Reportes.CxP.Form1.InstanciaReporteCxP();
+            Procesos.proCuentasxCobrar F_RCxC = new Procesos.proCuentasxCobrar();
+            F_RCxC = Procesos.proCuentasxCobrar.InstanciaCxc();
             F_RCxC.MdiParent = this;
             F_RCxC.Show();
+        }
+
+        private void cuentasPorPagarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.CxP.Form1 F_RCxP = new Reportes.CxP.Form1();
+            F_RCxP = Reportes.CxP.Form1.InstanciaReporteCxP();
+            F_RCxP.MdiParent = this;
+            F_RCxP.Show();
         }
     }
 }
