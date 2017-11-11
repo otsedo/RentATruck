@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mantVendedores));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtDireccion = new System.Windows.Forms.RichTextBox();
             this.cmdNuevo = new System.Windows.Forms.Button();
@@ -382,6 +383,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "mantVendedores";
             this.Load += new System.EventHandler(this.mantVendedores_Load);

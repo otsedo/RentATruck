@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTarjetaCredito));
             this.txt4Digitos = new System.Windows.Forms.TextBox();
             this.txtAprobacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,6 +120,7 @@
             this.Controls.Add(this.txtEfectivo);
             this.Controls.Add(this.txtCantidadPagar);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTarjetaCredito";
             this.Text = "frmTarjetaCredito";
             this.Load += new System.EventHandler(this.frmTarjetaCredito_Load);

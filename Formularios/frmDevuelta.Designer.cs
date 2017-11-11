@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevuelta));
             this.txtFT = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCambio = new System.Windows.Forms.TextBox();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.txtEfectivo);
             this.Controls.Add(this.txtCantidadPagar);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmDevuelta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

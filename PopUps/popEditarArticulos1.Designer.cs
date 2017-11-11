@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(popEditarArticulos1));
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -58,10 +59,11 @@
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "popEditarArticulos1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "popEditarArticulos1";
+            this.Text = "Editar Articulos";
             this.Activated += new System.EventHandler(this.popEditarArticulos1_Activated);
             this.Load += new System.EventHandler(this.popEditarArticulos1_Load);
             this.ResumeLayout(false);

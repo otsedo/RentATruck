@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proCuadreCaja));
             this.txtTotal2000 = new System.Windows.Forms.TextBox();
             this.txtTotal1000 = new System.Windows.Forms.TextBox();
             this.txtTotal500 = new System.Windows.Forms.TextBox();
@@ -632,6 +633,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "proCuadreCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
