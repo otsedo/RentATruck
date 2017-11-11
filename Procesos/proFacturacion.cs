@@ -17,7 +17,7 @@ namespace RentATruck.Procesos
         DataView miFiltro;
         int linea = 1;
         string descripcion, codigoArticulo, subTotal2, subTotal3, cantidadUpdated;
-        int numeroFactura, cantidad;
+        int numeroFactura, cantidad, ultimaFactura;
         double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS;
         private static proFacturacion facturacionInstancia = null;
         public double total;
@@ -393,9 +393,10 @@ namespace RentATruck.Procesos
 
         private void cmdImprimirFactura_Click(object sender, EventArgs e)
         {
+            ultimaFactura = Convert.ToInt32(txtNumeroFactura.Text) - 1;
             try
             {
-                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
+                Form frmImprimir = new Procesos.imprimirFacturas(ultimaFactura);
                 frmImprimir.Show();
             }
             catch (SystemException ex)
@@ -525,6 +526,7 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
+
             obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "','" + this.txtConcepto.Text + "'");
         }
 
