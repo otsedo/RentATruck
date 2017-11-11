@@ -93,7 +93,7 @@ namespace RentATruck.Procesos
             obDatos.Desconectar();
 
             obDatos.Conectar();
-            obDatos.Consulta_llenar_datos("select nombre from usuarios where codigo_usuario = " + codigoEmpleado);
+            obDatos.Consulta_llenar_datos("select nombre_usuario from usuarios where codigo_usuario = " + codigoEmpleado);
             this.txtVendedor.Text = obDatos.ds.Tables[0].Rows[0][0].ToString();
             obDatos.Desconectar();
             this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
@@ -525,7 +525,7 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
-            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "'");
+            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "','" + this.txtConcepto.Text + "'");
         }
 
         private void desabilitarNCF()
