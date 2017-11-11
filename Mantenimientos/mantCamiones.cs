@@ -304,6 +304,7 @@ namespace RentATruck.Mantenimientos
                     }
                 }
             }
+            cargarMarcas();
         }
 
 
