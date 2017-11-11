@@ -13,7 +13,7 @@ namespace RentATruck.Clases
 
     class Utilitarios
     {
-        public static int codigo_perfil;
+        public static int codigo_perfil, codigo_usuario;
         public static string IniciarSesion(string usuario, string password)
         {
             int logueado = 0;
@@ -45,6 +45,9 @@ namespace RentATruck.Clases
             //pCodigo_Perfil.Size = 40;
             cmd.Parameters.Add(pCodigo_Perfil);
 
+            SqlParameter pCodigo_Usuario = new SqlParameter("@codigo_usuario", System.Data.SqlDbType.Int);
+            pCodigo_Usuario.Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add(pCodigo_Usuario);
 
             cmd.ExecuteNonQuery();
             conexion.Close();
@@ -53,6 +56,7 @@ namespace RentATruck.Clases
             if (logueado == 1)
             {
                 codigo_perfil = Int32.Parse(cmd.Parameters["@codigo_perfil"].Value.ToString());
+                codigo_usuario = Int32.Parse(cmd.Parameters["@codigo_usuario"].Value.ToString());
             }
 
 

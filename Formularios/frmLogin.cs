@@ -19,7 +19,7 @@ namespace RentATruck.Formularios
         {
             InitializeComponent();
         }
-        
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
@@ -27,9 +27,9 @@ namespace RentATruck.Formularios
 
         public void IniciarSesion()
         {
-            
+
             resultado = Utilitarios.IniciarSesion(this.txtUsuario.Text, this.txtPassword.Text);
-            
+
             if (resultado != "")
             {
                 MessageBox.Show(resultado, "Mensaje", MessageBoxButtons.OK);
@@ -45,7 +45,7 @@ namespace RentATruck.Formularios
             }
         }
 
-        
+
         private void cmdAceptar_Click(object sender, EventArgs e)
         {
             IniciarSesion();
@@ -58,7 +58,8 @@ namespace RentATruck.Formularios
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13) {
+            if (e.KeyChar == 13)
+            {
                 this.txtPassword.Focus();
             }
         }

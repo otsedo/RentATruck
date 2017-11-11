@@ -14,9 +14,11 @@ namespace RentATruck.Formularios
 {
     public partial class frmPrincipal : Form
     {
+        public String Usuario, codigo_usuario;
         public Boolean UsuarioLogueado = false;
         public string varf2_codigo;
         frmAbout frmAbout = null;
+
         //Mantenimientos.mantMarcas mantMarcas = null;
 
         public frmPrincipal()
@@ -35,6 +37,8 @@ namespace RentATruck.Formularios
                 this.Show();
                 UsuarioLogueado = true;
                 lblEstado.Text = "Usuario: " + login.resultado.Substring(20);
+                Usuario = login.resultado.Substring(20);
+                codigo_usuario = Convert.ToString(Utilitarios.codigo_usuario);
 
                 if (codigo_perfil == 1)
                 {
@@ -145,6 +149,7 @@ namespace RentATruck.Formularios
             Procesos.proFacturacion proFacturacion = new Procesos.proFacturacion();
             proFacturacion = Procesos.proFacturacion.InstanciaFacturacion();
             proFacturacion.MdiParent = this;
+            proFacturacion.codigoEmpleado = codigo_usuario;
             proFacturacion.Show();
         }
 

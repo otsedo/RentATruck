@@ -596,7 +596,6 @@
             this.txtVendedor.Name = "txtVendedor";
             this.txtVendedor.Size = new System.Drawing.Size(137, 20);
             this.txtVendedor.TabIndex = 3;
-            this.txtVendedor.Text = "Administrador";
             this.txtVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // proFacturacion

@@ -16,11 +16,12 @@ namespace RentATruck.Procesos
         datos obDatos = new datos();
         DataView miFiltro;
         int linea = 1;
-        string descripcion, unidad, codigobarra, codigoArticulo, subTotal2, subTotal3, cantidadUpdated;
-        int numeroFactura, cantidad, codigoDetalleFactura;
-        double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS, descuento;
+        string descripcion, codigoArticulo, subTotal2, subTotal3, cantidadUpdated;
+        int numeroFactura, cantidad;
+        double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS;
         private static proFacturacion facturacionInstancia = null;
         public double total;
+        public string codigoEmpleado;
         //CrystalReport1 objRpt;
 
         //Funcion para asignar teclas de funciones
@@ -65,13 +66,11 @@ namespace RentATruck.Procesos
             this.txtCodigoCliente.Text = "";
             this.lblNombreCliente.Text = "";
             this.txtNCF.Text = "";
-
-
-            obDatos.Desconectar();
         }
 
         private void proFacturacion_Load(object sender, EventArgs e)
         {
+            //Corre la funcion para asignar teclas de funciones
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(KeyEvent);
 
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
@@ -92,7 +91,11 @@ namespace RentATruck.Procesos
             this.cmbTipoNCF.ValueMember = "codigo_tncf";
             this.cmbTipoNCF.SelectedIndex = 6;
             obDatos.Desconectar();
-            //Corre la funcion para asignar teclas de funciones
+
+            obDatos.Conectar();
+            obDatos.Consulta_llenar_datos("select nombre from usuarios where codigo_usuario = " + codigoEmpleado);
+            this.txtVendedor.Text = obDatos.ds.Tables[0].Rows[0][0].ToString();
+            obDatos.Desconectar();
 
         }
 
@@ -128,7 +131,6 @@ namespace RentATruck.Procesos
                     obDatos.Conectar();
                     obDatos.Consulta_llenar_datos(sql);
                     this.txtCantidad.Focus();
-
 
                     if (obDatos.ds.Tables[0].Rows.Count > 0)
                     {
@@ -445,8 +447,6 @@ namespace RentATruck.Procesos
                 limpiarDatos();
             }
         }
-
-
 
         public proFacturacion()
         {
