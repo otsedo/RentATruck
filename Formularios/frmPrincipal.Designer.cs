@@ -77,6 +77,8 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.salidasDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -201,8 +203,10 @@
             this.crearCuentasPorPagarToolStripMenuItem,
             this.toolStripSeparator6,
             this.cuentasPorPagarToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.cuadreDeCajaToolStripMenuItem,
             this.toolStripSeparator7,
-            this.cuadreDeCajaToolStripMenuItem});
+            this.salidasDeCamionesToolStripMenuItem});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.procesosToolStripMenuItem.Text = "&Procesos";
@@ -447,6 +451,18 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
+            // salidasDeCamionesToolStripMenuItem
+            // 
+            this.salidasDeCamionesToolStripMenuItem.Name = "salidasDeCamionesToolStripMenuItem";
+            this.salidasDeCamionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.salidasDeCamionesToolStripMenuItem.Text = "Salidas de Camiones";
+            this.salidasDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.salidasDeCamionesToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(208, 6);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,5 +537,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupDelSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem salidasDeCamionesToolStripMenuItem;
     }
 }

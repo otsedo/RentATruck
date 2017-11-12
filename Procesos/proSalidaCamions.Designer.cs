@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proSalidaCamions));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cmdProcesar = new System.Windows.Forms.Button();
@@ -44,8 +45,6 @@
             this.fechaSalida = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtHoraSalida = new System.Windows.Forms.TextBox();
-            this.txtHoraEntrada = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,6 +61,10 @@
             this.lblDatosCamion = new System.Windows.Forms.Label();
             this.lblDatosCliente = new System.Windows.Forms.Label();
             this.cmdCancelar = new System.Windows.Forms.Button();
+            this.horaSalida = new System.Windows.Forms.DateTimePicker();
+            this.horaEntrada = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -92,6 +95,7 @@
             this.cmdProcesar.TabIndex = 93;
             this.cmdProcesar.Text = "Procesar Salida";
             this.cmdProcesar.UseVisualStyleBackColor = false;
+            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 
             // label2
             // 
@@ -106,12 +110,14 @@
             // 
             // txtCamion
             // 
+            this.txtCamion.Enabled = false;
             this.txtCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCamion.Location = new System.Drawing.Point(99, 62);
             this.txtCamion.MaxLength = 40;
             this.txtCamion.Name = "txtCamion";
             this.txtCamion.Size = new System.Drawing.Size(61, 26);
             this.txtCamion.TabIndex = 94;
+            this.txtCamion.TextChanged += new System.EventHandler(this.txtCamion_TextChanged);
             // 
             // cmdBuscarCodCli
             // 
@@ -125,6 +131,7 @@
             this.cmdBuscarCodCli.TabIndex = 97;
             this.cmdBuscarCodCli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
+            this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
             // 
             // button1
             // 
@@ -138,6 +145,7 @@
             this.button1.TabIndex = 101;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -152,12 +160,14 @@
             // 
             // txtCodigoCliente
             // 
+            this.txtCodigoCliente.Enabled = false;
             this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCliente.Location = new System.Drawing.Point(99, 103);
             this.txtCodigoCliente.MaxLength = 40;
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(61, 26);
             this.txtCodigoCliente.TabIndex = 99;
+            this.txtCodigoCliente.TextChanged += new System.EventHandler(this.txtCodigoCliente_TextChanged);
             // 
             // label3
             // 
@@ -234,24 +244,6 @@
             this.label5.TabIndex = 111;
             this.label5.Text = "Hora Salida:";
             // 
-            // txtHoraSalida
-            // 
-            this.txtHoraSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraSalida.Location = new System.Drawing.Point(441, 176);
-            this.txtHoraSalida.MaxLength = 40;
-            this.txtHoraSalida.Name = "txtHoraSalida";
-            this.txtHoraSalida.Size = new System.Drawing.Size(85, 26);
-            this.txtHoraSalida.TabIndex = 112;
-            // 
-            // txtHoraEntrada
-            // 
-            this.txtHoraEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraEntrada.Location = new System.Drawing.Point(441, 208);
-            this.txtHoraEntrada.MaxLength = 40;
-            this.txtHoraEntrada.Name = "txtHoraEntrada";
-            this.txtHoraEntrada.Size = new System.Drawing.Size(85, 26);
-            this.txtHoraEntrada.TabIndex = 116;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -295,6 +287,7 @@
             this.txtKilometraje.Name = "txtKilometraje";
             this.txtKilometraje.Size = new System.Drawing.Size(158, 26);
             this.txtKilometraje.TabIndex = 118;
+            this.txtKilometraje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKilometraje_KeyPress);
             // 
             // label8
             // 
@@ -322,6 +315,7 @@
             // 
             // txtReferencia
             // 
+            this.txtReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferencia.Location = new System.Drawing.Point(598, 197);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
@@ -396,22 +390,20 @@
             this.lblDatosCamion.AutoSize = true;
             this.lblDatosCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosCamion.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblDatosCamion.Location = new System.Drawing.Point(237, 65);
+            this.lblDatosCamion.Location = new System.Drawing.Point(220, 65);
             this.lblDatosCamion.Name = "lblDatosCamion";
-            this.lblDatosCamion.Size = new System.Drawing.Size(333, 20);
+            this.lblDatosCamion.Size = new System.Drawing.Size(0, 20);
             this.lblDatosCamion.TabIndex = 127;
-            this.lblDatosCamion.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
             // 
             // lblDatosCliente
             // 
             this.lblDatosCliente.AutoSize = true;
             this.lblDatosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosCliente.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblDatosCliente.Location = new System.Drawing.Point(237, 106);
+            this.lblDatosCliente.Location = new System.Drawing.Point(220, 106);
             this.lblDatosCliente.Name = "lblDatosCliente";
-            this.lblDatosCliente.Size = new System.Drawing.Size(333, 20);
+            this.lblDatosCliente.Size = new System.Drawing.Size(0, 20);
             this.lblDatosCliente.TabIndex = 128;
-            this.lblDatosCliente.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXX";
             // 
             // cmdCancelar
             // 
@@ -426,12 +418,41 @@
             this.cmdCancelar.TabIndex = 138;
             this.cmdCancelar.Text = "Cancelar";
             this.cmdCancelar.UseVisualStyleBackColor = false;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
+            // 
+            // horaSalida
+            // 
+            this.horaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaSalida.Location = new System.Drawing.Point(441, 172);
+            this.horaSalida.Name = "horaSalida";
+            this.horaSalida.ShowUpDown = true;
+            this.horaSalida.Size = new System.Drawing.Size(117, 26);
+            this.horaSalida.TabIndex = 139;
+            this.horaSalida.Value = new System.DateTime(2017, 11, 12, 18, 35, 44, 0);
+            // 
+            // horaEntrada
+            // 
+            this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaEntrada.Location = new System.Drawing.Point(441, 209);
+            this.horaEntrada.Name = "horaEntrada";
+            this.horaEntrada.ShowUpDown = true;
+            this.horaEntrada.Size = new System.Drawing.Size(117, 26);
+            this.horaEntrada.TabIndex = 140;
+            this.horaEntrada.Value = new System.DateTime(2017, 11, 12, 8, 0, 0, 0);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // proSalidaCamions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 385);
+            this.Controls.Add(this.horaEntrada);
+            this.Controls.Add(this.horaSalida);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.lblDatosCliente);
             this.Controls.Add(this.lblDatosCamion);
@@ -445,11 +466,9 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtKilometraje);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtHoraEntrada);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtHoraSalida);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fechaSalida);
             this.Controls.Add(this.label16);
@@ -470,6 +489,8 @@
             this.MaximizeBox = false;
             this.Name = "proSalidaCamions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.proSalidaCamions_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,8 +513,6 @@
         private System.Windows.Forms.DateTimePicker fechaSalida;
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtHoraSalida;
-        public System.Windows.Forms.TextBox txtHoraEntrada;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker txtFechaEntrada;
         public System.Windows.Forms.Label label7;
@@ -510,5 +529,8 @@
         public System.Windows.Forms.Label lblDatosCamion;
         public System.Windows.Forms.Label lblDatosCliente;
         public System.Windows.Forms.Button cmdCancelar;
+        private System.Windows.Forms.DateTimePicker horaSalida;
+        private System.Windows.Forms.DateTimePicker horaEntrada;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

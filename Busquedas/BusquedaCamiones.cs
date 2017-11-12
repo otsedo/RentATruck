@@ -25,7 +25,7 @@ namespace RentATruck.Busquedas
         private void BusquedaCamiones_Load(object sender, EventArgs e)
         {
             objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select v.codveh_veh, m.descripcion, mv.descripcion, v.anoveh_veh, c.descripcion, v.descri_veh, v.numpla_veh, v.numcha_veh,v.kilome_veh from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and c.codigo_color = v.codigo_color");
+            objDatos.Consulta_llenar_datos("select v.codveh_veh, m.descripcion, mv.descripcion, v.anoveh_veh, c.descripcion, v.descri_veh, v.numpla_veh, v.numcha_veh,v.kilome_veh from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and c.codigo_color = v.codigo_color and v.alquilado = 0");
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
 
@@ -86,11 +86,11 @@ namespace RentATruck.Busquedas
             {
                 if (salida_datos.Length == 0)
                 {
-                    salida_datos = "(Marca del cliente LIKE '%" + palabra + "%')";
+                    salida_datos = "(numpla_veh LIKE '%" + palabra + "%')";
                 }
                 else
                 {
-                    salida_datos += "AND (Placa LIKE '%" + palabra + "'%)";
+                    salida_datos += "AND (codveh_veh LIKE '%" + palabra + "'%)";
                 }
             }
             this.miFiltro.RowFilter = salida_datos;

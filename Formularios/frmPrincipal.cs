@@ -250,6 +250,14 @@ namespace RentATruck.Formularios
             F_RCxC.Show();
         }
 
+        private void salidasDeCamionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.proSalidaCamions F_SalidaCamiones = new Procesos.proSalidaCamions();
+            F_SalidaCamiones = Procesos.proSalidaCamions.InstanciaSalidaCamiones();
+            F_SalidaCamiones.MdiParent = this;
+            F_SalidaCamiones.Show();
+        }
+
         private void cuentasPorPagarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Reportes.CxP.Form1 F_RCxP = new Reportes.CxP.Form1();
