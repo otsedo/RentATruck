@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas\BusquedaCamion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\BusquedaCamion.Designer.cs">
+      <DependentUpon>BusquedaCamion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\BusquedaCamiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,12 @@
     <Compile Include="Procesos\proFacturacion.Designer.cs">
       <DependentUpon>proFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\proRegistroAccidentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proRegistroAccidentes.Designer.cs">
+      <DependentUpon>proRegistroAccidentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\proSalidaCamions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +327,9 @@
       <DependentUpon>Suplidores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Busquedas\BusquedaCamion.resx">
+      <DependentUpon>BusquedaCamion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\BusquedaCamiones.resx">
       <DependentUpon>BusquedaCamiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -401,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proFacturacion.resx">
       <DependentUpon>proFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proRegistroAccidentes.resx">
+      <DependentUpon>proRegistroAccidentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proSalidaCamions.resx">
       <DependentUpon>proSalidaCamions.cs</DependentUpon>

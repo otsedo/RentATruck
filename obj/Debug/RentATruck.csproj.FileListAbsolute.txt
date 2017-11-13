@@ -62,3 +62,5 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proSalidaCamions.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.BusquedaCamiones.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.BusquedaCamion.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.txtNombreChofer.resources
