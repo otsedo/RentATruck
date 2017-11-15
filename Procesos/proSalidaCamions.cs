@@ -97,7 +97,7 @@ namespace RentATruck.Procesos
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void txtKilometraje_KeyPress(object sender, KeyPressEventArgs e)

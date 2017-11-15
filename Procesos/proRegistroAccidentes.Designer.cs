@@ -134,7 +134,7 @@
             this.cmbTipoAccidente.FormattingEnabled = true;
             this.cmbTipoAccidente.Location = new System.Drawing.Point(162, 148);
             this.cmbTipoAccidente.Name = "cmbTipoAccidente";
-            this.cmbTipoAccidente.Size = new System.Drawing.Size(197, 28);
+            this.cmbTipoAccidente.Size = new System.Drawing.Size(297, 28);
             this.cmbTipoAccidente.TabIndex = 133;
             // 
             // label1
@@ -175,7 +175,7 @@
             this.txtNombre.Location = new System.Drawing.Point(162, 189);
             this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(197, 26);
+            this.txtNombre.Size = new System.Drawing.Size(297, 26);
             this.txtNombre.TabIndex = 134;
             // 
             // label5
@@ -205,7 +205,7 @@
             this.txtLicencia.Location = new System.Drawing.Point(162, 226);
             this.txtLicencia.MaxLength = 40;
             this.txtLicencia.Name = "txtLicencia";
-            this.txtLicencia.Size = new System.Drawing.Size(143, 26);
+            this.txtLicencia.Size = new System.Drawing.Size(170, 26);
             this.txtLicencia.TabIndex = 137;
             // 
             // radioButton1
@@ -349,12 +349,12 @@
             this.txtSeguro.Location = new System.Drawing.Point(162, 266);
             this.txtSeguro.MaxLength = 40;
             this.txtSeguro.Name = "txtSeguro";
-            this.txtSeguro.Size = new System.Drawing.Size(143, 26);
+            this.txtSeguro.Size = new System.Drawing.Size(170, 26);
             this.txtSeguro.TabIndex = 144;
             // 
             // txtDetalles
             // 
-            this.txtDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetalles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDetalles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetalles.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtDetalles.Location = new System.Drawing.Point(475, 148);

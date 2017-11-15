@@ -74,12 +74,12 @@ namespace RentATruck.Procesos
 
                 if (this.radioButton6.Checked == true)
                 {
-                    casaConductor = true;
+                    Muertos = true;
                 }
 
                 if (this.radioButton4.Checked == true)
                 {
-                    Heridos = true;
+                    casaConductor = true;
                 }
 
                 try
@@ -111,6 +111,7 @@ namespace RentATruck.Procesos
             this.txtLicencia.Text = "";
             this.txtNombre.Text = "";
             this.txtSeguro.Text = "";
+            this.lblDatosCamion.Text = "";
         }
     }
 }

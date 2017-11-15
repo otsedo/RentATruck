@@ -151,6 +151,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Name = "BusquedaCamion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BusquedaCamion";
             this.Load += new System.EventHandler(this.BusquedaCamion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

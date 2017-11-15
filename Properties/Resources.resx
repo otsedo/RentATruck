@@ -124,6 +124,9 @@
   <data name="if_floppy_disk_save_103863" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_floppy_disk_save_103863.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_oil1_216297" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_oil1_216297.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="if_xmag_8826 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_xmag_8826 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="place_holder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\place_holder1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_cancel_black_18dp_2x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_cancel_black_18dp_2x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -144,6 +150,9 @@
   </data>
   <data name="exec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono-de-mantenimiento-de-coches-juego_62147501512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono-de-mantenimiento-de-coches-juego_62147501512.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_floppy_disk_save_103863 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_floppy_disk_save_103863 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,13 +187,16 @@
   <data name="if_1-04_511562" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_1-04_511562.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="if_folder_118926" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_folder_118926.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="currency_dollar_red1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\currency_dollar_red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="if_1-04_5115621" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_1-04_5115621.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_folder_118926" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_folder_118926.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Untitled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

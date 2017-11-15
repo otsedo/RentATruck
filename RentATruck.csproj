@@ -145,6 +145,12 @@
     <Compile Include="Mantenimientos\mantColores.Designer.cs">
       <DependentUpon>mantColores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantMantenimiento.Designer.cs">
+      <DependentUpon>mantMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -369,6 +375,9 @@
     <EmbeddedResource Include="Mantenimientos\mantColores.resx">
       <DependentUpon>mantColores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantMantenimiento.resx">
+      <DependentUpon>mantMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantMarcas.resx">
       <DependentUpon>mantMarcas.cs</DependentUpon>
     </EmbeddedResource>
@@ -566,6 +575,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="black-truck-48.ico" />
+    <None Include="Resources\Untitled1.png" />
+    <None Include="Resources\Untitled.png" />
+    <None Include="Resources\icono-de-mantenimiento-de-coches-juego_62147501512.jpg" />
+    <None Include="Resources\if_oil1_216297.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
