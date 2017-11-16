@@ -95,6 +95,7 @@
       <DependentUpon>busquedaVendedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\EnviarCorreo.cs" />
     <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Utilitarios.cs" />
     <Compile Include="Formularios\frmAbout.cs">

@@ -4,15 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using RentATruck.Clases;
 
 namespace RentATruck.Mantenimientos
 {
     public partial class frm : Form
     {
-        string aceite, seguro, correa_tiempo, frenos;
+        string aceite, seguro, correa_tiempo, frenos, camion;
         datos objDatos = new datos();
         int codigoMantenimiento;
 
@@ -82,6 +85,12 @@ namespace RentATruck.Mantenimientos
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void mantMantenimiento_Load(object sender, EventArgs e)
         {
