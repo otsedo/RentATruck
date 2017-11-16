@@ -14,6 +14,7 @@ namespace RentATruck.Procesos
     {
         Boolean casaConductor = false, Muertos = false, Heridos = false;
         datos objDatos = new datos();
+        private static txtNombreChofer accidnetesInstancia = null;
         public txtNombreChofer()
         {
             InitializeComponent();
@@ -45,6 +46,16 @@ namespace RentATruck.Procesos
                     MessageBox.Show("Cliente no encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+        }
+
+        public static txtNombreChofer InstanciaAccidentes()
+        {
+            if ((accidnetesInstancia == null) || (accidnetesInstancia.IsDisposed == true))
+            {
+                accidnetesInstancia = new txtNombreChofer();
+            }
+            accidnetesInstancia.BringToFront();
+            return accidnetesInstancia;
         }
 
         private void proRegistroAccidentes_Load(object sender, EventArgs e)

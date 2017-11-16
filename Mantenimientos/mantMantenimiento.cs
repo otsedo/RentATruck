@@ -17,6 +17,7 @@ namespace RentATruck.Mantenimientos
     {
         string aceite, seguro, correa_tiempo, frenos, camion;
         datos objDatos = new datos();
+        private static frm mantMantNotificacionInstancia = null;
         int codigoMantenimiento;
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -29,6 +30,16 @@ namespace RentATruck.Mantenimientos
             {
                 this.dateTimePicker1.Enabled = false;
             }
+        }
+
+        public static frm InstanciaMantMant()
+        {
+            if ((mantMantNotificacionInstancia == null) || (mantMantNotificacionInstancia.IsDisposed == true))
+            {
+                mantMantNotificacionInstancia = new frm();
+            }
+            mantMantNotificacionInstancia.BringToFront();
+            return mantMantNotificacionInstancia;
         }
 
         private void txtCamion_TextChanged(object sender, EventArgs e)

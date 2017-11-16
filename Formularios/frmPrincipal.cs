@@ -44,6 +44,26 @@ namespace RentATruck.Formularios
                 {
                     mnuMantenimientos.Enabled = false;
                 }
+
+                try
+                {
+                    datos objDatos = new datos();
+                    string correo = "";
+                    objDatos.Conectar();
+                    objDatos.Consulta_llenar_datos("select descripcion from notificacion_correos");
+
+                    if (objDatos.ds.Tables[0].Rows.Count > 0)
+                    {
+                        correo = objDatos.ds.Tables[0].Rows[0][0].ToString();
+                    }
+
+                    EnviarCorreo mandaCorreo = new EnviarCorreo();
+                    mandaCorreo.enviarCorreo15(correo);
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
             else
             {
@@ -256,6 +276,30 @@ namespace RentATruck.Formularios
             F_SalidaCamiones = Procesos.proSalidaCamions.InstanciaSalidaCamiones();
             F_SalidaCamiones.MdiParent = this;
             F_SalidaCamiones.Show();
+        }
+
+        private void correoRecibeAlertasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantNotificacionesCorreo notificaciones = new Mantenimientos.mantNotificacionesCorreo();
+            notificaciones = Mantenimientos.mantNotificacionesCorreo.InstanciaNotificaciones();
+            notificaciones.MdiParent = this;
+            notificaciones.Show();
+        }
+
+        private void configuracionDeMantenimientosACamionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.frm mantMant = new Mantenimientos.frm();
+            mantMant = Mantenimientos.frm.InstanciaMantMant();
+            mantMant.MdiParent = this;
+            mantMant.Show();
+        }
+
+        private void registroDeAccidentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Procesos.txtNombreChofer proAccidentes = new Procesos.txtNombreChofer();
+            proAccidentes = Procesos.txtNombreChofer.InstanciaAccidentes();
+            proAccidentes.MdiParent = this;
+            proAccidentes.Show();
         }
 
         private void cuentasPorPagarToolStripMenuItem1_Click(object sender, EventArgs e)

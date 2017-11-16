@@ -14,6 +14,7 @@ namespace RentATruck.Mantenimientos
     public partial class mantNotificacionesCorreo : Form
     {
         datos objDatos = new datos();
+        private static mantNotificacionesCorreo correoNotificacionInstancia = null;
         public mantNotificacionesCorreo()
         {
             InitializeComponent();
@@ -47,6 +48,16 @@ namespace RentATruck.Mantenimientos
             {
                 MessageBox.Show("Correo invalido");
             }
+        }
+
+        public static mantNotificacionesCorreo InstanciaNotificaciones()
+        {
+            if ((correoNotificacionInstancia == null) || (correoNotificacionInstancia.IsDisposed == true))
+            {
+                correoNotificacionInstancia = new mantNotificacionesCorreo();
+            }
+            correoNotificacionInstancia.BringToFront();
+            return correoNotificacionInstancia;
         }
 
         private void mantNotificacionesCorreo_Load(object sender, EventArgs e)
