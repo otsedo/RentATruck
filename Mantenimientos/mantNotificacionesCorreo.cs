@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentATruck.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,7 +51,14 @@ namespace RentATruck.Mantenimientos
 
         private void mantNotificacionesCorreo_Load(object sender, EventArgs e)
         {
-            cargarDatos();
+            try
+            {
+                cargarDatos();               
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void cargarDatos()
