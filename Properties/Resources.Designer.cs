@@ -93,6 +93,16 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dfggfdfg {
+            get {
+                object obj = ResourceManager.GetObject("dfggfdfg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dialog_cancel {
             get {
                 object obj = ResourceManager.GetObject("dialog_cancel", resourceCulture);
@@ -256,6 +266,16 @@ namespace RentATruck.Properties {
         internal static System.Drawing.Bitmap if_xmag_8826__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_xmag_8826 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new_email_notification_sound_alert {
+            get {
+                object obj = ResourceManager.GetObject("new-email-notification-sound-alert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
