@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentATruck.Clases;
-
+using System.Threading;
 
 namespace RentATruck.Formularios
 {
@@ -18,8 +18,7 @@ namespace RentATruck.Formularios
         public Boolean UsuarioLogueado = false;
         public string varf2_codigo;
         frmAbout frmAbout = null;
-
-        //Mantenimientos.mantMarcas mantMarcas = null;
+        Thread p1;
 
         public frmPrincipal()
         {
@@ -45,29 +44,41 @@ namespace RentATruck.Formularios
                     mnuMantenimientos.Enabled = false;
                 }
 
-                try
-                {
-                    datos objDatos = new datos();
-                    string correo = "";
-                    objDatos.Conectar();
-                    objDatos.Consulta_llenar_datos("select descripcion from notificacion_correos");
-
-                    if (objDatos.ds.Tables[0].Rows.Count > 0)
-                    {
-                        correo = objDatos.ds.Tables[0].Rows[0][0].ToString();
-                    }
-
-                    EnviarCorreo mandaCorreo = new EnviarCorreo();
-                    mandaCorreo.enviarCorreo15(correo);
-                }
-                catch (System.Data.SqlClient.SqlException ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                //Hilo para enviar correo
+                p1 = new Thread(new ThreadStart(HiloEnviarCorreo));
+                p1.Start();
             }
             else
             {
                 this.Close();
+            }
+        }
+
+        public void HiloEnviarCorreo()
+        {
+            enviarCorreo();
+        }
+
+        private void enviarCorreo()
+        {
+            try
+            {
+                datos objDatos = new datos();
+                string correo = "";
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select descripcion from notificacion_correos");
+
+                if (objDatos.ds.Tables[0].Rows.Count > 0)
+                {
+                    correo = objDatos.ds.Tables[0].Rows[0][0].ToString();
+                }
+
+                EnviarCorreo mandaCorreo = new EnviarCorreo();
+                mandaCorreo.enviarCorreo15(correo);
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -300,6 +311,11 @@ namespace RentATruck.Formularios
             proAccidentes = Procesos.txtNombreChofer.InstanciaAccidentes();
             proAccidentes.MdiParent = this;
             proAccidentes.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void cuentasPorPagarToolStripMenuItem1_Click(object sender, EventArgs e)

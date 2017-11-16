@@ -98,9 +98,9 @@ namespace RentATruck.Procesos
             obDatos.Desconectar();
             this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
 
-            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString("dd-MM-yyyy"));
+            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString());
             DateTime expiryDate = startDate.AddDays(30);
-            this.fechaVencimiento.Text = expiryDate.ToString("dd-MM-yyyy");
+            this.fechaVencimiento.Text = expiryDate.ToString();
 
         }
 
