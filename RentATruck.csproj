@@ -248,6 +248,12 @@
     <Compile Include="Procesos\proCuentasXPagar.Designer.cs">
       <DependentUpon>proCuentasXPagar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\proEntradaCamiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\proEntradaCamiones.Designer.cs">
+      <DependentUpon>proEntradaCamiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\proFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proCuentasXPagar.resx">
       <DependentUpon>proCuentasXPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\proEntradaCamiones.resx">
+      <DependentUpon>proEntradaCamiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\proFacturacion.resx">
       <DependentUpon>proFacturacion.cs</DependentUpon>
