@@ -49,6 +49,7 @@
             this.crearCuentasPorPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cuentasPorCobrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,8 +70,6 @@
             this.cuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPorPagarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.recibosCxCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recibosCxPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.correoRecibeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -196,6 +195,7 @@
             this.crearCuentasPorPagarToolStripMenuItem,
             this.toolStripSeparator1,
             this.cuentasPorCobrarToolStripMenuItem1,
+            this.entradaDeCamionesToolStripMenuItem,
             this.toolStripSeparator3,
             this.facturacionToolStripMenuItem,
             this.toolStripSeparator2,
@@ -250,6 +250,13 @@
             this.cuentasPorCobrarToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
             this.cuentasPorCobrarToolStripMenuItem1.Text = "Cuentas por Cobrar";
             this.cuentasPorCobrarToolStripMenuItem1.Click += new System.EventHandler(this.cuentasPorCobrarToolStripMenuItem1_Click);
+            // 
+            // entradaDeCamionesToolStripMenuItem
+            // 
+            this.entradaDeCamionesToolStripMenuItem.Name = "entradaDeCamionesToolStripMenuItem";
+            this.entradaDeCamionesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.entradaDeCamionesToolStripMenuItem.Text = "Entrada de Camiones";
+            this.entradaDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.entradaDeCamionesToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -319,9 +326,7 @@
             this.toolStripSeparator8,
             this.cuentasPorCobrarToolStripMenuItem,
             this.cuentasPorPagarToolStripMenuItem1,
-            this.toolStripSeparator9,
-            this.recibosCxCToolStripMenuItem,
-            this.recibosCxPToolStripMenuItem});
+            this.toolStripSeparator9});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
@@ -388,18 +393,6 @@
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(182, 6);
-            // 
-            // recibosCxCToolStripMenuItem
-            // 
-            this.recibosCxCToolStripMenuItem.Name = "recibosCxCToolStripMenuItem";
-            this.recibosCxCToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.recibosCxCToolStripMenuItem.Text = "Recibos CxC";
-            // 
-            // recibosCxPToolStripMenuItem
-            // 
-            this.recibosCxPToolStripMenuItem.Name = "recibosCxPToolStripMenuItem";
-            this.recibosCxPToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.recibosCxPToolStripMenuItem.Text = "Recibos CxP";
             // 
             // administrarToolStripMenuItem
             // 
@@ -533,8 +526,6 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasPorCobrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasPorPagarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem recibosCxCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recibosCxPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
@@ -551,5 +542,6 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeAccidentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem entradaDeCamionesToolStripMenuItem;
     }
 }

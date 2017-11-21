@@ -40,7 +40,7 @@
             this.txtKilometraje = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFechaSalida = new System.Windows.Forms.DateTimePicker();
+            this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,6 +58,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtCamion = new System.Windows.Forms.TextBox();
+            this.txtFechaSalida = new System.Windows.Forms.TextBox();
+            this.txtKmSalida = new System.Windows.Forms.TextBox();
+            this.txtCombustibleEntrada = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +107,7 @@
             this.lblDatosCamion.AutoSize = true;
             this.lblDatosCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDatosCamion.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblDatosCamion.Location = new System.Drawing.Point(296, 70);
+            this.lblDatosCamion.Location = new System.Drawing.Point(372, 64);
             this.lblDatosCamion.Name = "lblDatosCamion";
             this.lblDatosCamion.Size = new System.Drawing.Size(0, 20);
             this.lblDatosCamion.TabIndex = 169;
@@ -181,16 +187,16 @@
             this.label6.TabIndex = 158;
             this.label6.Text = "Hora Entrada:";
             // 
-            // txtFechaSalida
+            // txtFechaEntrada
             // 
-            this.txtFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFechaSalida.Location = new System.Drawing.Point(144, 98);
-            this.txtFechaSalida.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
-            this.txtFechaSalida.Name = "txtFechaSalida";
-            this.txtFechaSalida.Size = new System.Drawing.Size(158, 26);
-            this.txtFechaSalida.TabIndex = 156;
-            this.txtFechaSalida.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.txtFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtFechaEntrada.Location = new System.Drawing.Point(144, 98);
+            this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.txtFechaEntrada.Name = "txtFechaEntrada";
+            this.txtFechaEntrada.Size = new System.Drawing.Size(158, 26);
+            this.txtFechaEntrada.TabIndex = 156;
+            this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -256,6 +262,7 @@
             this.cmdBuscarCodCli.TabIndex = 145;
             this.cmdBuscarCodCli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
+            this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
             // 
             // label2
             // 
@@ -288,8 +295,9 @@
             this.cmdProcesar.Name = "cmdProcesar";
             this.cmdProcesar.Size = new System.Drawing.Size(178, 50);
             this.cmdProcesar.TabIndex = 142;
-            this.cmdProcesar.Text = "Procesar Salida";
+            this.cmdProcesar.Text = "Procesar Entrada";
             this.cmdProcesar.UseVisualStyleBackColor = false;
+            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 
             // textBox1
             // 
@@ -311,6 +319,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox1.Controls.Add(this.txtCombustibleEntrada);
+            this.groupBox1.Controls.Add(this.txtKmSalida);
+            this.groupBox1.Controls.Add(this.txtFechaSalida);
+            this.groupBox1.Controls.Add(this.txtCamion);
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.txtCodigoCliente);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -318,9 +332,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(428, 57);
+            this.groupBox1.Location = new System.Drawing.Point(428, 103);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 419);
+            this.groupBox1.Size = new System.Drawing.Size(566, 373);
             this.groupBox1.TabIndex = 174;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del camión";
@@ -330,7 +344,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label14.Location = new System.Drawing.Point(48, 289);
+            this.label14.Location = new System.Drawing.Point(51, 270);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(128, 20);
             this.label14.TabIndex = 180;
@@ -341,7 +355,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label13.Location = new System.Drawing.Point(48, 118);
+            this.label13.Location = new System.Drawing.Point(20, 102);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(162, 20);
             this.label13.TabIndex = 179;
@@ -352,7 +366,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(48, 232);
+            this.label12.Location = new System.Drawing.Point(38, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 20);
             this.label12.TabIndex = 178;
@@ -363,7 +377,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(48, 175);
+            this.label10.Location = new System.Drawing.Point(105, 158);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 20);
             this.label10.TabIndex = 177;
@@ -374,22 +388,82 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(48, 346);
+            this.label5.Location = new System.Drawing.Point(11, 326);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(304, 20);
+            this.label5.Size = new System.Drawing.Size(168, 20);
             this.label5.TabIndex = 176;
-            this.label5.Text = "Cantidad de Combustible a la Salida:";
+            this.label5.Text = "Combustible Salida:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(48, 61);
+            this.label1.Location = new System.Drawing.Point(51, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 175;
             this.label1.Text = "Codigo Cliente:";
+            // 
+            // txtCodigoCliente
+            // 
+            this.txtCodigoCliente.Enabled = false;
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.Location = new System.Drawing.Point(188, 43);
+            this.txtCodigoCliente.MaxLength = 40;
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(347, 26);
+            this.txtCodigoCliente.TabIndex = 175;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(188, 99);
+            this.txtCliente.MaxLength = 40;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(347, 26);
+            this.txtCliente.TabIndex = 181;
+            // 
+            // txtCamion
+            // 
+            this.txtCamion.Enabled = false;
+            this.txtCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCamion.Location = new System.Drawing.Point(188, 155);
+            this.txtCamion.MaxLength = 40;
+            this.txtCamion.Name = "txtCamion";
+            this.txtCamion.Size = new System.Drawing.Size(303, 26);
+            this.txtCamion.TabIndex = 182;
+            // 
+            // txtFechaSalida
+            // 
+            this.txtFechaSalida.Enabled = false;
+            this.txtFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaSalida.Location = new System.Drawing.Point(188, 211);
+            this.txtFechaSalida.MaxLength = 40;
+            this.txtFechaSalida.Name = "txtFechaSalida";
+            this.txtFechaSalida.Size = new System.Drawing.Size(347, 26);
+            this.txtFechaSalida.TabIndex = 183;
+            // 
+            // txtKmSalida
+            // 
+            this.txtKmSalida.Enabled = false;
+            this.txtKmSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKmSalida.Location = new System.Drawing.Point(188, 267);
+            this.txtKmSalida.MaxLength = 40;
+            this.txtKmSalida.Name = "txtKmSalida";
+            this.txtKmSalida.Size = new System.Drawing.Size(347, 26);
+            this.txtKmSalida.TabIndex = 184;
+            // 
+            // txtCombustibleEntrada
+            // 
+            this.txtCombustibleEntrada.Enabled = false;
+            this.txtCombustibleEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCombustibleEntrada.Location = new System.Drawing.Point(188, 323);
+            this.txtCombustibleEntrada.MaxLength = 40;
+            this.txtCombustibleEntrada.Name = "txtCombustibleEntrada";
+            this.txtCombustibleEntrada.Size = new System.Drawing.Size(347, 26);
+            this.txtCombustibleEntrada.TabIndex = 185;
             // 
             // proEntradaCamiones
             // 
@@ -408,7 +482,7 @@
             this.Controls.Add(this.txtKilometraje);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtFechaSalida);
+            this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label4);
@@ -446,7 +520,7 @@
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker txtFechaSalida;
+        private System.Windows.Forms.DateTimePicker txtFechaEntrada;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox txtCedula;
         public System.Windows.Forms.Label label4;
@@ -463,5 +537,11 @@
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtCombustibleEntrada;
+        public System.Windows.Forms.TextBox txtKmSalida;
+        public System.Windows.Forms.TextBox txtFechaSalida;
+        public System.Windows.Forms.TextBox txtCamion;
+        public System.Windows.Forms.TextBox txtCliente;
+        public System.Windows.Forms.TextBox txtCodigoCliente;
     }
 }
