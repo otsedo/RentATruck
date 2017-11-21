@@ -70,6 +70,12 @@
     <Compile Include="Busquedas\BusquedaCamiones.Designer.cs">
       <DependentUpon>BusquedaCamiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\busquedaCamionesAlquilados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\busquedaCamionesAlquilados.Designer.cs">
+      <DependentUpon>busquedaCamionesAlquilados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\busquedaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\BusquedaCamiones.resx">
       <DependentUpon>BusquedaCamiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\busquedaCamionesAlquilados.resx">
+      <DependentUpon>busquedaCamionesAlquilados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\busquedaClientes.resx">
       <DependentUpon>busquedaClientes.cs</DependentUpon>
