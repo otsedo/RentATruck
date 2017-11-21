@@ -594,6 +594,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="black-truck-48.ico" />
+    <None Include="Resources\anthonys rent a truck-031.png" />
+    <None Include="Resources\anthonys rent a truck-03.png" />
+    <None Include="Resources\anthonys rent a truck-01.png" />
     <None Include="Resources\dfggfdfg.png" />
     <None Include="Resources\new-email-notification-sound-alert.png" />
     <None Include="Resources\Untitled1.png" />

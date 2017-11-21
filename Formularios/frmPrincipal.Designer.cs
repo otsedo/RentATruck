@@ -58,10 +58,6 @@
             this.registroDeAccidentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.salidasDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entradaDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salidaDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,14 +90,12 @@
             this.archivoToolStripMenuItem,
             this.mnuMantenimientos,
             this.procesosToolStripMenuItem,
-            this.inventarioToolStripMenuItem,
-            this.consultasToolStripMenuItem,
             this.reportesToolStripMenuItem,
             this.administrarToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(938, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1019, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -313,33 +307,6 @@
             this.salidasDeCamionesToolStripMenuItem.Text = "Salidas de Camiones";
             this.salidasDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.salidasDeCamionesToolStripMenuItem_Click);
             // 
-            // inventarioToolStripMenuItem
-            // 
-            this.inventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.entradaDeArticulosToolStripMenuItem,
-            this.salidaDeArticulosToolStripMenuItem});
-            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
-            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.inventarioToolStripMenuItem.Text = "&Inventario";
-            // 
-            // entradaDeArticulosToolStripMenuItem
-            // 
-            this.entradaDeArticulosToolStripMenuItem.Name = "entradaDeArticulosToolStripMenuItem";
-            this.entradaDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.entradaDeArticulosToolStripMenuItem.Text = "Entrada de Articulos";
-            // 
-            // salidaDeArticulosToolStripMenuItem
-            // 
-            this.salidaDeArticulosToolStripMenuItem.Name = "salidaDeArticulosToolStripMenuItem";
-            this.salidaDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salidaDeArticulosToolStripMenuItem.Text = "Salida de Articulos";
-            // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.consultasToolStripMenuItem.Text = "&Consultas";
-            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -492,9 +459,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblEstado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(938, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1019, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -508,14 +475,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 424);
-            this.Controls.Add(this.statusStrip1);
+            this.BackgroundImage = global::RentATruck.Properties.Resources.anthonys_rent_a_truck_01;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1019, 544);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.statusStrip1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Anthony RentATruck";
+            this.Text = "Anthony\'s RentATruck";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
@@ -552,10 +522,6 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasPorPagarToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem cuadreDeCajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem entradaDeArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salidaDeArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;

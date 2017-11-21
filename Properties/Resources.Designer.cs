@@ -63,6 +63,36 @@ namespace RentATruck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anthonys_rent_a_truck_01 {
+            get {
+                object obj = ResourceManager.GetObject("anthonys rent a truck-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anthonys_rent_a_truck_03 {
+            get {
+                object obj = ResourceManager.GetObject("anthonys rent a truck-03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anthonys_rent_a_truck_031 {
+            get {
+                object obj = ResourceManager.GetObject("anthonys rent a truck-031", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup_to_nas {
             get {
                 object obj = ResourceManager.GetObject("backup_to_nas", resourceCulture);
