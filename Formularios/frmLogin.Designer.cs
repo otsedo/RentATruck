@@ -44,7 +44,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(420, 143);
+            this.linkLabel1.Location = new System.Drawing.Point(337, 112);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(42, 13);
             this.linkLabel1.TabIndex = 15;
@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 114);
+            this.label2.Location = new System.Drawing.Point(64, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 12;
@@ -65,7 +65,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 85);
+            this.label1.Location = new System.Drawing.Point(10, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 11;
@@ -74,7 +74,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(245, 114);
+            this.txtPassword.Location = new System.Drawing.Point(162, 71);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(217, 26);
@@ -86,7 +86,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(245, 82);
+            this.txtUsuario.Location = new System.Drawing.Point(162, 39);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(217, 26);
             this.txtUsuario.TabIndex = 9;
@@ -97,7 +97,7 @@
             // 
             this.cmdAceptar.Image = global::RentATruck.Properties.Resources.yes;
             this.cmdAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmdAceptar.Location = new System.Drawing.Point(209, 146);
+            this.cmdAceptar.Location = new System.Drawing.Point(126, 103);
             this.cmdAceptar.Name = "cmdAceptar";
             this.cmdAceptar.Size = new System.Drawing.Size(74, 30);
             this.cmdAceptar.TabIndex = 13;
@@ -111,7 +111,7 @@
             this.cmdCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdCancelar.Image = global::RentATruck.Properties.Resources.dialog_cancel;
             this.cmdCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cmdCancelar.Location = new System.Drawing.Point(289, 146);
+            this.cmdCancelar.Location = new System.Drawing.Point(206, 103);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(74, 30);
             this.cmdCancelar.TabIndex = 14;
@@ -123,7 +123,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentATruck.Properties.Resources.anthonys_rent_a_truck_031;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 196);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 153);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(298, 147);
             this.pictureBox1.TabIndex = 16;
@@ -136,7 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.cmdCancelar;
-            this.ClientSize = new System.Drawing.Size(560, 377);
+            this.ClientSize = new System.Drawing.Size(402, 350);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cmdCancelar);

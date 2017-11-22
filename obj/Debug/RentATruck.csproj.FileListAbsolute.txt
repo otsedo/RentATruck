@@ -67,3 +67,4 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantNotificacionesCorreo.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proEntradaCamiones.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaCamionesAlquilados.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache

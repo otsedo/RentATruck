@@ -175,6 +175,8 @@ namespace RentATruck.Procesos
             this.txtReferencia.Text = "";
             this.txtSucursal.Text = "";
             this.txtPersonaRecibe.Text = "";
+            this.lblDatosCamion.Text = "";
+            this.lblDatosCliente.Text = "";
         }
     }
 }

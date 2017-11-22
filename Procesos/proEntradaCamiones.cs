@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace RentATruck.Procesos
 {
-
     public partial class proEntradaCamiones : Form
     {
         datos objDatos = new datos();
         private static proEntradaCamiones entradaCamionesInstancia = null;
-
+        Int32 NuevoKilometraje, KilometrajeInsertar, codigoSalidaCamion;
 
         private void cmdProcesar_Click(object sender, EventArgs e)
         {
@@ -52,14 +51,33 @@ namespace RentATruck.Procesos
                     string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + this.txtFechaEntrada.Text + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'";
                     if (objDatos.Insertar(sql))
                     {
-                        objDatos.Desconectar();
-
-                        string ActualizarAlquiler = "update vehiculo set alquilado = 'False' where codveh_veh = " + this.txtCodigoCamion.Text;
+                        string ActualizarAlquiler = "update vehiculo set alquilado = 'False', kilome_veh= " + txtKilometraje.Text + " where codveh_veh = " + this.txtCodigoCamion.Text;
                         if (objDatos.Insertar(ActualizarAlquiler))
                         {
                             MessageBox.Show("Registro Insertado");
-                            limpiarPantalla();
                         }
+
+                        NuevoKilometraje = Convert.ToInt32(txtKilometraje.Text) - Convert.ToInt32(txtKmSalida.Text);
+                        KilometrajeInsertar = NuevoKilometraje + kilometrajeActualCambioAceite();
+                        MessageBox.Show("El nuevo kilometraje es:" + NuevoKilometraje);
+                        objDatos.Desconectar();
+                        objDatos.Conectar();
+                        string sql3 = "exec actualizar_kilometraje_aceite " + this.txtCodigoCamion.Text + "," + KilometrajeInsertar;
+                        if (objDatos.Insertar(sql3))
+                        {
+                            objDatos.Desconectar();
+                            MessageBox.Show("Se actualizó la cantidad de KM para el cambio de aceite");
+                        }
+
+                        objDatos.Conectar();
+                        string sql5 = "exec desactiva_salida_camion " + codigoSalidaCamion + "," + "'False'";
+                        if (objDatos.Insertar(sql5))
+                        {
+                            objDatos.Desconectar();
+                            MessageBox.Show("se deactivo la salida de camion");
+                        }
+                        objDatos.Desconectar();
+                        limpiarPantalla();
                     }
                     else
                     {
@@ -71,7 +89,6 @@ namespace RentATruck.Procesos
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
-
         }
 
         public static proEntradaCamiones InstanciaEntradaCamiones()
@@ -113,6 +130,13 @@ namespace RentATruck.Procesos
             }
         }
 
+        private Int32 kilometrajeActualCambioAceite()
+        {
+            objDatos.Conectar();
+            objDatos.Consulta_llenar_datos("select * from control_cambio_aceite where control_cambio_aceite.codveh_veh = " + txtCodigoCamion.Text);
+            return Convert.ToInt32(this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][2].ToString());
+        }
+
         public proEntradaCamiones()
         {
             InitializeComponent();
@@ -123,7 +147,7 @@ namespace RentATruck.Procesos
             if (this.txtCodigoCamion.Text != "Nuevo")
             {
                 objDatos.Conectar();
-                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, sc.fecha_salida, sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and c.codigo_color = v.codigo_color and sc.codveh_veh = v.codveh_veh and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh =  " + txtCodigoCamion.Text);
+                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, sc.fecha_salida, sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, sc.codigo_salida_camiones from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh = v.codveh_veh and sc.codigo_cliente = cl.codigo_cliente and c.codigo_color = v.codigo_color and sc.estado = 'True' and sc.codveh_veh = " + txtCodigoCamion.Text);
                 if (objDatos.ds.Tables[0].Rows.Count > 0)
                 {
                     this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
@@ -132,7 +156,7 @@ namespace RentATruck.Procesos
                     this.txtFechaSalida.Text = objDatos.ds.Tables[0].Rows[0][3].ToString();
                     this.txtKmSalida.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
                     this.txtCombustibleEntrada.Text = objDatos.ds.Tables[0].Rows[0][2].ToString();
-                    txtCodigoCamion.Text = "Nuevo";
+                    codigoSalidaCamion = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][8].ToString());
                 }
                 else
                 {
