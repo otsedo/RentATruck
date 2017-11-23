@@ -18,7 +18,7 @@ namespace RentATruck.Formularios
         public Boolean UsuarioLogueado = false;
         public string varf2_codigo;
         frmAbout frmAbout = null;
-        Thread p1;
+        Thread p1, p2;
 
         public frmPrincipal()
         {
@@ -46,7 +46,9 @@ namespace RentATruck.Formularios
 
                 //Hilo para enviar correo
                 p1 = new Thread(new ThreadStart(HiloEnviarCorreo));
+                p2 = new Thread(new ThreadStart(HiloEnviarCorreoAceite));
                 p1.Start();
+                p2.Start();
             }
             else
             {
@@ -57,6 +59,11 @@ namespace RentATruck.Formularios
         public void HiloEnviarCorreo()
         {
             enviarCorreo();
+        }
+
+        public void HiloEnviarCorreoAceite()
+        {
+            enviarCorreoCambioAceite();
         }
 
         private void enviarCorreo()
@@ -75,6 +82,29 @@ namespace RentATruck.Formularios
 
                 EnviarCorreo mandaCorreo = new EnviarCorreo();
                 mandaCorreo.enviarCorreo15(correo);
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void enviarCorreoCambioAceite()
+        {
+            try
+            {
+                datos objDatos = new datos();
+                string correo = "";
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select descripcion from notificacion_correos");
+
+                if (objDatos.ds.Tables[0].Rows.Count > 0)
+                {
+                    correo = objDatos.ds.Tables[0].Rows[0][0].ToString();
+                }
+
+                EnviarCorreo mandaCorreoAceite = new EnviarCorreo();
+                mandaCorreoAceite.enviarCorreoAceite(correo);
             }
             catch (System.Data.SqlClient.SqlException ex)
             {

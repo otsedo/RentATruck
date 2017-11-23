@@ -175,12 +175,6 @@ namespace RentATruck.Clases
         }
 
 
-
-
-
-
-
-
         public static bool CheckForInternetConnection()
         {
             try
@@ -198,6 +192,68 @@ namespace RentATruck.Clases
         }
 
 
+        public bool enviarCorreoAceite(string email)
+        {
+            try
+            {
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select m.descripcion + ' '  + mv.descripcion + ', año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ', Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, v.codveh_veh from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, control_cambio_aceite cca where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and c.codigo_color = v.codigo_color and cca.codveh_veh = v.codveh_veh and cca.kilometros > 5000");
+
+                if (objDatos.ds.Tables[0].Rows.Count > 0)
+                {
+
+                    for (int i = 0; i < objDatos.ds.Tables[0].Rows.Count; i++)
+                    {
+                        camion = objDatos.ds.Tables[0].Rows[i][0].ToString();
+                        System.Web.UI.WebControls.MailDefinition md = new System.Web.UI.WebControls.MailDefinition();
+                        md.From = "anthonyrentatruck@gmail.com";
+                        md.IsBodyHtml = true;
+                        md.Subject = "Test of MailDefinition";
+
+                        System.Collections.Specialized.ListDictionary replacements = new System.Collections.Specialized.ListDictionary();
+                        replacements.Add("{camion1}", camion);
+
+                        string body = "<!DOCTYPE html><html><head><title>Anthony Rent A Truck</title></head><body><center><h1>Cambio de Aceite</h1><h4>Le toca cambio de aceite al siguiente camion:  </h4>{camion1}</center></body></html>";
+
+                        MailMessage msg = md.CreateMailMessage("you@anywhere.com", replacements, body, new System.Web.UI.Control());
+
+                        msg.To.Add(email);
+                        msg.Subject = "Notificación de Cambio de Aceite - Anthony RentATruck";
+                        msg.SubjectEncoding = System.Text.Encoding.UTF8;
+                        msg.BodyEncoding = System.Text.Encoding.UTF8;
+                        msg.From = new System.Net.Mail.MailAddress("anthonyrentatruck@gmail.com");
+
+                        System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+                        cliente.Credentials = new System.Net.NetworkCredential("anthonyrentatruck@gmail.com", "kebrbkqkbqjhiscs");
+
+                        cliente.Port = 587;
+                        cliente.EnableSsl = true;
+                        cliente.Host = "smtp.gmail.com";
+
+                        if (CheckForInternetConnection() == true)
+                        {
+                            cliente.Send(msg);
+                            string AceiteEnCero = "update control_cambio_aceite set kilometros = 0 where codveh_veh =" + objDatos.ds.Tables[0].Rows[i][1].ToString();
+                            objDatos3.Conectar();
+                            objDatos3.Consulta_llenar_datos(AceiteEnCero);
+                            objDatos3.Desconectar();
+                        }
+                    }
+
+                    objDatos.Desconectar();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                return false;
+            }
+        }
     }
 }
 
