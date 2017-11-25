@@ -71,29 +71,32 @@
             // txtAceite
             // 
             this.txtAceite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAceite.Location = new System.Drawing.Point(179, 181);
+            this.txtAceite.Location = new System.Drawing.Point(708, 54);
             this.txtAceite.MaxLength = 4;
             this.txtAceite.Name = "txtAceite";
             this.txtAceite.Size = new System.Drawing.Size(89, 26);
             this.txtAceite.TabIndex = 92;
+            this.txtAceite.Text = "0";
+            this.txtAceite.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(61, 182);
+            this.label2.Location = new System.Drawing.Point(590, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 93;
             this.label2.Text = "Aceite (Km.):";
+            this.label2.Visible = false;
             // 
             // cmdNuevo
             // 
             this.cmdNuevo.BackColor = System.Drawing.Color.SteelBlue;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdNuevo.ForeColor = System.Drawing.Color.White;
-            this.cmdNuevo.Location = new System.Drawing.Point(320, 382);
+            this.cmdNuevo.Location = new System.Drawing.Point(247, 260);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(140, 51);
             this.cmdNuevo.TabIndex = 97;
@@ -106,7 +109,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(101, 231);
+            this.label4.Location = new System.Drawing.Point(101, 179);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 99;
@@ -118,7 +121,7 @@
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 230);
+            this.dateTimePicker1.Location = new System.Drawing.Point(179, 178);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(182, 26);
             this.dateTimePicker1.TabIndex = 100;
@@ -129,45 +132,51 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(-1, 280);
+            this.label5.Location = new System.Drawing.Point(528, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 20);
             this.label5.TabIndex = 101;
             this.label5.Text = "Correa Tempo (Km.):";
+            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(103, 329);
+            this.label6.Location = new System.Drawing.Point(632, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 103;
             this.label6.Text = "Frenos:";
+            this.label6.Visible = false;
             // 
             // txtCorreaTiempo
             // 
             this.txtCorreaTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreaTiempo.Location = new System.Drawing.Point(179, 279);
+            this.txtCorreaTiempo.Location = new System.Drawing.Point(708, 152);
             this.txtCorreaTiempo.MaxLength = 4;
             this.txtCorreaTiempo.Name = "txtCorreaTiempo";
             this.txtCorreaTiempo.Size = new System.Drawing.Size(89, 26);
             this.txtCorreaTiempo.TabIndex = 105;
+            this.txtCorreaTiempo.Text = "0";
+            this.txtCorreaTiempo.Visible = false;
             // 
             // txtFrenos
             // 
             this.txtFrenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFrenos.Location = new System.Drawing.Point(179, 328);
+            this.txtFrenos.Location = new System.Drawing.Point(708, 201);
             this.txtFrenos.MaxLength = 4;
             this.txtFrenos.Name = "txtFrenos";
             this.txtFrenos.Size = new System.Drawing.Size(89, 26);
             this.txtFrenos.TabIndex = 106;
+            this.txtFrenos.Text = "0";
+            this.txtFrenos.Visible = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentATruck.Properties.Resources.Untitled1;
-            this.pictureBox1.Location = new System.Drawing.Point(563, 310);
+            this.pictureBox1.Location = new System.Drawing.Point(119, 324);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(242, 123);
             this.pictureBox1.TabIndex = 107;
@@ -180,7 +189,7 @@
             this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cmdCancelar.ForeColor = System.Drawing.Color.White;
             this.cmdCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdCancelar.Location = new System.Drawing.Point(179, 382);
+            this.cmdCancelar.Location = new System.Drawing.Point(106, 260);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(140, 51);
             this.cmdCancelar.TabIndex = 153;
@@ -192,7 +201,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(368, 230);
+            this.checkBox1.Location = new System.Drawing.Point(367, 180);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 24);
             this.checkBox1.TabIndex = 154;
