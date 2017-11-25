@@ -13,6 +13,7 @@ namespace RentATruck.Reportes.Salida
     public partial class Form1 : Form
     {
         datos objDatos = new datos();
+        private static Form1 rpSalidaCamiones = null;
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +22,16 @@ namespace RentATruck.Reportes.Salida
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public static Form1 InstanciaReporteSalidas()
+        {
+            if ((rpSalidaCamiones == null) || (rpSalidaCamiones.IsDisposed == true))
+            {
+                rpSalidaCamiones = new Form1();
+            }
+            rpSalidaCamiones.BringToFront();
+            return rpSalidaCamiones;
         }
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)

@@ -79,6 +79,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.salidaDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -326,7 +327,8 @@
             this.toolStripSeparator8,
             this.cuentasPorCobrarToolStripMenuItem,
             this.cuentasPorPagarToolStripMenuItem1,
-            this.toolStripSeparator9});
+            this.toolStripSeparator9,
+            this.salidaDeCamionesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
@@ -464,6 +466,13 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
+            // salidaDeCamionesToolStripMenuItem
+            // 
+            this.salidaDeCamionesToolStripMenuItem.Name = "salidaDeCamionesToolStripMenuItem";
+            this.salidaDeCamionesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.salidaDeCamionesToolStripMenuItem.Text = "Salida de Camiones";
+            this.salidaDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.salidaDeCamionesToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,5 +552,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem entradaDeCamionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salidaDeCamionesToolStripMenuItem;
     }
 }
