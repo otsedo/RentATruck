@@ -70,6 +70,7 @@
             this.cuentasPorCobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPorPagarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.salidaDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.correoRecibeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +80,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.salidaDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradaDeCamionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -328,7 +329,8 @@
             this.cuentasPorCobrarToolStripMenuItem,
             this.cuentasPorPagarToolStripMenuItem1,
             this.toolStripSeparator9,
-            this.salidaDeCamionesToolStripMenuItem});
+            this.salidaDeCamionesToolStripMenuItem,
+            this.entradaDeCamionesToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
@@ -336,65 +338,72 @@
             // clientesToolStripMenuItem2
             // 
             this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
-            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // suplidoresToolStripMenuItem2
             // 
             this.suplidoresToolStripMenuItem2.Name = "suplidoresToolStripMenuItem2";
-            this.suplidoresToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
+            this.suplidoresToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.suplidoresToolStripMenuItem2.Text = "Suplidores";
             this.suplidoresToolStripMenuItem2.Click += new System.EventHandler(this.suplidoresToolStripMenuItem2_Click);
             // 
             // nCFDisponiblesToolStripMenuItem
             // 
             this.nCFDisponiblesToolStripMenuItem.Name = "nCFDisponiblesToolStripMenuItem";
-            this.nCFDisponiblesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.nCFDisponiblesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.nCFDisponiblesToolStripMenuItem.Text = "NCF Disponibles";
             this.nCFDisponiblesToolStripMenuItem.Click += new System.EventHandler(this.nCFDisponiblesToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(182, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(183, 6);
             // 
             // imprimirFacturasToolStripMenuItem
             // 
             this.imprimirFacturasToolStripMenuItem.Name = "imprimirFacturasToolStripMenuItem";
-            this.imprimirFacturasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.imprimirFacturasToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.imprimirFacturasToolStripMenuItem.Text = "Re-Imprimir Facturas";
             this.imprimirFacturasToolStripMenuItem.Click += new System.EventHandler(this.imprimirFacturasToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(182, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(183, 6);
             // 
             // cuentasPorCobrarToolStripMenuItem
             // 
             this.cuentasPorCobrarToolStripMenuItem.Name = "cuentasPorCobrarToolStripMenuItem";
-            this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cuentasPorCobrarToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.cuentasPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar";
             this.cuentasPorCobrarToolStripMenuItem.Click += new System.EventHandler(this.cuentasPorCobrarToolStripMenuItem_Click);
             // 
             // cuentasPorPagarToolStripMenuItem1
             // 
             this.cuentasPorPagarToolStripMenuItem1.Name = "cuentasPorPagarToolStripMenuItem1";
-            this.cuentasPorPagarToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.cuentasPorPagarToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.cuentasPorPagarToolStripMenuItem1.Text = "Cuentas por Pagar";
             this.cuentasPorPagarToolStripMenuItem1.Click += new System.EventHandler(this.cuentasPorPagarToolStripMenuItem1_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(182, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(183, 6);
+            // 
+            // salidaDeCamionesToolStripMenuItem
+            // 
+            this.salidaDeCamionesToolStripMenuItem.Name = "salidaDeCamionesToolStripMenuItem";
+            this.salidaDeCamionesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.salidaDeCamionesToolStripMenuItem.Text = "Salida de Camiones";
+            this.salidaDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.salidaDeCamionesToolStripMenuItem_Click);
             // 
             // administrarToolStripMenuItem
             // 
@@ -466,12 +475,12 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
-            // salidaDeCamionesToolStripMenuItem
+            // entradaDeCamionesToolStripMenuItem1
             // 
-            this.salidaDeCamionesToolStripMenuItem.Name = "salidaDeCamionesToolStripMenuItem";
-            this.salidaDeCamionesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.salidaDeCamionesToolStripMenuItem.Text = "Salida de Camiones";
-            this.salidaDeCamionesToolStripMenuItem.Click += new System.EventHandler(this.salidaDeCamionesToolStripMenuItem_Click);
+            this.entradaDeCamionesToolStripMenuItem1.Name = "entradaDeCamionesToolStripMenuItem1";
+            this.entradaDeCamionesToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.entradaDeCamionesToolStripMenuItem1.Text = "Entrada de Camiones";
+            this.entradaDeCamionesToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeCamionesToolStripMenuItem1_Click);
             // 
             // frmPrincipal
             // 
@@ -553,5 +562,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem entradaDeCamionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salidaDeCamionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entradaDeCamionesToolStripMenuItem1;
     }
 }
