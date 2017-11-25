@@ -340,6 +340,18 @@
     <Compile Include="Reportes\ReimpresionFacturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Salida\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Salida\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Salida\rptSalidaCamiones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSalidaCamiones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Suplodore\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +516,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReimpresionFacturas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Salida\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Salida\rptSalidaCamiones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaCamiones.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Suplodore\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
