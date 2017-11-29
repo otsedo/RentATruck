@@ -39,9 +39,9 @@ namespace RentATruck.Formularios
                 Usuario = login.resultado.Substring(20);
                 codigo_usuario = Convert.ToString(Utilitarios.codigo_usuario);
 
-                if (codigo_perfil == 1)
+                if (codigo_perfil == 2)
                 {
-                    mnuMantenimientos.Enabled = false;
+                    administrarToolStripMenuItem.Enabled = false;
                 }
 
                 //Hilo para enviar correo

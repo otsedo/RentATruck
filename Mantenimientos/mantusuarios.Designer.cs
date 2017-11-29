@@ -45,8 +45,8 @@
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.texto = new System.Windows.Forms.TextBox();
             this.txtHora = new System.Windows.Forms.TextBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtFecha = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +209,7 @@
             // cmdCancelar
             // 
             this.cmdCancelar.BackColor = System.Drawing.Color.White;
+            this.cmdCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancelar.ForeColor = System.Drawing.Color.SteelBlue;
@@ -249,16 +250,6 @@
             this.txtHora.Size = new System.Drawing.Size(184, 26);
             this.txtHora.TabIndex = 6;
             // 
-            // txtFecha
-            // 
-            this.txtFecha.Enabled = false;
-            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(193, 190);
-            this.txtFecha.MaxLength = 9;
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(161, 26);
-            this.txtFecha.TabIndex = 5;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -270,6 +261,16 @@
             this.label5.TabIndex = 90;
             this.label5.Text = "Fecha / Hora:";
             // 
+            // txtFecha
+            // 
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.Location = new System.Drawing.Point(193, 193);
+            this.txtFecha.Mask = "0000/00/00";
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(161, 26);
+            this.txtFecha.TabIndex = 91;
+            // 
             // mantUsuarios
             // 
             this.AcceptButton = this.cmdGuardar;
@@ -278,9 +279,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(668, 608);
+            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtHora);
-            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.texto);
             this.Controls.Add(this.cmdEliminar);
             this.Controls.Add(this.cmdCancelar);
@@ -326,7 +327,7 @@
         public System.Windows.Forms.Button cmdCancelar;
         public System.Windows.Forms.TextBox texto;
         private System.Windows.Forms.TextBox txtHora;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox txtFecha;
     }
 }

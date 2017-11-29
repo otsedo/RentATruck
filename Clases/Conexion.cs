@@ -7,7 +7,7 @@ using System.Text;
 
 class datos
 {
-    private string Cadena = @"Data Source=LENOVO-PC\SQLEXPRESS;Initial Catalog=RentATruck;Integrated Security=True";
+    string Cadena = @"Data Source=10.0.0.2,1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
     public SqlConnection Cn;
     private SqlCommandBuilder cmb;
     public DataSet ds = new DataSet();

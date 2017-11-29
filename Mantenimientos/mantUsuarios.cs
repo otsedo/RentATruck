@@ -52,7 +52,7 @@ namespace RentATruck.Mantenimientos
             this.txtUsuario.Text = "";
             this.txtContrasena1.Text = "";
             this.txtContrasena2.Text = "";
-            this.txtFecha.Text = System.DateTime.Now.Date.ToShortDateString();
+            txtFecha.Text = DateTime.Now.Date.Date.ToString("yyyy-MM-dd");
             this.txtHora.Text = DateTime.Now.ToString("h:mm:ss tt");
             this.txtMarca.Focus();
             this.txtID.Enabled = false;
@@ -146,7 +146,13 @@ namespace RentATruck.Mantenimientos
                         respuesta = MessageBox.Show("El usuario encontrado, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (respuesta == DialogResult.OK)
                         {
-                            MessageBox.Show("Procedemos a guardar");
+                            objDatos.Conectar();
+                            string sql = "exec inserta_actualiza_usuarios " + codigo_marca + ",'" + this.txtMarca.Text + "','" + this.txtUsuario.Text + "','" + this.txtContrasena1.Text + "','" + this.txtFecha.Text + "','" + this.txtHora.Text + "'," + this.cmbPerfiles.SelectedValue;
+                            if (objDatos.Insertar(sql))
+                            {
+                                MessageBox.Show("Registro Insertado");
+                                //cargarMarcas();
+                            }
                             cargarMarcas();
                         }
                         else
