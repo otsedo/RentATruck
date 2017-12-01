@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RentATruck.exe.manifest" size="23153">
+    <dependentAssembly dependencyType="install" codebase="RentATruck.exe.manifest" size="21181">
       <assemblyIdentity name="RentATruck.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C26Lp2PNRFeOgQsbPwtD/RwP6MSKpVpBpKJut9jYky0=</dsig:DigestValue>
+        <dsig:DigestValue>CSiauc5LyZGNtrERWV5dKk1o/T8TZvS9FgPV6y1QLCA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

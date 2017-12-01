@@ -216,7 +216,7 @@ namespace RentATruck.Procesos
 
         private void proCuentasXPagar_Load(object sender, EventArgs e)
         {
-            txtFecha.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
+            txtFecha.Text = DateTime.Now.Date.Date.ToString("yyyy-MM-dd");
             objDatos.Conectar();
             this.cmbTipoPago.DataSource = objDatos.ConsultaTabla("tipo_pagos", " descri_tpa");
             this.cmbTipoPago.DisplayMember = "descri_tpa";

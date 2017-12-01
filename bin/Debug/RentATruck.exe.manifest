@@ -291,7 +291,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mT7zhLcsDn0ZuPUY7wA3K12T4mmw8hH+F3RE+m3eRsw=</dsig:DigestValue>
+        <dsig:DigestValue>Z7D250qzgQ46agw8ky+Dv5Ws14u1wo+G+kIGPvWs3RA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -328,13 +328,13 @@
       <dsig:DigestValue>6oSZoSNB0x4L8dttsYSSDMC+b6iQVX74haznDXwCbT8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RentATruck.exe.config" size="482">
+  <file name="RentATruck.exe.config" size="464">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Pi5uFTA1EVDwV7V/Xm0ytu4rHb7ywo+i1mMPVIuzXYg=</dsig:DigestValue>
+      <dsig:DigestValue>ChzJq/uZ2qfI1Y3KoJQg/18aApUymuMcEmFEThiqdAQ=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
