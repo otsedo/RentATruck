@@ -83,6 +83,8 @@ namespace RentATruck.Mantenimientos
             this.txtIDentificacion.Text = "";
             this.txtnombre.Focus();
             this.txtID.Enabled = false;
+            this.txtRepresentante.Text = "";
+            this.telRepresentante.Text = "";
             this.pictureBox1.Image = RentATruck.Properties.Resources.user;
             objDatos.Conectar();
 
@@ -185,6 +187,11 @@ namespace RentATruck.Mantenimientos
                 this.txtnombre.Focus();
             }
 
+            if (String.IsNullOrEmpty(this.txtIDentificacion.Text))
+            {
+                this.txtIDentificacion.Text = " ";
+            }
+
             if (validadCampo() == false)
             {
                 MessageBox.Show("El nombre no puede ser menor a 2 caracteres.", "Favor verifique", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -196,46 +203,48 @@ namespace RentATruck.Mantenimientos
                 if (this.txtID.Text == "Nuevo")
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "insert into clientes (nombre, identificacion,estado, fecha_ingreso, codtip_tip, telefono1, telefono2, direccion,fotove_cliente) values (@nombre, @identificacion,@estado, @fecha_ingreso, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente)";
+                    string qry = "insert into clientes (nombre, identificacion,estado, fecha_ingreso, codtip_tip, telefono1, telefono2, direccion,fotove_cliente, representante, telefono_representante) values (@nombre, @identificacion,@estado, @fecha_ingreso, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente,@representante, @telefono_representante)";
 
-                    try
-                    {
-                        // Inicializa el objeto SqlCommand
-                        SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
+                    //try
+                    //{
+                    // Inicializa el objeto SqlCommand
+                    SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
 
-                        // Se agrega la información como parámetros
-                        SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
-                        SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text.Trim()));
-                        SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
-                        SqlCom.Parameters.Add(new SqlParameter("@codtip_tip", this.cbmTipoCliente.SelectedValue));
-                        SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
-                        SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
-                        SqlCom.Parameters.Add(new SqlParameter("@direccion", this.txtDireccion.Text));
-                        SqlCom.Parameters.Add(new SqlParameter("@fotove_cliente", data));
-                        // Abrir la conexión y ejecutar el query
-                        objDatos.Conectar();
-                        SqlCom.ExecuteNonQuery();
+                    // Se agrega la información como parámetros
+                    SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
+                    SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@codtip_tip", this.cbmTipoCliente.SelectedValue));
+                    SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@direccion", this.txtDireccion.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@fotove_cliente", data));
+                    SqlCom.Parameters.Add(new SqlParameter("@representante", this.txtRepresentante.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@telefono_representante", this.telRepresentante.Text));
+                    // Abrir la conexión y ejecutar el query
+                    objDatos.Conectar();
+                    SqlCom.ExecuteNonQuery();
 
-                        // Mostrar un mensaje de confirmación
-                        MessageBox.Show("Registro guardado correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarMarcas();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        // Cerrar la conexión si esta se encuentra abierta
-                        if (objDatos.Cn.State == ConnectionState.Open)
-                            objDatos.Desconectar();
-                    }
+                    // Mostrar un mensaje de confirmación
+                    MessageBox.Show("Registro guardado correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarMarcas();
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.Message);
+                    //}
+                    //finally
+                    //{
+                    //    // Cerrar la conexión si esta se encuentra abierta
+                    //    if (objDatos.Cn.State == ConnectionState.Open)
+                    //        objDatos.Desconectar();
+                    //}
                 }
                 else
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente where codigo_cliente = " + this.txtID.Text;
+                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente, representante = @representante, telefono_representante = @telefono_representante where codigo_cliente = " + this.txtID.Text;
 
                     try
                     {
@@ -252,6 +261,8 @@ namespace RentATruck.Mantenimientos
                         SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@direccion", this.txtDireccion.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@fotove_cliente", data));
+                        SqlCom.Parameters.Add(new SqlParameter("@representante", this.txtRepresentante.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@telefono_representante", this.telRepresentante.Text));
 
                         // Abrir la conexión y ejecutar el query
                         objDatos.Conectar();
@@ -259,6 +270,7 @@ namespace RentATruck.Mantenimientos
 
                         // Mostrar un mensaje de confirmación
                         MessageBox.Show("Cliente Actualizado correctamente", "Guardar Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cargarMarcas();
                     }
                     catch (Exception ex)
                     {
@@ -373,7 +385,9 @@ namespace RentATruck.Mantenimientos
                     this.txtTelefono1.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
                     this.txtDireccion.Text = objDatos.ds.Tables[0].Rows[0][8].ToString();
                     this.txtTelefono2.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
-                    this.cbmTipoCliente.Text = objDatos.ds.Tables[0].Rows[0][11].ToString();
+                    this.cbmTipoCliente.Text = objDatos.ds.Tables[0].Rows[0][13].ToString();
+                    this.txtRepresentante.Text = objDatos.ds.Tables[0].Rows[0][10].ToString();
+                    this.telRepresentante.Text = objDatos.ds.Tables[0].Rows[0][11].ToString();
 
                     if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][3]) == true)
                     {

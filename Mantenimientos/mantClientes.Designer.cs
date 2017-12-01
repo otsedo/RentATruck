@@ -56,6 +56,11 @@
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.RichTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtRepresentante = new System.Windows.Forms.TextBox();
+            this.telRepresentante = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +120,7 @@
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Value = new System.DateTime(2017, 10, 27, 22, 2, 25, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2017, 11, 30, 22, 14, 40, 0);
             // 
             // estado
             // 
@@ -242,11 +247,45 @@
             resources.ApplyResources(this.txtDireccion, "txtDireccion");
             this.txtDireccion.Name = "txtDireccion";
             // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label10.Name = "label10";
+            // 
+            // txtRepresentante
+            // 
+            resources.ApplyResources(this.txtRepresentante, "txtRepresentante");
+            this.txtRepresentante.Name = "txtRepresentante";
+            // 
+            // telRepresentante
+            // 
+            resources.ApplyResources(this.telRepresentante, "telRepresentante");
+            this.telRepresentante.Name = "telRepresentante";
+            this.telRepresentante.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label11.Name = "label11";
+            // 
             // mantClientes
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.telRepresentante);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtRepresentante);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.txtTelefono2);
@@ -312,5 +351,10 @@
         public System.Windows.Forms.Button cmdNuevo;
         private System.Windows.Forms.RichTextBox txtDireccion;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txtRepresentante;
+        private System.Windows.Forms.MaskedTextBox telRepresentante;
+        public System.Windows.Forms.Label label11;
     }
 }
