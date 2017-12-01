@@ -16,6 +16,7 @@ namespace RentATruck.Procesos
         datos objDatos = new datos();
         private static GenerarCxP cxpInstancia = null;
         DataView miFiltro;
+        public string codigoEmpleado;
 
         private void GenerarCxP_Load(object sender, EventArgs e)
         {
@@ -27,6 +28,8 @@ namespace RentATruck.Procesos
             this.cmbTipoPago.ValueMember = "codigo_tpa";
             txtFecha.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
             objDatos.Desconectar();
+
+            this.txtUsuario.Text = codigoEmpleado.ToString();
         }
 
         void actualizarGrid()
@@ -90,7 +93,10 @@ namespace RentATruck.Procesos
                     this.txtNCF.Text = "";
                     this.txtMontoFactura.Text = "";
                     this.txtNumeroFactura.Text = "";
-                    this.txtUsuario.Text = "";
+                    dataGridView1.DataSource = null;
+                    this.dataGridView1.Rows.Clear();
+                    this.dataGridView1.Refresh();
+
                 }
                 else
                 {

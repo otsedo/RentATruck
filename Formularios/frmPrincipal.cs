@@ -235,6 +235,7 @@ namespace RentATruck.Formularios
             Procesos.GenerarCxP F_CxP = new Procesos.GenerarCxP();
             F_CxP = Procesos.GenerarCxP.InstanciaCxP();
             F_CxP.MdiParent = this;
+            F_CxP.codigoEmpleado = codigo_usuario;
             F_CxP.Show();
         }
 

@@ -19,6 +19,7 @@ namespace RentATruck.Procesos
         private static proCuentasXPagar abonocxpInstancia = null;
         DataView miFiltro;
         double apagar, saldo, deuda;
+        public string codigoEmpleado;
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
         {

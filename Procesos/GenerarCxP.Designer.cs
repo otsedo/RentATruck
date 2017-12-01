@@ -92,7 +92,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 23);
             this.txtUsuario.TabIndex = 28;
-            this.txtUsuario.Text = "2";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
