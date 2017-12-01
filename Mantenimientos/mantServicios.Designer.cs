@@ -90,7 +90,7 @@
             this.txtMarca.MaxLength = 40;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(503, 26);
-            this.txtMarca.TabIndex = 88;
+            this.txtMarca.TabIndex = 1;
             this.txtMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMarca_KeyPress);
             // 
             // cmdGuardar
@@ -104,7 +104,7 @@
             this.cmdGuardar.Location = new System.Drawing.Point(44, 181);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(84, 78);
-            this.cmdGuardar.TabIndex = 89;
+            this.cmdGuardar.TabIndex = 3;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdGuardar.UseVisualStyleBackColor = false;
@@ -164,7 +164,7 @@
             this.txtID.MaxLength = 40;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(193, 26);
-            this.txtID.TabIndex = 93;
+            this.txtID.TabIndex = 0;
             // 
             // cmdNuevo
             // 
@@ -211,7 +211,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(85, 124);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 26);
-            this.txtPrecio.TabIndex = 98;
+            this.txtPrecio.TabIndex = 2;
             // 
             // mantServicios
             // 

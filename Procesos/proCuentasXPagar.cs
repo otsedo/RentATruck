@@ -74,15 +74,14 @@ namespace RentATruck.Procesos
             if (this.txtCodigoCliente.Text != "")
             {
                 objDatos.Conectar();
-                this.objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codigo_suplidor = " + CodigoCliente.ToString());
-
-                deuda = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
-                if (objDatos.ds.Tables[0].Rows[0][0].ToString() != "0.00")
+                objDatos.Consulta_llenar_datos("select SUM(saldo_final) as 'saldo' from cuentas_por_pagar cpp where cpp.codigo_suplidor = " + CodigoCliente.ToString());
+                if (objDatos.ds.Tables[0].Rows[0][0].ToString() != "")
                 {
                     saldo = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
                 }
-                objDatos.Desconectar();
                 this.txtSaldo.Text = saldo.ToString("C");
+                objDatos.Desconectar();
+
 
                 if (deuda > 0)
                 {
@@ -108,6 +107,7 @@ namespace RentATruck.Procesos
                 }
             }
         }
+
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
