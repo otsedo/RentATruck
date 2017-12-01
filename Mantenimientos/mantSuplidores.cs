@@ -83,6 +83,7 @@ namespace RentATruck.Mantenimientos
             this.pictureBox1.Image = RentATruck.Properties.Resources.user;
             objDatos.Conectar();
 
+
             this.cmdEliminar.Enabled = false;
         }
 
@@ -179,6 +180,7 @@ namespace RentATruck.Mantenimientos
                         // Mostrar un mensaje de confirmación
                         MessageBox.Show("Registro guardado correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarMarcas();
+                        data.Initialize();
                     }
                     catch (Exception ex)
                     {
@@ -194,7 +196,7 @@ namespace RentATruck.Mantenimientos
                 else
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "update suplidores set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente where codigo_cliente = " + this.txtID.Text;
+                    string qry = "update suplidores set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente where codigo_suplidor = " + this.txtID.Text;
 
                     try
                     {
@@ -217,6 +219,7 @@ namespace RentATruck.Mantenimientos
 
                         // Mostrar un mensaje de confirmación
                         MessageBox.Show("Suplidor Actualizado correctamente", "Guardar Vendedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cargarMarcas();
                     }
                     catch (Exception ex)
                     {
@@ -253,7 +256,7 @@ namespace RentATruck.Mantenimientos
             if (this.txtID.Text != "Nuevo")
             {
                 objDatos.Conectar();
-                string sql = ("select * from suplidores c where codigo_suplidor = " + this.txtID.Text + "");
+                string sql = ("select * from suplidores c where c.codigo_suplidor = " + this.txtID.Text + "");
                 objDatos.Consulta_llenar_datos(sql);
 
                 if (objDatos.ds.Tables[0].Rows.Count > 0)
@@ -261,7 +264,7 @@ namespace RentATruck.Mantenimientos
                     this.txtnombre.Text = objDatos.ds.Tables[0].Rows[0][1].ToString();
                     this.txtIDentificacion.Text = objDatos.ds.Tables[0].Rows[0][2].ToString();
                     this.dateTimePicker1.Text = objDatos.ds.Tables[0].Rows[0][4].ToString();
-                    this.txtTelefono1.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
+                    this.txtTelefono1.Text = objDatos.ds.Tables[0].Rows[0][5].ToString();
                     this.txtDireccion.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
                     this.txtTelefono2.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
 
