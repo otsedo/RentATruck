@@ -61,26 +61,33 @@ namespace RentATruck.Reportes.Salida
 
         private void cmdNuevo_Click(object sender, EventArgs e)
         {
-            datos objDatos = new datos();
-            objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("consultar_salida_camion " + this.txtCamion.Text + "");
+            if (txtCamion.Text != "")
+            {
+                datos objDatos = new datos();
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("consultar_salida_camion " + this.txtCamion.Text + "");
 
-            Reportes.Salida.rptSalidaCamiones rp = new Reportes.Salida.rptSalidaCamiones();
-            rp.SetDataSource(objDatos.ds.Tables[0]);
-            crystalReportViewer1.ReportSource = rp;
+                Reportes.Salida.rptSalidaCamiones rp = new Reportes.Salida.rptSalidaCamiones();
+                rp.SetDataSource(objDatos.ds.Tables[0]);
+                crystalReportViewer1.ReportSource = rp;
 
-            crystalReportViewer1.ShowCloseButton = false;
-            crystalReportViewer1.ShowCopyButton = false;
-            crystalReportViewer1.ShowGotoPageButton = false;
-            crystalReportViewer1.ShowLogo = false;
-            crystalReportViewer1.ShowParameterPanelButton = false;
-            crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            crystalReportViewer1.ShowParameterPanelButton = false;
-            crystalReportViewer1.DisplayStatusBar = false;
+                crystalReportViewer1.ShowCloseButton = false;
+                crystalReportViewer1.ShowCopyButton = false;
+                crystalReportViewer1.ShowGotoPageButton = false;
+                crystalReportViewer1.ShowLogo = false;
+                crystalReportViewer1.ShowParameterPanelButton = false;
+                crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+                crystalReportViewer1.ShowParameterPanelButton = false;
+                crystalReportViewer1.DisplayStatusBar = false;
 
-            crystalReportViewer1.RefreshReport();
+                crystalReportViewer1.RefreshReport();
 
-            objDatos.Desconectar();
+                objDatos.Desconectar();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un camion");
+            }
         }
     }
 }

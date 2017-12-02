@@ -65,7 +65,7 @@ namespace RentATruck.Mantenimientos
                     }
                     else
                     {
-                        MessageBox.Show("Cliente no encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Todavia No se ha guardado ninguna configuracion para este camion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }

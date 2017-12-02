@@ -249,6 +249,7 @@ namespace RentATruck.Mantenimientos
 
                         // Mostrar un mensaje de confirmación
                         MessageBox.Show("Registro guardado correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Ahora, vaya al menu de Administracion y configure la fecha de vencimiento del seguro del camion", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarMarcas();
                     }
                     catch (Exception ex)
