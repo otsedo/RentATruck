@@ -16,7 +16,7 @@ namespace RentATruck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Procesos.txtNombreChofer());
+            Application.Run(new Mantenimientos.mantTipoContacto());
         }
     }
 }

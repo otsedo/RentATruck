@@ -231,6 +231,12 @@
     <Compile Include="Mantenimientos\mantSuplidores.Designer.cs">
       <DependentUpon>mantSuplidores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\mantTipoContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantTipoContacto.Designer.cs">
+      <DependentUpon>mantTipoContacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\mantTipoVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantSuplidores.resx">
       <DependentUpon>mantSuplidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantTipoContacto.resx">
+      <DependentUpon>mantTipoContacto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantTipoVehiculos.resx">
       <DependentUpon>mantTipoVehiculos.cs</DependentUpon>
