@@ -348,10 +348,7 @@ namespace RentATruck.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Mantenimientos.mantContactosTelefomicos contactos = new Mantenimientos.mantContactosTelefomicos();
-            contactos = Mantenimientos.mantContactosTelefomicos.InstanciaContactos();
-            contactos.MdiParent = this;
-            contactos.Show();
+
         }
 
         private void salidaDeCamionesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -380,7 +377,18 @@ namespace RentATruck.Formularios
 
         private void contactosTelefonicosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Mantenimientos.mantContactosTelefomicos contactos = new Mantenimientos.mantContactosTelefomicos();
+            contactos = Mantenimientos.mantContactosTelefomicos.InstanciaContactos();
+            contactos.MdiParent = this;
+            contactos.Show();
+        }
 
+        private void tipoDeContactoTelefonicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientos.mantTipoContacto contactos = new Mantenimientos.mantTipoContacto();
+            contactos = Mantenimientos.mantTipoContacto.InstanciaTipoContactos();
+            contactos.MdiParent = this;
+            contactos.Show();
         }
 
         private void entradaDeCamionesToolStripMenuItem_Click(object sender, EventArgs e)

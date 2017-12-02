@@ -35,6 +35,7 @@
             this.mnuMantenimientos = new System.Windows.Forms.ToolStripMenuItem();
             this.gruposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactosTelefonicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasDeArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,12 +78,12 @@
             this.correoRecibeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeMantenimientosACamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendaTelefonicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.agendaTelefonicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactosTelefonicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeContactoTelefonicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +131,8 @@
             this.medidasToolStripMenuItem,
             this.unidadesToolStripMenuItem,
             this.suplidoresToolStripMenuItem,
-            this.tipoProductosToolStripMenuItem});
+            this.tipoProductosToolStripMenuItem,
+            this.tipoDeContactoTelefonicoToolStripMenuItem});
             this.mnuMantenimientos.Name = "mnuMantenimientos";
             this.mnuMantenimientos.Size = new System.Drawing.Size(106, 20);
             this.mnuMantenimientos.Text = "&Mantenimientos";
@@ -138,56 +140,63 @@
             // gruposToolStripMenuItem
             // 
             this.gruposToolStripMenuItem.Name = "gruposToolStripMenuItem";
-            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.gruposToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.gruposToolStripMenuItem.Text = "Camiones";
             this.gruposToolStripMenuItem.Click += new System.EventHandler(this.gruposToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.clientesToolStripMenuItem.Text = "C&lientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // contactosTelefonicosToolStripMenuItem
+            // 
+            this.contactosTelefonicosToolStripMenuItem.Name = "contactosTelefonicosToolStripMenuItem";
+            this.contactosTelefonicosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.contactosTelefonicosToolStripMenuItem.Text = "Contactos Telefonicos";
+            this.contactosTelefonicosToolStripMenuItem.Click += new System.EventHandler(this.contactosTelefonicosToolStripMenuItem_Click);
             // 
             // articulosToolStripMenuItem
             // 
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.articulosToolStripMenuItem.Text = "Colores";
             this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
             // marcasDeArticulosToolStripMenuItem
             // 
             this.marcasDeArticulosToolStripMenuItem.Name = "marcasDeArticulosToolStripMenuItem";
-            this.marcasDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.marcasDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.marcasDeArticulosToolStripMenuItem.Text = "Marcas";
             this.marcasDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.marcasDeArticulosToolStripMenuItem_Click);
             // 
             // medidasToolStripMenuItem
             // 
             this.medidasToolStripMenuItem.Name = "medidasToolStripMenuItem";
-            this.medidasToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.medidasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.medidasToolStripMenuItem.Text = "Modelos";
             this.medidasToolStripMenuItem.Click += new System.EventHandler(this.medidasToolStripMenuItem_Click);
             // 
             // unidadesToolStripMenuItem
             // 
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
-            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.unidadesToolStripMenuItem.Text = "Servicios";
             this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
             // 
             // suplidoresToolStripMenuItem
             // 
             this.suplidoresToolStripMenuItem.Name = "suplidoresToolStripMenuItem";
-            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.suplidoresToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.suplidoresToolStripMenuItem.Text = "Suplidores";
             this.suplidoresToolStripMenuItem.Click += new System.EventHandler(this.suplidoresToolStripMenuItem_Click);
             // 
             // tipoProductosToolStripMenuItem
             // 
             this.tipoProductosToolStripMenuItem.Name = "tipoProductosToolStripMenuItem";
-            this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.tipoProductosToolStripMenuItem.Text = "Tipo de Vehiculos";
             this.tipoProductosToolStripMenuItem.Click += new System.EventHandler(this.tipoProductosToolStripMenuItem_Click);
             // 
@@ -455,6 +464,13 @@
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
+            // agendaTelefonicaToolStripMenuItem
+            // 
+            this.agendaTelefonicaToolStripMenuItem.Name = "agendaTelefonicaToolStripMenuItem";
+            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.agendaTelefonicaToolStripMenuItem.Text = "Agenda Telefonica";
+            this.agendaTelefonicaToolStripMenuItem.Click += new System.EventHandler(this.agendaTelefonicaToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -466,7 +482,7 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca De";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -486,19 +502,12 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
-            // agendaTelefonicaToolStripMenuItem
+            // tipoDeContactoTelefonicoToolStripMenuItem
             // 
-            this.agendaTelefonicaToolStripMenuItem.Name = "agendaTelefonicaToolStripMenuItem";
-            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.agendaTelefonicaToolStripMenuItem.Text = "Agenda Telefonica";
-            this.agendaTelefonicaToolStripMenuItem.Click += new System.EventHandler(this.agendaTelefonicaToolStripMenuItem_Click);
-            // 
-            // contactosTelefonicosToolStripMenuItem
-            // 
-            this.contactosTelefonicosToolStripMenuItem.Name = "contactosTelefonicosToolStripMenuItem";
-            this.contactosTelefonicosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.contactosTelefonicosToolStripMenuItem.Text = "Contactos Telefonicos";
-            this.contactosTelefonicosToolStripMenuItem.Click += new System.EventHandler(this.contactosTelefonicosToolStripMenuItem_Click);
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Name = "tipoDeContactoTelefonicoToolStripMenuItem";
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Text = "Tipo de Contacto Telefonico";
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeContactoTelefonicoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -583,5 +592,6 @@
         private System.Windows.Forms.ToolStripMenuItem entradaDeCamionesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agendaTelefonicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactosTelefonicosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeContactoTelefonicoToolStripMenuItem;
     }
 }

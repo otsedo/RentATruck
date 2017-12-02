@@ -142,6 +142,26 @@ namespace RentATruck.Procesos
             InitializeComponent();
         }
 
+        private void txtKilometraje_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtKilometraje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo acepta numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtCamion_TextChanged(object sender, EventArgs e)
         {
             if (this.txtCodigoCamion.Text != "Nuevo")

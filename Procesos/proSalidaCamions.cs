@@ -136,46 +136,62 @@ namespace RentATruck.Procesos
             {
                 errorProvider1.SetError(txtCodigoCliente, "Seleccione un camion");
             }
+            else { errorProvider1.Clear(); }
 
             if (this.txtFechaEntrada.Text == this.fechaSalida.Text)
             {
                 MessageBox.Show("La fecha de Salida no puede ser la misma fecha de Entrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-
-
-            else { errorProvider1.Clear(); }
-
-            if (this.txtCamion.Text != "" && this.txtCamion.Text != "")
+            else
             {
-                try
-                {
-                    if (txtPersonaRecibe.Text == "") { personaRecibe = "NULL"; } else { personaRecibe = txtPersonaRecibe.Text; }
-                    if (this.txtCedula.Text == "") { Cedula = "NULL"; } else { Cedula = txtCedula.Text; }
-                    if (this.txtReferencia.Text == "") { Referencia = "NULL"; } else { Referencia = txtReferencia.Text; }
-                    if (this.txtKilometraje.Text == "") { Km = "NULL"; } else { Km = txtKilometraje.Text; }
-                    if (this.txtConcepto.Text == "") { Concepto = "NULL"; } else { Concepto = txtConcepto.Text; }
-                    if (this.txtCombustible.Text == "") { Combustible = "NULL"; } else { Combustible = txtCombustible.Text; }
-                    if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
-                    if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
 
-                    objDatos.Conectar();
-                    string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
-                    if (objDatos.Insertar(sql))
-                    {
-                        objDatos.Desconectar();
-                        objDatos.Conectar();
-                        objDatos.Consulta_llenar_datos("exec setAlquilarVehiculo1 " + this.txtCamion.Text);
-                        objDatos.Desconectar();
-                        MessageBox.Show("Registro Insertado");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro no pudo ser insertado");
-                    }
-                }
-                catch (System.Data.SqlClient.SqlException ex)
+                if (this.txtCamion.Text != "" && this.txtCamion.Text != "")
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    if (this.txtCamion.Text != "Nuevo")
+                    {
+                        objDatos.Conectar();
+                        objDatos.Consulta_llenar_datos("select * from mantenimiento_vehiculos where mantenimiento_vehiculos.codveh_veh = " + txtCamion.Text);
+                        if (objDatos.ds.Tables[0].Rows.Count > 0)
+                        {
+                            try
+                            {
+                                if (txtPersonaRecibe.Text == "") { personaRecibe = "NULL"; } else { personaRecibe = txtPersonaRecibe.Text; }
+                                if (this.txtCedula.Text == "") { Cedula = "NULL"; } else { Cedula = txtCedula.Text; }
+                                if (this.txtReferencia.Text == "") { Referencia = "NULL"; } else { Referencia = txtReferencia.Text; }
+                                if (this.txtKilometraje.Text == "") { Km = "NULL"; } else { Km = txtKilometraje.Text; }
+                                if (this.txtConcepto.Text == "") { Concepto = "NULL"; } else { Concepto = txtConcepto.Text; }
+                                if (this.txtCombustible.Text == "") { Combustible = "NULL"; } else { Combustible = txtCombustible.Text; }
+                                if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
+                                if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
+
+                                objDatos.Conectar();
+                                string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
+                                if (objDatos.Insertar(sql))
+                                {
+                                    objDatos.Desconectar();
+                                    objDatos.Conectar();
+                                    objDatos.Consulta_llenar_datos("exec setAlquilarVehiculo1 " + this.txtCamion.Text);
+                                    objDatos.Desconectar();
+                                    MessageBox.Show("Registro Insertado");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Registro no pudo ser insertado");
+                                }
+                            }
+                            catch (System.Data.SqlClient.SqlException ex)
+                            {
+                                MessageBox.Show(ex.Message.ToString());
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Antes de Darle salida al vehiculo, debe configurar la fecha de vencimiento del seguro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+
+
+
                 }
             }
             limpiarPantalla();

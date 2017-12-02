@@ -240,6 +240,7 @@
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(197, 26);
             this.txtAño.TabIndex = 0;
+            this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
             // 
             // label8
             // 
@@ -271,6 +272,7 @@
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(197, 26);
             this.txtKm.TabIndex = 2;
+            this.txtKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKm_KeyPress);
             // 
             // label10
             // 

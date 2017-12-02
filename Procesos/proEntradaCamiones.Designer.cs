@@ -52,18 +52,18 @@
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCombustibleEntrada = new System.Windows.Forms.TextBox();
+            this.txtKmSalida = new System.Windows.Forms.TextBox();
+            this.txtFechaSalida = new System.Windows.Forms.TextBox();
+            this.txtCamion = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.txtCamion = new System.Windows.Forms.TextBox();
-            this.txtFechaSalida = new System.Windows.Forms.TextBox();
-            this.txtKmSalida = new System.Windows.Forms.TextBox();
-            this.txtCombustibleEntrada = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +162,8 @@
             this.txtKilometraje.Name = "txtKilometraje";
             this.txtKilometraje.Size = new System.Drawing.Size(158, 26);
             this.txtKilometraje.TabIndex = 160;
+            this.txtKilometraje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKilometraje_KeyPress);
+            this.txtKilometraje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKilometraje_KeyUp);
             // 
             // label8
             // 
@@ -339,6 +341,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del camión";
             // 
+            // txtCombustibleEntrada
+            // 
+            this.txtCombustibleEntrada.Enabled = false;
+            this.txtCombustibleEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCombustibleEntrada.Location = new System.Drawing.Point(188, 323);
+            this.txtCombustibleEntrada.MaxLength = 40;
+            this.txtCombustibleEntrada.Name = "txtCombustibleEntrada";
+            this.txtCombustibleEntrada.Size = new System.Drawing.Size(347, 26);
+            this.txtCombustibleEntrada.TabIndex = 185;
+            // 
+            // txtKmSalida
+            // 
+            this.txtKmSalida.Enabled = false;
+            this.txtKmSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKmSalida.Location = new System.Drawing.Point(188, 267);
+            this.txtKmSalida.MaxLength = 40;
+            this.txtKmSalida.Name = "txtKmSalida";
+            this.txtKmSalida.Size = new System.Drawing.Size(347, 26);
+            this.txtKmSalida.TabIndex = 184;
+            // 
+            // txtFechaSalida
+            // 
+            this.txtFechaSalida.Enabled = false;
+            this.txtFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaSalida.Location = new System.Drawing.Point(188, 211);
+            this.txtFechaSalida.MaxLength = 40;
+            this.txtFechaSalida.Name = "txtFechaSalida";
+            this.txtFechaSalida.Size = new System.Drawing.Size(347, 26);
+            this.txtFechaSalida.TabIndex = 183;
+            // 
+            // txtCamion
+            // 
+            this.txtCamion.Enabled = false;
+            this.txtCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCamion.Location = new System.Drawing.Point(188, 155);
+            this.txtCamion.MaxLength = 40;
+            this.txtCamion.Name = "txtCamion";
+            this.txtCamion.Size = new System.Drawing.Size(303, 26);
+            this.txtCamion.TabIndex = 182;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(188, 99);
+            this.txtCliente.MaxLength = 40;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(347, 26);
+            this.txtCliente.TabIndex = 181;
+            // 
+            // txtCodigoCliente
+            // 
+            this.txtCodigoCliente.Enabled = false;
+            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCliente.Location = new System.Drawing.Point(188, 43);
+            this.txtCodigoCliente.MaxLength = 40;
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(347, 26);
+            this.txtCodigoCliente.TabIndex = 175;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -404,66 +466,6 @@
             this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 175;
             this.label1.Text = "Codigo Cliente:";
-            // 
-            // txtCodigoCliente
-            // 
-            this.txtCodigoCliente.Enabled = false;
-            this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoCliente.Location = new System.Drawing.Point(188, 43);
-            this.txtCodigoCliente.MaxLength = 40;
-            this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.Size = new System.Drawing.Size(347, 26);
-            this.txtCodigoCliente.TabIndex = 175;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Enabled = false;
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(188, 99);
-            this.txtCliente.MaxLength = 40;
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(347, 26);
-            this.txtCliente.TabIndex = 181;
-            // 
-            // txtCamion
-            // 
-            this.txtCamion.Enabled = false;
-            this.txtCamion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCamion.Location = new System.Drawing.Point(188, 155);
-            this.txtCamion.MaxLength = 40;
-            this.txtCamion.Name = "txtCamion";
-            this.txtCamion.Size = new System.Drawing.Size(303, 26);
-            this.txtCamion.TabIndex = 182;
-            // 
-            // txtFechaSalida
-            // 
-            this.txtFechaSalida.Enabled = false;
-            this.txtFechaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaSalida.Location = new System.Drawing.Point(188, 211);
-            this.txtFechaSalida.MaxLength = 40;
-            this.txtFechaSalida.Name = "txtFechaSalida";
-            this.txtFechaSalida.Size = new System.Drawing.Size(347, 26);
-            this.txtFechaSalida.TabIndex = 183;
-            // 
-            // txtKmSalida
-            // 
-            this.txtKmSalida.Enabled = false;
-            this.txtKmSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKmSalida.Location = new System.Drawing.Point(188, 267);
-            this.txtKmSalida.MaxLength = 40;
-            this.txtKmSalida.Name = "txtKmSalida";
-            this.txtKmSalida.Size = new System.Drawing.Size(347, 26);
-            this.txtKmSalida.TabIndex = 184;
-            // 
-            // txtCombustibleEntrada
-            // 
-            this.txtCombustibleEntrada.Enabled = false;
-            this.txtCombustibleEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCombustibleEntrada.Location = new System.Drawing.Point(188, 323);
-            this.txtCombustibleEntrada.MaxLength = 40;
-            this.txtCombustibleEntrada.Name = "txtCombustibleEntrada";
-            this.txtCombustibleEntrada.Size = new System.Drawing.Size(347, 26);
-            this.txtCombustibleEntrada.TabIndex = 185;
             // 
             // proEntradaCamiones
             // 

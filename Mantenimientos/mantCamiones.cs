@@ -443,6 +443,36 @@ namespace RentATruck.Mantenimientos
                 activo = "False";
             }
         }
+
+        private void txtKm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo acepta numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo acepta numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 
