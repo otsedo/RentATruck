@@ -147,6 +147,12 @@
     <Compile Include="Formularios\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAgenda.Designer.cs">
+      <DependentUpon>frmAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmDevuelta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,12 @@
     </Compile>
     <Compile Include="Mantenimientos\mantColores.Designer.cs">
       <DependentUpon>mantColores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\mantContactosTelefomicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\mantContactosTelefomicos.Designer.cs">
+      <DependentUpon>mantContactosTelefomicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\mantMantenimiento.cs">
       <SubType>Form</SubType>
@@ -443,6 +455,9 @@
     <EmbeddedResource Include="Formularios\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmAgenda.resx">
+      <DependentUpon>frmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDevuelta.resx">
       <DependentUpon>frmDevuelta.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantColores.resx">
       <DependentUpon>mantColores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\mantContactosTelefomicos.resx">
+      <DependentUpon>mantContactosTelefomicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\mantMantenimiento.resx">
       <DependentUpon>mantMantenimiento.cs</DependentUpon>
