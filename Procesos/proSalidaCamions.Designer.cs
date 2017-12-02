@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proSalidaCamions));
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmdProcesar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCamion = new System.Windows.Forms.TextBox();
             this.cmdBuscarCodCli = new System.Windows.Forms.Button();
@@ -68,6 +67,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.cmdProcesar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,19 +87,6 @@
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Salida de Camiones";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cmdProcesar
-            // 
-            this.cmdProcesar.BackColor = System.Drawing.Color.SteelBlue;
-            this.cmdProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdProcesar.ForeColor = System.Drawing.Color.White;
-            this.cmdProcesar.Location = new System.Drawing.Point(622, 372);
-            this.cmdProcesar.Name = "cmdProcesar";
-            this.cmdProcesar.Size = new System.Drawing.Size(178, 35);
-            this.cmdProcesar.TabIndex = 93;
-            this.cmdProcesar.Text = "Procesar Salida";
-            this.cmdProcesar.UseVisualStyleBackColor = false;
-            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 
             // label2
             // 
@@ -132,7 +119,7 @@
             this.cmdBuscarCodCli.Location = new System.Drawing.Point(166, 80);
             this.cmdBuscarCodCli.Name = "cmdBuscarCodCli";
             this.cmdBuscarCodCli.Size = new System.Drawing.Size(48, 35);
-            this.cmdBuscarCodCli.TabIndex = 97;
+            this.cmdBuscarCodCli.TabIndex = 0;
             this.cmdBuscarCodCli.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmdBuscarCodCli.UseVisualStyleBackColor = true;
             this.cmdBuscarCodCli.Click += new System.EventHandler(this.cmdBuscarCodCli_Click);
@@ -146,7 +133,7 @@
             this.button1.Location = new System.Drawing.Point(166, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(48, 35);
-            this.button1.TabIndex = 101;
+            this.button1.TabIndex = 1;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -191,7 +178,7 @@
             this.txtPersonaRecibe.MaxLength = 40;
             this.txtPersonaRecibe.Name = "txtPersonaRecibe";
             this.txtPersonaRecibe.Size = new System.Drawing.Size(516, 26);
-            this.txtPersonaRecibe.TabIndex = 103;
+            this.txtPersonaRecibe.TabIndex = 2;
             // 
             // txtCedula
             // 
@@ -200,7 +187,7 @@
             this.txtCedula.MaxLength = 40;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(202, 26);
-            this.txtCedula.TabIndex = 105;
+            this.txtCedula.TabIndex = 4;
             // 
             // label4
             // 
@@ -221,7 +208,7 @@
             this.fechaSalida.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             this.fechaSalida.Name = "fechaSalida";
             this.fechaSalida.Size = new System.Drawing.Size(158, 26);
-            this.fechaSalida.TabIndex = 109;
+            this.fechaSalida.TabIndex = 5;
             this.fechaSalida.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             // 
             // label16
@@ -268,7 +255,7 @@
             this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             this.txtFechaEntrada.Name = "txtFechaEntrada";
             this.txtFechaEntrada.Size = new System.Drawing.Size(158, 26);
-            this.txtFechaEntrada.TabIndex = 113;
+            this.txtFechaEntrada.TabIndex = 7;
             this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             // 
             // label7
@@ -290,7 +277,7 @@
             this.txtKilometraje.MaxLength = 40;
             this.txtKilometraje.Name = "txtKilometraje";
             this.txtKilometraje.Size = new System.Drawing.Size(158, 26);
-            this.txtKilometraje.TabIndex = 118;
+            this.txtKilometraje.TabIndex = 10;
             this.txtKilometraje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKilometraje_KeyPress);
             // 
             // label8
@@ -324,7 +311,7 @@
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(202, 37);
-            this.txtReferencia.TabIndex = 120;
+            this.txtReferencia.TabIndex = 9;
             // 
             // txtConcepto
             // 
@@ -333,7 +320,7 @@
             this.txtConcepto.MaxLength = 40;
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(359, 26);
-            this.txtConcepto.TabIndex = 122;
+            this.txtConcepto.TabIndex = 11;
             // 
             // label10
             // 
@@ -354,7 +341,7 @@
             this.txtCombustible.MaxLength = 40;
             this.txtCombustible.Name = "txtCombustible";
             this.txtCombustible.Size = new System.Drawing.Size(158, 26);
-            this.txtCombustible.TabIndex = 124;
+            this.txtCombustible.TabIndex = 12;
             // 
             // label11
             // 
@@ -375,7 +362,7 @@
             this.txtSucursal.MaxLength = 40;
             this.txtSucursal.Name = "txtSucursal";
             this.txtSucursal.Size = new System.Drawing.Size(359, 26);
-            this.txtSucursal.TabIndex = 126;
+            this.txtSucursal.TabIndex = 13;
             // 
             // label12
             // 
@@ -432,7 +419,7 @@
             this.horaSalida.Name = "horaSalida";
             this.horaSalida.ShowUpDown = true;
             this.horaSalida.Size = new System.Drawing.Size(117, 26);
-            this.horaSalida.TabIndex = 139;
+            this.horaSalida.TabIndex = 6;
             this.horaSalida.Value = new System.DateTime(2017, 11, 12, 18, 35, 44, 0);
             // 
             // horaEntrada
@@ -443,7 +430,7 @@
             this.horaEntrada.Name = "horaEntrada";
             this.horaEntrada.ShowUpDown = true;
             this.horaEntrada.Size = new System.Drawing.Size(117, 26);
-            this.horaEntrada.TabIndex = 140;
+            this.horaEntrada.TabIndex = 8;
             this.horaEntrada.Value = new System.DateTime(2017, 11, 12, 8, 0, 0, 0);
             // 
             // errorProvider1
@@ -457,7 +444,7 @@
             this.txtTelefonoChofer.Mask = "(999) 000-0000";
             this.txtTelefonoChofer.Name = "txtTelefonoChofer";
             this.txtTelefonoChofer.Size = new System.Drawing.Size(183, 26);
-            this.txtTelefonoChofer.TabIndex = 142;
+            this.txtTelefonoChofer.TabIndex = 3;
             this.txtTelefonoChofer.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label13
@@ -493,10 +480,25 @@
             this.txtUsuario.Size = new System.Drawing.Size(181, 26);
             this.txtUsuario.TabIndex = 143;
             // 
+            // cmdProcesar
+            // 
+            this.cmdProcesar.BackColor = System.Drawing.Color.SteelBlue;
+            this.cmdProcesar.Enabled = false;
+            this.cmdProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdProcesar.ForeColor = System.Drawing.Color.White;
+            this.cmdProcesar.Location = new System.Drawing.Point(622, 372);
+            this.cmdProcesar.Name = "cmdProcesar";
+            this.cmdProcesar.Size = new System.Drawing.Size(178, 35);
+            this.cmdProcesar.TabIndex = 14;
+            this.cmdProcesar.Text = "Procesar Salida";
+            this.cmdProcesar.UseVisualStyleBackColor = false;
+            this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
+            // 
             // proSalidaCamions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(833, 459);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtUsuario);
@@ -550,7 +552,6 @@
         #endregion
 
         public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Button cmdProcesar;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCamion;
         private System.Windows.Forms.Button cmdBuscarCodCli;
@@ -587,5 +588,6 @@
         public System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.Button cmdProcesar;
     }
 }

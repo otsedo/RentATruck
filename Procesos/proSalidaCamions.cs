@@ -39,6 +39,18 @@ namespace RentATruck.Procesos
             if (res == DialogResult.OK)
             {
                 this.txtCamion.Text = BC.ReturnValue1;
+
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("select * from mantenimiento_vehiculos where mantenimiento_vehiculos.codveh_veh = " + txtCamion.Text);
+                if (objDatos.ds.Tables[0].Rows.Count > 0)
+                {
+                    this.cmdProcesar.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Antes de Darle salida al vehiculo, debe configurar la fecha de vencimiento del seguro, en el menu Administrar y luego en Configuracion de Mantenimientos a Camiones", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.cmdProcesar.Enabled = false;
+                }
             }
         }
 
@@ -81,7 +93,7 @@ namespace RentATruck.Procesos
                 }
                 else
                 {
-                    MessageBox.Show("Cliente no encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Camion no encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -144,57 +156,50 @@ namespace RentATruck.Procesos
             }
             else
             {
-
                 if (this.txtCamion.Text != "" && this.txtCamion.Text != "")
                 {
                     if (this.txtCamion.Text != "Nuevo")
                     {
-                        objDatos.Conectar();
-                        objDatos.Consulta_llenar_datos("select * from mantenimiento_vehiculos where mantenimiento_vehiculos.codveh_veh = " + txtCamion.Text);
-                        if (objDatos.ds.Tables[0].Rows.Count > 0)
-                        {
-                            try
-                            {
-                                if (txtPersonaRecibe.Text == "") { personaRecibe = "NULL"; } else { personaRecibe = txtPersonaRecibe.Text; }
-                                if (this.txtCedula.Text == "") { Cedula = "NULL"; } else { Cedula = txtCedula.Text; }
-                                if (this.txtReferencia.Text == "") { Referencia = "NULL"; } else { Referencia = txtReferencia.Text; }
-                                if (this.txtKilometraje.Text == "") { Km = "NULL"; } else { Km = txtKilometraje.Text; }
-                                if (this.txtConcepto.Text == "") { Concepto = "NULL"; } else { Concepto = txtConcepto.Text; }
-                                if (this.txtCombustible.Text == "") { Combustible = "NULL"; } else { Combustible = txtCombustible.Text; }
-                                if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
-                                if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
 
-                                objDatos.Conectar();
-                                string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
-                                if (objDatos.Insertar(sql))
-                                {
-                                    objDatos.Desconectar();
-                                    objDatos.Conectar();
-                                    objDatos.Consulta_llenar_datos("exec setAlquilarVehiculo1 " + this.txtCamion.Text);
-                                    objDatos.Desconectar();
-                                    MessageBox.Show("Registro Insertado");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Registro no pudo ser insertado");
-                                }
-                            }
-                            catch (System.Data.SqlClient.SqlException ex)
-                            {
-                                MessageBox.Show(ex.Message.ToString());
-                            }
-                        }
-                        else
+                        try
                         {
-                            MessageBox.Show("Antes de Darle salida al vehiculo, debe configurar la fecha de vencimiento del seguro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            if (txtPersonaRecibe.Text == "") { personaRecibe = "NULL"; } else { personaRecibe = txtPersonaRecibe.Text; }
+                            if (this.txtCedula.Text == "") { Cedula = "NULL"; } else { Cedula = txtCedula.Text; }
+                            if (this.txtReferencia.Text == "") { Referencia = "NULL"; } else { Referencia = txtReferencia.Text; }
+                            if (this.txtKilometraje.Text == "") { Km = "NULL"; } else { Km = txtKilometraje.Text; }
+                            if (this.txtConcepto.Text == "") { Concepto = "NULL"; } else { Concepto = txtConcepto.Text; }
+                            if (this.txtCombustible.Text == "") { Combustible = "NULL"; } else { Combustible = txtCombustible.Text; }
+                            if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
+                            if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
+
+                            objDatos.Conectar();
+                            string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
+                            if (objDatos.Insertar(sql))
+                            {
+                                objDatos.Desconectar();
+                                objDatos.Conectar();
+                                objDatos.Consulta_llenar_datos("exec setAlquilarVehiculo1 " + this.txtCamion.Text);
+                                objDatos.Desconectar();
+                                MessageBox.Show("Registro Insertado");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Registro no pudo ser insertado");
+                            }
                         }
+                        catch (System.Data.SqlClient.SqlException ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString());
+                        }
+
                     }
 
 
 
                 }
+                limpiarPantalla();
             }
-            limpiarPantalla();
+
         }
 
         private void limpiarPantalla()
