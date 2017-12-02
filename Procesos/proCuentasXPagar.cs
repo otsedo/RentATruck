@@ -83,7 +83,7 @@ namespace RentATruck.Procesos
                 this.txtSaldo.Text = saldo.ToString("C");
                 objDatos.Desconectar();
 
-
+                deuda = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
                 if (deuda > 0)
                 {
                     string sring = ("exec consultarCxP " + CodigoCliente.ToString());
@@ -178,7 +178,7 @@ namespace RentATruck.Procesos
                     string ncf = objDatos2.ds.Tables[0].Rows[n][4].ToString();
                     string referencia = objDatos2.ds.Tables[0].Rows[n][10].ToString();
 
-                    string sql = "actualiza_cuentas_por_pagar " + codigoCXP.ToString() + ",'" + fecha.ToShortDateString() + "','" + numfac_fac.ToString() + "'," + credito.ToString() + "," + monto.ToString() + "," + debito.ToString() + "," + saldo_final.ToString() + "," + this.cmbTipoPago.SelectedValue.ToString() + "," + this.txtCodigoCliente.Text + "," + codigocliente.ToString() + ",'" + ncf.ToString() + "','" + referencia.ToString() + "'";
+                    string sql = "actualiza_cuentas_por_pagar " + codigoCXP.ToString() + ",'" + fecha.ToShortDateString() + "','" + numfac_fac.ToString() + "'," + credito.ToString() + "," + monto.ToString() + "," + debito.ToString() + "," + saldo_final.ToString() + "," + this.cmbTipoPago.SelectedValue.ToString() + "," + codigoEmpleado + "," + codigocliente.ToString() + ",'" + ncf.ToString() + "','" + referencia.ToString() + "'";
                     objDatos2.Consulta_llenar_datos(sql);
 
                     string sql2 = "insert into registro_detalles_abonos_cpp values (" + codigoCXP + ",'" + numfac_fac.ToString() + "'," + monto.ToString() + ")";

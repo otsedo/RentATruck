@@ -244,6 +244,7 @@ namespace RentATruck.Formularios
             Procesos.proCuentasXPagar F_AbonoCxP = new Procesos.proCuentasXPagar();
             F_AbonoCxP = Procesos.proCuentasXPagar.InstanciaAbonarCxP();
             F_AbonoCxP.MdiParent = this;
+            F_AbonoCxP.codigoEmpleado = codigo_usuario;
             F_AbonoCxP.Show();
 
         }
@@ -317,6 +318,7 @@ namespace RentATruck.Formularios
             Procesos.proSalidaCamions F_SalidaCamiones = new Procesos.proSalidaCamions();
             F_SalidaCamiones = Procesos.proSalidaCamions.InstanciaSalidaCamiones();
             F_SalidaCamiones.MdiParent = this;
+            F_SalidaCamiones.codigoEmpleado = codigo_usuario;
             F_SalidaCamiones.Show();
         }
 

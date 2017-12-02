@@ -12,9 +12,10 @@ namespace RentATruck.Procesos
 {
     public partial class proSalidaCamions : Form
     {
-        string personaRecibe, Cedula, Referencia, Km, Concepto, Combustible, Sucursal;
+        string personaRecibe, Cedula, Referencia, Km, Concepto, Combustible, Sucursal, TelefonoChofer;
         datos objDatos = new datos();
         private static proSalidaCamions salidaCamionesInstancia = null;
+        public string NombreEmpleado, codigoEmpleado;
         public proSalidaCamions()
         {
             InitializeComponent();
@@ -45,8 +46,16 @@ namespace RentATruck.Procesos
         {
             horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
             horaSalida.Text = DateTime.Now.ToShortTimeString().ToString();
+            this.fechaSalida.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
             this.txtCamion.Text = "Nuevo";
             this.txtCodigoCliente.Text = "Nuevo";
+
+
+            objDatos.Conectar();
+            objDatos.Consulta_llenar_datos("select nombre_usuario from usuarios where codigo_usuario = " + codigoEmpleado);
+            this.txtUsuario.Text = objDatos.ds.Tables[0].Rows[0][0].ToString();
+            objDatos.Desconectar();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -127,6 +136,13 @@ namespace RentATruck.Procesos
             {
                 errorProvider1.SetError(txtCodigoCliente, "Seleccione un camion");
             }
+
+            if (this.txtFechaEntrada.Text == this.fechaSalida.Text)
+            {
+                MessageBox.Show("La fecha de Salida no puede ser la misma fecha de Entrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+
             else { errorProvider1.Clear(); }
 
             if (this.txtCamion.Text != "" && this.txtCamion.Text != "")
@@ -140,9 +156,10 @@ namespace RentATruck.Procesos
                     if (this.txtConcepto.Text == "") { Concepto = "NULL"; } else { Concepto = txtConcepto.Text; }
                     if (this.txtCombustible.Text == "") { Combustible = "NULL"; } else { Combustible = txtCombustible.Text; }
                     if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
+                    if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
 
                     objDatos.Conectar();
-                    string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "'";
+                    string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
                     if (objDatos.Insertar(sql))
                     {
                         objDatos.Desconectar();
@@ -177,6 +194,7 @@ namespace RentATruck.Procesos
             this.txtPersonaRecibe.Text = "";
             this.lblDatosCamion.Text = "";
             this.lblDatosCliente.Text = "";
+            this.txtTelefonoChofer.Text = "";
         }
     }
 }
