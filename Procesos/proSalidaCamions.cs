@@ -181,6 +181,9 @@ namespace RentATruck.Procesos
                                 objDatos.Consulta_llenar_datos("exec setAlquilarVehiculo1 " + this.txtCamion.Text);
                                 objDatos.Desconectar();
                                 MessageBox.Show("Registro Insertado");
+
+                                Reportes.ReporteSalida.Form1 Reporte_Salida = new Reportes.ReporteSalida.Form1();
+                                Reporte_Salida.ShowDialog();
                             }
                             else
                             {
