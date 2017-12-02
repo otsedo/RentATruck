@@ -73,6 +73,7 @@ namespace RentATruck.Busquedas
                     salida_datos += "AND (Nombre del vendedor LIKE '%" + palabra + "'%)";
                 }
             }
+            this.miFiltro.RowFilter = salida_datos;
         }
 
         private void cmdSeleccionar_Click(object sender, EventArgs e)

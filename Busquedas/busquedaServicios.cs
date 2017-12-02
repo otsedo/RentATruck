@@ -85,6 +85,7 @@ namespace RentATruck.Busquedas
                     salida_datos += "AND (Nombre del servicio LIKE '%" + palabra + "'%)";
                 }
             }
+            this.miFiltro.RowFilter = salida_datos;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
