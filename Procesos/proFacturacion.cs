@@ -17,7 +17,7 @@ namespace RentATruck.Procesos
         DataView miFiltro;
         int linea = 1;
         string descripcion, codigoArticulo, subTotal2, subTotal3, cantidadUpdated;
-        int numeroFactura, cantidad, ultimaFactura;
+        int numeroFactura, cantidad;
         double importe, precioUnidad, subTotal, ITBIS = 0.18, totalITBIS;
         private static proFacturacion facturacionInstancia = null;
         public double total;
@@ -98,9 +98,9 @@ namespace RentATruck.Procesos
             obDatos.Desconectar();
             this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
 
-            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString());
+            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString("dd-MM-yyyy"));
             DateTime expiryDate = startDate.AddDays(30);
-            this.fechaVencimiento.Text = expiryDate.ToString();
+            this.fechaVencimiento.Text = expiryDate.ToString("dd-MM-yyyy");
 
         }
 
@@ -393,10 +393,9 @@ namespace RentATruck.Procesos
 
         private void cmdImprimirFactura_Click(object sender, EventArgs e)
         {
-            ultimaFactura = Convert.ToInt32(txtNumeroFactura.Text) - 1;
             try
             {
-                Form frmImprimir = new Procesos.imprimirFacturas(ultimaFactura);
+                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
                 frmImprimir.Show();
             }
             catch (SystemException ex)
@@ -526,7 +525,6 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
-
             obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "','" + this.txtConcepto.Text + "'");
         }
 

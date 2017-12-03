@@ -604,7 +604,7 @@
             this.fechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.fechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaVencimiento.Location = new System.Drawing.Point(455, 130);
-            this.fechaVencimiento.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.fechaVencimiento.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             this.fechaVencimiento.Name = "fechaVencimiento";
             this.fechaVencimiento.Size = new System.Drawing.Size(158, 26);
             this.fechaVencimiento.TabIndex = 107;
