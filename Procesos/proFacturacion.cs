@@ -395,7 +395,7 @@ namespace RentATruck.Procesos
         {
             try
             {
-                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
+                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura - 1);
                 frmImprimir.Show();
             }
             catch (SystemException ex)
