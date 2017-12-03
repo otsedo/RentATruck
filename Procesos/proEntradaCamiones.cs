@@ -59,14 +59,14 @@ namespace RentATruck.Procesos
 
                         NuevoKilometraje = Convert.ToInt32(txtKilometraje.Text) - Convert.ToInt32(txtKmSalida.Text);
                         KilometrajeInsertar = NuevoKilometraje + kilometrajeActualCambioAceite();
-                        MessageBox.Show("El nuevo kilometraje es:" + NuevoKilometraje);
+                        //MessageBox.Show("El nuevo kilometraje es:" + NuevoKilometraje);
                         objDatos.Desconectar();
                         objDatos.Conectar();
                         string sql3 = "exec actualizar_kilometraje_aceite " + this.txtCodigoCamion.Text + "," + KilometrajeInsertar;
                         if (objDatos.Insertar(sql3))
                         {
                             objDatos.Desconectar();
-                            MessageBox.Show("Se actualizó la cantidad de KM para el cambio de aceite");
+                            //MessageBox.Show("Se actualizó la cantidad de KM para el cambio de aceite");
                         }
 
                         objDatos.Conectar();
@@ -74,7 +74,7 @@ namespace RentATruck.Procesos
                         if (objDatos.Insertar(sql5))
                         {
                             objDatos.Desconectar();
-                            MessageBox.Show("se deactivo la salida de camion");
+                            //MessageBox.Show("se deactivo la salida de camion");
                         }
                         objDatos.Desconectar();
                         limpiarPantalla();

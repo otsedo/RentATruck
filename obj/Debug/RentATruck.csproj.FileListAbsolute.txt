@@ -8,6 +8,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportSou
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\FlashControlV71.dll
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
@@ -31,6 +32,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busqu
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaSuplidores.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaVendedores.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmAbout.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmAgenda.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmDevuelta.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmLogin.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmPrincipal.resources
@@ -38,6 +40,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frm
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantCamiones.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantClientes.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantColores.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantContactosTelefomicos.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.frm.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantMarcas.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantModelosVehiculos.resources
@@ -45,6 +48,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantNotificacionesCorreo.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantServicios.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantSuplidores.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantTipoContacto.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantTipoVehiculos.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantUsuarios.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantVendedores.resources
@@ -66,6 +70,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.CxP.Fo
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Entradas.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.NCF.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReimpresionFacturas.Form1.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReporteSalida.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Salida.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Suplodore.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csproj.GenerateResource.Cache
@@ -75,8 +80,3 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.application
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\Microsoft.ReportViewer.Common.dll
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantTipoContacto.resources
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmAgenda.resources
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Mantenimientos.mantContactosTelefomicos.resources
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReporteSalida.Form1.resources

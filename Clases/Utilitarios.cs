@@ -18,7 +18,7 @@ namespace RentATruck.Clases
         {
             int logueado = 0;
             string mensaje = "";
-            string Cadena = @"Data Source=.\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
+            string Cadena = @"Data Source=10.0.0.5,1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = Cadena;
             conexion.Open();
