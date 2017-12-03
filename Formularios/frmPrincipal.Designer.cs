@@ -42,6 +42,7 @@
             this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeContactoTelefonicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasPorPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -83,7 +84,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tipoDeContactoTelefonicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accidentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -199,6 +200,13 @@
             this.tipoProductosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.tipoProductosToolStripMenuItem.Text = "Tipo de Vehiculos";
             this.tipoProductosToolStripMenuItem.Click += new System.EventHandler(this.tipoProductosToolStripMenuItem_Click);
+            // 
+            // tipoDeContactoTelefonicoToolStripMenuItem
+            // 
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Name = "tipoDeContactoTelefonicoToolStripMenuItem";
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Text = "Tipo de Contacto Telefonico";
+            this.tipoDeContactoTelefonicoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeContactoTelefonicoToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -343,7 +351,8 @@
             this.cuentasPorPagarToolStripMenuItem1,
             this.toolStripSeparator9,
             this.salidaDeCamionesToolStripMenuItem,
-            this.entradaDeCamionesToolStripMenuItem1});
+            this.entradaDeCamionesToolStripMenuItem1,
+            this.accidentesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "&Reportes";
@@ -502,12 +511,12 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
-            // tipoDeContactoTelefonicoToolStripMenuItem
+            // accidentesToolStripMenuItem
             // 
-            this.tipoDeContactoTelefonicoToolStripMenuItem.Name = "tipoDeContactoTelefonicoToolStripMenuItem";
-            this.tipoDeContactoTelefonicoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.tipoDeContactoTelefonicoToolStripMenuItem.Text = "Tipo de Contacto Telefonico";
-            this.tipoDeContactoTelefonicoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeContactoTelefonicoToolStripMenuItem_Click);
+            this.accidentesToolStripMenuItem.Name = "accidentesToolStripMenuItem";
+            this.accidentesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.accidentesToolStripMenuItem.Text = "Accidentes";
+            this.accidentesToolStripMenuItem.Click += new System.EventHandler(this.accidentesToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -593,5 +602,6 @@
         private System.Windows.Forms.ToolStripMenuItem agendaTelefonicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contactosTelefonicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeContactoTelefonicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accidentesToolStripMenuItem;
     }
 }

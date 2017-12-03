@@ -79,3 +79,5 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.exe.manifest
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.application
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.pdb
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.csprojResolveAssemblyReference.cache
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Release\RentATruck.Reportes.Accidentes.Form1.resources
