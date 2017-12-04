@@ -8,6 +8,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportSou
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.Shared.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\FlashControlV71.dll
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\log4net.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
@@ -64,6 +65,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proFac
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.txtNombreChofer.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Procesos.proSalidaCamions.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Properties.Resources.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Accidentes.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Clientes.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.CxC.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.CxP.Form1.resources
@@ -79,4 +81,3 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe.manifest
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.application
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
