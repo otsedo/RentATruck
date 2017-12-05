@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RentATruck.Clases;
 using System.Data.SqlClient;
-
-
+using System.IO;
 
 namespace RentATruck.Clases
 {
@@ -18,7 +17,7 @@ namespace RentATruck.Clases
         {
             int logueado = 0;
             string mensaje = "";
-            string Cadena = @"Data Source=10.0.0.5,1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
+            string Cadena = @"Data Source=" + File.ReadAllText(@"C:\RentATruck\setting.txt", Encoding.UTF8) + @",1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
             SqlConnection conexion = new SqlConnection();
             conexion.ConnectionString = Cadena;
             conexion.Open();

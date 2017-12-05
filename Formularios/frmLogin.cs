@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentATruck.Clases;
+using System.IO;
 
 namespace RentATruck.Formularios
 {
@@ -70,6 +71,12 @@ namespace RentATruck.Formularios
             {
                 IniciarSesion();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string text = File.ReadAllText(@"C:\RentATruck\setting.txt", Encoding.UTF8);
+            MessageBox.Show(text);
         }
     }
 }

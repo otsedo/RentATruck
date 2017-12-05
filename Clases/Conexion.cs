@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 
 class datos
 {
-    string Cadena = @"Data Source=10.0.0.5,1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
+    string Cadena = @"Data Source=" + File.ReadAllText(@"C:\RentATruck\setting.txt", Encoding.UTF8) + @",1433\SQLEXPRESS;Initial Catalog=RentATruck;User ID=Test;Password=Test123";
     public SqlConnection Cn;
     private SqlCommandBuilder cmb;
     public DataSet ds = new DataSet();
