@@ -18,6 +18,7 @@ namespace RentATruck.Busquedas
 
         public string ReturnValue1 { get; set; }
         public string ReturnValue2 { get; set; }
+        public string ReturnValue3 { get; set; }
 
         public busquedaClientes()
         {
@@ -28,7 +29,7 @@ namespace RentATruck.Busquedas
         {
 
             objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("select c.codigo_cliente, c.nombre, c.direccion,c.telefono1, c.telefono2 from clientes c, tipo_cliente tc where c.codtip_tip = tc.codtip_tip");
+            objDatos.Consulta_llenar_datos("select c.codigo_cliente, c.nombre, c.direccion,c.telefono1, c.telefono2, c.representante from clientes c, tipo_cliente tc where c.codtip_tip = tc.codtip_tip");
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
 
@@ -97,6 +98,7 @@ namespace RentATruck.Busquedas
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 this.ReturnValue1 = row.Cells["codigo_cliente"].Value.ToString();
                 this.ReturnValue2 = row.Cells["nombre"].Value.ToString();
+                this.ReturnValue3 = row.Cells["representante"].Value.ToString();
             }
         }
 

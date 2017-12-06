@@ -123,6 +123,7 @@ namespace RentATruck.Procesos
             {
                 txtCodigoCliente.Text = f3.ReturnValue1;
                 lblNombreCliente.Text = f3.ReturnValue2;
+                lblRepresentante.Text = f3.ReturnValue3;
             }
         }
 
