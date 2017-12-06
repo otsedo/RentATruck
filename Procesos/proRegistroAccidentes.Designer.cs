@@ -393,7 +393,7 @@
             this.cmdProcesar.Name = "cmdProcesar";
             this.cmdProcesar.Size = new System.Drawing.Size(178, 35);
             this.cmdProcesar.TabIndex = 148;
-            this.cmdProcesar.Text = "Procesar Salida";
+            this.cmdProcesar.Text = "Registrar";
             this.cmdProcesar.UseVisualStyleBackColor = false;
             this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 

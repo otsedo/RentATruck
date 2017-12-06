@@ -63,7 +63,6 @@
             this.salidasDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.suplidoresToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.nCFDisponiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -74,6 +73,7 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.salidaDeCamionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaDeCamionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.accidentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.correoRecibeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,6 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.accidentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -341,7 +340,6 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem2,
-            this.usuariosToolStripMenuItem1,
             this.suplidoresToolStripMenuItem2,
             this.nCFDisponiblesToolStripMenuItem,
             this.toolStripSeparator10,
@@ -363,12 +361,6 @@
             this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(186, 22);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
-            // 
-            // usuariosToolStripMenuItem1
-            // 
-            this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // suplidoresToolStripMenuItem2
             // 
@@ -433,6 +425,13 @@
             this.entradaDeCamionesToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
             this.entradaDeCamionesToolStripMenuItem1.Text = "Entrada de Camiones";
             this.entradaDeCamionesToolStripMenuItem1.Click += new System.EventHandler(this.entradaDeCamionesToolStripMenuItem1_Click);
+            // 
+            // accidentesToolStripMenuItem
+            // 
+            this.accidentesToolStripMenuItem.Name = "accidentesToolStripMenuItem";
+            this.accidentesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.accidentesToolStripMenuItem.Text = "Accidentes";
+            this.accidentesToolStripMenuItem.Click += new System.EventHandler(this.accidentesToolStripMenuItem_Click);
             // 
             // administrarToolStripMenuItem
             // 
@@ -511,13 +510,6 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
-            // accidentesToolStripMenuItem
-            // 
-            this.accidentesToolStripMenuItem.Name = "accidentesToolStripMenuItem";
-            this.accidentesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.accidentesToolStripMenuItem.Text = "Accidentes";
-            this.accidentesToolStripMenuItem.Click += new System.EventHandler(this.accidentesToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,7 +563,6 @@
         private System.Windows.Forms.ToolStripMenuItem cuadreDeCajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem nCFDisponiblesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;

@@ -174,9 +174,9 @@
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(16, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 20);
+            this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 99;
-            this.label3.Text = "Código Articulo:";
+            this.label3.Text = "Código Servicio:";
             // 
             // label2
             // 

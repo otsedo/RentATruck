@@ -70,8 +70,8 @@ namespace RentATruck.Procesos
                 }
                 else
                 {
-                    MessageBox.Show("Backup Listo, se procedera a copiar los archivos");
-                    copiar();
+                    MessageBox.Show("Backup Listo");
+                    //copiar();
                     //MessageBox.Show(result);
                 }
                 progressBar1.Value = 0;
@@ -82,37 +82,37 @@ namespace RentATruck.Procesos
 
         public void copiar()
         {
-            progressBar1.Increment(1);
-            label1.Text = "Copiando Archivos de Backup  " + progressBar1.Value.ToString() + "%";
-            if (progressBar1.Value == progressBar1.Maximum)
-            {
-                timer1.Stop();
-                string Copiar = @"C:\RentATruck\Copiar.bat";
-                Process test2 = new Process();
-                test2.StartInfo.FileName = Copiar;
-                test2.StartInfo.UseShellExecute = false;
-                test2.StartInfo.RedirectStandardOutput = true;
-                test2.StartInfo.RedirectStandardError = true;
-                test2.Start();
+            //progressBar1.Increment(1);
+            //label1.Text = "Copiando Archivos de Backup  " + progressBar1.Value.ToString() + "%";
+            //if (progressBar1.Value == progressBar1.Maximum)
+            //{
+            //    timer1.Stop();
+            //    string Copiar = @"C:\RentATruck\Copiar.bat";
+            //    Process test2 = new Process();
+            //    test2.StartInfo.FileName = Copiar;
+            //    test2.StartInfo.UseShellExecute = false;
+            //    test2.StartInfo.RedirectStandardOutput = true;
+            //    test2.StartInfo.RedirectStandardError = true;
+            //    test2.Start();
 
 
-                string result = test2.StandardOutput.ReadToEnd();
-                string error = test2.StandardError.ReadToEnd();
+            //    string result = test2.StandardOutput.ReadToEnd();
+            //    string error = test2.StandardError.ReadToEnd();
 
-                test2.WaitForExit();
-                if (error != "")
-                {
-                    MessageBox.Show(error);
-                }
-                else
-                {
-                    MessageBox.Show("Proceso terminado");
-                    //MessageBox.Show(result);
-                }
-                progressBar1.Value = 0;
-                label1.Text = "";
-                timer1.Stop();
-            }
+            //    test2.WaitForExit();
+            //    if (error != "")
+            //    {
+            //        MessageBox.Show(error);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Proceso terminado");
+            //        //MessageBox.Show(result);
+            //    }
+            //    progressBar1.Value = 0;
+            //    label1.Text = "";
+            //    timer1.Stop();
+            //}
         }
 
 
@@ -141,9 +141,9 @@ namespace RentATruck.Procesos
         private void button2_Click(object sender, EventArgs e)
         {
             // Abre folder en el explorer
-            Process.Start(@"C:\AnthonysRentATruckBackup");
+            //Process.Start(@"C:\RentATruck\Backup");
             // Abre folder en el explorer
-            //Process.Start("explorer.exe", @"C:\AnthonysRentATruckBackup");
+            Process.Start("explorer.exe", @"C:\RentATruck\Backup");
             //// lanza un error
             //Process.Start(@"c:\");
             //// opens explorer, showing some other folder)
