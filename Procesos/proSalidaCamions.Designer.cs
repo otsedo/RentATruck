@@ -68,6 +68,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cmdProcesar = new System.Windows.Forms.Button();
+            this.chBoxListTables = new System.Windows.Forms.CheckedListBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(833, 38);
+            this.textBox1.Size = new System.Drawing.Size(979, 38);
             this.textBox1.TabIndex = 92;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Salida de Camiones";
@@ -403,7 +405,7 @@
             this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cmdCancelar.ForeColor = System.Drawing.Color.White;
             this.cmdCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdCancelar.Location = new System.Drawing.Point(441, 372);
+            this.cmdCancelar.Location = new System.Drawing.Point(257, 411);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(178, 35);
             this.cmdCancelar.TabIndex = 138;
@@ -486,7 +488,7 @@
             this.cmdProcesar.Enabled = false;
             this.cmdProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdProcesar.ForeColor = System.Drawing.Color.White;
-            this.cmdProcesar.Location = new System.Drawing.Point(622, 372);
+            this.cmdProcesar.Location = new System.Drawing.Point(442, 411);
             this.cmdProcesar.Name = "cmdProcesar";
             this.cmdProcesar.Size = new System.Drawing.Size(178, 35);
             this.cmdProcesar.TabIndex = 14;
@@ -494,12 +496,62 @@
             this.cmdProcesar.UseVisualStyleBackColor = false;
             this.cmdProcesar.Click += new System.EventHandler(this.cmdProcesar_Click);
             // 
+            // chBoxListTables
+            // 
+            this.chBoxListTables.FormattingEnabled = true;
+            this.chBoxListTables.Items.AddRange(new object[] {
+            "Abolladuras?",
+            "Aceite Motor?",
+            "Aceite Transmisión?",
+            "Agua?",
+            "Alfombras?",
+            "Aros de lujos?",
+            "Bocina?",
+            "Chapas?",
+            "Copia Matricula?",
+            "Duplicado de llaves?",
+            "Encendedor cigarrillos?",
+            "Espejo Retrov. Der.?",
+            "Espejo retrov. In.?",
+            "Espejo Retrov. Izq.?",
+            "Gato?",
+            "Goma Repuesto?",
+            "Gomas?",
+            "Juego de herramientas?",
+            "Llave de ruedas?",
+            "Luces Delanteras?",
+            "Luces Direcc. Delanteras?",
+            "Luces Direcc. Traseras?",
+            "Luces Traseras?",
+            "Manual de usuario?",
+            "Marbete?",
+            "Motor?",
+            "Radio?",
+            "Tapón Gasolina?",
+            "Tapón Radiador?"});
+            this.chBoxListTables.Location = new System.Drawing.Point(806, 54);
+            this.chBoxListTables.Name = "chBoxListTables";
+            this.chBoxListTables.Size = new System.Drawing.Size(161, 439);
+            this.chBoxListTables.TabIndex = 145;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(384, 372);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 146;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // proSalidaCamions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
-            this.ClientSize = new System.Drawing.Size(833, 459);
+            this.ClientSize = new System.Drawing.Size(979, 549);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.chBoxListTables);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtTelefonoChofer);
@@ -589,5 +641,7 @@
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.Button cmdProcesar;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckedListBox chBoxListTables;
     }
 }

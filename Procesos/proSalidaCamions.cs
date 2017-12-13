@@ -16,6 +16,11 @@ namespace RentATruck.Procesos
         datos objDatos = new datos();
         private static proSalidaCamions salidaCamionesInstancia = null;
         public string NombreEmpleado, codigoEmpleado;
+        Boolean miscelaneo_1 = false;
+        string[] miscelaneos = new string[] { "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False" };
+
+
+
         public proSalidaCamions()
         {
             InitializeComponent();
@@ -52,6 +57,18 @@ namespace RentATruck.Procesos
                     this.cmdProcesar.Enabled = false;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            //for (int i = 0; i < +chBoxListTables.Items.Count; i++)
+            //{
+            //    MessageBox.Show("Posicion: " + i.ToString() + ", Valor: " + miscelaneos[i].ToString());
+            //}
+
+
         }
 
         private void proSalidaCamions_Load(object sender, EventArgs e)
@@ -172,8 +189,16 @@ namespace RentATruck.Procesos
                             if (this.txtSucursal.Text == "") { Sucursal = "NULL"; } else { Sucursal = txtSucursal.Text; }
                             if (this.txtTelefonoChofer.Text == "") { TelefonoChofer = "NULL"; } else { TelefonoChofer = txtTelefonoChofer.Text; }
 
+                            for (int i = 0; i < +chBoxListTables.Items.Count; i++)
+                            {
+                                if (chBoxListTables.GetItemChecked(i))
+                                {
+                                    miscelaneos[i] = "True";
+                                }
+                            }
+
                             objDatos.Conectar();
-                            string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado;
+                            string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado + ",'" + miscelaneos[0] + "','" + miscelaneos[1] + "','" + miscelaneos[2] + "','" + miscelaneos[3] + "','" + miscelaneos[4] + "','" + miscelaneos[5] + "','" + miscelaneos[6] + "','" + miscelaneos[7] + "','" + miscelaneos[8] + "','" + miscelaneos[9] + "','" + miscelaneos[10] + "','" + miscelaneos[11] + "','" + miscelaneos[12] + "','" + miscelaneos[13] + "','" + miscelaneos[14] + "','" + miscelaneos[15] + "','" + miscelaneos[16] + "','" + miscelaneos[17] + "','" + miscelaneos[18] + "','" + miscelaneos[19] + "','" + miscelaneos[20] + "','" + miscelaneos[21] + "','" + miscelaneos[22] + "','" + miscelaneos[23] + "','" + miscelaneos[24] + "','" + miscelaneos[25] + "','" + miscelaneos[26] + "','" + miscelaneos[27] + "','" + miscelaneos[28] + "'";
                             if (objDatos.Insertar(sql))
                             {
                                 objDatos.Desconectar();
