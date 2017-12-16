@@ -276,6 +276,8 @@
             this.txtMontoFactura.Size = new System.Drawing.Size(100, 23);
             this.txtMontoFactura.TabIndex = 1;
             this.txtMontoFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMontoFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoFactura_KeyPress);
+            this.txtMontoFactura.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMontoFactura_KeyUp);
             // 
             // label5
             // 

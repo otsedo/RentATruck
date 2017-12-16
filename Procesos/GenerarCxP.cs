@@ -122,6 +122,26 @@ namespace RentATruck.Procesos
             objDatos.Desconectar();
         }
 
+        private void txtMontoFactura_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtMontoFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo acepta numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         public GenerarCxP()
         {
             InitializeComponent();
