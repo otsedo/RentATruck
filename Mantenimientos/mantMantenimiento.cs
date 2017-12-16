@@ -111,40 +111,40 @@ namespace RentATruck.Mantenimientos
 
         private void cmdNuevo_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "Nuevo")
-            {
-                MessageBox.Show("Seleccione un camion");
-            }
-            else
-            {
-                string selectDateAsString = dateTimePicker1.Value.ToString("yyyyMMdd");
-                if (this.txtAceite.Text == "") { aceite = "NULL"; } else { aceite = txtAceite.Text; }
-                if (this.checkBox1.Checked == false) { selectDateAsString = "19900101"; }
-                if (this.txtCorreaTiempo.Text == "") { correa_tiempo = "NULL"; } else { correa_tiempo = this.txtCorreaTiempo.Text; }
-                if (this.txtFrenos.Text == "") { frenos = "NULL"; } else { frenos = this.txtFrenos.Text; }
-                if (this.txtID.Text == "Nuevo") { codigoMantenimiento = 0; } else { codigoMantenimiento = Convert.ToInt32(txtID.Text); }
+            //if (txtID.Text == "Nuevo")
+            //{
+            //    MessageBox.Show("Seleccione un camion");
+            //}
+            //else
+            //{
+            string selectDateAsString = dateTimePicker1.Value.ToString("yyyyMMdd");
+            if (this.txtAceite.Text == "") { aceite = "NULL"; } else { aceite = txtAceite.Text; }
+            if (this.checkBox1.Checked == false) { selectDateAsString = "19900101"; }
+            if (this.txtCorreaTiempo.Text == "") { correa_tiempo = "NULL"; } else { correa_tiempo = this.txtCorreaTiempo.Text; }
+            if (this.txtFrenos.Text == "") { frenos = "NULL"; } else { frenos = this.txtFrenos.Text; }
+            if (this.txtID.Text == "Nuevo") { codigoMantenimiento = 0; } else { codigoMantenimiento = Convert.ToInt32(txtID.Text); }
 
 
-                try
+            try
+            {
+                objDatos.Conectar();
+                string sql = "exec inserta_actualiza_mantenimiento_vehiculos " + codigoMantenimiento + "," + this.txtCamion.Text + "," + aceite + ",'" + selectDateAsString + "'," + correa_tiempo + "," + frenos + "";
+                if (objDatos.Insertar(sql))
                 {
-                    objDatos.Conectar();
-                    string sql = "exec inserta_actualiza_mantenimiento_vehiculos " + codigoMantenimiento + "," + this.txtCamion.Text + "," + aceite + ",'" + selectDateAsString + "'," + correa_tiempo + "," + frenos + "";
-                    if (objDatos.Insertar(sql))
-                    {
-                        objDatos.Desconectar();
-                        MessageBox.Show("Registro Insertado");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro no pudo ser insertado");
-                    }
+                    objDatos.Desconectar();
+                    MessageBox.Show("Registro Insertado");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                else
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show("Registro no pudo ser insertado");
                 }
-                limpiarPantalla();
             }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            limpiarPantalla();
+            //}
         }
 
         private void limpiarPantalla()

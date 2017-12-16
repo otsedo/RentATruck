@@ -252,6 +252,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(91, 26);
             this.txtID.TabIndex = 96;
+            this.txtID.Visible = false;
             // 
             // label3
             // 
@@ -263,6 +264,7 @@
             this.label3.Size = new System.Drawing.Size(33, 20);
             this.label3.TabIndex = 98;
             this.label3.Text = "ID:";
+            this.label3.Visible = false;
             // 
             // dateTimePicker1
             // 
