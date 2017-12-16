@@ -70,6 +70,8 @@ namespace RentATruck.Mantenimientos
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+
+            //dateTimePicker1.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
         }
 
         public virtual void cargarMarcas()
@@ -211,10 +213,12 @@ namespace RentATruck.Mantenimientos
                     SqlCommand SqlCom = new SqlCommand(qry, objDatos.Cn);
 
                     // Se agrega la información como parámetros
+
+
                     SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                    SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", dateTimePicker1.Value));
                     SqlCom.Parameters.Add(new SqlParameter("@codtip_tip", this.cbmTipoCliente.SelectedValue));
                     SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));

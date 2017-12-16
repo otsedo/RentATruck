@@ -15,7 +15,7 @@ namespace RentATruck.Mantenimientos
 {
     public partial class frm : Form
     {
-        string aceite, seguro, correa_tiempo, frenos, camion;
+        string aceite, correa_tiempo, frenos, camion;
         datos objDatos = new datos();
         private static frm mantMantNotificacionInstancia = null;
         int codigoMantenimiento;
@@ -106,35 +106,45 @@ namespace RentATruck.Mantenimientos
         private void mantMantenimiento_Load(object sender, EventArgs e)
         {
             this.txtID.Text = "Nuevo";
+            dateTimePicker1.Value = DateTime.Now.Date.Date;
         }
 
         private void cmdNuevo_Click(object sender, EventArgs e)
         {
-            if (this.txtAceite.Text == "") { aceite = "NULL"; } else { aceite = txtAceite.Text; }
-            if (this.checkBox1.Checked == false) { seguro = "12/31/9998"; } else { seguro = dateTimePicker1.Text; }
-            if (this.txtCorreaTiempo.Text == "") { correa_tiempo = "NULL"; } else { correa_tiempo = this.txtCorreaTiempo.Text; }
-            if (this.txtFrenos.Text == "") { frenos = "NULL"; } else { frenos = this.txtFrenos.Text; }
-            if (this.txtID.Text == "Nuevo") { codigoMantenimiento = 0; } else { codigoMantenimiento = Convert.ToInt32(txtID.Text); }
+            if (txtID.Text == "Nuevo")
+            {
+                MessageBox.Show("Seleccione un camion");
+            }
+            else
+            {
+                string selectDateAsString = dateTimePicker1.Value.ToString("yyyyMMdd");
+                if (this.txtAceite.Text == "") { aceite = "NULL"; } else { aceite = txtAceite.Text; }
+                if (this.checkBox1.Checked == false) { selectDateAsString = "19900101"; }
+                if (this.txtCorreaTiempo.Text == "") { correa_tiempo = "NULL"; } else { correa_tiempo = this.txtCorreaTiempo.Text; }
+                if (this.txtFrenos.Text == "") { frenos = "NULL"; } else { frenos = this.txtFrenos.Text; }
+                if (this.txtID.Text == "Nuevo") { codigoMantenimiento = 0; } else { codigoMantenimiento = Convert.ToInt32(txtID.Text); }
 
-            try
-            {
-                objDatos.Conectar();
-                string sql = "exec inserta_actualiza_mantenimiento_vehiculos " + codigoMantenimiento + "," + this.txtCamion.Text + "," + aceite + ",'" + seguro + "'," + correa_tiempo + "," + frenos + "";
-                if (objDatos.Insertar(sql))
+
+                try
                 {
-                    objDatos.Desconectar();
-                    MessageBox.Show("Registro Insertado");
+                    objDatos.Conectar();
+                    string sql = "exec inserta_actualiza_mantenimiento_vehiculos " + codigoMantenimiento + "," + this.txtCamion.Text + "," + aceite + ",'" + selectDateAsString + "'," + correa_tiempo + "," + frenos + "";
+                    if (objDatos.Insertar(sql))
+                    {
+                        objDatos.Desconectar();
+                        MessageBox.Show("Registro Insertado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro no pudo ser insertado");
+                    }
                 }
-                else
+                catch (System.Data.SqlClient.SqlException ex)
                 {
-                    MessageBox.Show("Registro no pudo ser insertado");
+                    MessageBox.Show(ex.Message.ToString());
                 }
+                limpiarPantalla();
             }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-            limpiarPantalla();
         }
 
         private void limpiarPantalla()
@@ -142,7 +152,7 @@ namespace RentATruck.Mantenimientos
             this.txtAceite.Text = "";
             this.txtCorreaTiempo.Text = "";
             this.txtFrenos.Text = "";
-            this.dateTimePicker1.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+            this.dateTimePicker1.Value = DateTime.Now.Date;
             this.checkBox1.Checked = false;
             this.lblDatosCamion.Text = "";
             this.txtID.Text = "Nuevo";

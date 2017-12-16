@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCorreaTiempo = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.lblDatosCamion = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,18 +114,6 @@
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 99;
             this.label4.Text = "Seguro:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 178);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 26);
-            this.dateTimePicker1.TabIndex = 100;
-            this.dateTimePicker1.Value = new System.DateTime(2017, 10, 27, 22, 2, 25, 0);
             // 
             // label5
             // 
@@ -276,6 +264,19 @@
             this.label3.TabIndex = 98;
             this.label3.Text = "ID:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(179, 179);
+            this.dateTimePicker1.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(158, 26);
+            this.dateTimePicker1.TabIndex = 159;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 12, 15, 0, 0, 0, 0);
+            // 
             // frm
             // 
             this.AcceptButton = this.cmdNuevo;
@@ -284,6 +285,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(817, 459);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblDatosCamion);
             this.Controls.Add(this.cmdBuscarCodCli);
             this.Controls.Add(this.label1);
@@ -295,7 +297,6 @@
             this.Controls.Add(this.txtCorreaTiempo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmdNuevo);
@@ -322,7 +323,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button cmdNuevo;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtCorreaTiempo;
@@ -336,5 +336,6 @@
         public System.Windows.Forms.Label lblDatosCamion;
         public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

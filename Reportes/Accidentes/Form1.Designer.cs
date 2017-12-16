@@ -105,7 +105,7 @@
             this.cmdNuevo.BackColor = System.Drawing.Color.SteelBlue;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdNuevo.ForeColor = System.Drawing.Color.White;
-            this.cmdNuevo.Location = new System.Drawing.Point(763, 51);
+            this.cmdNuevo.Location = new System.Drawing.Point(883, 46);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(95, 35);
             this.cmdNuevo.TabIndex = 160;

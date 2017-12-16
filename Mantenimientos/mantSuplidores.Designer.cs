@@ -39,6 +39,10 @@
             // 
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
+            // cmdGuardar
+            // 
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            // 
             // textBox1
             // 
             this.textBox1.Text = "Mantenimiento de Suplidores";

@@ -168,7 +168,7 @@ namespace RentATruck.Mantenimientos
                         SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text.Trim()));
                         SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", dateTimePicker1.Value));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@direccion", this.txtDireccion.Text));
@@ -207,7 +207,7 @@ namespace RentATruck.Mantenimientos
                         SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text.Trim()));
                         SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Value));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@direccion", this.txtDireccion.Text));
@@ -338,6 +338,11 @@ namespace RentATruck.Mantenimientos
                 if (objDatos.Cn.State == ConnectionState.Open)
                     objDatos.Cn.Close();
             }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
