@@ -89,25 +89,25 @@ namespace RentATruck.Mantenimientos
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Validando que no pueda ingresar espacios, numeros y simbolos
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            ////Validando que no pueda ingresar espacios, numeros y simbolos
+            //if (Char.IsLetter(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
 
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            //else if (Char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
 
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            //else if (Char.IsSeparator(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            //else
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

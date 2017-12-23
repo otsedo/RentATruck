@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +40,16 @@
             // 
             this.textBox1.Text = "Mantenimiento de Tipos de Contactos";
             // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(159, 120);
+            this.txtMarca.Size = new System.Drawing.Size(416, 26);
+            // 
+            // label1
+            // 
+            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.Text = "Tipo Contacto:";
+            // 
             // cmdCancelar
             // 
             this.cmdCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -45,6 +57,22 @@
             // txtID
             // 
             this.txtID.Text = "Nuevo";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "codigo_marca";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "descripcion";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 421;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -96,5 +124,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

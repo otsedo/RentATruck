@@ -69,7 +69,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.chBoxListTables = new System.Windows.Forms.CheckedListBox();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -365,6 +364,7 @@
             this.txtSucursal.Name = "txtSucursal";
             this.txtSucursal.Size = new System.Drawing.Size(418, 26);
             this.txtSucursal.TabIndex = 13;
+            this.txtSucursal.Text = "Anthony Rent Truck";
             // 
             // label12
             // 
@@ -536,24 +536,12 @@
             this.chBoxListTables.Size = new System.Drawing.Size(187, 439);
             this.chBoxListTables.TabIndex = 145;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(448, 372);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 23);
-            this.button2.TabIndex = 146;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // proSalidaCamions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(1142, 549);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.chBoxListTables);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtUsuario);
@@ -645,7 +633,6 @@
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.Button cmdProcesar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckedListBox chBoxListTables;
     }
 }
