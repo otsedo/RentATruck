@@ -99,7 +99,7 @@ namespace RentATruck.Procesos
             this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
 
             DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString("dd-MM-yyyy"));
-            DateTime expiryDate = startDate.AddDays(30);
+            DateTime expiryDate = startDate.AddDays(15);
             this.fechaVencimiento.Text = expiryDate.ToString("dd-MM-yyyy");
 
         }
