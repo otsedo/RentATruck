@@ -31,26 +31,33 @@ namespace RentATruck.Reportes.ReimpresionSalida
 
         private void cmdNuevo_Click(object sender, EventArgs e)
         {
-            datos objDatos = new datos();
-            objDatos.Conectar();
-            objDatos.Consulta_llenar_datos("consultar_ultima_salida_camion " + this.txtID.Text);
+            if (this.txtID.Text == "")
+            {
+                MessageBox.Show("Debe de especificar el numero de salida", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                datos objDatos = new datos();
+                objDatos.Conectar();
+                objDatos.Consulta_llenar_datos("consultar_ultima_salida_camion " + this.txtID.Text);
 
-            Reportes.ReporteSalida.rptUltimaSalida rp = new Reportes.ReporteSalida.rptUltimaSalida();
-            rp.SetDataSource(objDatos.ds.Tables[0]);
-            crystalReportViewer1.ReportSource = rp;
+                Reportes.ReporteSalida.rptUltimaSalida rp = new Reportes.ReporteSalida.rptUltimaSalida();
+                rp.SetDataSource(objDatos.ds.Tables[0]);
+                crystalReportViewer1.ReportSource = rp;
 
-            crystalReportViewer1.ShowCloseButton = false;
-            crystalReportViewer1.ShowCopyButton = false;
-            crystalReportViewer1.ShowGotoPageButton = false;
-            crystalReportViewer1.ShowLogo = false;
-            crystalReportViewer1.ShowParameterPanelButton = false;
-            crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            crystalReportViewer1.ShowParameterPanelButton = false;
-            crystalReportViewer1.DisplayStatusBar = false;
+                crystalReportViewer1.ShowCloseButton = false;
+                crystalReportViewer1.ShowCopyButton = false;
+                crystalReportViewer1.ShowGotoPageButton = false;
+                crystalReportViewer1.ShowLogo = false;
+                crystalReportViewer1.ShowParameterPanelButton = false;
+                crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+                crystalReportViewer1.ShowParameterPanelButton = false;
+                crystalReportViewer1.DisplayStatusBar = false;
 
 
-            crystalReportViewer1.RefreshReport();
-            objDatos.Desconectar();
+                crystalReportViewer1.RefreshReport();
+                objDatos.Desconectar();
+            }
         }
     }
 }
