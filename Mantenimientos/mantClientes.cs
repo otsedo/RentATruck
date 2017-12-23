@@ -87,6 +87,7 @@ namespace RentATruck.Mantenimientos
             this.txtID.Enabled = false;
             this.txtRepresentante.Text = "";
             this.telRepresentante.Text = "";
+            this.txtRNC.Text = "";
             this.pictureBox1.Image = RentATruck.Properties.Resources.user;
             objDatos.Conectar();
 
@@ -205,7 +206,7 @@ namespace RentATruck.Mantenimientos
                 if (this.txtID.Text == "Nuevo")
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "insert into clientes (nombre, identificacion,estado, fecha_ingreso, codtip_tip, telefono1, telefono2, direccion,fotove_cliente, representante, telefono_representante) values (@nombre, @identificacion,@estado, @fecha_ingreso, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente,@representante, @telefono_representante)";
+                    string qry = "insert into clientes (nombre, identificacion,estado, fecha_ingreso, codtip_tip, telefono1, telefono2, direccion,fotove_cliente, representante, telefono_representante, rnc) values (@nombre, @identificacion,@estado, @fecha_ingreso, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente,@representante, @telefono_representante, @rnc)";
 
                     //try
                     //{
@@ -226,6 +227,7 @@ namespace RentATruck.Mantenimientos
                     SqlCom.Parameters.Add(new SqlParameter("@fotove_cliente", data));
                     SqlCom.Parameters.Add(new SqlParameter("@representante", this.txtRepresentante.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@telefono_representante", this.telRepresentante.Text));
+                    SqlCom.Parameters.Add(new SqlParameter("@rnc", this.txtRNC.Text));
                     // Abrir la conexión y ejecutar el query
                     objDatos.Conectar();
                     SqlCom.ExecuteNonQuery();
@@ -248,7 +250,7 @@ namespace RentATruck.Mantenimientos
                 else
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente, representante = @representante, telefono_representante = @telefono_representante where codigo_cliente = " + this.txtID.Text;
+                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente, representante = @representante, telefono_representante = @telefono_representante, rnc = @rnc where codigo_cliente = " + this.txtID.Text;
 
                     try
                     {
@@ -267,6 +269,7 @@ namespace RentATruck.Mantenimientos
                         SqlCom.Parameters.Add(new SqlParameter("@fotove_cliente", data));
                         SqlCom.Parameters.Add(new SqlParameter("@representante", this.txtRepresentante.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono_representante", this.telRepresentante.Text));
+                        SqlCom.Parameters.Add(new SqlParameter("@rnc", this.txtRNC.Text));
 
                         // Abrir la conexión y ejecutar el query
                         objDatos.Conectar();
@@ -392,6 +395,7 @@ namespace RentATruck.Mantenimientos
                     this.cbmTipoCliente.Text = objDatos.ds.Tables[0].Rows[0][13].ToString();
                     this.txtRepresentante.Text = objDatos.ds.Tables[0].Rows[0][10].ToString();
                     this.telRepresentante.Text = objDatos.ds.Tables[0].Rows[0][11].ToString();
+                    this.txtRNC.Text = objDatos.ds.Tables[0].Rows[0][12].ToString();
 
                     if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][3]) == true)
                     {

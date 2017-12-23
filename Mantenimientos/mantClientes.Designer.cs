@@ -61,6 +61,8 @@
             this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.telRepresentante = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtRNC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,11 +278,24 @@
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
             this.label11.Name = "label11";
             // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label12.Name = "label12";
+            // 
+            // txtRNC
+            // 
+            resources.ApplyResources(this.txtRNC, "txtRNC");
+            this.txtRNC.Name = "txtRNC";
+            // 
             // mantClientes
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtRNC);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.telRepresentante);
             this.Controls.Add(this.label10);
@@ -356,5 +371,7 @@
         public System.Windows.Forms.TextBox txtRepresentante;
         private System.Windows.Forms.MaskedTextBox telRepresentante;
         public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox txtRNC;
     }
 }
