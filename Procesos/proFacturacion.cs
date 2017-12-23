@@ -389,7 +389,7 @@ namespace RentATruck.Procesos
                     MessageBox.Show("Proceso concluido");
 
                 }
-                this.cmdImprimirFactura.PerformClick();
+                imprimirFactura();
                 limpiarDatos();
             }
         }
@@ -399,6 +399,19 @@ namespace RentATruck.Procesos
             try
             {
                 Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura - 1);
+                frmImprimir.Show();
+            }
+            catch (SystemException ex)
+            {
+                MessageBox.Show("No se encuentra la factura actual");
+            }
+        }
+
+        private void imprimirFactura()
+        {
+            try
+            {
+                Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
                 frmImprimir.Show();
             }
             catch (SystemException ex)
@@ -441,6 +454,12 @@ namespace RentATruck.Procesos
         private void txtCantidad_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
+            frmImprimir.Show();
         }
 
         private void Button6_Click(object sender, EventArgs e)
