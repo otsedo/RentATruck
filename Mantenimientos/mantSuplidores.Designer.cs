@@ -41,7 +41,16 @@
             // 
             // cmdGuardar
             // 
+            this.cmdGuardar.TabIndex = 6;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
+            // 
+            // txtIDentificacion
+            // 
+            this.txtIDentificacion.TabIndex = 1;
+            // 
+            // txtnombre
+            // 
+            this.txtnombre.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -52,9 +61,25 @@
             this.txtID.Text = "Nuevo";
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
+            // txtDireccion
+            // 
+            this.txtDireccion.TabIndex = 5;
+            // 
+            // txtTelefono2
+            // 
+            this.txtTelefono2.TabIndex = 4;
+            // 
+            // txtTelefono1
+            // 
+            this.txtTelefono1.TabIndex = 3;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // button1
             // 

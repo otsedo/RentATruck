@@ -322,7 +322,7 @@
     <value>182, 26</value>
   </data>
   <data name="txtIDentificacion.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtIDentificacion.Name" xml:space="preserve">
     <value>txtIDentificacion</value>
@@ -379,7 +379,7 @@
     <value>182, 26</value>
   </data>
   <data name="dateTimePicker1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
     <value>dateTimePicker1</value>
@@ -436,7 +436,7 @@
     <value>182, 28</value>
   </data>
   <data name="cbmTipoCliente.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;cbmTipoCliente.Name" xml:space="preserve">
     <value>cbmTipoCliente</value>
@@ -751,7 +751,7 @@
     <value>84, 78</value>
   </data>
   <data name="cmdGuardar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="cmdGuardar.Text" xml:space="preserve">
     <value>Guardar</value>
@@ -814,7 +814,7 @@
     <value>183, 26</value>
   </data>
   <data name="txtTelefono1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtTelefono1.Name" xml:space="preserve">
     <value>txtTelefono1</value>
@@ -841,7 +841,7 @@
     <value>183, 26</value>
   </data>
   <data name="txtTelefono2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtTelefono2.Name" xml:space="preserve">
     <value>txtTelefono2</value>
@@ -892,7 +892,7 @@
     <value>272, 70</value>
   </data>
   <data name="txtDireccion.TabIndex" type="System.Int32, mscorlib">
-    <value>134</value>
+    <value>9</value>
   </data>
   <data name="txtDireccion.Text" xml:space="preserve">
     <value />
@@ -991,7 +991,7 @@
     <value>272, 26</value>
   </data>
   <data name="txtRepresentante.TabIndex" type="System.Int32, mscorlib">
-    <value>137</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtRepresentante.Name" xml:space="preserve">
     <value>txtRepresentante</value>
@@ -1018,7 +1018,7 @@
     <value>183, 26</value>
   </data>
   <data name="telRepresentante.TabIndex" type="System.Int32, mscorlib">
-    <value>139</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;telRepresentante.Name" xml:space="preserve">
     <value>telRepresentante</value>
@@ -1111,7 +1111,7 @@
     <value>182, 26</value>
   </data>
   <data name="txtRNC.TabIndex" type="System.Int32, mscorlib">
-    <value>141</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtRNC.Name" xml:space="preserve">
     <value>txtRNC</value>

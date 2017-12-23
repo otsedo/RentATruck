@@ -72,6 +72,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.CxP.Fo
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Entradas.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.NCF.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReimpresionFacturas.Form1.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReimpresionSalida.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReporteSalida.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Salida.Form1.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.Suplodore.Form1.resources
@@ -82,4 +83,3 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.application
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Reportes.ReimpresionSalida.Form1.resources

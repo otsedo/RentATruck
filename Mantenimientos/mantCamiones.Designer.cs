@@ -130,7 +130,7 @@
             this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(479, 26);
-            this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.TabIndex = 8;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             this.txtPlaca.MaxLength = 7;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(193, 26);
-            this.txtPlaca.TabIndex = 1;
+            this.txtPlaca.TabIndex = 5;
             // 
             // label5
             // 
@@ -173,7 +173,7 @@
             this.cbmMarca.Location = new System.Drawing.Point(137, 92);
             this.cbmMarca.Name = "cbmMarca";
             this.cbmMarca.Size = new System.Drawing.Size(197, 28);
-            this.cbmMarca.TabIndex = 102;
+            this.cbmMarca.TabIndex = 0;
             // 
             // cbmTipo
             // 
@@ -185,7 +185,7 @@
             this.cbmTipo.Location = new System.Drawing.Point(423, 88);
             this.cbmTipo.Name = "cbmTipo";
             this.cbmTipo.Size = new System.Drawing.Size(193, 28);
-            this.cbmTipo.TabIndex = 103;
+            this.cbmTipo.TabIndex = 1;
             // 
             // label6
             // 
@@ -208,7 +208,7 @@
             this.cbmColor.Location = new System.Drawing.Point(423, 123);
             this.cbmColor.Name = "cbmColor";
             this.cbmColor.Size = new System.Drawing.Size(193, 28);
-            this.cbmColor.TabIndex = 105;
+            this.cbmColor.TabIndex = 3;
             // 
             // label4
             // 
@@ -239,7 +239,7 @@
             this.txtAño.MaxLength = 4;
             this.txtAño.Name = "txtAño";
             this.txtAño.Size = new System.Drawing.Size(197, 26);
-            this.txtAño.TabIndex = 0;
+            this.txtAño.TabIndex = 4;
             this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
             // 
             // label8
@@ -271,7 +271,7 @@
             this.txtKm.MaxLength = 6;
             this.txtKm.Name = "txtKm";
             this.txtKm.Size = new System.Drawing.Size(197, 26);
-            this.txtKm.TabIndex = 2;
+            this.txtKm.TabIndex = 6;
             this.txtKm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKm_KeyPress);
             // 
             // label10
@@ -292,7 +292,7 @@
             this.txtChasis.MaxLength = 17;
             this.txtChasis.Name = "txtChasis";
             this.txtChasis.Size = new System.Drawing.Size(193, 26);
-            this.txtChasis.TabIndex = 3;
+            this.txtChasis.TabIndex = 7;
             // 
             // estado
             // 
@@ -379,7 +379,7 @@
             this.cmdGuardar.Location = new System.Drawing.Point(137, 256);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(84, 78);
-            this.cmdGuardar.TabIndex = 89;
+            this.cmdGuardar.TabIndex = 9;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cmdGuardar.UseVisualStyleBackColor = false;
@@ -404,7 +404,7 @@
             this.cbmModelo.Location = new System.Drawing.Point(137, 123);
             this.cbmModelo.Name = "cbmModelo";
             this.cbmModelo.Size = new System.Drawing.Size(197, 28);
-            this.cbmModelo.TabIndex = 120;
+            this.cbmModelo.TabIndex = 2;
             // 
             // mantCamiones
             // 
