@@ -84,6 +84,7 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.reImprimirSalidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -343,6 +344,7 @@
             this.suplidoresToolStripMenuItem2,
             this.nCFDisponiblesToolStripMenuItem,
             this.toolStripSeparator10,
+            this.reImprimirSalidasToolStripMenuItem,
             this.imprimirFacturasToolStripMenuItem,
             this.toolStripSeparator8,
             this.cuentasPorCobrarToolStripMenuItem,
@@ -510,6 +512,13 @@
             this.lblEstado.Size = new System.Drawing.Size(35, 17);
             this.lblEstado.Text = "dddd";
             // 
+            // reImprimirSalidasToolStripMenuItem
+            // 
+            this.reImprimirSalidasToolStripMenuItem.Name = "reImprimirSalidasToolStripMenuItem";
+            this.reImprimirSalidasToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.reImprimirSalidasToolStripMenuItem.Text = "Re-Imprimir Salidas";
+            this.reImprimirSalidasToolStripMenuItem.Click += new System.EventHandler(this.reImprimirSalidasToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,5 +603,6 @@
         private System.Windows.Forms.ToolStripMenuItem contactosTelefonicosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeContactoTelefonicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accidentesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reImprimirSalidasToolStripMenuItem;
     }
 }

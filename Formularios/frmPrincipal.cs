@@ -399,6 +399,14 @@ namespace RentATruck.Formularios
             Accidentes.Show();
         }
 
+        private void reImprimirSalidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReimpresionSalida.Form1 salidasre = new Reportes.ReimpresionSalida.Form1();
+            salidasre = Reportes.ReimpresionSalida.Form1.InstanciaReimpresionSalidas();
+            salidasre.MdiParent = this;
+            salidasre.Show();
+        }
+
         private void entradaDeCamionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Procesos.proEntradaCamiones proEntradaCamiones = new Procesos.proEntradaCamiones();
