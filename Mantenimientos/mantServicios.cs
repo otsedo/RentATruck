@@ -143,7 +143,7 @@ namespace RentATruck.Mantenimientos
                     if (marcaEncontrada != "")
                     {
                         DialogResult respuesta;
-                        respuesta = MessageBox.Show("El color encontrado, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        respuesta = MessageBox.Show("El servicio encontrado, " + marcaEncontrada + ", existe. ¿Desea actualizar?", "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (respuesta == DialogResult.OK)
                         {
                             objDatos.Conectar();

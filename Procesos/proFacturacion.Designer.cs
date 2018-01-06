@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proFacturacion));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,12 +75,11 @@
             this.cmdFacturar = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtVendedor = new System.Windows.Forms.TextBox();
-            this.fechaVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fechaVencimiento = new System.Windows.Forms.TextBox();
             this.lblRepresentante = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtFechaVencimiento = new System.Windows.Forms.TextBox();
             this.GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -274,6 +273,7 @@
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(211, 21);
             this.cmbTipoPago.TabIndex = 88;
+            this.cmbTipoPago.SelectionChangeCommitted += new System.EventHandler(this.cmbTipoPago_SelectionChangeCommitted);
             // 
             // cmdEditarArticulo
             // 
@@ -390,26 +390,26 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(10, 200);
             this.dataGridView1.MultiSelect = false;
@@ -602,17 +602,6 @@
             this.txtVendedor.TabIndex = 3;
             this.txtVendedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // fechaVencimiento
-            // 
-            this.fechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.fechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaVencimiento.Location = new System.Drawing.Point(455, 130);
-            this.fechaVencimiento.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
-            this.fechaVencimiento.Name = "fechaVencimiento";
-            this.fechaVencimiento.Size = new System.Drawing.Size(158, 26);
-            this.fechaVencimiento.TabIndex = 107;
-            this.fechaVencimiento.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -625,22 +614,22 @@
             this.label16.TabIndex = 108;
             this.label16.Text = "Fecha Vencimiento:";
             // 
-            // textBox1
+            // fechaVencimiento
             // 
-            this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(1205, 38);
-            this.textBox1.TabIndex = 109;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "Facturación";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fechaVencimiento.BackColor = System.Drawing.Color.SteelBlue;
+            this.fechaVencimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fechaVencimiento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.fechaVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaVencimiento.ForeColor = System.Drawing.Color.White;
+            this.fechaVencimiento.HideSelection = false;
+            this.fechaVencimiento.Location = new System.Drawing.Point(0, 0);
+            this.fechaVencimiento.Name = "fechaVencimiento";
+            this.fechaVencimiento.ReadOnly = true;
+            this.fechaVencimiento.Size = new System.Drawing.Size(1205, 38);
+            this.fechaVencimiento.TabIndex = 109;
+            this.fechaVencimiento.TabStop = false;
+            this.fechaVencimiento.Text = "Facturación";
+            this.fechaVencimiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblRepresentante
             // 
@@ -663,26 +652,23 @@
             this.label18.Size = new System.Drawing.Size(134, 20);
             this.label18.TabIndex = 111;
             this.label18.Text = "Representante:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // button1
+            // txtFechaVencimiento
             // 
-            this.button1.Location = new System.Drawing.Point(34, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 112;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtFechaVencimiento.Location = new System.Drawing.Point(446, 134);
+            this.txtFechaVencimiento.Name = "txtFechaVencimiento";
+            this.txtFechaVencimiento.Size = new System.Drawing.Size(167, 20);
+            this.txtFechaVencimiento.TabIndex = 113;
             // 
             // proFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 559);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtFechaVencimiento);
             this.Controls.Add(this.lblRepresentante);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.fechaVencimiento);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cmdAgregarNCF);
@@ -780,11 +766,10 @@
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker fechaVencimiento;
         public System.Windows.Forms.Label label16;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox fechaVencimiento;
         internal System.Windows.Forms.Label lblRepresentante;
         public System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFechaVencimiento;
     }
 }

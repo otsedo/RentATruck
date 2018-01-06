@@ -65,6 +65,8 @@ namespace RentATruck.Procesos
             this.txtCodigoArticulo.Focus();
             this.txtCodigoCliente.Text = "";
             this.lblNombreCliente.Text = "";
+            this.lblRepresentante.Text = "";
+            this.txtConcepto.Text = "";
             this.txtNCF.Text = "";
         }
 
@@ -98,10 +100,18 @@ namespace RentATruck.Procesos
             obDatos.Desconectar();
             this.txtCodigoEmpleado.Text = codigoEmpleado.ToString();
 
-            DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
-            //DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date.ToString("dd-MM-yyyy"));
-            DateTime expiryDate = startDate.AddDays(15);
-            this.fechaVencimiento.Text = expiryDate.ToString("dd-MM-yyyy");
+            if (this.cmbTipoPago.Text == "Contado")
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate;
+                txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
+            else if (this.cmbTipoPago.Text == "Credito")
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate.AddDays(15);
+                txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
 
 
         }
@@ -458,8 +468,46 @@ namespace RentATruck.Procesos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form frmImprimir = new Procesos.imprimirFacturas(this.numeroFactura);
-            frmImprimir.Show();
+
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (this.cmbTipoPago.Text == "Contado")
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate;
+                this.txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
+            else
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate.AddDays(15);
+                this.txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
+            MessageBox.Show(txtFechaVencimiento.Text);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTipoPago_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (this.cmbTipoPago.Text == "Contado")
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate;
+                txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
+            else if (this.cmbTipoPago.Text == "Credito")
+            {
+                DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
+                DateTime expiryDate = startDate.AddDays(15);
+                txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
+            }
         }
 
         private void Button6_Click(object sender, EventArgs e)
@@ -547,12 +595,12 @@ namespace RentATruck.Procesos
 
         private void guardarFactura()
         {
-            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.fechaVencimiento.Text + "','" + this.txtConcepto.Text + "'");
+            obDatos.Consulta_llenar_datos("exec inserta_facturas " + cmbTipoPago.SelectedValue.ToString() + "," + this.txtNumeroFactura.Text + "," + this.txtCodigoEmpleado.Text + ",'" + this.txtFecha.Text + "'," + total + "," + this.txtCodigoCliente.Text + ",0" + "," + this.cmbTipoPago.SelectedValue.ToString() + ",1,0,'" + this.txtNCF.Text + "'," + totalITBIS.ToString() + "," + subTotal2.ToString() + ",'" + this.txtFechaVencimiento.Text + "','" + this.txtConcepto.Text + "'");
         }
 
         private void desabilitarNCF()
         {
-            obDatos.Consulta_llenar_datos("update NCF set estado = 'False' where ncf_ncf =  '" + this.txtNCF.Text + "'");
+            obDatos.Consulta_llenar_datos("update NCF set estado = '0' where ncf_ncf =  '" + this.txtNCF.Text + "'");
         }
 
         private void guardarDetalleFactura()

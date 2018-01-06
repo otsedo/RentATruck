@@ -61,7 +61,6 @@
             this.lblDatosCliente = new System.Windows.Forms.Label();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.horaSalida = new System.Windows.Forms.DateTimePicker();
-            this.horaEntrada = new System.Windows.Forms.DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtTelefonoChofer = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.chBoxListTables = new System.Windows.Forms.CheckedListBox();
+            this.horaEntrada = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,42 +239,48 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(365, 269);
+            this.label6.Location = new System.Drawing.Point(558, 519);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 20);
             this.label6.TabIndex = 115;
             this.label6.Text = "Hora Entrada:";
+            this.label6.Visible = false;
             // 
             // txtFechaEntrada
             // 
+            this.txtFechaEntrada.Enabled = false;
             this.txtFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFechaEntrada.Location = new System.Drawing.Point(178, 267);
+            this.txtFechaEntrada.Location = new System.Drawing.Point(371, 517);
             this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             this.txtFechaEntrada.Name = "txtFechaEntrada";
             this.txtFechaEntrada.Size = new System.Drawing.Size(184, 26);
             this.txtFechaEntrada.TabIndex = 7;
             this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.txtFechaEntrada.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Enabled = false;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(20, 270);
+            this.label7.Location = new System.Drawing.Point(213, 520);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 20);
             this.label7.TabIndex = 114;
             this.label7.Text = "Fecha Entrada:";
+            this.label7.Visible = false;
             // 
             // txtKilometraje
             // 
             this.txtKilometraje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKilometraje.Location = new System.Drawing.Point(178, 302);
+            this.txtKilometraje.Location = new System.Drawing.Point(178, 321);
             this.txtKilometraje.MaxLength = 40;
             this.txtKilometraje.Name = "txtKilometraje";
             this.txtKilometraje.Size = new System.Drawing.Size(184, 26);
@@ -287,7 +293,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.SteelBlue;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(55, 305);
+            this.label8.Location = new System.Drawing.Point(55, 324);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 20);
             this.label8.TabIndex = 117;
@@ -299,7 +305,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(693, 232);
+            this.label9.Location = new System.Drawing.Point(49, 272);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 20);
             this.label9.TabIndex = 119;
@@ -308,16 +314,16 @@
             // txtReferencia
             // 
             this.txtReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReferencia.Location = new System.Drawing.Point(698, 255);
+            this.txtReferencia.Location = new System.Drawing.Point(178, 269);
             this.txtReferencia.Multiline = true;
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(235, 37);
+            this.txtReferencia.Size = new System.Drawing.Size(601, 37);
             this.txtReferencia.TabIndex = 9;
             // 
             // txtConcepto
             // 
             this.txtConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcepto.Location = new System.Drawing.Point(514, 305);
+            this.txtConcepto.Location = new System.Drawing.Point(514, 324);
             this.txtConcepto.MaxLength = 40;
             this.txtConcepto.Name = "txtConcepto";
             this.txtConcepto.Size = new System.Drawing.Size(418, 26);
@@ -329,7 +335,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(401, 308);
+            this.label10.Location = new System.Drawing.Point(401, 327);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 20);
             this.label10.TabIndex = 121;
@@ -338,7 +344,7 @@
             // txtCombustible
             // 
             this.txtCombustible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCombustible.Location = new System.Drawing.Point(178, 337);
+            this.txtCombustible.Location = new System.Drawing.Point(178, 356);
             this.txtCombustible.MaxLength = 40;
             this.txtCombustible.Name = "txtCombustible";
             this.txtCombustible.Size = new System.Drawing.Size(184, 26);
@@ -350,7 +356,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(43, 340);
+            this.label11.Location = new System.Drawing.Point(43, 359);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 20);
             this.label11.TabIndex = 123;
@@ -359,7 +365,7 @@
             // txtSucursal
             // 
             this.txtSucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSucursal.Location = new System.Drawing.Point(514, 340);
+            this.txtSucursal.Location = new System.Drawing.Point(514, 359);
             this.txtSucursal.MaxLength = 40;
             this.txtSucursal.Name = "txtSucursal";
             this.txtSucursal.Size = new System.Drawing.Size(418, 26);
@@ -372,7 +378,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.SteelBlue;
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(401, 343);
+            this.label12.Location = new System.Drawing.Point(401, 362);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(79, 20);
             this.label12.TabIndex = 125;
@@ -405,7 +411,7 @@
             this.cmdCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cmdCancelar.ForeColor = System.Drawing.Color.White;
             this.cmdCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cmdCancelar.Location = new System.Drawing.Point(300, 411);
+            this.cmdCancelar.Location = new System.Drawing.Point(226, 406);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(208, 35);
             this.cmdCancelar.TabIndex = 138;
@@ -415,6 +421,7 @@
             // 
             // horaSalida
             // 
+            this.horaSalida.CustomFormat = "";
             this.horaSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.horaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.horaSalida.Location = new System.Drawing.Point(514, 230);
@@ -423,17 +430,6 @@
             this.horaSalida.Size = new System.Drawing.Size(136, 26);
             this.horaSalida.TabIndex = 6;
             this.horaSalida.Value = new System.DateTime(2017, 11, 12, 18, 35, 44, 0);
-            // 
-            // horaEntrada
-            // 
-            this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horaEntrada.Location = new System.Drawing.Point(514, 267);
-            this.horaEntrada.Name = "horaEntrada";
-            this.horaEntrada.ShowUpDown = true;
-            this.horaEntrada.Size = new System.Drawing.Size(136, 26);
-            this.horaEntrada.TabIndex = 8;
-            this.horaEntrada.Value = new System.DateTime(2017, 11, 12, 8, 0, 0, 0);
             // 
             // errorProvider1
             // 
@@ -488,7 +484,7 @@
             this.cmdProcesar.Enabled = false;
             this.cmdProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdProcesar.ForeColor = System.Drawing.Color.White;
-            this.cmdProcesar.Location = new System.Drawing.Point(516, 411);
+            this.cmdProcesar.Location = new System.Drawing.Point(442, 406);
             this.cmdProcesar.Name = "cmdProcesar";
             this.cmdProcesar.Size = new System.Drawing.Size(208, 35);
             this.cmdProcesar.TabIndex = 14;
@@ -535,6 +531,19 @@
             this.chBoxListTables.Name = "chBoxListTables";
             this.chBoxListTables.Size = new System.Drawing.Size(187, 439);
             this.chBoxListTables.TabIndex = 145;
+            // 
+            // horaEntrada
+            // 
+            this.horaEntrada.Enabled = false;
+            this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaEntrada.Location = new System.Drawing.Point(707, 517);
+            this.horaEntrada.Name = "horaEntrada";
+            this.horaEntrada.ShowUpDown = true;
+            this.horaEntrada.Size = new System.Drawing.Size(136, 26);
+            this.horaEntrada.TabIndex = 8;
+            this.horaEntrada.Value = new System.DateTime(2017, 11, 12, 8, 0, 0, 0);
+            this.horaEntrada.Visible = false;
             // 
             // proSalidaCamions
             // 
@@ -626,7 +635,6 @@
         public System.Windows.Forms.Label lblDatosCliente;
         public System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.DateTimePicker horaSalida;
-        private System.Windows.Forms.DateTimePicker horaEntrada;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.MaskedTextBox txtTelefonoChofer;
         public System.Windows.Forms.Label label13;
@@ -634,5 +642,6 @@
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.Button cmdProcesar;
         private System.Windows.Forms.CheckedListBox chBoxListTables;
+        private System.Windows.Forms.DateTimePicker horaEntrada;
     }
 }

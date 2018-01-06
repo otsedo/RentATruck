@@ -75,8 +75,7 @@ namespace RentATruck.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string text = File.ReadAllText(@"C:\RentATruck\setting.txt", Encoding.UTF8);
-            MessageBox.Show(text);
+
         }
     }
 }

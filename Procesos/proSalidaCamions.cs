@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,15 +72,19 @@ namespace RentATruck.Procesos
 
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void proSalidaCamions_Load(object sender, EventArgs e)
         {
-            horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
-            horaSalida.Text = DateTime.Now.ToShortTimeString().ToString();
-            this.fechaSalida.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
-            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("MM-dd-yyyy");
+            horaSalida.Value = DateTime.Now;
+            horaSalida.Value = DateTime.Now;
+            this.fechaSalida.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
+            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
             this.txtCamion.Text = "Nuevo";
             this.txtCodigoCliente.Text = "Nuevo";
-
 
             objDatos.Conectar();
             objDatos.Consulta_llenar_datos("select nombre_usuario from usuarios where codigo_usuario = " + codigoEmpleado);
@@ -165,12 +170,10 @@ namespace RentATruck.Procesos
             {
                 errorProvider1.SetError(txtCodigoCliente, "Seleccione un camion");
             }
-            else { errorProvider1.Clear(); }
-
-            if (this.txtFechaEntrada.Text == this.fechaSalida.Text)
-            {
-                MessageBox.Show("La fecha de Salida no puede ser la misma fecha de Entrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            //if (this.txtFechaEntrada.Text == this.fechaSalida.Text)
+            //{
+            //    MessageBox.Show("La fecha de Salida no puede ser la misma fecha de Entrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            //}
             else
             {
                 if (this.txtCamion.Text != "" && this.txtCamion.Text != "")
@@ -198,7 +201,7 @@ namespace RentATruck.Procesos
                             }
 
                             objDatos.Conectar();
-                            string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Text + "','" + this.txtFechaEntrada.Text + "','" + this.horaEntrada.Text + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado + ",'" + miscelaneos[0] + "','" + miscelaneos[1] + "','" + miscelaneos[2] + "','" + miscelaneos[3] + "','" + miscelaneos[4] + "','" + miscelaneos[5] + "','" + miscelaneos[6] + "','" + miscelaneos[7] + "','" + miscelaneos[8] + "','" + miscelaneos[9] + "','" + miscelaneos[10] + "','" + miscelaneos[11] + "','" + miscelaneos[12] + "','" + miscelaneos[13] + "','" + miscelaneos[14] + "','" + miscelaneos[15] + "','" + miscelaneos[16] + "','" + miscelaneos[17] + "','" + miscelaneos[18] + "','" + miscelaneos[19] + "','" + miscelaneos[20] + "','" + miscelaneos[21] + "','" + miscelaneos[22] + "','" + miscelaneos[23] + "','" + miscelaneos[24] + "','" + miscelaneos[25] + "','" + miscelaneos[26] + "','" + miscelaneos[27] + "','" + miscelaneos[28] + "'";
+                            string sql = "exec inserta_salida_camiones " + this.txtCamion.Text + "," + this.txtCodigoCliente.Text + ",'" + personaRecibe + "','" + Cedula + "','" + this.fechaSalida.Text + "','" + this.horaSalida.Value.ToString("HH:mm:ss") + "','" + this.txtFechaEntrada.Text + "','" + this.horaSalida.Value.ToString("HH:mm:ss") + "'," + Km + ",'" + Referencia + "','" + Concepto + "','" + Sucursal + "','" + Combustible + "','" + TelefonoChofer + "'," + codigoEmpleado + ",'" + miscelaneos[0] + "','" + miscelaneos[1] + "','" + miscelaneos[2] + "','" + miscelaneos[3] + "','" + miscelaneos[4] + "','" + miscelaneos[5] + "','" + miscelaneos[6] + "','" + miscelaneos[7] + "','" + miscelaneos[8] + "','" + miscelaneos[9] + "','" + miscelaneos[10] + "','" + miscelaneos[11] + "','" + miscelaneos[12] + "','" + miscelaneos[13] + "','" + miscelaneos[14] + "','" + miscelaneos[15] + "','" + miscelaneos[16] + "','" + miscelaneos[17] + "','" + miscelaneos[18] + "','" + miscelaneos[19] + "','" + miscelaneos[20] + "','" + miscelaneos[21] + "','" + miscelaneos[22] + "','" + miscelaneos[23] + "','" + miscelaneos[24] + "','" + miscelaneos[25] + "','" + miscelaneos[26] + "','" + miscelaneos[27] + "','" + miscelaneos[28] + "'";
                             if (objDatos.Insertar(sql))
                             {
                                 objDatos.Desconectar();
