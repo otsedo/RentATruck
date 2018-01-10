@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(proEntradaCamiones));
-            this.horaEntrada = new System.Windows.Forms.DateTimePicker();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.lblDatosCliente = new System.Windows.Forms.Label();
             this.lblDatosCamion = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.txtKilometraje = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,19 +62,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
+            this.horaEntrada = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // horaEntrada
-            // 
-            this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horaEntrada.Location = new System.Drawing.Point(144, 205);
-            this.horaEntrada.Name = "horaEntrada";
-            this.horaEntrada.ShowUpDown = true;
-            this.horaEntrada.Size = new System.Drawing.Size(158, 26);
-            this.horaEntrada.TabIndex = 173;
-            this.horaEntrada.Value = new System.DateTime(2017, 11, 12, 8, 0, 0, 0);
             // 
             // cmdCancelar
             // 
@@ -188,17 +177,6 @@
             this.label6.Size = new System.Drawing.Size(122, 20);
             this.label6.TabIndex = 158;
             this.label6.Text = "Hora Entrada:";
-            // 
-            // txtFechaEntrada
-            // 
-            this.txtFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFechaEntrada.Location = new System.Drawing.Point(144, 98);
-            this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
-            this.txtFechaEntrada.Name = "txtFechaEntrada";
-            this.txtFechaEntrada.Size = new System.Drawing.Size(158, 26);
-            this.txtFechaEntrada.TabIndex = 156;
-            this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -467,14 +445,36 @@
             this.label1.TabIndex = 175;
             this.label1.Text = "Codigo Cliente:";
             // 
+            // txtFechaEntrada
+            // 
+            this.txtFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtFechaEntrada.Location = new System.Drawing.Point(144, 103);
+            this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            this.txtFechaEntrada.Name = "txtFechaEntrada";
+            this.txtFechaEntrada.Size = new System.Drawing.Size(184, 26);
+            this.txtFechaEntrada.TabIndex = 175;
+            this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
+            // 
+            // horaEntrada
+            // 
+            this.horaEntrada.CustomFormat = "HH:mm";
+            this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horaEntrada.Location = new System.Drawing.Point(144, 209);
+            this.horaEntrada.Name = "horaEntrada";
+            this.horaEntrada.Size = new System.Drawing.Size(200, 26);
+            this.horaEntrada.TabIndex = 176;
+            // 
             // proEntradaCamiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(1006, 531);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.horaEntrada);
+            this.Controls.Add(this.txtFechaEntrada);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.lblDatosCliente);
             this.Controls.Add(this.lblDatosCamion);
@@ -485,7 +485,6 @@
             this.Controls.Add(this.txtKilometraje);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label4);
@@ -510,8 +509,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker horaEntrada;
         public System.Windows.Forms.Button cmdCancelar;
         public System.Windows.Forms.Label lblDatosCliente;
         public System.Windows.Forms.Label lblDatosCamion;
@@ -523,7 +520,6 @@
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker txtFechaEntrada;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox txtCedula;
         public System.Windows.Forms.Label label4;
@@ -546,5 +542,7 @@
         public System.Windows.Forms.TextBox txtCamion;
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtCodigoCliente;
+        private System.Windows.Forms.DateTimePicker txtFechaEntrada;
+        private System.Windows.Forms.DateTimePicker horaEntrada;
     }
 }

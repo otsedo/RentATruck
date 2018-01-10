@@ -104,7 +104,7 @@ namespace RentATruck.Procesos
         private void limpiarPantalla()
         {
             this.txtCamion.Text = "Nuevo";
-            this.txtFechaEntrada.Text = DateTime.Now.ToShortDateString().ToString();
+            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
             this.txtPersonaEntrega.Text = "";
             this.txtCedula.Text = "";
             this.horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
@@ -134,7 +134,14 @@ namespace RentATruck.Procesos
         {
             objDatos.Conectar();
             objDatos.Consulta_llenar_datos("select * from control_cambio_aceite where control_cambio_aceite.codveh_veh = " + txtCodigoCamion.Text);
-            return Convert.ToInt32(this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][2].ToString());
+            if (objDatos.ds.Tables[0].Rows.Count > 0)
+            {
+                return Convert.ToInt32(this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][2].ToString());
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public proEntradaCamiones()
@@ -144,7 +151,7 @@ namespace RentATruck.Procesos
 
         private void txtKilometraje_KeyUp(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void txtKilometraje_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,8 +194,18 @@ namespace RentATruck.Procesos
 
         private void proEntradaCamiones_Load(object sender, EventArgs e)
         {
-            horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
-            txtFechaEntrada.Text = DateTime.Now.ToShortDateString().ToString();
+            //horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
+            //horaEntrada.ShowUpDown = true;
+
+            //horaEntrada.CustomFormat = "HH:mm";
+
+            //horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+
+            horaEntrada.Text = DateTime.Now.ToString("HH:mm");
+
+
+
+            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
             txtCodigoCamion.Text = "Nuevo";
         }
     }

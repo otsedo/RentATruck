@@ -80,7 +80,6 @@ namespace RentATruck.Procesos
         private void proSalidaCamions_Load(object sender, EventArgs e)
         {
             horaSalida.Value = DateTime.Now;
-            horaSalida.Value = DateTime.Now;
             this.fechaSalida.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
             this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
             this.txtCamion.Text = "Nuevo";
