@@ -30,7 +30,6 @@ namespace RentATruck.Busquedas
             objDatos.Consulta_llenar_datos("select c.codigo_suplidor, c.nombre, c.direccion,c.telefono1, c.telefono2 from suplidores c");
             this.miFiltro = (objDatos.ds.Tables[0].DefaultView);
             this.dataGridView1.DataSource = miFiltro;
-
             this.dataGridView1.Columns[0].Width = 48;
             this.dataGridView1.Columns[0].HeaderText = "ID";
             this.dataGridView1.Columns[1].Width = 200;
@@ -80,14 +79,14 @@ namespace RentATruck.Busquedas
             {
                 if (salida_datos.Length == 0)
                 {
-                    salida_datos = "(ID LIKE '%" + palabra + "%')";
+                    salida_datos = "(nombre LIKE '%" + palabra + "%')";
                 }
                 else
                 {
-                    salida_datos += "AND (Nombre del servicio LIKE '%" + palabra + "'%)";
+                    salida_datos += "AND (nombre LIKE '%" + palabra + "'%)";
                 }
+                this.miFiltro.RowFilter = salida_datos;
             }
-            this.miFiltro.RowFilter = salida_datos;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

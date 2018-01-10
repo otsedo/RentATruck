@@ -122,25 +122,25 @@ namespace RentATruck.Procesos
                     casaConductor = true;
                 }
 
-                try
+                //try
+                //{
+                objDatos.Conectar();
+                string sql = "exec inserta_registro_accidentes " + this.txtCamion.Text + "," + this.cmbTipoAccidente.SelectedValue + ",'" + this.txtNombre.Text + "','" + this.txtLicencia.Text + "','" + this.txtSeguro.Text + "','" + this.txtDetalles.Text + "','" + casaConductor + "','" + Muertos + "','" + Heridos + "'," + this.txtCodigoCliente.Text + ",'" + this.txtTelefonoChofer.Text + "'";
+                if (objDatos.Insertar(sql))
                 {
-                    objDatos.Conectar();
-                    string sql = "exec inserta_registro_accidentes " + this.txtCamion.Text + "," + this.cmbTipoAccidente.SelectedValue + ",'" + this.txtNombre.Text + "','" + this.txtLicencia.Text + "','" + this.txtSeguro.Text + "','" + this.txtDetalles.Text + "','" + casaConductor + "','" + Muertos + "','" + Heridos + "'," + this.txtCodigoCliente.Text + ",'" + this.txtTelefonoChofer.Text + "'";
-                    if (objDatos.Insertar(sql))
-                    {
-                        objDatos.Desconectar();
-                        MessageBox.Show("Registro Insertado");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registro no pudo ser insertado");
-                    }
+                    objDatos.Desconectar();
+                    MessageBox.Show("Registro Insertado");
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                else
                 {
-                    MessageBox.Show("Confirme que no haya campos vacios");
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show("Registro no pudo ser insertado");
                 }
+                //}
+                //catch (System.Data.SqlClient.SqlException ex)
+                //{
+                //    MessageBox.Show("Confirme que no haya campos vacios");
+                //    MessageBox.Show(ex.Message.ToString());
+                //}
             }
             limpiarPantalla();
         }

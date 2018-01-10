@@ -87,72 +87,72 @@
             // txtTotal2000
             // 
             this.txtTotal2000.Enabled = false;
-            this.txtTotal2000.Location = new System.Drawing.Point(176, 289);
+            this.txtTotal2000.Location = new System.Drawing.Point(218, 289);
             this.txtTotal2000.Name = "txtTotal2000";
-            this.txtTotal2000.Size = new System.Drawing.Size(94, 26);
+            this.txtTotal2000.Size = new System.Drawing.Size(122, 26);
             this.txtTotal2000.TabIndex = 32;
             this.txtTotal2000.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotal1000
             // 
             this.txtTotal1000.Enabled = false;
-            this.txtTotal1000.Location = new System.Drawing.Point(176, 263);
+            this.txtTotal1000.Location = new System.Drawing.Point(218, 263);
             this.txtTotal1000.Name = "txtTotal1000";
-            this.txtTotal1000.Size = new System.Drawing.Size(94, 26);
+            this.txtTotal1000.Size = new System.Drawing.Size(122, 26);
             this.txtTotal1000.TabIndex = 31;
             this.txtTotal1000.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotal500
             // 
             this.txtTotal500.Enabled = false;
-            this.txtTotal500.Location = new System.Drawing.Point(176, 237);
+            this.txtTotal500.Location = new System.Drawing.Point(218, 237);
             this.txtTotal500.Name = "txtTotal500";
-            this.txtTotal500.Size = new System.Drawing.Size(94, 26);
+            this.txtTotal500.Size = new System.Drawing.Size(122, 26);
             this.txtTotal500.TabIndex = 30;
             this.txtTotal500.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotal200
             // 
             this.txtTotal200.Enabled = false;
-            this.txtTotal200.Location = new System.Drawing.Point(176, 211);
+            this.txtTotal200.Location = new System.Drawing.Point(218, 211);
             this.txtTotal200.Name = "txtTotal200";
-            this.txtTotal200.Size = new System.Drawing.Size(94, 26);
+            this.txtTotal200.Size = new System.Drawing.Size(122, 26);
             this.txtTotal200.TabIndex = 29;
             this.txtTotal200.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalCien
             // 
             this.txtTotalCien.Enabled = false;
-            this.txtTotalCien.Location = new System.Drawing.Point(176, 185);
+            this.txtTotalCien.Location = new System.Drawing.Point(218, 185);
             this.txtTotalCien.Name = "txtTotalCien";
-            this.txtTotalCien.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalCien.Size = new System.Drawing.Size(122, 26);
             this.txtTotalCien.TabIndex = 28;
             this.txtTotalCien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalCiencuenta
             // 
             this.txtTotalCiencuenta.Enabled = false;
-            this.txtTotalCiencuenta.Location = new System.Drawing.Point(176, 159);
+            this.txtTotalCiencuenta.Location = new System.Drawing.Point(218, 159);
             this.txtTotalCiencuenta.Name = "txtTotalCiencuenta";
-            this.txtTotalCiencuenta.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalCiencuenta.Size = new System.Drawing.Size(122, 26);
             this.txtTotalCiencuenta.TabIndex = 27;
             this.txtTotalCiencuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalVeinteyCinco
             // 
             this.txtTotalVeinteyCinco.Enabled = false;
-            this.txtTotalVeinteyCinco.Location = new System.Drawing.Point(176, 133);
+            this.txtTotalVeinteyCinco.Location = new System.Drawing.Point(218, 133);
             this.txtTotalVeinteyCinco.Name = "txtTotalVeinteyCinco";
-            this.txtTotalVeinteyCinco.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalVeinteyCinco.Size = new System.Drawing.Size(122, 26);
             this.txtTotalVeinteyCinco.TabIndex = 26;
             this.txtTotalVeinteyCinco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalVeinte
             // 
             this.txtTotalVeinte.Enabled = false;
-            this.txtTotalVeinte.Location = new System.Drawing.Point(176, 107);
+            this.txtTotalVeinte.Location = new System.Drawing.Point(218, 107);
             this.txtTotalVeinte.Name = "txtTotalVeinte";
-            this.txtTotalVeinte.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalVeinte.Size = new System.Drawing.Size(122, 26);
             this.txtTotalVeinte.TabIndex = 25;
             this.txtTotalVeinte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -166,7 +166,7 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(306, 58);
+            this.groupBox4.Location = new System.Drawing.Point(364, 58);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(344, 165);
             this.groupBox4.TabIndex = 18;
@@ -243,7 +243,7 @@
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(306, 253);
+            this.groupBox3.Location = new System.Drawing.Point(364, 253);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(338, 152);
             this.groupBox3.TabIndex = 19;
@@ -313,27 +313,27 @@
             // txtTotalDiez
             // 
             this.txtTotalDiez.Enabled = false;
-            this.txtTotalDiez.Location = new System.Drawing.Point(176, 81);
+            this.txtTotalDiez.Location = new System.Drawing.Point(218, 81);
             this.txtTotalDiez.Name = "txtTotalDiez";
-            this.txtTotalDiez.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalDiez.Size = new System.Drawing.Size(122, 26);
             this.txtTotalDiez.TabIndex = 24;
             this.txtTotalDiez.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalCinco
             // 
             this.txtTotalCinco.Enabled = false;
-            this.txtTotalCinco.Location = new System.Drawing.Point(176, 55);
+            this.txtTotalCinco.Location = new System.Drawing.Point(218, 55);
             this.txtTotalCinco.Name = "txtTotalCinco";
-            this.txtTotalCinco.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalCinco.Size = new System.Drawing.Size(122, 26);
             this.txtTotalCinco.TabIndex = 23;
             this.txtTotalCinco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalPeso
             // 
             this.txtTotalPeso.Enabled = false;
-            this.txtTotalPeso.Location = new System.Drawing.Point(176, 29);
+            this.txtTotalPeso.Location = new System.Drawing.Point(218, 29);
             this.txtTotalPeso.Name = "txtTotalPeso";
-            this.txtTotalPeso.Size = new System.Drawing.Size(94, 26);
+            this.txtTotalPeso.Size = new System.Drawing.Size(122, 26);
             this.txtTotalPeso.TabIndex = 22;
             this.txtTotalPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -350,7 +350,7 @@
             // 
             this.txtDosMil.Location = new System.Drawing.Point(83, 289);
             this.txtDosMil.Name = "txtDosMil";
-            this.txtDosMil.Size = new System.Drawing.Size(87, 26);
+            this.txtDosMil.Size = new System.Drawing.Size(129, 26);
             this.txtDosMil.TabIndex = 20;
             this.txtDosMil.Text = "0";
             this.txtDosMil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -414,7 +414,7 @@
             // 
             this.txtMil.Location = new System.Drawing.Point(83, 263);
             this.txtMil.Name = "txtMil";
-            this.txtMil.Size = new System.Drawing.Size(87, 26);
+            this.txtMil.Size = new System.Drawing.Size(129, 26);
             this.txtMil.TabIndex = 13;
             this.txtMil.Text = "0";
             this.txtMil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -424,7 +424,7 @@
             // 
             this.txtQuinientos.Location = new System.Drawing.Point(83, 237);
             this.txtQuinientos.Name = "txtQuinientos";
-            this.txtQuinientos.Size = new System.Drawing.Size(87, 26);
+            this.txtQuinientos.Size = new System.Drawing.Size(129, 26);
             this.txtQuinientos.TabIndex = 12;
             this.txtQuinientos.Text = "0";
             this.txtQuinientos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -434,7 +434,7 @@
             // 
             this.txtDoscientos.Location = new System.Drawing.Point(83, 211);
             this.txtDoscientos.Name = "txtDoscientos";
-            this.txtDoscientos.Size = new System.Drawing.Size(87, 26);
+            this.txtDoscientos.Size = new System.Drawing.Size(129, 26);
             this.txtDoscientos.TabIndex = 11;
             this.txtDoscientos.Text = "0";
             this.txtDoscientos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -444,7 +444,7 @@
             // 
             this.txtCien.Location = new System.Drawing.Point(83, 185);
             this.txtCien.Name = "txtCien";
-            this.txtCien.Size = new System.Drawing.Size(87, 26);
+            this.txtCien.Size = new System.Drawing.Size(129, 26);
             this.txtCien.TabIndex = 10;
             this.txtCien.Text = "0";
             this.txtCien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -454,7 +454,7 @@
             // 
             this.txtCincuenta.Location = new System.Drawing.Point(83, 159);
             this.txtCincuenta.Name = "txtCincuenta";
-            this.txtCincuenta.Size = new System.Drawing.Size(87, 26);
+            this.txtCincuenta.Size = new System.Drawing.Size(129, 26);
             this.txtCincuenta.TabIndex = 9;
             this.txtCincuenta.Text = "0";
             this.txtCincuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -464,7 +464,7 @@
             // 
             this.txtVeinticinco.Location = new System.Drawing.Point(83, 133);
             this.txtVeinticinco.Name = "txtVeinticinco";
-            this.txtVeinticinco.Size = new System.Drawing.Size(87, 26);
+            this.txtVeinticinco.Size = new System.Drawing.Size(129, 26);
             this.txtVeinticinco.TabIndex = 8;
             this.txtVeinticinco.Text = "0";
             this.txtVeinticinco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -474,7 +474,7 @@
             // 
             this.txtVeinte.Location = new System.Drawing.Point(83, 107);
             this.txtVeinte.Name = "txtVeinte";
-            this.txtVeinte.Size = new System.Drawing.Size(87, 26);
+            this.txtVeinte.Size = new System.Drawing.Size(129, 26);
             this.txtVeinte.TabIndex = 7;
             this.txtVeinte.Text = "0";
             this.txtVeinte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -502,7 +502,7 @@
             // 
             this.txtDiez.Location = new System.Drawing.Point(83, 81);
             this.txtDiez.Name = "txtDiez";
-            this.txtDiez.Size = new System.Drawing.Size(87, 26);
+            this.txtDiez.Size = new System.Drawing.Size(129, 26);
             this.txtDiez.TabIndex = 4;
             this.txtDiez.Text = "0";
             this.txtDiez.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -512,7 +512,7 @@
             // 
             this.txtCinco.Location = new System.Drawing.Point(83, 55);
             this.txtCinco.Name = "txtCinco";
-            this.txtCinco.Size = new System.Drawing.Size(87, 26);
+            this.txtCinco.Size = new System.Drawing.Size(129, 26);
             this.txtCinco.TabIndex = 3;
             this.txtCinco.Text = "0";
             this.txtCinco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -540,7 +540,7 @@
             // 
             this.txtPeso.Location = new System.Drawing.Point(83, 29);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(87, 26);
+            this.txtPeso.Size = new System.Drawing.Size(129, 26);
             this.txtPeso.TabIndex = 0;
             this.txtPeso.Text = "0";
             this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -585,7 +585,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 347);
+            this.groupBox1.Size = new System.Drawing.Size(346, 347);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Denominaciones de efectivo";
@@ -601,7 +601,7 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(662, 38);
+            this.textBox1.Size = new System.Drawing.Size(720, 38);
             this.textBox1.TabIndex = 87;
             this.textBox1.TabStop = false;
             this.textBox1.Text = "Cuadre de Efectivo";
@@ -625,7 +625,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(662, 491);
+            this.ClientSize = new System.Drawing.Size(720, 491);
             this.Controls.Add(this.cmdNuevo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox4);

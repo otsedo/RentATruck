@@ -206,7 +206,7 @@ namespace RentATruck.Mantenimientos
                 if (this.txtID.Text == "Nuevo")
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "insert into clientes (nombre, identificacion,estado, fecha_ingreso, codtip_tip, telefono1, telefono2, direccion,fotove_cliente, representante, telefono_representante, rnc) values (@nombre, @identificacion,@estado, @fecha_ingreso, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente,@representante, @telefono_representante, @rnc)";
+                    string qry = "insert into clientes (nombre, identificacion,estado, codtip_tip, telefono1, telefono2, direccion,fotove_cliente, representante, telefono_representante, rnc) values (@nombre, @identificacion,@estado, @codtip_tip, @telefono1, @telefono2, @direccion,@fotove_cliente,@representante, @telefono_representante, @rnc)";
 
                     //try
                     //{
@@ -219,7 +219,7 @@ namespace RentATruck.Mantenimientos
                     SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                    SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", dateTimePicker1.Value));
+                    //SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", dateTimePicker1.Value));
                     SqlCom.Parameters.Add(new SqlParameter("@codtip_tip", this.cbmTipoCliente.SelectedValue));
                     SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
                     SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
@@ -250,7 +250,7 @@ namespace RentATruck.Mantenimientos
                 else
                 {
                     byte[] data = System.IO.File.ReadAllBytes(this.txtRutaImagen.Text);
-                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado, fecha_ingreso=@fecha_ingreso, codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente, representante = @representante, telefono_representante = @telefono_representante, rnc = @rnc where codigo_cliente = " + this.txtID.Text;
+                    string qry = "update clientes set nombre = @nombre, identificacion = @identificacion,estado = @estado,  codtip_tip=@codtip_tip, telefono1 = @telefono1, telefono2=@telefono2, direccion = @direccion, fotove_cliente = @fotove_cliente, representante = @representante, telefono_representante = @telefono_representante, rnc = @rnc where codigo_cliente = " + this.txtID.Text;
 
                     try
                     {
@@ -261,7 +261,7 @@ namespace RentATruck.Mantenimientos
                         SqlCom.Parameters.Add(new SqlParameter("@nombre", this.txtnombre.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@identificacion", this.txtIDentificacion.Text.Trim()));
                         SqlCom.Parameters.Add(new SqlParameter("@estado", activo));
-                        SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
+                        //SqlCom.Parameters.Add(new SqlParameter("@fecha_ingreso", this.dateTimePicker1.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@codtip_tip", this.cbmTipoCliente.SelectedValue));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono1", this.txtTelefono1.Text));
                         SqlCom.Parameters.Add(new SqlParameter("@telefono2", this.txtTelefono2.Text));
@@ -388,14 +388,14 @@ namespace RentATruck.Mantenimientos
                 {
                     this.txtnombre.Text = objDatos.ds.Tables[0].Rows[0][1].ToString();
                     this.txtIDentificacion.Text = objDatos.ds.Tables[0].Rows[0][2].ToString();
-                    this.dateTimePicker1.Text = objDatos.ds.Tables[0].Rows[0][4].ToString();
-                    this.txtTelefono1.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
-                    this.txtDireccion.Text = objDatos.ds.Tables[0].Rows[0][8].ToString();
-                    this.txtTelefono2.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
-                    this.cbmTipoCliente.Text = objDatos.ds.Tables[0].Rows[0][13].ToString();
-                    this.txtRepresentante.Text = objDatos.ds.Tables[0].Rows[0][10].ToString();
-                    this.telRepresentante.Text = objDatos.ds.Tables[0].Rows[0][11].ToString();
-                    this.txtRNC.Text = objDatos.ds.Tables[0].Rows[0][12].ToString();
+                    //this.dateTimePicker1.Text = objDatos.ds.Tables[0].Rows[0][4].ToString();
+                    this.txtTelefono1.Text = objDatos.ds.Tables[0].Rows[0][5].ToString();
+                    this.txtDireccion.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
+                    this.txtTelefono2.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
+                    this.cbmTipoCliente.Text = objDatos.ds.Tables[0].Rows[0][12].ToString();
+                    this.txtRepresentante.Text = objDatos.ds.Tables[0].Rows[0][9].ToString();
+                    this.telRepresentante.Text = objDatos.ds.Tables[0].Rows[0][10].ToString();
+                    this.txtRNC.Text = objDatos.ds.Tables[0].Rows[0][11].ToString();
 
                     if (Convert.ToBoolean(objDatos.ds.Tables[0].Rows[0][3]) == true)
                     {

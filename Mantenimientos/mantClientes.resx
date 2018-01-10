@@ -346,7 +346,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 286</value>
+    <value>489, 139</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 20</value>
@@ -373,7 +373,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 285</value>
+    <value>622, 138</value>
   </data>
   <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 26</value>
@@ -430,7 +430,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="cbmTipoCliente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 317</value>
+    <value>143, 284</value>
   </data>
   <data name="cbmTipoCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 28</value>
@@ -460,7 +460,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 325</value>
+    <value>31, 292</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 20</value>
@@ -493,7 +493,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 357</value>
+    <value>41, 324</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 20</value>
@@ -526,7 +526,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 386</value>
+    <value>41, 353</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 20</value>
@@ -559,7 +559,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 439</value>
+    <value>51, 406</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 20</value>
@@ -622,7 +622,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 491</value>
+    <value>128, 458</value>
   </data>
   <data name="cmdBuscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 78</value>
@@ -667,7 +667,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 491</value>
+    <value>334, 458</value>
   </data>
   <data name="cmdEliminar.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 78</value>
@@ -706,7 +706,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 491</value>
+    <value>231, 458</value>
   </data>
   <data name="cmdCancelar.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 78</value>
@@ -745,7 +745,7 @@
     <value>NoControl</value>
   </data>
   <data name="cmdGuardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 491</value>
+    <value>38, 458</value>
   </data>
   <data name="cmdGuardar.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 78</value>
@@ -805,7 +805,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtTelefono1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 351</value>
+    <value>143, 318</value>
   </data>
   <data name="txtTelefono1.Mask" xml:space="preserve">
     <value>(999) 000-0000</value>
@@ -832,7 +832,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtTelefono2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 383</value>
+    <value>143, 350</value>
   </data>
   <data name="txtTelefono2.Mask" xml:space="preserve">
     <value>(999) 000-0000</value>
@@ -886,7 +886,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtDireccion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 415</value>
+    <value>143, 382</value>
   </data>
   <data name="txtDireccion.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 70</value>

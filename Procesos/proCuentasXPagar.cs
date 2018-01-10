@@ -83,7 +83,10 @@ namespace RentATruck.Procesos
                 this.txtSaldo.Text = saldo.ToString("C");
                 objDatos.Desconectar();
 
-                deuda = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                if (objDatos.ds.Tables[0].Rows[0][0].ToString() != "")
+                {
+                    deuda = Convert.ToDouble(objDatos.ds.Tables[0].Rows[0][0].ToString());
+                }
                 if (deuda > 0)
                 {
                     string sring = ("exec consultarCxP " + CodigoCliente.ToString());
