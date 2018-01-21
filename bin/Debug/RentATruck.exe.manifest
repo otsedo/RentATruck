@@ -296,14 +296,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RentATruck.exe" size="2456576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RentATruck.exe" size="2472960">
       <assemblyIdentity name="RentATruck" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ypGle0tP95LaQXXjWFqpUZvQ10rTeVif0XgGJoi+kTQ=</dsig:DigestValue>
+        <dsig:DigestValue>DSZpA4EQMKaCxVCVtARL8o7UhdeD8GBQW5pskhFZ718=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
