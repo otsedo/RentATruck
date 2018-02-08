@@ -50,6 +50,8 @@
             this.cmdProcesar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHoraEntrada = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtCombustibleEntrada = new System.Windows.Forms.TextBox();
             this.txtKmSalida = new System.Windows.Forms.TextBox();
             this.txtFechaSalida = new System.Windows.Forms.TextBox();
@@ -64,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.horaEntrada = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -299,6 +302,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox1.Controls.Add(this.txtHoraEntrada);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtCombustibleEntrada);
             this.groupBox1.Controls.Add(this.txtKmSalida);
             this.groupBox1.Controls.Add(this.txtFechaSalida);
@@ -312,18 +317,39 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(428, 103);
+            this.groupBox1.Location = new System.Drawing.Point(428, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 373);
+            this.groupBox1.Size = new System.Drawing.Size(566, 437);
             this.groupBox1.TabIndex = 174;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del camión";
+            // 
+            // txtHoraEntrada
+            // 
+            this.txtHoraEntrada.Enabled = false;
+            this.txtHoraEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraEntrada.Location = new System.Drawing.Point(188, 258);
+            this.txtHoraEntrada.MaxLength = 40;
+            this.txtHoraEntrada.Name = "txtHoraEntrada";
+            this.txtHoraEntrada.Size = new System.Drawing.Size(347, 26);
+            this.txtHoraEntrada.TabIndex = 187;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label15.Location = new System.Drawing.Point(71, 261);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(108, 20);
+            this.label15.TabIndex = 186;
+            this.label15.Text = "Hora Salida:";
             // 
             // txtCombustibleEntrada
             // 
             this.txtCombustibleEntrada.Enabled = false;
             this.txtCombustibleEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCombustibleEntrada.Location = new System.Drawing.Point(188, 323);
+            this.txtCombustibleEntrada.Location = new System.Drawing.Point(188, 366);
             this.txtCombustibleEntrada.MaxLength = 40;
             this.txtCombustibleEntrada.Name = "txtCombustibleEntrada";
             this.txtCombustibleEntrada.Size = new System.Drawing.Size(347, 26);
@@ -333,7 +359,7 @@
             // 
             this.txtKmSalida.Enabled = false;
             this.txtKmSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKmSalida.Location = new System.Drawing.Point(188, 267);
+            this.txtKmSalida.Location = new System.Drawing.Point(188, 310);
             this.txtKmSalida.MaxLength = 40;
             this.txtKmSalida.Name = "txtKmSalida";
             this.txtKmSalida.Size = new System.Drawing.Size(347, 26);
@@ -356,7 +382,7 @@
             this.txtCamion.Location = new System.Drawing.Point(188, 155);
             this.txtCamion.MaxLength = 40;
             this.txtCamion.Name = "txtCamion";
-            this.txtCamion.Size = new System.Drawing.Size(303, 26);
+            this.txtCamion.Size = new System.Drawing.Size(347, 26);
             this.txtCamion.TabIndex = 182;
             // 
             // txtCliente
@@ -384,7 +410,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label14.Location = new System.Drawing.Point(51, 270);
+            this.label14.Location = new System.Drawing.Point(51, 313);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(128, 20);
             this.label14.TabIndex = 180;
@@ -428,7 +454,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(11, 326);
+            this.label5.Location = new System.Drawing.Point(11, 369);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 20);
             this.label5.TabIndex = 176;
@@ -460,11 +486,21 @@
             // 
             this.horaEntrada.CustomFormat = "HH:mm";
             this.horaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.horaEntrada.Location = new System.Drawing.Point(144, 209);
             this.horaEntrada.Name = "horaEntrada";
             this.horaEntrada.Size = new System.Drawing.Size(200, 26);
             this.horaEntrada.TabIndex = 176;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(334, 96);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 37);
+            this.button1.TabIndex = 177;
+            this.button1.Text = "Calcular Dias";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // proEntradaCamiones
             // 
@@ -472,6 +508,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(1006, 531);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.horaEntrada);
             this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.groupBox1);
@@ -544,5 +581,8 @@
         public System.Windows.Forms.TextBox txtCodigoCliente;
         private System.Windows.Forms.DateTimePicker txtFechaEntrada;
         private System.Windows.Forms.DateTimePicker horaEntrada;
+        public System.Windows.Forms.TextBox txtHoraEntrada;
+        public System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button1;
     }
 }

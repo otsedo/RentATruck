@@ -15,6 +15,7 @@ namespace RentATruck.Procesos
         datos objDatos = new datos();
         private static proEntradaCamiones entradaCamionesInstancia = null;
         Int32 NuevoKilometraje, KilometrajeInsertar, codigoSalidaCamion;
+        DateTime fecha_entrada;
 
         private void cmdProcesar_Click(object sender, EventArgs e)
         {
@@ -47,8 +48,13 @@ namespace RentATruck.Procesos
             {
                 try
                 {
+                    fecha_entrada = Convert.ToDateTime(this.txtFechaEntrada.Text);
+                    DateTime entrada = Convert.ToDateTime(this.txtFechaSalida.Text);
+                    DateTime salida = Convert.ToDateTime(this.txtFechaEntrada.Text);
+                    TimeSpan difference = salida - entrada;
+
                     objDatos.Conectar();
-                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + this.txtFechaEntrada.Text + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'";
+                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + fecha_entrada.ToString("yyyy-MM-dd") + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text.Substring(0, 8) + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'," + difference.TotalDays;
                     if (objDatos.Insertar(sql))
                     {
                         string ActualizarAlquiler = "update vehiculo set alquilado = 'False', kilome_veh= " + txtKilometraje.Text + " where codveh_veh = " + this.txtCodigoCamion.Text;
@@ -169,12 +175,28 @@ namespace RentATruck.Procesos
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoCamion.Text != "Nuevo")
+            {
+                //Calcular la cantidad de dias
+                DateTime entrada = Convert.ToDateTime(this.txtFechaSalida.Text);
+                DateTime salida = Convert.ToDateTime(this.txtFechaEntrada.Text);
+                TimeSpan difference = salida - entrada;
+                MessageBox.Show("Dias: " + difference.TotalDays.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un camion");
+            }
+        }
+
         private void txtCamion_TextChanged(object sender, EventArgs e)
         {
             if (this.txtCodigoCamion.Text != "Nuevo")
             {
                 objDatos.Conectar();
-                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, sc.fecha_salida, sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, sc.codigo_salida_camiones from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh = v.codveh_veh and sc.codigo_cliente = cl.codigo_cliente and c.codigo_color = v.codigo_color and sc.estado = 'True' and sc.codveh_veh = " + txtCodigoCamion.Text);
+                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, CONVERT(char(10), sc.fecha_salida,102) as 'fecha_salida', sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, sc.codigo_salida_camiones, sc.hola_salida from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh = v.codveh_veh and sc.codigo_cliente = cl.codigo_cliente and c.codigo_color = v.codigo_color and sc.estado = 'True' and sc.codveh_veh = " + txtCodigoCamion.Text);
                 if (objDatos.ds.Tables[0].Rows.Count > 0)
                 {
                     this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
@@ -184,12 +206,18 @@ namespace RentATruck.Procesos
                     this.txtKmSalida.Text = objDatos.ds.Tables[0].Rows[0][6].ToString();
                     this.txtCombustibleEntrada.Text = objDatos.ds.Tables[0].Rows[0][2].ToString();
                     codigoSalidaCamion = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][8].ToString());
+                    this.txtHoraEntrada.Text = objDatos.ds.Tables[0].Rows[0][9].ToString();
+
+
+
+
                 }
                 else
                 {
                     MessageBox.Show("Cliente no encontrado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
+
         }
 
         private void proEntradaCamiones_Load(object sender, EventArgs e)
@@ -202,10 +230,12 @@ namespace RentATruck.Procesos
             //horaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             horaEntrada.Text = DateTime.Now.ToString("HH:mm");
-
-
+            String HoraEntradaFinal = horaEntrada.Text;
 
             this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
+
+
+            fecha_entrada = Convert.ToDateTime(this.txtFechaEntrada.Text);
             txtCodigoCamion.Text = "Nuevo";
         }
     }

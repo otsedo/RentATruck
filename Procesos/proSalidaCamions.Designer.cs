@@ -168,9 +168,9 @@
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
             this.label3.Location = new System.Drawing.Point(21, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 20);
+            this.label3.Size = new System.Drawing.Size(141, 20);
             this.label3.TabIndex = 102;
-            this.label3.Text = "Perona Recibe:";
+            this.label3.Text = "Persona Recibe:";
             // 
             // txtPersonaRecibe
             // 

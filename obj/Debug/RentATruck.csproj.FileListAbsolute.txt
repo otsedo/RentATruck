@@ -32,6 +32,7 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busqu
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaServicios.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaSuplidores.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Busquedas.busquedaVendedores.resources
+C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Consultas.conFacturas.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmAbout.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmAgenda.resources
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Formularios.frmDevuelta.resources
@@ -82,5 +83,3 @@ C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe.manifest
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.application
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.exe
 C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.pdb
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.csprojResolveAssemblyReference.cache
-C:\Users\Odesto\Desktop\Proyecto\RentATruck\obj\Debug\RentATruck.Consultas.conFacturas.resources

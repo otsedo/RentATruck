@@ -16,7 +16,7 @@ namespace RentATruck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Consultas.conFacturas());
+            Application.Run(new Formularios.frmPrincipal());
         }
     }
 }
