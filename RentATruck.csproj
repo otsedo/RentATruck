@@ -147,6 +147,12 @@
     <Compile Include="Clases\EnviarCorreo.cs" />
     <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Utilitarios.cs" />
+    <Compile Include="Consultas\conFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\conFacturas.Designer.cs">
+      <DependentUpon>conFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -488,6 +494,9 @@
     <EmbeddedResource Include="Busquedas\busquedaVendedores.resx">
       <DependentUpon>busquedaVendedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\conFacturas.resx">
+      <DependentUpon>conFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -682,7 +691,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consultas\" />
     <Folder Include="Recibos\" />
   </ItemGroup>
   <ItemGroup>

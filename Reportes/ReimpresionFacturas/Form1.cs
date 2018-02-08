@@ -57,5 +57,17 @@ namespace RentATruck.Reportes.ReimpresionFacturas
 
             objDatos.Desconectar();
         }
+
+        private void cmdBuscar_Click(object sender, EventArgs e)
+        {
+            Consultas.conFacturas f3 = new Consultas.conFacturas();
+            DialogResult res = f3.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                this.txtID.Text = f3.ReturnValue1;
+            }
+
+        }
     }
 }

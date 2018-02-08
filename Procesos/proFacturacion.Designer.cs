@@ -273,6 +273,7 @@
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(211, 21);
             this.cmbTipoPago.TabIndex = 88;
+            this.cmbTipoPago.SelectedIndexChanged += new System.EventHandler(this.cmbTipoPago_SelectedIndexChanged);
             this.cmbTipoPago.SelectionChangeCommitted += new System.EventHandler(this.cmbTipoPago_SelectionChangeCommitted);
             // 
             // cmdEditarArticulo

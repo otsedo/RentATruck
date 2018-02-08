@@ -109,7 +109,7 @@ namespace RentATruck.Procesos
             else if (this.cmbTipoPago.Text == "Credito")
             {
                 DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
-                DateTime expiryDate = startDate.AddDays(15);
+                DateTime expiryDate = startDate.AddDays(7);
                 txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
             }
 
@@ -505,9 +505,14 @@ namespace RentATruck.Procesos
             else if (this.cmbTipoPago.Text == "Credito")
             {
                 DateTime startDate = Convert.ToDateTime(DateTime.Now.Date.Date);
-                DateTime expiryDate = startDate.AddDays(15);
+                DateTime expiryDate = startDate.AddDays(7);
                 txtFechaVencimiento.Text = expiryDate.ToString("MM-dd-yyyy");
             }
+        }
+
+        private void cmbTipoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Button6_Click(object sender, EventArgs e)
