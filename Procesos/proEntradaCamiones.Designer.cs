@@ -64,9 +64,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.horaEntrada = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtFechaEntrada = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -471,17 +471,6 @@
             this.label1.TabIndex = 175;
             this.label1.Text = "Codigo Cliente:";
             // 
-            // txtFechaEntrada
-            // 
-            this.txtFechaEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFechaEntrada.Location = new System.Drawing.Point(144, 103);
-            this.txtFechaEntrada.MinDate = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
-            this.txtFechaEntrada.Name = "txtFechaEntrada";
-            this.txtFechaEntrada.Size = new System.Drawing.Size(184, 26);
-            this.txtFechaEntrada.TabIndex = 175;
-            this.txtFechaEntrada.Value = new System.DateTime(2017, 11, 11, 0, 0, 0, 0);
-            // 
             // horaEntrada
             // 
             this.horaEntrada.CustomFormat = "HH:mm";
@@ -502,15 +491,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtFechaEntrada
+            // 
+            this.txtFechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaEntrada.Location = new System.Drawing.Point(145, 103);
+            this.txtFechaEntrada.Name = "txtFechaEntrada";
+            this.txtFechaEntrada.Size = new System.Drawing.Size(183, 20);
+            this.txtFechaEntrada.TabIndex = 178;
+            // 
             // proEntradaCamiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
             this.ClientSize = new System.Drawing.Size(1006, 531);
+            this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.horaEntrada);
-            this.Controls.Add(this.txtFechaEntrada);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.lblDatosCliente);
@@ -579,10 +576,10 @@
         public System.Windows.Forms.TextBox txtCamion;
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtCodigoCliente;
-        private System.Windows.Forms.DateTimePicker txtFechaEntrada;
         private System.Windows.Forms.DateTimePicker horaEntrada;
         public System.Windows.Forms.TextBox txtHoraEntrada;
         public System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker txtFechaEntrada;
     }
 }
