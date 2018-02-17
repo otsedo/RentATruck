@@ -19,6 +19,8 @@ namespace RentATruck.Procesos
         public string NombreEmpleado, codigoEmpleado;
         Boolean miscelaneo_1 = false;
         DateTime fecha_salida;
+        DateTime fecha_entrada;
+        DateTime salida;
         string[] miscelaneos = new string[] { "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False", "False" };
 
 
@@ -86,16 +88,17 @@ namespace RentATruck.Procesos
         private void proSalidaCamions_Load(object sender, EventArgs e)
         {
             horaSalida.Value = DateTime.Now;
-            this.fechaSalida.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
-            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
+
+
+            txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+            txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+            string date = DateTime.Now.ToString("dd/MM/yyyy");
+            DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            fecha_salida = entrada;
+            this.fechaSalida.Text = fecha_salida.ToString();
+            this.txtFechaEntrada.Text = fecha_salida.ToString(); 
             this.txtCamion.Text = "Nuevo";
             this.txtCodigoCliente.Text = "Nuevo";
-
-
-
-
-
-
             objDatos.Conectar();
             objDatos.Consulta_llenar_datos("select nombre_usuario from usuarios where codigo_usuario = " + codigoEmpleado);
             this.txtUsuario.Text = objDatos.ds.Tables[0].Rows[0][0].ToString();

@@ -17,6 +17,7 @@ namespace RentATruck.Procesos
         private static proEntradaCamiones entradaCamionesInstancia = null;
         Int32 NuevoKilometraje, KilometrajeInsertar, codigoSalidaCamion;
         DateTime fecha_entrada;
+        DateTime salida;
 
         private void cmdProcesar_Click(object sender, EventArgs e)
         {
@@ -50,14 +51,15 @@ namespace RentATruck.Procesos
                 try
                 {
                     //Calcular la cantidad de dias
-                    DateTime salida = DateTime.ParseExact(this.txtFechaSalida.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    string date = DateTime.Now.ToString("dd/MM/yyyy");
+                    txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+                    txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+                    salida = DateTime.ParseExact(this.txtFechaSalida.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    string date = txtFechaEntrada.Text;
                     DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     TimeSpan difference = entrada - salida;
 
-
                     objDatos.Conectar();
-                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + fecha_entrada.ToString("yyyy-MM-dd") + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text.Substring(0, 8) + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'," + difference.TotalDays;
+                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + entrada + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text.Substring(0, 8) + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'," + difference.TotalDays;
                     if (objDatos.Insertar(sql))
                     {
                         string ActualizarAlquiler = "update vehiculo set alquilado = 'False', kilome_veh= " + txtKilometraje.Text + " where codveh_veh = " + this.txtCodigoCamion.Text;
@@ -113,7 +115,30 @@ namespace RentATruck.Procesos
         private void limpiarPantalla()
         {
             this.txtCamion.Text = "Nuevo";
-            this.txtFechaEntrada.Text = DateTime.Now.Date.Date.ToString("dd-MM-yyyy");
+
+            txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+            txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+            string date = DateTime.Now.ToString("dd/MM/yyyy");
+            DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            fecha_entrada = entrada;
+            this.txtFechaEntrada.Text = fecha_entrada.ToString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             this.txtPersonaEntrega.Text = "";
             this.txtCedula.Text = "";
             this.horaEntrada.Text = DateTime.Now.ToShortTimeString().ToString();
@@ -126,6 +151,12 @@ namespace RentATruck.Procesos
             txtFechaSalida.Text = "";
             txtKmSalida.Text = "";
             txtCombustibleEntrada.Text = "";
+
+            txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+            txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+            date = DateTime.Now.ToString("dd/MM/yyyy");
+            entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            fecha_entrada = entrada;
         }
 
         private void cmdBuscarCodCli_Click(object sender, EventArgs e)
@@ -183,8 +214,10 @@ namespace RentATruck.Procesos
             if (txtCodigoCamion.Text != "Nuevo")
             {
                 //Calcular la cantidad de dias
-                DateTime salida = DateTime.ParseExact(this.txtFechaSalida.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                string date = DateTime.Now.ToString("dd/MM/yyyy");
+                txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+                txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+                salida = DateTime.ParseExact(this.txtFechaSalida.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string date = txtFechaEntrada.Text;
                 DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 TimeSpan difference = entrada - salida;
                 MessageBox.Show("Dias: " + difference.TotalDays.ToString());
@@ -225,6 +258,8 @@ namespace RentATruck.Procesos
             horaEntrada.Text = DateTime.Now.ToString("HH:mm");
             String HoraEntradaFinal = horaEntrada.Text;
 
+            txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+            txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
             string date = DateTime.Now.ToString("dd/MM/yyyy");
             DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             fecha_entrada = entrada;
