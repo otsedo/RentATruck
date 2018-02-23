@@ -97,7 +97,7 @@ namespace RentATruck.Mantenimientos
             }
             else
             {
-                MessageBox.Show("El numero DESDE no puede ser mejor que HASTA");
+                MessageBox.Show("El numero DESDE no puede ser mayor que HASTA");
             }
             this.button2.Enabled = true;
         }
@@ -116,7 +116,7 @@ namespace RentATruck.Mantenimientos
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
                     //MessageBox.Show(listBox1.Items[i].ToString());
-                    string sql = "insert into NCF (ncf_ncf,codigo_tncf,estado) values ('" + listBox1.Items[i].ToString() + "'," + this.cmbTCF.SelectedValue.ToString() + ",'TRUE')";
+                    string sql = "insert into NCF (ncf_ncf,codigo_tncf,estado) values ('" + listBox1.Items[i].ToString() + "','" + this.cmbTCF.SelectedValue.ToString() + "','TRUE')";
 
                     if (obDatos.Insertar(sql))
                     {
@@ -194,6 +194,18 @@ namespace RentATruck.Mantenimientos
             {
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            obDatos.Conectar();
+            this.cmbTCF.DataSource = obDatos.ConsultaTabla("tipo_NCF", " descri_tncf");
+            this.cmbTCF.DisplayMember = "descri_tncf";
+            this.cmbTCF.ValueMember = "codigo_tncf";
+            MessageBox.Show(this.cmbTCF.SelectedValue.ToString());
+            obDatos.Desconectar();
+
+
         }
     }
 }
