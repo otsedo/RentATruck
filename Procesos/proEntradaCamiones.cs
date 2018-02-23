@@ -17,7 +17,7 @@ namespace RentATruck.Procesos
         private static proEntradaCamiones entradaCamionesInstancia = null;
         Int32 NuevoKilometraje, KilometrajeInsertar, codigoSalidaCamion;
         DateTime fecha_entrada;
-        DateTime salida;
+        DateTime salida, HoraFechaSalida, HoraFechaEntrada;
 
         private void cmdProcesar_Click(object sender, EventArgs e)
         {
@@ -35,6 +35,7 @@ namespace RentATruck.Procesos
                 MessageBox.Show("Especifique el kilometraje al recibir el camion");
                 this.txtPersonaEntrega.Focus();
             }
+
 
             if (this.txtKilometraje.Text == "")
             {
@@ -58,8 +59,30 @@ namespace RentATruck.Procesos
                     DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                     TimeSpan difference = entrada - salida;
 
+                    //Calcular la cantidad de horas
+                    txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+                    txtFechaEntrada.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+
+                    var src = HoraFechaSalida;
+                    var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+
+                    DateTime src2 = txtFechaEntrada.Value;
+                    var hm2 = new DateTime(src2.Year, src2.Month, src2.Day, src2.Hour, src2.Minute, 0);
+
+                    int dias = hm2.Day - hm.Day;
+                    int horas = hm2.Hour - hm.Hour;
+                    int minutos;
+
+
+                    if (hm2.Hour > hm.Hour)
+                    { minutos = hm2.Minute - hm.Minute; }
+                    else
+                    { minutos = hm.Minute - hm2.Minute; }
+
+
+
                     objDatos.Conectar();
-                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + entrada + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text.Substring(0, 8) + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'," + difference.TotalDays;
+                    string sql = "exec inserta_entrada_camiones " + this.txtCodigoCamion.Text + ",'" + entrada + "','" + this.txtPersonaEntrega.Text + "','" + this.txtCedula.Text + "','" + this.horaEntrada.Text.Substring(0, 8) + "','" + this.txtKilometraje.Text + "','" + this.txtReferencia.Text + "','" + this.txtCombustible.Text + "'," + difference.TotalDays + "," + horas;
                     if (objDatos.Insertar(sql))
                     {
                         string ActualizarAlquiler = "update vehiculo set alquilado = 'False', kilome_veh= " + txtKilometraje.Text + " where codveh_veh = " + this.txtCodigoCamion.Text;
@@ -220,7 +243,29 @@ namespace RentATruck.Procesos
                 string date = txtFechaEntrada.Text;
                 DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 TimeSpan difference = entrada - salida;
-                MessageBox.Show("Dias: " + difference.TotalDays.ToString());
+                //MessageBox.Show("Dias: " + difference.TotalDays.ToString());
+
+                //Calcular la cantidad de horas
+                txtFechaEntrada.Format = DateTimePickerFormat.Custom;
+                txtFechaEntrada.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+
+                var src = HoraFechaSalida;
+                var hm = new DateTime(src.Year, src.Month, src.Day, src.Hour, src.Minute, 0);
+
+                DateTime src2 = txtFechaEntrada.Value;
+                var hm2 = new DateTime(src2.Year, src2.Month, src2.Day, src2.Hour, src2.Minute, 0);
+
+                int dias = hm2.Day - hm.Day;
+                int horas = hm2.Hour - hm.Hour;
+                int minutos;
+
+
+                if (hm2.Hour > hm.Hour)
+                { minutos = hm2.Minute - hm.Minute; }
+                else
+                { minutos = hm.Minute - hm2.Minute; }
+
+                MessageBox.Show("Dias:       " + difference.TotalDays.ToString() + "\n" + "Horas:    " + horas);
             }
             else
             {
@@ -233,7 +278,7 @@ namespace RentATruck.Procesos
             if (this.txtCodigoCamion.Text != "Nuevo")
             {
                 objDatos.Conectar();
-                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, CONVERT(char(10), sc.fecha_salida,103) as 'fecha_salida', sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, sc.codigo_salida_camiones, sc.hola_salida from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh = v.codveh_veh and sc.codigo_cliente = cl.codigo_cliente and c.codigo_color = v.codigo_color and sc.estado = 'True' and sc.codveh_veh = " + txtCodigoCamion.Text);
+                objDatos.Consulta_llenar_datos("select cl.nombre as 'cliente',cl.codigo_cliente ,sc.cantidad_combustible, CONVERT(char(10), sc.fecha_salida,103) as 'fecha_salida', sc.concepto,sc.codigo_cliente,sc.kilometraje_salida,m.descripcion + ' '  + mv.descripcion + ' año ' + convert(varchar(4),v.anoveh_veh) + ', Placa ' + convert(varchar(12),v.numpla_veh) + ' Chasis ' +  convert(varchar(17),v.numcha_veh) as vehiculo, sc.codigo_salida_camiones, sc.hola_salida, Combined = fecha_salida + hola_salida from vehiculo v, marca_articulos m, tipo_vehiculos tv, modelos_vehiculos mv, colores c, salida_camiones sc, clientes cl where v.codigo_marca = m.codigo_marca and v.codigo_tipo_vehiculo = tv.codigo_tipo_vehiculo and v.codigo_modelos =mv.codigo_modelos and cl.codigo_cliente = sc.codigo_cliente and sc.codveh_veh = v.codveh_veh and sc.codigo_cliente = cl.codigo_cliente and c.codigo_color = v.codigo_color and sc.estado = 'True' and sc.codveh_veh = " + txtCodigoCamion.Text);
                 if (objDatos.ds.Tables[0].Rows.Count > 0)
                 {
                     this.txtCamion.Text = objDatos.ds.Tables[0].Rows[0][7].ToString();
@@ -244,6 +289,7 @@ namespace RentATruck.Procesos
                     this.txtCombustibleEntrada.Text = objDatos.ds.Tables[0].Rows[0][2].ToString();
                     codigoSalidaCamion = Convert.ToInt32(objDatos.ds.Tables[0].Rows[0][8].ToString());
                     this.txtHoraEntrada.Text = objDatos.ds.Tables[0].Rows[0][9].ToString();
+                    HoraFechaSalida = Convert.ToDateTime(objDatos.ds.Tables[0].Rows[0][10].ToString());
                 }
                 else
                 {
@@ -259,7 +305,7 @@ namespace RentATruck.Procesos
             String HoraEntradaFinal = horaEntrada.Text;
 
             txtFechaEntrada.Format = DateTimePickerFormat.Custom;
-            txtFechaEntrada.CustomFormat = "dd/MM/yyyy";
+            txtFechaEntrada.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             string date = DateTime.Now.ToString("dd/MM/yyyy");
             DateTime entrada = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             fecha_entrada = entrada;
