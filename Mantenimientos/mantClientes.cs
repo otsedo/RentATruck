@@ -102,7 +102,7 @@ namespace RentATruck.Mantenimientos
         public virtual void eliminarRegistro()
         {
             DialogResult respuesta;
-            respuesta = MessageBox.Show("Desea elmininar el cliente: " + this.txtnombre.Text, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            respuesta = MessageBox.Show("Desea borrar el cliente: " + this.txtnombre.Text, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (respuesta == DialogResult.OK)
             {
 
